@@ -1,0 +1,241 @@
+{
+  "revision": "PA-2026-10-18-01",
+  "date": "2026-10-18",
+  "method": "Least-squares 2D similarity, accounting for image rows increasing southward; source survey image pixels to EPSG:26918 metres, then WGS84 for display",
+  "sourceImage": "assets/sites/dannemora/subdivision-survey.png",
+  "targetGeometry": "sources/dannemora/county-parent-parcel.geojson",
+  "sourcePermit": "https://apa.ny.gov/files/permits/issued/2025/11/P2025-0137-Permit-Final.pdf#page=9",
+  "crs": "EPSG:26918 NAD83 / UTM18N metres",
+  "parameters": [
+    0.22486650686612383,
+    -0.15750336088240147,
+    592589.6447822957,
+    4954230.12523124
+  ],
+  "rmsFitResidualMeters": 3.100449631077403,
+  "maxFitResidualMeters": 7.604859606751461,
+  "leaveOneOutRmsMeters": 4.3853689598682,
+  "leaveOneOutMaxMeters": 11.646717797317095,
+  "controls": [
+    {
+      "name": "First access strip, west upper corner",
+      "sourcePixel": [
+        1439,
+        595
+      ],
+      "countyRingVertex": 10,
+      "targetLonLat": [
+        -73.8277643529169,
+        44.7321862711444
+      ],
+      "fitResidualMeters": 0.7656392069979244,
+      "leaveOneOutResidualMeters": 0.9774744838968774
+    },
+    {
+      "name": "First access strip, east upper corner",
+      "sourcePixel": [
+        1496,
+        588
+      ],
+      "countyRingVertex": 11,
+      "targetLonLat": [
+        -73.8275887797664,
+        44.7321219241305
+      ],
+      "fitResidualMeters": 0.31944252570996445,
+      "leaveOneOutResidualMeters": 0.3982121505290702
+    },
+    {
+      "name": "First access strip, west lower corner",
+      "sourcePixel": [
+        1442,
+        821
+      ],
+      "countyRingVertex": 9,
+      "targetLonLat": [
+        -73.8281980683975,
+        44.731731502732
+      ],
+      "fitResidualMeters": 1.3867947001710512,
+      "leaveOneOutResidualMeters": 1.6753623959792983
+    },
+    {
+      "name": "Second access strip, west upper corner",
+      "sourcePixel": [
+        1828,
+        615
+      ],
+      "countyRingVertex": 16,
+      "targetLonLat": [
+        -73.8267132572133,
+        44.7315963424448
+      ],
+      "fitResidualMeters": 0.6871885386968593,
+      "leaveOneOutResidualMeters": 0.7912178716639808
+    },
+    {
+      "name": "Second access strip, east upper corner",
+      "sourcePixel": [
+        1885,
+        612
+      ],
+      "countyRingVertex": 17,
+      "targetLonLat": [
+        -73.8265357286487,
+        44.7315184126115
+      ],
+      "fitResidualMeters": 0.8989450313038784,
+      "leaveOneOutResidualMeters": 1.0373024060418894
+    },
+    {
+      "name": "Second access strip, west lower corner",
+      "sourcePixel": [
+        1831,
+        773
+      ],
+      "countyRingVertex": 15,
+      "targetLonLat": [
+        -73.8270358754117,
+        44.7312514894269
+      ],
+      "fitResidualMeters": 2.2143499633246986,
+      "leaveOneOutResidualMeters": 2.4576220926390544
+    },
+    {
+      "name": "Second access strip, east lower corner",
+      "sourcePixel": [
+        1887,
+        784
+      ],
+      "countyRingVertex": 18,
+      "targetLonLat": [
+        -73.8268911356126,
+        44.7311651307895
+      ],
+      "fitResidualMeters": 0.24433335346977955,
+      "leaveOneOutResidualMeters": 0.2711257275868272
+    },
+    {
+      "name": "Eastern boundary upper bend",
+      "sourcePixel": [
+        2075,
+        812
+      ],
+      "countyRingVertex": 20,
+      "targetLonLat": [
+        -73.826424876479,
+        44.7308565431374
+      ],
+      "fitResidualMeters": 2.1240332196877483,
+      "leaveOneOutResidualMeters": 2.421263714546993
+    },
+    {
+      "name": "Lot 1 eastern inset",
+      "sourcePixel": [
+        2009,
+        1368
+      ],
+      "countyRingVertex": 27,
+      "targetLonLat": [
+        -73.827717240887,
+        44.7298635306062
+      ],
+      "fitResidualMeters": 4.976413708178841,
+      "leaveOneOutResidualMeters": 6.336314532162275
+    },
+    {
+      "name": "Lot 1 Garmish frontage upper corner",
+      "sourcePixel": [
+        2172,
+        1390
+      ],
+      "countyRingVertex": 28,
+      "targetLonLat": [
+        -73.8272980443226,
+        44.7295644130263
+      ],
+      "fitResidualMeters": 3.126618883710911,
+      "leaveOneOutResidualMeters": 4.260554990367712
+    },
+    {
+      "name": "Lot 1 southern road corner",
+      "sourcePixel": [
+        2155,
+        1543
+      ],
+      "countyRingVertex": 31,
+      "targetLonLat": [
+        -73.8277108064568,
+        44.7291942401318
+      ],
+      "fitResidualMeters": 7.604859606751461,
+      "leaveOneOutResidualMeters": 11.646717797317095
+    }
+  ],
+  "traces": {
+    "lot1SourcePixels": [
+      [
+        1778,
+        1108
+      ],
+      [
+        2031,
+        1145
+      ],
+      [
+        1997,
+        1304
+      ],
+      [
+        2009,
+        1368
+      ],
+      [
+        2172,
+        1390
+      ],
+      [
+        2155,
+        1543
+      ],
+      [
+        1684,
+        1476
+      ],
+      [
+        1778,
+        1108
+      ]
+    ],
+    "houseSourcePixels": [
+      [
+        1878,
+        1397
+      ],
+      [
+        1894,
+        1397
+      ],
+      [
+        1894,
+        1442
+      ],
+      [
+        1878,
+        1442
+      ],
+      [
+        1878,
+        1397
+      ]
+    ]
+  },
+  "limitations": [
+    "All controls come from approximate county tax GIS; no independent surveyed checkpoints or direct aerial ground control.",
+    "Fit residual and leave-one-out values measure internal agreement, not absolute or legal boundary accuracy.",
+    "Lot 1 lineage and recorded subdivision are not reconciled; house and lot are manually traced from a reduced drawing.",
+    "Overlay depicts the 2025 proposal on 2014/2020/2024 imagery; not proof of historical boundary, construction, or permit validity.",
+    "House dimensions and location are controlled by original permit drawing, not display coordinates.",
+    "Well, septic, clearing and wetland boundaries are not transferred by this registration."
+  ]
+}

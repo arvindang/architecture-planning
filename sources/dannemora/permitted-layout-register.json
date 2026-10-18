@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-18",
+  "permit": "https://apa.ny.gov/files/permits/issued/2025/11/P2025-0137-Permit-Final.pdf",
+  "basis": "Condition 9 fixes dwelling location and footprint; condition 15 references clearing limits; condition 16 requires new/amended permit for wetland activity.",
+  "limits": "Display-only source-drawing emphasis, not GIS geometry or an engineered envelope. Permit recordation/current validity and other approvals unchecked. Lot area is not buildable area.",
+  "files": [
+    {
+      "file": "assets/sites/dannemora/lot1-permitted-layout.svg",
+      "sourceImage": "assets/sites/dannemora/subdivision-survey.png",
+      "sourceViewBox": "1630 1080 680 560",
+      "method": "Unchanged original pixels embedded in SVG; display-only emphasis and callouts",
+      "sha256": "be823d357634605c10ccf40b10473ec20e2612a3a2e676e5906526a4ac38d350"
+    },
+    {
+      "file": "assets/sites/dannemora/house-services-permitted-layout.svg",
+      "sourceImage": "assets/sites/dannemora/septic-site-c1.png",
+      "sourceViewBox": "180 660 2300 1040",
+      "method": "Unchanged original pixels embedded in SVG; display-only emphasis and callouts",
+      "sha256": "0807add4ea58eba82cc92707df81c5b43d4242cec5b3a64ad4d01f290ed4653b"
+    }
+  ]
+}

@@ -28,6 +28,7 @@ The static entry points are `index.html`, `styles.css`, and `app.js`. Exported r
 
 | Document | Purpose |
 | --- | --- |
+| [Current site findings & handoff](ops/site-findings.md) | Sourced candidate findings, unresolved issues, and what later stages can use |
 | [Project brief](ops/brief.md) | Goals, fictional client, scope, and success criteria |
 | [Six-week roadmap](ops/roadmap.md) | Weekly deliverables and completion gates |
 | [First milestone](ops/milestone-01.md) | Concrete behavior and acceptance criteria for the prototype |
@@ -49,6 +50,8 @@ The conversations are planning inputs, not verified technical references. Their 
 
 ## Site evidence and terrain
 
-Site feasibility has separate Overview, Aerial imagery, Terrain & slopes, Plans & annotations, Sources & gaps, and Findings tabs. Shared Dannemora research never changes a project's selected site or manual check states.
+Site feasibility has separate Overview, Permitted layout, Aerial imagery, Terrain & slopes, Plans & annotations, Sources & gaps, and Findings tabs. Shared Dannemora research never changes a project's selected site or manual check states.
 
 The terrain tab displays a native 1 m historical USGS DEM, slope / elevation / hillshade maps, a rotatable local 3D surface, reference profiles, and downloadable 2 m contours. It runs without accounts, external scripts or API keys. Context layers and two candidate weather files are archived. See [Terrain acquisition and next steps](ops/terrain.md) for provenance, regeneration, reuse from mapping-race-courses, and unresolved accuracy / boundary issues.
+
+The current candidate summary lives in `ops/site-findings.json`. Update that record and run `python3 scripts/prepare-site-findings.py` to regenerate `site-findings-data.js` and `ops/site-findings.md`. Overview and Findings use the same record; cite its stable SF finding IDs when recording later design decisions. Acquisition detail remains in `ops/terrain.md`; earlier research history remains in `ops/site-shortlist.md`.

@@ -17,7 +17,7 @@ Updated: 2026-10-18. This log distinguishes the user's request, direction from t
 
 | ID | Recommendation | Reason / revisit trigger |
 | --- | --- | --- |
-| P-001 | Start with one NYC parcel for the software prototype | The conversation identifies public-data access as the advantage; validate actual data before selection |
+| P-001 · superseded recommendation | Original NYC-first default replaced by a Dannemora data exercise recommendation | Rural-site exploration has supplied survey, septic and elevation evidence. This does not select the final project site |
 | P-002 | Keep the house brief provisional until the parcel is chosen | A weekend-home brief may not suit an urban lot; avoid quietly treating them as interchangeable |
 | P-003 | Begin local and file-based, with a small Python geometry pipeline | One project does not yet need hosted infrastructure; revisit on deployment or multiple-project needs |
 | P-004 | Allow manual imports and reviewed rule entry | Demonstrates the workflow before brittle automation |
@@ -25,7 +25,7 @@ Updated: 2026-10-18. This log distinguishes the user's request, direction from t
 
 ## Decisions needed, in order
 
-1. **Site direction:** NYC data-first prototype or Hudson Valley house-first experiment? Recommendation: NYC for the first milestone. If the landscape-house design matters more, select Hudson Valley and accept more manual sourcing. Keep one parcel throughout when feasible; record a deliberate change if needed.
+1. **Site direction:** Dannemora is now the recommended first reconstruction exercise, based on recovered survey, septic and terrain inputs. Final project-site selection remains open; see [current findings](site-findings.md). Philipstown remains an alternative closer to the original house scale.
 2. **Exact parcel and jurisdiction:** choose only after checking boundary data, source availability, and manageable constraints. No listing or example in the source conversation is selected.
 3. **Time and budget:** kickoff date, weekly hours, experiment spending ceiling, and fictional construction budget.
 4. **Client program:** occupants, guest patterns, workspace needs, area definition, and ranked tradeoffs.
@@ -52,3 +52,9 @@ The site choice, modeling tools, analysis workers, and future backend are still 
 
 - Rename the workspace Groundwork; retain the existing storage key and v1 JSON compatibility to preserve saved work.
 - Label the existing structural check **Structural feasibility** and show it in the overview, concept exploration, and design/modeling reviews. This is early review of structural assumptions, with engineering questions captured alongside evidence and model revision. It remains a manual check; structural design and certification are outside the static workspace.
+
+## Evidence and handoff — 2026-10-18
+
+- Use `ops/site-findings.json` as the current structured candidate findings record. Stable IDs SF-001–SF-008 connect facts, uncertainties, source files and consequences for later stages. Regenerate the Markdown handoff and browser data with `python3 scripts/prepare-site-findings.py` after updates.
+- The Overview research summary and Findings page describe completed acquisition / generated terrain separately from manual project check states. A researched candidate is not a selected project site or completed feasibility review.
+- Keep public archived data and the local terrain viewer as the current implementation. No paid GIS integration or backend choice is required yet. Exact Lot 1 alignment precedes parcel-specific pad, access and quantity work.

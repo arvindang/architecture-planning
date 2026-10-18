@@ -1,0 +1,91 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "lot1",
+        "label": "Approximate Lot 1 survey boundary",
+        "status": "Provisional county-GIS fit; not surveyed coordinates",
+        "source": "APA2025-0137 page9",
+        "proposalYear": 2025
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.82785250833963,
+              44.7306749218491
+            ],
+            [
+              -73.8272165300718,
+              44.73023476407893
+            ],
+            [
+              -73.82763478638724,
+              44.72996539933027
+            ],
+            [
+              -73.82773094989187,
+              44.72981981484411
+            ],
+            [
+              -73.82731748423708,
+              44.72953991722135
+            ],
+            [
+              -73.82767577933839,
+              44.72925797823471
+            ],
+            [
+              -73.82886356771222,
+              44.73007362537745
+            ],
+            [
+              -73.82785250833963,
+              44.7306749218491
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "house",
+        "label": "Approximate permit house footprint",
+        "status": "Provisional county-GIS fit; not surveyed coordinates",
+        "source": "APA2025-0137 page9",
+        "proposalYear": 2025
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.82815798723902,
+              44.72995123684418
+            ],
+            [
+              -73.82811301842008,
+              44.72992808902156
+            ],
+            [
+              -73.82820434654683,
+              44.72983793149373
+            ],
+            [
+              -73.8282493153338,
+              44.72986107928039
+            ],
+            [
+              -73.82815798723902,
+              44.72995123684418
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Backlog
 
-Status as of 2026-10-18: planning baseline and static management workspace implemented; site-analysis implementation has not begun. Items are ordered by dependency. Unchecked items are outstanding, not commitments to complete without resolving their inputs.
+Status as of 2026-10-18: static management workspace, evidence gallery and initial historical-terrain pipeline implemented. Dannemora remains a research candidate; Lot 1 registration and site selection remain open. Read [site-findings.md](site-findings.md) before starting dependent design work. Items are ordered by dependency. Unchecked items are outstanding, not commitments to complete without resolving their inputs.
 
 ## Planning baseline
 
@@ -13,10 +13,10 @@ Status as of 2026-10-18: planning baseline and static management workspace imple
 
 - [ ] Resolve NYC versus Hudson Valley and record the choice.
 - [ ] Set kickoff, available weekly time, and experiment budget.
-- [ ] Compare a small number of candidate parcels for data availability and manageable constraints.
+- [x] Compare Dannemora and Philipstown candidates for data availability and manageable constraints.
 - [ ] Select one parcel and jurisdiction; record why it is suitable.
-- [ ] Inventory authoritative parcel and regulatory sources; check access and usage conditions.
-- [ ] Record CRS, boundary provenance, orientation, and missing survey / terrain / access information.
+- [x] Inventory primary parcel, permit, elevation and screening sources; archive access and provenance. Applicability and current approvals still need review.
+- [x] Record CRS, boundary provenance, imagery orientation, elevation datum and unresolved survey / access information.
 - [ ] Extract only the initial supported rules, retaining applicability and review status.
 
 ## Build milestone one
@@ -59,4 +59,18 @@ Status as of 2026-10-18: planning baseline and static management workspace imple
 - [x] Verify creation, reload persistence, evidence validation, review flags, export/import, and invalid imports in a browser.
 - [x] Check all ten views at 390px, 768px, and 1440px; fix checks-table mobile overflow.
 
-Remaining: pick a real site, build actual geometry and analysis pipelines, and select backend persistence when needed. No automated check integrations are connected.
+Remaining: select and register the exact site, implement supported envelope / placement checks and later analyses, and select backend persistence when needed. A precomputed terrain pipeline now exists; current-condition and parcel-specific feasibility remain unresolved. No automated check integrations are connected.
+
+## Site evidence and historical terrain — implemented
+
+- [x] Archive permit, survey / septic drawings, three aerial years and native imagery metadata.
+- [x] Match county parent parcel; retain unresolved subdivision / Lot 1 alignment.
+- [x] Acquire native historical 1 m DEM and preserve CRS, vertical datum and source dates.
+- [x] Generate terrain, slope / hillshade, contours and reference profiles; provide a 3D viewer with rotation and zoom.
+- [x] Archive environmental context, partial FEMA results and two candidate weather files.
+- [x] Publish a sourced findings register and stage handoff from one structured record.
+- [ ] Register Lot 1 to the maps with supported control and measured residuals.
+- [ ] Acquire the classified point-cloud clip and audit ground coverage / gaps.
+- [ ] Verify current conditions, recorded instruments and installed services.
+- [ ] Resolve documented 560 sq ft benchmark versus the larger provisional house brief.
+- [ ] Select weather inputs and run solar / climate analysis; recover missing flood geometry and soil / geology screening.

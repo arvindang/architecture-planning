@@ -5,6 +5,8 @@ root = Path(__file__).resolve().parent.parent
 assets = 'assets/sites/dannemora/'
 manifest = json.loads((root/'sources/dannemora/imagery-manifest.json').read_text())
 parcel = json.loads((root/'sources/dannemora/county-parent-parcel.geojson').read_text())
+permit_geometry = json.loads((root/'sources/dannemora/permit-layout-provisional.geojson').read_text())
+registration = json.loads((root/'sources/dannemora/permit-aerial-registration.json').read_text())
 R = 6378137
 
 def project(lon, lat):
@@ -20,6 +22,21 @@ def outline(extent):
         paths.append('M'+' L'.join(points)+' Z')
     return ' '.join(paths)
 
+def permit_overlay(extent):
+    paths={}
+    for feature in permit_geometry['features']:
+        points=[]
+        for lon,lat in feature['geometry']['coordinates'][0]:
+            x,y=project(lon,lat)
+            points.append([(x-extent['xmin'])/(extent['xmax']-extent['xmin'])*1000,
+                           (extent['ymax']-y)/(extent['ymax']-extent['ymin'])*1000])
+        paths[feature['properties']['id']]='M'+' L'.join(f'{x:.2f},{y:.2f}' for x,y in points)+' Z'
+        if feature['properties']['id']=='house':
+            center=[sum(p[axis] for p in points[:-1])/(len(points)-1) for axis in [0,1]]
+    return {**paths,'houseCenter':center,'rms':round(registration['rmsFitResidualMeters'],1),
+            'maxResidual':round(registration['maxFitResidualMeters'],1),
+            'registration':'sources/dannemora/permit-aerial-registration.json'}
+
 items=[]
 for entry in manifest:
     year=entry['year']; context='context' in entry['id']
@@ -27,6 +44,7 @@ for entry in manifest:
         'id':entry['id'],'group':'imagery','title':f'{year} · '+('Landscape context' if context else 'Site aerial'),
         'file':entry['file'],'width':1600,'height':1600,'date':f'{year} imagery program; exact flight day unverified',
         'source':entry['source'],'credit':entry['credit'],'boundary':outline(entry['response']['extent']),
+        'permitOverlay':permit_overlay(entry['response']['extent']),
         'caption':'North-up natural-color orthophotography. '+('Shows the parent tract, surrounding roads and lake.' if context else 'Same extent across all three years; visual comparison only. All images predate the 2025 proposal.'),
         'annotations':([
             {'x':66,'y':58,'title':'Parent tax parcel','kind':'GIS reference','note':'185.2-2-48 from county GIS. This is the larger parent tract, not the 2.4-acre Lot 1 boundary.'},
@@ -35,7 +53,7 @@ for entry in manifest:
         ] if context else [
             {'x':79,'y':34,'title':'Nearby roof / structure','kind':'Visible in image','note':'Visible outside the displayed parent GIS outline. Do not assume this is a Lot 1 accessory building; survey-to-aerial reconciliation is pending.'},
             {'x':62,'y':73,'title':'Garmish Street corridor','kind':'Visible in image','note':'Road corridor and approach to the site. No subsurface utilities inferred.'},
-            {'x':31,'y':47,'title':'Tree canopy & shadows','kind':'Visible in image','note':'Canopy obscures portions of the ground. Image brightness and shadows are not elevations.'}
+            {'x':24,'y':22,'title':'Tree canopy & shadows','kind':'Visible in image','note':'Canopy obscures portions of the ground. Image brightness and shadows are not elevations.'}
         ])
     })
 
@@ -44,7 +62,7 @@ for item in items:
         item['annotations'][0].update(title='Compare with 2024 roofs', kind='Historical comparison', note='The same nearby roof forms are not apparent here in this earlier image. Compare against 2024; construction timing and parcel identity remain unverified.')
 
 plans=[
- {'id':'septic-site-c1','title':'C1 · Septic, well & access','page':7,'date':'August 6, 2025','caption':'Engineering site plan. Pins identify features on the drawing, not installed systems. No aerial alignment has been applied.','annotations':[
+ {'id':'septic-site-c1','title':'C1 · Septic, well & access','page':7,'date':'August 6, 2025','caption':'Engineering site plan. Pins identify proposed features on the drawing, not installed systems. Well and septic remain unregistered to aerial imagery.','annotations':[
   {'x':39.3,'y':57.5,'title':'Septic tank','kind':'Proposed','note':'Proposed 1,000-gallon concrete tank; installation not verified.'},
   {'x':46.8,'y':66.5,'title':'Absorption field & fill','kind':'Proposed','note':'Shallow absorption trenches and fill area. Follow original engineering dimensions and details.'},
   {'x':46.0,'y':37.1,'title':'Well','kind':'Proposed','note':'Proposed well; drawing states minimum separation from distribution box and absorption field.'},
@@ -53,7 +71,7 @@ plans=[
   {'x':26.8,'y':42.0,'title':'Wetland flags / stream','kind':'Documented constraint','note':'APA delineation flags and stream line shown on the plan; preserve original mapping.'},
   {'x':45.8,'y':64.1,'title':'Soil & percolation tests','kind':'Documented test','note':'Deep-hole/percolation locations; test table is at upper left. These are localized septic observations.'}
  ]},
- {'id':'subdivision-survey','title':'Survey · Boundaries & wetlands','page':9,'date':'Revised August 18, 2025','caption':'Boundary/subdivision survey by Dean H. Lashway, L.S., P.C. Drawing orientation follows its north arrow. It is not yet georeferenced to the aerials.','annotations':[
+ {'id':'subdivision-survey','title':'Survey · Boundaries & wetlands','page':9,'date':'Revised August 18, 2025','caption':'Boundary/subdivision survey by Dean H. Lashway, L.S., P.C. Drawing orientation follows its north arrow. Lot 1 and house now have a provisional county-GIS display fit, without independent surveyed control.','annotations':[
   {'x':70.3,'y':61.9,'title':'Lot 1','kind':'Survey reference','note':'Proposed 2.4-acre building lot. County download still represents the larger parent parcel.'},
   {'x':74.6,'y':67.9,'title':'Accessory buildings','kind':'Documented existing','note':'Two accessory buildings recorded by the survey; current condition unverified.'},
   {'x':70.0,'y':65.8,'title':'Wetland delineation','kind':'Documented constraint','note':'APA wetland line and flagged points. No completeness claim for all wetlands on or adjacent to site.'},
