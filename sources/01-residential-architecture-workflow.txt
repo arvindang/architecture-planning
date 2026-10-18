@@ -1,0 +1,272 @@
+You've got the sequence mostly right. The interesting part is that architecture is an iterative design process, much like product design, except the constraints include physics, geography, building codes, budgets, and construction methods.
+
+For a custom residential home in the US, the typical workflow looks like this:
+
+RESIDENTIAL ARCHITECTURE WORKFLOW
+
+01
+
+Discovery
+
+Client + site
+
+02
+
+Feasibility
+
+Land + regulations
+
+03
+
+Concept
+
+Explore designs
+
+04
+
+Develop
+
+Materials + systems
+
+05
+
+Document
+
+Engineering + drawings
+
+06
+
+Permit
+
+Agency reviews
+
+07
+
+Build
+
+GC + trades
+
+08
+
+Complete
+
+Inspection + handover
+
+## 1. Discovery: understanding the client and the land
+
+Usually, architects begin with a client conversation and an initial assessment of the property. These happen before or alongside formal surveying.
+
+Client requirements (called programming):
+
+- How many people will live here? How many bedrooms?
+- How do they actually use their home?
+- Should the kitchen be the social center?
+- What architectural styles or materials appeal to them?
+- What's the construction budget?
+- What are the priorities and compromises?
+
+Architects translate these conversations into a program: a list of spaces, approximate square footage, desired relationships, and constraints.
+
+Site investigation:
+
+A licensed land surveyor, rather than the architect, typically prepares the formal survey.
+
+This may include property boundaries, elevations, slopes, existing structures, trees, utilities, easements, and other relevant features.
+
+A geotechnical engineer might additionally investigate soil conditions, groundwater, and foundation requirements.
+
+The architect also visits the property, photographs it, observes neighboring buildings, and studies the surrounding environment.
+
+## 2. Site feasibility and environmental analysis
+
+This is where an architect learns what can actually be built.
+
+[Master Planning — PADEE DESIGN STUDIO](https://images.openai.com/static-rsc-4/85Z4KshWZjxBmvChGCsygzWYzCjoMiNACJNfotrULpLgePZo51FgSLLDXh-hKK_Rbmuxz3bnBzTXsKJSVbPYJlDB1cqcCMEWMtcetTc-ltjrgue_HjdHDUpIcPMKsMqNXtTD4pjIq0ukYHoaNsGRE-nXR2CRmt5WZmxQLaVNffM?purpose=inline)
+
+[Montauk Residence — Jones Product](https://images.openai.com/static-rsc-4/7c8TO6R5GpjiUn5T-fk9NEaY2CGswrJXmpuGJ0g10h4yIX0kxn8TE5k1NIH2fsTyZJ963yd-Mkbf3TL87ttJEPby-nSRlod_gInhwCUQN-wMVk1gH5oa9jO2bY8nQduY5J093PIW9alm5UCbLLyoABYS9D4dJ-mQQ2thEwSr4G4?purpose=inline)
+
+They investigate two categories of constraints:
+
+Legal and regulatory: Zoning, setbacks, maximum height, lot coverage, floor-area restrictions, access, historic preservation, flood zones, and applicable building regulations.
+
+Environmental: Solar orientation, seasonal shadows, wind, rainfall, drainage, prevailing temperatures, topography, existing vegetation, privacy, and views.
+
+For instance, on a residential site in New York, an architect might examine how low winter sunlight could heat a south-facing living room, while designing roof overhangs to reduce summer overheating.
+
+These considerations influence not only window placement, but the building's entire geometry.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.energy.gov\&sz=32)
+
+The Department of Energy's Energy.gov
+
++1
+
+
+
+Tools commonly used include:
+
+- Autodesk Forma for site planning, daylight, wind, noise, and early massing.
+- Google Earth Pro and GIS for geographic context.
+- Ladybug Tools for solar, daylight, and climate studies.
+- Survey CAD files and terrain models for accurate site geometry.
+
+## 3. Schematic design: how architects actually design a house
+
+This is probably the most interesting phase.
+
+The architect isn't necessarily starting by drawing walls. They're often starting by organizing relationships.
+
+A TYPICAL DESIGN PROGRESSION
+
+[Montauk Residence — Jones Product](https://images.openai.com/static-rsc-4/7c8TO6R5GpjiUn5T-fk9NEaY2CGswrJXmpuGJ0g10h4yIX0kxn8TE5k1NIH2fsTyZJ963yd-Mkbf3TL87ttJEPby-nSRlod_gInhwCUQN-wMVk1gH5oa9jO2bY8nQduY5J093PIW9alm5UCbLLyoABYS9D4dJ-mQQ2thEwSr4G4?purpose=inline)
+
+A. Spatial organization
+
+Sketch adjacencies and movement. Should bedrooms be separated from shared spaces? Should the living room open directly to the garden? Where does circulation go?
+
+[N House - Pita Masa Studio Bali](https://images.openai.com/static-rsc-4/GKC_tEyTpEKmWxbmlwKVXxPikCePeMcoIjFF4xE7IDjiomh2U0MkVPKWBwhNm04zHP3k3-MWlUouGO7nWVKBQbPP_Az6HHRNUgazsHPDsiCVjsprQkchlOO2uPNcEK8UamIWvLu6_yD7Xbv4EGWwodscRSIiMmPfJ_eeTeCKUSE?purpose=inline)
+
+B. Massing studies
+
+Experiment with rough 3D volumes on the surveyed land. Rotate, stretch, stack, or subtract volumes to respond to light, slope, setbacks, and views.
+
+[MOUNTAIN VILLA in Saborsko / by ZDL studio | Miljan Salata | Archinect](https://images.openai.com/static-rsc-4/2xebHWh8QyCZJLbsyvw2AWnBHvea80d04cHibFXW7mnE6MM_juDBDGZ5-d6Dt8Vg2p9tw48Kd9VYeYW8mboDILKD6IVrRSBcipaHMmFxZK8W90Eqjov2t3WL0OOxbzgqISpwMNZoyD0tfGgKwaHfnTtVfwOcSXlKjHYNzr40SJY?purpose=inline)
+
+C. Architecture emerges
+
+Develop floor plans, sections, windows, roof forms, materials, and indoor-outdoor relationships together. The architect repeatedly moves between 2D and 3D.
+
+Imagine a wooded hillside lot.
+
+The architect might start with a rectangular two-story building, then discover that rotating it 20 degrees improves views. Moving the bedrooms upstairs preserves privacy. Splitting the building into two volumes avoids removing a large tree. A courtyard could allow sunlight deeper into the interior.
+
+They'll compare multiple concepts, discuss tradeoffs with the client, and iterate toward an approved schematic design.
+
+### What tools do they design in?
+
+This depends heavily on the firm.
+
+| Tool                  | Typical role                                 |
+| --------------------- | -------------------------------------------- |
+| SketchUp              | Fast conceptual 3D modeling                  |
+| Rhino 3D              | Custom forms, complex geometry               |
+| Grasshopper           | Parametric and generative design             |
+| Revit                 | Precise 3D building models and documentation |
+| Archicad              | Design, BIM, and construction documentation  |
+| Vectorworks Architect | Integrated 2D, 3D, and BIM design            |
+| Twinmotion / Enscape  | Realistic visualization and walkthroughs     |
+
+In smaller residential practices, SketchUp combined with CAD is a viable workflow. Others work directly in Archicad, Vectorworks, or Revit from the beginning.
+
+## 4. Design development: turning a concept into a real building
+
+Once the client approves a direction, the team starts making the design technically credible.
+
+This includes selecting actual windows and doors, wall assemblies, roof systems, materials, structural arrangements, insulation, heating and cooling strategies, and plumbing locations.
+
+This is also when engineers become deeply involved. The architect coordinates the overall design, while structural engineers design and calculate structural systems, and mechanical, electrical, and plumbing specialists develop their respective systems where required.
+
+These are not all decisions deferred until the end. They inform the design throughout.
+
+## 5. Construction documentation: the technical blueprint
+
+Here's an important distinction: architects increasingly use BIM (Building Information Modeling), rather than producing every drawing independently.
+
+In BIM, a wall isn't just a line. It's an object with thickness, materials, layers, fire-resistance information where needed, and relationships to other building elements.
+
+Changing that wall can update the corresponding plans, sections, elevations, quantities, and schedules.
+
+[image](https://www.google.com/s2/favicons?domain=https://cegra.learn.graphisoft.com\&sz=32)
+
+Establishing a BIM-enabled Workflow in Archicad
+
++1
+
+A construction drawing set can include:
+
+- Site plans and grading information
+- Dimensioned floor plans
+- Elevations and sections
+- Foundation and structural drawings
+- Wall, roof, stair, and waterproofing details
+- Door, window, and finish schedules
+- Electrical, plumbing, and HVAC drawings
+- Material and construction specifications
+
+Some calculations and quantities can be extracted from the model, but engineering analysis, code compliance, cost estimation, and documentation still require professional verification.
+
+## 6. Approvals and permitting
+
+There are really two kinds of approval.
+
+Client approvals happen throughout programming, schematic design, and design development.
+
+Government approvals may involve zoning or planning review, design review, and building permit review. The sequence depends on the jurisdiction and property.
+
+Some projects need early zoning approvals before construction documents are finalized. Others can proceed directly to a building permit application.
+
+The building department reviews relevant plans and engineering documents, requests revisions if necessary, and issues permits when the requirements are satisfied.
+
+The architect and engineers provide signed or sealed documents where the law requires them.
+
+## 7. Contractor pricing and construction
+
+A general contractor (GC) can become involved early, particularly when budget or constructability feedback is important. Alternatively, the owner might invite contractors to bid after the construction documents are developed.
+
+The GC typically takes responsibility for organizing construction: subcontractors, labor, procurement, site logistics, schedule, and means and methods.
+
+The architect may remain involved through construction administration: answering RFIs (requests for information), reviewing shop drawings and material submittals, observing construction, reviewing changes, and helping determine whether the work generally conforms to the design documents.
+
+The contractor builds; the architect helps protect the design intent and administers the architect's contract responsibilities.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.aia.org\&sz=32)
+
+AIA
+
++1
+
+
+
+## A real residential example: Hudson Valley
+
+[BIM Collaboration Delivers Striking Mountain Retreat - Graphisoft | Austria](https://images.openai.com/static-rsc-4/FwvBKY69ylV0cY9c8gfeotYJ3kV8VaHOfD_aze5xRnjchlxhqhj291UJVql9lw3Kh_6JIWjHx7iIBOQfo08scZ3knOrxUi1jPhnzgz2X3vu9Dqu3K-CY052w-96kD5e5uo-x_ZCcD-FmsdZ0WeqE0q1lXi-I4TJ6r82Fppqku2w?purpose=inline)
+
+[Twisted Ridge — The Up Studio](https://www.graphisoft.com/en-gb/case-studies/bim-collaboration-the-up-studio-twisted-ridge/?utm_source=chatgpt.com)
+
+A 3,800-square-foot residence near Hudson, New York.
+
+The architects used Archicad's solar studies to optimize the building's placement and relationship with the pool. Structural engineers and designers collaborated through a shared building model, which was also used during site visits and construction.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.graphisoft.com\&sz=32)
+
+Caribbean Netherlands
+
+
+
+## The bigger insight: architecture isn't a linear handoff
+
+The process is less like design first, calculate second, build third and more like a continuous negotiation between four interconnected things:
+
+Human needs
+
+Program, aesthetics, lifestyle
+
+Site and climate
+
+Geography, sunlight, weather
+
+Technical feasibility
+
+Structure, materials, regulations
+
+Economics
+
+Budget, labor, construction
+
+Iterative architectural design
+
+One of the interesting opportunities in modern architecture software is connecting these traditionally separate workflows. Imagine moving a window in the 3D model and immediately seeing changes to daylight, heat gain, structural implications, material quantities, and estimated construction cost.
+
+Individual tools already do portions of that today, but comprehensive, reliable integration is still a challenge.
+
+The key distinction is that an architect doesn't merely design how a home looks. They coordinate how it functions, interacts with its environment, and can actually be constructed.

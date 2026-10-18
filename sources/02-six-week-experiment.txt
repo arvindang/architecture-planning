@@ -1,0 +1,270 @@
+Yes. I'd turn this into a six-week residential architecture experiment where you're simultaneously learning to design buildings and developing software that helps you design them.
+
+Your proposed workflow is exactly the right direction, with one important adjustment: don't aim to generate renderings that a general contractor could directly build from. Aim to produce a credible architectural design package, backed by a structured building model, with automated checks and clearly identified areas requiring professional engineering.
+
+I would structure the experiment around one question:
+
+Can we go from a real parcel of land and a client's requirements to an intelligently designed, technically evaluated house—with as much of the repetitive work automated as possible?
+
+Here's how I'd approach it.
+
+## The project: design a real house for a fictional client
+
+Choose a real parcel, preferably one with a known survey or site plan, and establish a fictional client brief. This gives us authentic constraints without introducing the responsibilities of a real construction project.
+
+For example:
+
+[2.14 Acres of Residential Land for Sale in Poughkeepsie, New York - LandSearch](https://images.openai.com/static-rsc-4/Op0rbn3xFQLxGedUsAFToYnhIaxWuaArhQmGm3v0RJptUIJdJB1iV9Bu_1jgiVjY92y1N9BgWM1-lAuJq8nXryl0GCn5lXnsZA3_0c1yLcrtO3B97xuzCA4J_WG97uCOF4yb9tRVsWnDD9kqWrc3TA4ymlEyFU1ccsNfWGmKWhg?purpose=inline)
+
+## The Hudson Valley House
+
+Proposed learning project · Hypothetical design brief
+
+A compact, contemporary weekend home designed around natural light, landscape, and a strong relationship between indoor and outdoor spaces.
+
+Program
+
+2 bedrooms / 2 baths
+
+Size target
+
+1,400–1,600 sq ft
+
+Construction
+
+Timber framing
+
+Site
+
+Real mapped parcel
+
+Design objectives: Preserve important trees, maximize natural light, create a quiet workspace, and minimize unnecessary building complexity.
+
+The site data, applicable jurisdiction, and local construction pricing would determine whether the brief is feasible.
+
+A Hudson Valley site gives us interesting architectural questions. An NYC residential lot, on the other hand, offers a more accessible public-data environment for initially developing the software. We could use either, but I'd start with one site, one jurisdiction, and one relatively simple building.
+
+## 1. Start with the land, and build a feasibility engine
+
+WEEK 1 · GIS, regulatory research, and environmental constraints
+
+The first thing I'd build is a site dossier: a combination of a map, a regulatory report, and an initial 3D terrain model.
+
+For NYC, we already have excellent public sources:
+
+- [NYC ZoLa](https://zola.planning.nyc.gov/?utm_source=chatgpt.com) — zoning district and land-use research.
+- [NYC PLUTO](https://data.cityofnewyork.us/City-Government/Primary-Land-Use-Tax-Lot-Output-PLUTO-/64uk-42ks?utm_source=chatgpt.com) — lot-level property and land-use attributes.
+- [USGS 3DEP](https://www.usgs.gov/3d-elevation-program?utm_source=chatgpt.com) — topographic and elevation data.&#x20;
+
+  [image](https://www.google.com/s2/favicons?domain=https://zola.planninglabs.nyc\&sz=32)
+
+  NYC’s Zoning & Land Use Map
+
+  +2
+
+
+
+We'd collect parcel boundaries, topography, orientation, setbacks, maximum building height, allowed uses, access, and environmental constraints. We'd also identify missing information: for example, utilities, soil-bearing capacity, drainage, and easements.
+
+A GIS parcel boundary is useful for preliminary design, but it's not a replacement for a licensed property survey.
+
+### Software opportunity #1: a feasibility report
+
+Imagine a simple address-based interface:
+
+Site feasibility
+
+Illustrative
+
+Selected parcel · Hudson Valley, NY
+
+Residential site study
+
+Demonstration only — no parcel analyzed
+
+| Residential use    | Verify                  |
+| ------------------ | ----------------------- |
+| Building setbacks  | Awaiting ordinance      |
+| Topography         | Awaiting elevation data |
+| Solar orientation  | Ready to analyze        |
+| Flood and wetlands | Verify                  |
+
+Each result should include its source, effective date, assumptions, and whether it has been professionally verified.
+
+The cool part: once a setback rule is verified, we could turn it into geometry and automatically generate a preliminary buildable envelope.
+
+Instead of reading "the building must be 20 feet from the rear lot line," you'd see the restriction in 3D.
+
+This would be our first useful software milestone.
+
+## 2. Learn architecture by developing the brief yourself
+
+WEEK 2 · Spatial planning and schematic design
+
+Before generating any 3D geometry, I'd have you design the spatial relationships.
+
+Start with a structured client program:
+
+```
+home:
+  target_area_sqft: 1500
+  bedrooms: 2
+  bathrooms: 2
+
+priorities:
+  - south-facing shared living space
+  - private bedrooms
+  - natural ventilation
+  - connection to garden
+  - simple construction
+
+constraints:
+  - stay within verified buildable area
+  - minimize unnecessary circulation
+  - preserve important trees
+```
+
+Then draw three different floor-plan concepts, initially without worrying about exact dimensions.
+
+The learning exercise is to defend each choice: Why put the kitchen there? Why orient the building this way? What happens to privacy? How far do occupants have to walk? What spaces feel generous versus compressed?
+
+I'd avoid having AI design the first floor plan. Your goal is to develop architectural judgment, not just prompt an image generator.
+
+AI can be useful as a critic, checking your ideas against the brief and identifying relationships you might have overlooked.
+
+## 3. Model the house in 3D
+
+WEEKS 3–4 · Geometry, parametric modeling, and building information
+
+I'd start with Rhino + Grasshopper.
+
+Rhino makes it relatively easy to explore architectural geometry, while Grasshopper lets you program relationships and constraints.
+
+For example, you could define the home using parameters for roof pitch, ceiling height, building depth, glazing ratio, and orientation, then explore alternatives without redrawing everything.
+
+Parametric environmental studies
+
+Grasshopper with Ladybug analysis
+
+Building information modeling
+
+A residential IFC model in Bonsai
+
+Once the concept stabilizes, I'd transition into a semantic BIM model using Bonsai and IfcOpenShell.
+
+Bonsai is especially interesting for you: it's open source, built around the IFC building-data standard, and scriptable in Python. You can create actual building elements—not just disconnected 3D meshes.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://bonsaibim.org\&sz=32)
+
+beautiful, detailed, and data-rich OpenBIM
+
++1
+
+
+
+This would let us write code against doors, windows, walls, rooms, slabs, and other architectural objects.
+
+## 4. Automate the analyses and preliminary reviews
+
+WEEK 5 · Analysis engines and design feedback
+
+This is where the software starts to become particularly compelling.
+
+We can build a validation pipeline that runs whenever the model changes.
+
+| Review         | What software could do                                           |
+| -------------- | ---------------------------------------------------------------- |
+| Zoning         | Compare dimensions with verified setback, height, and area rules |
+| Solar          | Simulate sunlight, shadowing, and solar exposure                 |
+| Environmental  | Estimate energy use and heating/cooling demand                   |
+| Space planning | Compare rooms and circulation against the program                |
+| Structural     | Flag long spans, unusual cantilevers, missing supports           |
+| Cost           | Estimate quantities and preliminary cost ranges                  |
+| BIM quality    | Check required building-object attributes and relationships      |
+
+There are already mature engines for some of this. Ladybug Tools performs climate and sunlight studies, while Honeybee connects to Radiance and EnergyPlus for detailed daylight and energy simulation.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.ladybug.tools\&sz=32)
+
+Ladybug
+
++1
+
+
+
+And buildingSMART's [Information Delivery Specification](https://www.buildingsmart.org/standards/bsi-standards/information-delivery-specification-ids/?utm_source=chatgpt.com) provides a standard for automatically checking whether IFC models contain required information.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.buildingsmart.org\&sz=32)
+
+buildingSMART International
+
+
+
+The important limitation: we can automate many checks, but not certify engineering safety or legal compliance. Structural design needs verified loads, material specifications, soil conditions, and professional engineering judgment. A model passing automated checks is not an engineering approval.
+
+The goal is to surface mistakes early and produce an organized review package for licensed professionals.
+
+## 5. Generate an architectural package
+
+WEEK 6 · Documentation and presentation
+
+Rather than producing only beautiful renders, the goal is to produce multiple outputs from a shared, dimensionally accurate model.
+
+Our first package would include:
+
+- A site and zoning feasibility report, with assumptions and source citations
+- Dimensioned conceptual floor plans, elevations, and building sections
+- 3D perspectives and interior renderings
+- Solar and energy analysis
+- Preliminary material quantities and cost assumptions
+- A BIM/IFC model and an automated review report
+
+This would be a compelling schematic design package, not yet a construction set.
+
+To reach the point where a GC can actually build it, we'd need a substantially more developed construction-document package: coordinated foundation and structural plans, engineered connections, building assemblies, waterproofing details, schedules, specifications, building systems, and jurisdiction-specific permit requirements. Licensed professionals would need to perform or verify the required design work.
+
+The distinction matters because beautiful renderings can conceal unresolved or even impossible construction details.
+
+## The software I'd build alongside the house
+
+I wouldn't build another CAD application. I'd build an orchestration layer around existing architectural tools.
+
+Site data + client brief
+
+GIS, zoning, climate, requirements
+
+Project intelligence layer
+
+Verified constraints, structured program, model relationships
+
+Model authoring
+
+Rhino / Bonsai / IFC
+
+Automated checks
+
+Python / simulation / rules
+
+Review + deliverables
+
+Interactive 3D, drawings, reports, revisions
+
+Given your development background, a practical application stack would be Rails + Postgres/PostGIS for parcels and project data, Python for geometry and simulation workflows, and a Three.js viewer for reviewing models in the browser.
+
+The principle I'd protect is that the structured geometry and building data are the source of truth, not the rendered images or an LLM's interpretation of them.
+
+## What I'd actually build first
+
+Not all six weeks at once. I'd make the first two-week milestone incredibly focused:
+
+An address-to-buildable-envelope prototype.
+
+You choose an address, the application retrieves available parcel information, produces a sourced feasibility report, and displays the known building restrictions as geometry. It distinguishes confirmed facts from assumptions and missing data. You then manually place a simple building volume inside that envelope and receive immediate preliminary feedback.
+
+That first project teaches you land-use research, GIS, 3D geometry, regulatory analysis, and software development. It also gives us something concrete that an architect could review and critique.
+
+From there, the next milestone is to bring your own house design into the system and evaluate two or three genuine architectural alternatives.
+
+I'd be particularly interested in treating the entire house like a product with testable requirements: every major design decision should map back to a client need, a site constraint, or an architectural intention.
+
+One decision to make first: would you rather start with a Hudson Valley landscape, where the architectural design is more compelling, or a Brooklyn/NYC lot, where the public data makes building the first automated feasibility tool more straightforward?
