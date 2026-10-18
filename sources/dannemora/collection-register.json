@@ -1,0 +1,89 @@
+{
+  "retrievedAt": "2026-10-18",
+  "scope": "Initial historical imagery and public proposal drawing collection; current conditions and Lot 1 georeferencing unresolved",
+  "countyParcelService": "https://services3.arcgis.com/33FPYaVQYNa7sFJ5/arcgis/rest/services/Parcels_ClintonWeb1_view/FeatureServer/0",
+  "parcelQuery": "PRINT_KEY LIKE '185.2-2-48%'",
+  "permitSource": "https://apa.ny.gov/files/permits/issued/2025/11/P2025-0137-Permit-Final.pdf",
+  "files": [
+    {
+      "path": "assets/sites/dannemora/aerial-2014-site.jpg",
+      "bytes": 390799,
+      "sha256": "01642685bd8018394c306ecf955b28e3abb8349f23894f625a9425c4381b2eec"
+    },
+    {
+      "path": "assets/sites/dannemora/aerial-2020-site.jpg",
+      "bytes": 426595,
+      "sha256": "d79104bb8aebe73ffe78574b225cb8f512769dacc50fb0af1b7f281a6acc1793"
+    },
+    {
+      "path": "assets/sites/dannemora/aerial-2024-context.jpg",
+      "bytes": 762203,
+      "sha256": "e78c14be96433bf104a6104add0f814af7a8e5a8e34847084a7f8ba803d8b747"
+    },
+    {
+      "path": "assets/sites/dannemora/aerial-2024-site.jpg",
+      "bytes": 454586,
+      "sha256": "50aae55259d8ac0d51b055c328100dae8e68e6fb375c76f66c5c62ffa9aa0702"
+    },
+    {
+      "path": "assets/sites/dannemora/septic-details-c2.png",
+      "bytes": 317399,
+      "sha256": "484eecd6554185530eaf178f44c6a382bcac3796d815196a9f74dbdc12fb6c8f"
+    },
+    {
+      "path": "assets/sites/dannemora/septic-site-c1.png",
+      "bytes": 365175,
+      "sha256": "e23a161739f8264cb59d835860bde790046af79525171b06074a1c72ef7db764"
+    },
+    {
+      "path": "assets/sites/dannemora/subdivision-survey.png",
+      "bytes": 404691,
+      "sha256": "9ea867b408771cc5316fb49f9526740d258ce9b293e72881d81a501c5ae08f24"
+    },
+    {
+      "path": "sources/dannemora/apa-2025-0137.pdf",
+      "bytes": 360382,
+      "sha256": "0cc78bb16a993e2182a46eabf1781a594ee96919513d37b12645e849917ce171"
+    },
+    {
+      "path": "sources/dannemora/county-layer-metadata.json",
+      "bytes": 11510,
+      "sha256": "ae063d53997bb3be51ff62224efef3bf0c2c8c4248eb60275418954a409be38e"
+    },
+    {
+      "path": "sources/dannemora/county-parent-parcel.geojson",
+      "bytes": 40152,
+      "sha256": "94e7ac5e42dc3c511749b0bc04e7f89c756228e396106c0c69eab29ac3ed39b4"
+    },
+    {
+      "path": "sources/dannemora/county-site-context.geojson",
+      "bytes": 526749,
+      "sha256": "034943e2bf2d1607f5aba2009dd249dc749ea1e4e343422375a19a3e7af9b2fd"
+    },
+    {
+      "path": "sources/dannemora/e_06662148_12_22500_4bd_2024.j2w",
+      "bytes": 126,
+      "sha256": "58b7771c33b5c5e8c0aa52870865b62de437cb8623a886788b0426d3898e9446"
+    },
+    {
+      "path": "sources/dannemora/e_06662148_12_22500_4bd_2024.jp2.aux.xml",
+      "bytes": 714,
+      "sha256": "7cf6ac1df487acee57c8558a75e331037b564e498c48fcfbb8e1f2086e2a3d27"
+    },
+    {
+      "path": "sources/dannemora/e_06662148_12_22500_4bd_2024.zip",
+      "bytes": 2401371,
+      "sha256": "6852469dd0e167de42e584efb5045b83215c251a04c4894ebebd8c97d23b9ffc"
+    },
+    {
+      "path": "sources/dannemora/imagery-manifest.json",
+      "bytes": 4580,
+      "sha256": "6d8079d4c5e2f192e0e66b78fe46427d346336e1d9044e9c1a80196318f93958"
+    },
+    {
+      "path": "sources/dannemora/ortho-tile-index-2024.json",
+      "bytes": 1138,
+      "sha256": "23bae9e72665c98f5a6139c38e7c15b7f7711c88dd76f36a5ee5ee28ffe7e96b"
+    }
+  ]
+}

@@ -1,0 +1,1283 @@
+{
+  "currentVersion": 12,
+  "id": 1,
+  "name": "Wetland Covertype Areas",
+  "type": "Feature Layer",
+  "serviceItemId": "d1cdf49d4e0643c199e6eb9551279f6f",
+  "cacheMaxAge": 30,
+  "displayField": "NWILABEL",
+  "description": "This database contains locations of Palustrine wetland areas delineated by aerial photo interpretation of 1994 to 1999 photography for the Adirondack Park. The wetlands database is part of a larger database designed to help evaluate watershed/wetland relationships in the New York State Adirondack Park.",
+  "copyrightText": "NYS Adirondack Park Agency",
+  "defaultVisibility": true,
+  "editingInfo": {
+    "lastEditDate": 1514933034867,
+    "schemaLastEditDate": 1514933034867,
+    "dataLastEditDate": 1514933034867
+  },
+  "multiScaleGeometryInfo": {
+    "levels": [
+      5,
+      7,
+      9,
+      11,
+      13
+    ],
+    "generalizationType": "Default"
+  },
+  "relationships": [],
+  "isDataVersioned": false,
+  "hasContingentValuesDefinition": false,
+  "supportsAppend": true,
+  "supportsCalculate": true,
+  "supportsASyncCalculate": true,
+  "supportsTruncate": true,
+  "supportsAttachmentsByUploadId": true,
+  "supportsAttachmentsResizing": true,
+  "supportsRollbackOnFailureParameter": true,
+  "supportsStatistics": true,
+  "supportsExceedsLimitStatistics": true,
+  "supportsAdvancedQueries": true,
+  "supportsValidateSql": true,
+  "supportsCoordinatesQuantization": true,
+  "supportsLayerOverrides": true,
+  "supportsTilesAndBasicQueriesMode": true,
+  "supportsFieldDescriptionProperty": true,
+  "supportsQuantizationEditMode": true,
+  "supportsColumnStoreIndex": true,
+  "supportsApplyEditsWithGlobalIds": false,
+  "supportsMultiScaleGeometry": true,
+  "supportsReturningQueryGeometry": true,
+  "enableNullGeometry": false,
+  "hasGeometryProperties": true,
+  "geometryProperties": {
+    "shapeAreaFieldName": "Shape__Area",
+    "shapeLengthFieldName": "Shape__Length",
+    "units": "esriMeters"
+  },
+  "advancedQueryCapabilities": {
+    "supportsPagination": true,
+    "supportsPaginationOnAggregatedQueries": true,
+    "supportsQueryRelatedPagination": true,
+    "supportsQueryWithDistance": true,
+    "supportsOutDistance": true,
+    "supportsReturningQueryExtent": true,
+    "supportsStatistics": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsQueryWithResultType": true,
+    "supportsSqlExpression": true,
+    "supportsTimeRelation": true,
+    "supportsAdvancedQueryRelated": true,
+    "supportsCountDistinct": true,
+    "supportsPercentileStatistics": true,
+    "supportsApproxPercentileStatistics": true,
+    "supportsSpatialAggregationStatistics": true,
+    "supportsTrueCurve": true,
+    "supportedSpatialAggregationStatistics": [
+      "EnvelopeAggregate",
+      "CentroidAggregate",
+      "ConvexHullAggregate"
+    ],
+    "supportsLod": true,
+    "supportsQueryWithLodSR": false,
+    "supportedLodTypes": [
+      "geohash"
+    ],
+    "supportsReturningGeometryCentroid": true,
+    "supportsReturningGeometryEnvelope": true,
+    "supportsReturningGeometryProperties": true,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsCurrentUserQueries": true,
+    "supportsHavingClause": true,
+    "supportsOutFieldSQLExpression": true,
+    "supportsMaxRecordCountFactor": true,
+    "supportsTopFeaturesQuery": true,
+    "supportsDisjointSpatialRel": true,
+    "supportsQueryWithCacheHint": true,
+    "supportedOperationsWithCacheHint": [
+      "query",
+      "queryTopFilter",
+      "queryAnalytics",
+      "queryAttachments",
+      "queryRelated",
+      "queryBins",
+      "queryPivot"
+    ],
+    "supportsQueryAnalytic": true,
+    "supportsQueryPivot": true,
+    "supportsQueryBins": true,
+    "supportsDefaultSR": true,
+    "supportsTranslations": false,
+    "supportsAggIds": true,
+    "supportsQueryWithCollation": true,
+    "supportsISODOW": true,
+    "supportsISOWeek": true,
+    "supportsFullTextSearch": true,
+    "fullTextSearchCapabilities": {
+      "supportsAccentSensitivity": true,
+      "supportsStopWords": true,
+      "supportsSearchOperator": true,
+      "supportsOperator": true
+    }
+  },
+  "advancedQueryAnalyticCapabilities": {
+    "supportsLinearRegression": true,
+    "supportsTrendlineRegression": true,
+    "supportsAsync": true,
+    "supportsPercentileAnalytic": true
+  },
+  "queryBinsCapabilities": {
+    "supportsAsync": true,
+    "supportsAutoIntervalBin": true,
+    "supportsFixedIntervalBin": true,
+    "supportsFixedBoundariesBin": true,
+    "supportsDateBin": true,
+    "supportsClassificationBin": true,
+    "supportsStackBy": true,
+    "supportsSplitBy": true,
+    "supportsFirstDayOfWeek": true,
+    "supportsSnapToData": true,
+    "supportsReturnFullIntervalBin": true,
+    "supportsReturnStackValueRange": true,
+    "supportsNormalization": true,
+    "supportedStatisticTypes": [
+      "COUNT",
+      "SUM",
+      "AVG",
+      "VAR",
+      "STDDEV",
+      "MIN",
+      "MAX",
+      "PERCENTILE_CONT",
+      "PERCENTILE_DISC",
+      "APPROX_PERCENTILE_CONT",
+      "APPROX_PERCENTILE_DISC",
+      "CentroidAggregate",
+      "EnvelopeAggregate",
+      "ConvexHullAggregate"
+    ],
+    "supportedNormalizationTypes": [
+      "boxCox",
+      "field",
+      "inverse",
+      "log",
+      "naturalLog",
+      "percentOfTotal",
+      "squareRoot"
+    ]
+  },
+  "supportedOperationsWithCollation": "query,addField,updateField",
+  "advancedEditingCapabilities": {
+    "supportedSqlFormatsInCalculate": [
+      "standard"
+    ],
+    "supportsAsyncApplyEdits": true,
+    "supportsReturnEditResults": true,
+    "supportsApplyEditsbyUploadID": true,
+    "supportedApplyEditsUploadIDFormats": "JSON,PBF",
+    "supportsTranslation": false,
+    "supportsMaxTranslations": 10
+  },
+  "infoInEstimates": [
+    "extent",
+    "count"
+  ],
+  "useStandardizedQueries": true,
+  "geometryType": "esriGeometryPolygon",
+  "minScale": 500000,
+  "maxScale": 0,
+  "extent": {
+    "xmin": -8383821.5739,
+    "ymin": 5313744.193899997,
+    "xmax": -8163134.0805,
+    "ymax": 5602243.835600004,
+    "spatialReference": {
+      "wkid": 102100,
+      "latestWkid": 3857
+    }
+  },
+  "spatialReference": {
+    "wkid": 102100,
+    "latestWkid": 3857
+  },
+  "drawingInfo": {
+    "renderer": {
+      "type": "uniqueValue",
+      "field1": "CLASS1",
+      "field2": null,
+      "field3": null,
+      "fieldDelimiter": ", ",
+      "defaultSymbol": null,
+      "defaultLabel": null,
+      "uniqueValueInfos": [
+        {
+          "symbol": {
+            "color": [
+              245,
+              122,
+              182,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "AB3",
+          "label": "AB3 Aquatic Bed Rooted Vascular",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              202,
+              122,
+              245,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "EM1",
+          "label": "EM1 Emergent Persistent",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              149,
+              80,
+              179,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "EM2",
+          "label": "EM2 Emergent Nonpersistent",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              171,
+              205,
+              102,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "FO1",
+          "label": "FO1 Forested Broad-leaved Deciduous",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              56,
+              168,
+              0,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "FO2",
+          "label": "FO2 Forested Needle-leaved Deciduous",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              38,
+              115,
+              0,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "FO4",
+          "label": "FO4 Forested Needle-leaved Evergreen",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              78,
+              78,
+              78,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "FO5",
+          "label": "FO5 Forested Dead",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              137,
+              90,
+              68,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "SB2",
+          "label": "SB3 Streambed Rubble",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              255,
+              255,
+              115,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "SS1",
+          "label": "SS1 Scrub Shrub Broad-leaf Deciduous",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              255,
+              211,
+              127,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "SS2",
+          "label": "SS2 Scrub Shrub Needle-leaf Deciduous",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              255,
+              170,
+              0,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "SS3",
+          "label": "SS3 Scrub Shrub Broad-leaf Evergreen",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              112,
+              168,
+              0,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "SS4",
+          "label": "SS4 Scrub Shrub Needle-leaf Evergreen",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              156,
+              156,
+              156,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "SS5",
+          "label": "SS5 Scrub Shrub Dead",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              205,
+              170,
+              102,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0,
+              "type": "esriSLS",
+              "style": "esriSLSNull"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "UB2",
+          "label": "UB2 Unconsolidated Bottom Sand",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              137,
+              112,
+              68,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "UB3",
+          "label": "UB3 Unconsolidated Bottom Mud",
+          "description": ""
+        },
+        {
+          "symbol": {
+            "color": [
+              205,
+              170,
+              102,
+              255
+            ],
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "width": 0.4,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+            },
+            "type": "esriSFS",
+            "style": "esriSFSSolid"
+          },
+          "value": "US2",
+          "label": "US2 Unconsolidated Shore Sand",
+          "description": ""
+        }
+      ]
+    },
+    "labelingInfo": [
+      {
+        "labelExpression": null,
+        "labelExpressionInfo": {
+          "expression": "$feature[\"NWILABEL\"]",
+          "value": "{NWILABEL}"
+        },
+        "useCodedValues": true,
+        "maxScale": 0,
+        "minScale": 10000,
+        "where": null,
+        "labelPlacement": "esriServerPolygonPlacementAlwaysHorizontal",
+        "symbol": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "type": "esriTS",
+          "backgroundColor": null,
+          "borderLineColor": null,
+          "borderLineSize": null,
+          "haloSize": 0,
+          "haloColor": null,
+          "verticalAlignment": "bottom",
+          "horizontalAlignment": "center",
+          "rightToLeft": false,
+          "angle": 0,
+          "xoffset": 0,
+          "yoffset": 0,
+          "text": "",
+          "rotated": false,
+          "kerning": true,
+          "font": {
+            "size": 8.25,
+            "style": "normal",
+            "decoration": "none",
+            "weight": "normal",
+            "family": "Arial Unicode MS"
+          }
+        }
+      }
+    ],
+    "transparency": 0
+  },
+  "allowGeometryUpdates": true,
+  "trueCurveSupportMode": "OGC",
+  "supportedCurveTypes": [
+    "esriGeometryCircularArc"
+  ],
+  "supportedTrueCurvePbfFeatureEncodings": [
+    "esriCompressedShapeBuffer",
+    "esriDefault"
+  ],
+  "allowTrueCurvesUpdates": true,
+  "onlyAllowTrueCurveUpdatesByTrueCurveClients": false,
+  "hasAttachments": false,
+  "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+  "hasM": false,
+  "hasZ": false,
+  "objectIdField": "OBJECTID",
+  "uniqueIdField": {
+    "name": "OBJECTID",
+    "isSystemMaintained": true
+  },
+  "globalIdField": "",
+  "typeIdField": "CLASS1",
+  "collation": {
+    "locale": "neutral",
+    "caseSensitive": false,
+    "accentSensitive": true
+  },
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "sqlType": "sqlTypeOther",
+      "nullable": false,
+      "editable": false,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "SYSTEM",
+      "type": "esriFieldTypeString",
+      "alias": "SYSTEM",
+      "sqlType": "sqlTypeOther",
+      "length": 2,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "CLASS1",
+      "type": "esriFieldTypeString",
+      "alias": "CLASS1",
+      "sqlType": "sqlTypeOther",
+      "length": 3,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "CLASS2",
+      "type": "esriFieldTypeString",
+      "alias": "CLASS2",
+      "sqlType": "sqlTypeOther",
+      "length": 4,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "REGIME",
+      "type": "esriFieldTypeString",
+      "alias": "REGIME",
+      "sqlType": "sqlTypeOther",
+      "length": 1,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "SPECIAL1",
+      "type": "esriFieldTypeString",
+      "alias": "SPECIAL1",
+      "sqlType": "sqlTypeOther",
+      "length": 2,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "SPECIAL2",
+      "type": "esriFieldTypeString",
+      "alias": "SPECIAL2",
+      "sqlType": "sqlTypeOther",
+      "length": 2,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "SPECIAL3",
+      "type": "esriFieldTypeString",
+      "alias": "SPECIAL3",
+      "sqlType": "sqlTypeOther",
+      "length": 2,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "NWILABEL",
+      "type": "esriFieldTypeString",
+      "alias": "NWILABEL",
+      "sqlType": "sqlTypeOther",
+      "length": 16,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "Shape__Area",
+      "type": "esriFieldTypeDouble",
+      "alias": "Shape__Area",
+      "sqlType": "sqlTypeDouble",
+      "nullable": true,
+      "editable": false,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "Shape__Length",
+      "type": "esriFieldTypeDouble",
+      "alias": "Shape__Length",
+      "sqlType": "sqlTypeDouble",
+      "nullable": true,
+      "editable": false,
+      "domain": null,
+      "defaultValue": null
+    }
+  ],
+  "indexes": [
+    {
+      "name": "Shape__Area_Index",
+      "fields": "Shape__Area",
+      "isAscending": true,
+      "isUnique": false,
+      "description": "",
+      "indexType": "Attribute"
+    },
+    {
+      "name": "Shape__Length_Index",
+      "fields": "Shape__Length",
+      "isAscending": true,
+      "isUnique": false,
+      "description": "",
+      "indexType": "Attribute"
+    },
+    {
+      "name": "PK__WETLANDC__F4B70D85A294ACFF",
+      "fields": "OBJECTID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": "clustered, unique, primary key",
+      "indexType": "Attribute"
+    },
+    {
+      "name": "user_9195.WETLANDCLASSFEATURES_WETLAND_COVERTYPE_AREAS_Shape_sidx",
+      "fields": "Shape",
+      "isAscending": false,
+      "isUnique": false,
+      "description": "Shape Index",
+      "indexType": "Spatial"
+    }
+  ],
+  "dateFieldsTimeReference": {
+    "timeZone": "UTC",
+    "timeZoneIANA": "Etc/UTC",
+    "respectsDaylightSaving": false
+  },
+  "preferredTimeReference": null,
+  "types": [
+    {
+      "id": "SS2",
+      "name": "SS2 Scrub Shrub Needle-leaf Deciduous",
+      "domains": {},
+      "templates": [
+        {
+          "name": "SS2 Scrub Shrub Needle-leaf Deciduous",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SPECIAL3": null,
+              "NWILABEL": null,
+              "SYSTEM": null,
+              "CLASS1": "SS2",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS3",
+      "name": "SS3 Scrub Shrub Broad-leaf Evergreen",
+      "domains": {},
+      "templates": [
+        {
+          "name": "SS3 Scrub Shrub Broad-leaf Evergreen",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "SS3",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS4",
+      "name": "SS4 Scrub Shrub Needle-leaf Evergreen",
+      "domains": {},
+      "templates": [
+        {
+          "name": "SS4 Scrub Shrub Needle-leaf Evergreen",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "SS4",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS5",
+      "name": "SS5 Scrub Shrub Dead",
+      "domains": {},
+      "templates": [
+        {
+          "name": "SS5 Scrub Shrub Dead",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "SS5",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "FO1",
+      "name": "FO1 Forested Broad-leaved Deciduous",
+      "domains": {},
+      "templates": [
+        {
+          "name": "FO1 Forested Broad-leaved Deciduous",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "FO1",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "FO2",
+      "name": "FO2 Forested Needle-leaved Deciduous",
+      "domains": {},
+      "templates": [
+        {
+          "name": "FO2 Forested Needle-leaved Deciduous",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "FO2",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "FO4",
+      "name": "FO4 Forested Needle-leaved Evergreen",
+      "domains": {},
+      "templates": [
+        {
+          "name": "FO4 Forested Needle-leaved Evergreen",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "FO4",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "FO5",
+      "name": "FO5 Forested Dead",
+      "domains": {},
+      "templates": [
+        {
+          "name": "FO5 Forested Dead",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "FO5",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "US2",
+      "name": "US2 Unconsolidated Shore Sand",
+      "domains": {},
+      "templates": [
+        {
+          "name": "US2 Unconsolidated Shore Sand",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "US2",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "AB3",
+      "name": "AB3 Aquatic Bed Rooted Vascular",
+      "domains": {},
+      "templates": [
+        {
+          "name": "AB3 Aquatic Bed Rooted Vascular",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "AB3",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "EM1",
+      "name": "EM1 Emergent Persistent",
+      "domains": {},
+      "templates": [
+        {
+          "name": "EM1 Emergent Persistent",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "EM1",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "EM2",
+      "name": "EM2 Emergent Nonpersistent",
+      "domains": {},
+      "templates": [
+        {
+          "name": "EM2 Emergent Nonpersistent",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SPECIAL3": null,
+              "NWILABEL": null,
+              "SYSTEM": null,
+              "CLASS1": "EM2",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SB2",
+      "name": "SB3 Streambed Rubble",
+      "domains": {},
+      "templates": [
+        {
+          "name": "SB3 Streambed Rubble",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SPECIAL3": null,
+              "NWILABEL": null,
+              "SYSTEM": null,
+              "CLASS1": "SB2",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "UB2",
+      "name": "UB2 Unconsolidated Bottom Sand",
+      "domains": {},
+      "templates": [
+        {
+          "name": "UB2 Unconsolidated Bottom Sand",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "UB2",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "UB3",
+      "name": "UB3 Unconsolidated Bottom Mud",
+      "domains": {},
+      "templates": [
+        {
+          "name": "UB3 Unconsolidated Bottom Mud",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "UB3",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SS1",
+      "name": "SS1 Scrub Shrub Broad-leaf Deciduous",
+      "domains": {},
+      "templates": [
+        {
+          "name": "SS1 Scrub Shrub Broad-leaf Deciduous",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPolygon",
+          "prototype": {
+            "attributes": {
+              "SYSTEM": null,
+              "NWILABEL": null,
+              "CLASS1": "SS1",
+              "CLASS2": null,
+              "REGIME": null,
+              "SPECIAL1": null,
+              "SPECIAL2": null,
+              "SPECIAL3": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "templates": [],
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "supportedAppendFormats": "sqlite,geoPackage,shapefile,filegdb,featureCollection,geojson,csv,excel,jsonl,featureService,pbf",
+  "supportedAppendSourceFilterFormats": "sqlite,geoPackage,shapefile,filegdb,featureService",
+  "supportedExportFormats": "csv,shapefile,sqlite,geoPackage,filegdb,featureCollection,geojson,kml,excel,parquet",
+  "supportedConvertFileFormats": "JSON,PBF,Parquet",
+  "supportedConvertContentFormats": "LayerEditCollection,FeatureCollection",
+  "supportedSpatialRelationships": [
+    "esriSpatialRelIntersects",
+    "esriSpatialRelContains",
+    "esriSpatialRelCrosses",
+    "esriSpatialRelEnvelopeIntersects",
+    "esriSpatialRelIndexIntersects",
+    "esriSpatialRelOverlaps",
+    "esriSpatialRelTouches",
+    "esriSpatialRelWithin",
+    "esriSpatialRelDisjoint",
+    "esriSpatialRelRelation"
+  ],
+  "guidFormat": "",
+  "supportsContingentValues": true,
+  "supportsEditingContingentValues": true,
+  "supportedContingentValuesFormats": "JSON, PBF",
+  "supportsFieldGroups": true,
+  "supportedSyncDataOptions": 260,
+  "hasStaticData": true,
+  "maxRecordCount": 1000,
+  "standardMaxRecordCount": 2000,
+  "maxIdsCount": 1000000,
+  "standardMaxRecordCountNoGeometry": 32000,
+  "tileMaxRecordCount": 4000,
+  "maxRecordCountFactor": 1,
+  "capabilities": "Query,Extract"
+}

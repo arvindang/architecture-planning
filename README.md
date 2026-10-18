@@ -4,7 +4,7 @@ A six-week experiment in residential architecture and software: design a house f
 
 The first software milestone is an **address-to-buildable-envelope prototype**: select a parcel, assemble a sourced feasibility report, visualize supported restrictions, and manually place a simple building volume for preliminary feedback.
 
-This repository contains the planning baseline and Groundwork, a static project-management workspace. No parcel has been selected, no regulations have been verified, and no analysis pipelines have been implemented. The schedule is relative to project kickoff; calendar dates are not committed.
+This repository contains the planning baseline and Groundwork, a static project-management workspace. No parcel has been selected and no regulatory feasibility determination has been made. Dannemora is a documented data exercise, with archived imagery and an initial terrain pipeline. The schedule is relative to project kickoff; calendar dates are not committed.
 
 ## Run the workspace
 
@@ -18,7 +18,7 @@ Then open [Groundwork](http://localhost:4173). No installation, build step, acco
 
 Each new project includes five stages, editable checklists and notes, stage references, seven check categories, six deliverables, and candidate tool links. Record a decision and select affected checks / deliverables to flag them for review. Updating a review clears its flag; previous decisions remain in the log. Marking a stage complete is a separate manual action from completing its tasks.
 
-Data saves in this browser's local storage, not in repository files. Use **Export JSON** for backups or transfer; **Import JSON** validates the v1 format and adds copies without overwriting existing projects. References are HTTP(S) links to externally stored work; this version does not upload files or run analyses. A source, link, findings, and model/input revision are required to record a passing check or ready deliverable.
+Data saves in this browser's local storage, not in repository files. Use **Export JSON** for backups or transfer; **Import JSON** validates the v1 format and adds copies without overwriting existing projects. References are HTTP(S) links to externally stored work; this version does not upload files or launch analysis jobs. The Site feasibility terrain tab displays precomputed geospatial derivatives. A source, link, findings, and model/input revision are required to record a passing check or ready deliverable.
 
 The initial Hudson Valley House is explicitly an example, with every stage and check unstarted. Create your own project or edit its brief to use it as your working record.
 
@@ -46,3 +46,9 @@ The two supplied conversations are preserved verbatim in [sources](sources/):
 - [Six-week experiment](sources/02-six-week-experiment.txt)
 
 The conversations are planning inputs, not verified technical references. Their tool suggestions, external links, and regulatory examples need research before use. The example rear setback and property listing do not establish constraints or select a site.
+
+## Site evidence and terrain
+
+Site feasibility has separate Overview, Aerial imagery, Terrain & slopes, Plans & annotations, Sources & gaps, and Findings tabs. Shared Dannemora research never changes a project's selected site or manual check states.
+
+The terrain tab displays a native 1 m historical USGS DEM, slope / elevation / hillshade maps, a rotatable local 3D surface, reference profiles, and downloadable 2 m contours. It runs without accounts, external scripts or API keys. Context layers and two candidate weather files are archived. See [Terrain acquisition and next steps](ops/terrain.md) for provenance, regeneration, reuse from mapping-race-courses, and unresolved accuracy / boundary issues.

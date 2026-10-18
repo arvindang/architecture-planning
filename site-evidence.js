@@ -1,0 +1,47 @@
+'use strict';
+
+let siteEvidenceTab='overview';
+let siteEvidenceImage='aerial-2024-site';
+let siteEvidenceOverlays=true;
+let siteEvidenceZoom=1;
+
+function siteResearchView(p){
+  const tabs=[['overview','Overview'],['imagery','Aerial imagery'],['terrain','Terrain & slopes'],['plans','Plans & annotations'],['sources','Sources & gaps'],['findings','Findings']];
+  return `<div class="site-tabs" role="tablist" aria-label="Site evidence">${tabs.map(([key,title])=>`<button id="site-tab-${key}" role="tab" aria-selected="${siteEvidenceTab===key}" aria-controls="site-evidence-panel" tabindex="${siteEvidenceTab===key?0:-1}" data-site-tab="${key}">${title}</button>`).join('')}</div><div id="site-evidence-panel" role="tabpanel" aria-labelledby="site-tab-${siteEvidenceTab}">${siteEvidenceTab==='overview'?stageOverviewView(p,'site'):siteEvidenceTab==='terrain'?siteTerrainView():siteEvidenceTab==='findings'?siteFindingsView():siteEvidenceTab==='sources'?siteEvidenceSources():siteEvidenceGallery()}</div>`;
+}
+
+function siteEvidenceGallery(){
+  const items=SITE_EVIDENCE.filter(x=>x.group===siteEvidenceTab);
+  const selected=items.find(x=>x.id===siteEvidenceImage)||items[0];
+  const pins=selected.annotations;
+  const proposed=siteEvidenceTab==='plans';
+  return `<section class="panel evidence-gallery" aria-labelledby="evidence-title"><div class="section-header"><div><p class="research-eyebrow">Dannemora · Source collection</p><h2 id="evidence-title">${proposed?'Read the documented proposal':'See the site before the proposal'}</h2></div>${badge(proposed?'2025 plans':'Historical imagery')}</div><p class="subtitle">${proposed?'Proposed services are marked on their source drawings. Transferring them to an aerial is pending survey alignment.':'Three image years, one consistent site extent. All predate the November 2025 permit; present-day construction is unverified.'}</p>
+    <div class="evidence-choices" role="group" aria-label="Choose ${proposed?'drawing':'aerial'}">${items.map(item=>`<button class="evidence-choice ${item.id===selected.id?'selected':''}" data-evidence-image="${item.id}" aria-pressed="${item.id===selected.id}"><img src="${e(item.file)}" alt="" loading="lazy"><span>${e(item.title)}</span></button>`).join('')}</div>
+    <div class="evidence-toolbar"><label><input type="checkbox" id="evidence-overlays" ${siteEvidenceOverlays?'checked':''}> Show annotations</label><label for="evidence-zoom">Zoom <select id="evidence-zoom">${[1,1.5,2,3].map(x=>`<option value="${x}" ${siteEvidenceZoom===x?'selected':''}>${Math.round(x*100)}%</option>`).join('')}</select></label><a href="${e(selected.file)}" target="_blank" rel="noopener">Open full-resolution image ↗</a></div>
+    <div class="evidence-layout"><div><div class="evidence-viewport" tabindex="0" role="region" aria-label="${e(selected.title)}; scroll to pan when zoomed"><div class="evidence-canvas" style="width:${siteEvidenceZoom*100}%"><img class="evidence-original" src="${e(selected.file)}" width="${selected.width}" height="${selected.height}" alt="${e(selected.title)}. ${e(selected.caption)}"><svg class="evidence-overlay" viewBox="0 0 1000 ${1000*selected.height/selected.width}" aria-hidden="true" ${siteEvidenceOverlays?'':'hidden'}>${selected.boundary?`<path d="${selected.boundary}" class="parcel-outline"/>`:''}${pins.map((pin,i)=>`<g transform="translate(${pin.x*10},${pin.y*10*selected.height/selected.width})" class="evidence-pin ${pin.kind==='Proposed'||pin.kind==='Required change'?'proposed':''}"><circle r="12"/><text text-anchor="middle" dy="4">${i+1}</text></g>`).join('')}</svg></div></div><div class="evidence-caption"><strong>${e(selected.title)}</strong><p>${e(selected.caption)}</p><p class="meta">${e(selected.date)} · ${e(selected.credit)}</p>${link(selected.source,'View source')}</div></div><aside class="evidence-legend" aria-label="Image annotations"><h3>What to look at</h3>${pins.length?`<ol>${pins.map((pin,i)=>`<li><span class="legend-pin">${i+1}</span><div><strong>${e(pin.title)}</strong><small>${e(pin.kind)}</small><p>${e(pin.note)}</p></div></li>`).join('')}</ol>`:'<p class="subtitle">Read this sheet alongside C1. No location pins apply to these construction details.</p>'}${selected.boundary?'<p class="boundary-key"><span></span> County parent boundary · GIS reference, not a surveyed Lot 1 outline</p>':''}</aside></div></section>`;
+}
+
+function siteEvidenceSources(){
+  return `<section class="panel"><p class="research-eyebrow">Collection register · October 18, 2026</p><h2>Collected materials & remaining evidence</h2><p class="subtitle">Local copies remain available without third-party image services. Dates below describe source records, not a verified present-day inspection.</p><div class="research-table"><table><thead><tr><th>Material</th><th>Available now</th><th>Source / download</th></tr></thead><tbody>
+    <tr><td>Aerial photographs</td><td>2014, 2020, 2024 site images; 2024 landscape context. North up, matching site extents.</td><td>${link('https://gis.ny.gov/clinton-county-orthoimagery-downloads','NYS imagery catalog')}<p><a href="sources/dannemora/imagery-manifest.json" target="_blank">Image extents & requests ↗</a></p></td></tr>
+    <tr><td>Native 2024 imagery tile</td><td>Four-band JP2 plus georeferencing. 1 US survey foot pixels; NAD83(2011), NY East State Plane, US survey feet. Exact flight day remains unknown. Tile coverage must be checked before analysis of the full tract.</td><td><a href="sources/dannemora/e_06662148_12_22500_4bd_2024.zip" download>Download original tile ZIP</a><p><a href="sources/dannemora/e_06662148_12_22500_4bd_2024.jp2.aux.xml" target="_blank">CRS & pixel metadata ↗</a></p></td></tr>
+    <tr><td>Survey & septic drawings</td><td>Original APA packet; readable previews of C1, C2 and boundary survey. Preview rotation only; source PDF preserved.</td><td><a href="sources/dannemora/apa-2025-0137.pdf" target="_blank">Open archived permit PDF ↗</a></td></tr>
+    <tr><td>County parent parcel</td><td>Matched 185.2-2-48. County acreage is 18.6; permit describes a roughly 22-acre project across four parcels. Neither equals the proposed 2.4-acre Lot 1.</td><td><a href="sources/dannemora/county-parent-parcel.geojson" download>Download county geometry</a><p>${link('https://clintoncountyny.gov/planning/gis-map','Official county map')}</p></td></tr>
+    </tbody></table></div>
+    <div class="evidence-gap-grid"><article><h3>Still needed for a current site record</h3><ul><li>Dated ground photographs of access, structures, wet areas and utility poles / service equipment.</li><li>Recorded subdivision and any installed-system / as-built records.</li><li>Survey-to-aerial alignment with control points and a measured residual.</li><li>Verified electrical connection and buried utility locations.</li></ul><p class="subtitle">No site visit or verified ground-level photo set has been obtained. Historical aerials do not establish present conditions.</p>${link('https://www.google.com/maps/@44.7298,-73.82775,18z/data=!3m1!1e3','Review site area in Google Maps')}</article><article><h3>Terrain acquired · point cloud next</h3><p>The Terrain & slopes tab now uses a native 1 m USGS bare-earth DEM from the 2014–15 collection. Elevation, slope, hillshade, 2 m contours and a simplified 3D surface are available. Exact classified tile 18TWQ592953 is verified; its full download remains deferred.</p><p>These flat orthophotos are not overlapping camera frames suitable for reconstructing a reliable point cloud. A new photogrammetric survey needs overlapping photographs, camera information and ground control.</p><p class="subtitle">No complete local point cloud, ground-return audit or earthwork estimate exists yet. The historical DEM is not a current topographic survey.</p><div class="research-links">${link('https://gis.ny.gov/node/171','NYS LiDAR collections')}${link('https://apps.nationalmap.gov/lidar-explorer/','USGS LiDAR Explorer')}${link('https://www.usgs.gov/programs/national-land-imaging-program/science/nuso-research-activities','USGS photogrammetry guidance')}</div></article></div></section>`;
+}
+
+document.addEventListener('click',event=>{
+  const tabButton=event.target.closest('[data-site-tab]');
+  const imageButton=event.target.closest('[data-evidence-image]');
+  if(tabButton){siteEvidenceTab=tabButton.dataset.siteTab;siteEvidenceZoom=1;render();document.getElementById(`site-tab-${siteEvidenceTab}`).focus();}
+  if(imageButton){siteEvidenceImage=imageButton.dataset.evidenceImage;siteEvidenceZoom=1;render();document.querySelector(`[data-evidence-image="${siteEvidenceImage}"]`).focus();}
+});
+document.addEventListener('change',event=>{
+  if(event.target.id==='evidence-overlays'){siteEvidenceOverlays=event.target.checked;document.querySelector('.evidence-overlay').toggleAttribute('hidden',!siteEvidenceOverlays);}
+  if(event.target.id==='evidence-zoom'){siteEvidenceZoom=Number(event.target.value);document.querySelector('.evidence-canvas').style.width=`${siteEvidenceZoom*100}%`;}
+});
+document.addEventListener('keydown',event=>{
+  if(!event.target.matches('[data-site-tab]')||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
+  event.preventDefault();const buttons=[...document.querySelectorAll('[data-site-tab]')];const index=buttons.indexOf(event.target);buttons[event.key==='Home'?0:event.key==='End'?buttons.length-1:(index+(event.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length].click();
+});

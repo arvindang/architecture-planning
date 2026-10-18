@@ -1,0 +1,26 @@
+{
+  "sourceIndexUrl": "https://climate.onebuilding.org/WMO_Region_4_North_and_Central_America/USA_United_States_of_America/index.html",
+  "candidates": [
+    {
+      "url": "https://climate.onebuilding.org/WMO_Region_4_North_and_Central_America/USA_United_States_of_America/NY_New_York/USA_NY_Plattsburgh.Intl.AP.726225_TMYx.2011-2025.zip",
+      "file": "USA_NY_Plattsburgh.Intl.AP.726225_TMYx.2011-2025.zip",
+      "sha256": "c0b3ccb0d33212ce92c8fe46061db1ef738093164679b1e3b61224e24e830756",
+      "bytes": 426901,
+      "epwEntry": "USA_NY_Plattsburgh.Intl.AP.726225_TMYx.2011-2025.epw",
+      "locationHeader": "LOCATION,Plattsburgh.Intl.AP,NY,USA,SRC-TMYx,726225,44.65000,-73.46700,-5.0,71.0",
+      "retrievedAt": "2026-10-18T19:21:54.872345+00:00",
+      "status": "Candidate climate file only; not selected or analyzed. Compare station distance/elevation/topography and data periods."
+    },
+    {
+      "url": "https://climate.onebuilding.org/WMO_Region_4_North_and_Central_America/USA_United_States_of_America/NY_New_York/USA_NY_Saranac.Lake-Adirondack.Rgnl.AP.726228_TMYx.2011-2025.zip",
+      "file": "USA_NY_Saranac.Lake-Adirondack.Rgnl.AP.726228_TMYx.2011-2025.zip",
+      "sha256": "ad7204e51d5fbabf4a4670d7c52a885dfffcfaa01b093d0e20bb93247f118ca8",
+      "bytes": 432192,
+      "epwEntry": "USA_NY_Saranac.Lake-Adirondack.Rgnl.AP.726228_TMYx.2011-2025.epw",
+      "locationHeader": "LOCATION,Saranac.Lake-Adirondack.Rgnl.AP,NY,USA,SRC-TMYx,726228,44.38500,-74.20700,-5.0,507.0",
+      "retrievedAt": "2026-10-18T19:21:55.080341+00:00",
+      "status": "Candidate climate file only; not selected or analyzed. Compare station distance/elevation/topography and data periods."
+    }
+  ],
+  "limits": "Typical Meteorological Year weather is regional design context, not site observations, extremes or terrain/canopy microclimate."
+}

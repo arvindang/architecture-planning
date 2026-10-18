@@ -1,0 +1,20 @@
+{
+  "id": "fema-coverage",
+  "url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/0",
+  "retrievedAt": "2026-10-18T19:19:47.118132+00:00",
+  "bboxWgs84": [
+    -73.834,
+    44.727,
+    -73.823,
+    44.736
+  ],
+  "access": "public HTTPS; no API key or account used",
+  "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+  "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+  "queryUrl": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/0/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+  "file": "fema-coverage.geojson",
+  "featureCount": 2,
+  "bytes": 87674,
+  "sha256": "ad68ead233fe015b4fd41f56c072a0a24add56b1e4d3a92a035dbd4e38dff1fb",
+  "exceededTransferLimit": false
+}

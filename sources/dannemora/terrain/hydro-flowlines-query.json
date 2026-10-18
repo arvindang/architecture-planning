@@ -1,0 +1,20 @@
+{
+  "id": "hydro-flowlines",
+  "url": "https://hydro.nationalmap.gov/arcgis/rest/services/3DHP_all/MapServer/50",
+  "retrievedAt": "2026-10-18T19:19:47.118211+00:00",
+  "bboxWgs84": [
+    -73.834,
+    44.727,
+    -73.823,
+    44.736
+  ],
+  "access": "public HTTPS; no API key or account used",
+  "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+  "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+  "queryUrl": "https://hydro.nationalmap.gov/arcgis/rest/services/3DHP_all/MapServer/50/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+  "file": "hydro-flowlines.geojson",
+  "featureCount": 2,
+  "bytes": 43322,
+  "sha256": "ecd44db90b1830f1763ce9b98dcd5763fd6a1fb33f0b48898020598ed71ad471",
+  "exceededTransferLimit": false
+}

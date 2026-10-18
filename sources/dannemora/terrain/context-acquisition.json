@@ -1,0 +1,167 @@
+{
+  "retrievedAt": "2026-10-18T19:19:58.023595+00:00",
+  "bboxWgs84": [
+    -73.834,
+    44.727,
+    -73.823,
+    44.736
+  ],
+  "records": [
+    {
+      "id": "nwi-wetlands",
+      "url": "https://fwspublicservices.wim.usgs.gov/wetlandsmapservice/rest/services/Wetlands/MapServer/0",
+      "retrievedAt": "2026-10-18T19:19:47.117644+00:00",
+      "bboxWgs84": [
+        -73.834,
+        44.727,
+        -73.823,
+        44.736
+      ],
+      "access": "public HTTPS; no API key or account used",
+      "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+      "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+      "queryUrl": "https://fwspublicservices.wim.usgs.gov/wetlandsmapservice/rest/services/Wetlands/MapServer/0/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+      "file": "nwi-wetlands.geojson",
+      "featureCount": 5,
+      "bytes": 188560,
+      "sha256": "a87946b3d13ded2d46eac49c885418898ac154556315224fbb1d923b396cd0d0",
+      "exceededTransferLimit": false
+    },
+    {
+      "id": "fema-flood-zones",
+      "url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28",
+      "retrievedAt": "2026-10-18T19:19:47.118038+00:00",
+      "bboxWgs84": [
+        -73.834,
+        44.727,
+        -73.823,
+        44.736
+      ],
+      "access": "public HTTPS; no API key or account used",
+      "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+      "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+      "error": "500 Server Error:  for url: https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson"
+    },
+    {
+      "id": "fema-coverage",
+      "url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/0",
+      "retrievedAt": "2026-10-18T19:19:47.118132+00:00",
+      "bboxWgs84": [
+        -73.834,
+        44.727,
+        -73.823,
+        44.736
+      ],
+      "access": "public HTTPS; no API key or account used",
+      "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+      "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+      "queryUrl": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/0/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+      "file": "fema-coverage.geojson",
+      "featureCount": 2,
+      "bytes": 87674,
+      "sha256": "ad68ead233fe015b4fd41f56c072a0a24add56b1e4d3a92a035dbd4e38dff1fb",
+      "exceededTransferLimit": false
+    },
+    {
+      "id": "hydro-flowlines",
+      "url": "https://hydro.nationalmap.gov/arcgis/rest/services/3DHP_all/MapServer/50",
+      "retrievedAt": "2026-10-18T19:19:47.118211+00:00",
+      "bboxWgs84": [
+        -73.834,
+        44.727,
+        -73.823,
+        44.736
+      ],
+      "access": "public HTTPS; no API key or account used",
+      "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+      "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+      "queryUrl": "https://hydro.nationalmap.gov/arcgis/rest/services/3DHP_all/MapServer/50/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+      "file": "hydro-flowlines.geojson",
+      "featureCount": 2,
+      "bytes": 43322,
+      "sha256": "ecd44db90b1830f1763ce9b98dcd5763fd6a1fb33f0b48898020598ed71ad471",
+      "exceededTransferLimit": false
+    },
+    {
+      "id": "hydro-waterbodies",
+      "url": "https://hydro.nationalmap.gov/arcgis/rest/services/3DHP_all/MapServer/60",
+      "retrievedAt": "2026-10-18T19:19:47.118299+00:00",
+      "bboxWgs84": [
+        -73.834,
+        44.727,
+        -73.823,
+        44.736
+      ],
+      "access": "public HTTPS; no API key or account used",
+      "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+      "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+      "queryUrl": "https://hydro.nationalmap.gov/arcgis/rest/services/3DHP_all/MapServer/60/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+      "file": "hydro-waterbodies.geojson",
+      "featureCount": 1,
+      "bytes": 159439,
+      "sha256": "c764b124c9f37aa7c1fcd0dd2b51ca4a79ec48bb1a79390ce0d69d73f7edaa71",
+      "exceededTransferLimit": false
+    },
+    {
+      "id": "apa-wetland-areas",
+      "url": "https://services2.arcgis.com/8krRUWgifzA4cgL3/arcgis/rest/services/WetlandClassFeatures/FeatureServer/1",
+      "retrievedAt": "2026-10-18T19:19:47.474417+00:00",
+      "bboxWgs84": [
+        -73.834,
+        44.727,
+        -73.823,
+        44.736
+      ],
+      "access": "public HTTPS; no API key or account used",
+      "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+      "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+      "queryUrl": "https://services2.arcgis.com/8krRUWgifzA4cgL3/arcgis/rest/services/WetlandClassFeatures/FeatureServer/1/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+      "file": "apa-wetland-areas.geojson",
+      "featureCount": 2,
+      "bytes": 2825,
+      "sha256": "ff2d7ac523003022e5601aba772679a7f01eae32a720a32e3abb839ce6f2570c",
+      "exceededTransferLimit": false
+    },
+    {
+      "id": "apa-wetland-lines",
+      "url": "https://services2.arcgis.com/8krRUWgifzA4cgL3/arcgis/rest/services/WetlandClassFeatures/FeatureServer/0",
+      "retrievedAt": "2026-10-18T19:19:47.536054+00:00",
+      "bboxWgs84": [
+        -73.834,
+        44.727,
+        -73.823,
+        44.736
+      ],
+      "access": "public HTTPS; no API key or account used",
+      "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+      "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+      "queryUrl": "https://services2.arcgis.com/8krRUWgifzA4cgL3/arcgis/rest/services/WetlandClassFeatures/FeatureServer/0/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+      "file": "apa-wetland-lines.geojson",
+      "featureCount": 0,
+      "bytes": 139,
+      "sha256": "e02400618f295396785e8bc8f7c24db1c46bcbf3b6f42b1a92f481330323e8ad",
+      "exceededTransferLimit": false
+    },
+    {
+      "id": "apa-land-classification",
+      "url": "https://services2.arcgis.com/8krRUWgifzA4cgL3/arcgis/rest/services/AdirondackParkLandClassification/FeatureServer/0",
+      "retrievedAt": "2026-10-18T19:19:47.768955+00:00",
+      "bboxWgs84": [
+        -73.834,
+        44.727,
+        -73.823,
+        44.736
+      ],
+      "access": "public HTTPS; no API key or account used",
+      "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+      "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+      "queryUrl": "https://services2.arcgis.com/8krRUWgifzA4cgL3/arcgis/rest/services/AdirondackParkLandClassification/FeatureServer/0/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+      "file": "apa-land-classification.geojson",
+      "featureCount": 3,
+      "bytes": 685048,
+      "sha256": "c55e123b995d15c499f0f47915eca0cd8a3f24a8d1f5db501f162f2e19f19f05",
+      "exceededTransferLimit": false
+    }
+  ],
+  "warning": "Empty response does not establish clearance. AOI is site-area context, not verified Lot 1 boundary."
+}

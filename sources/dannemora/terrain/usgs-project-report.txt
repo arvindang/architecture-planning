@@ -1,0 +1,696 @@
+               Clinton-Essex-Lake Champlain, NY
+                  2014 QL2 LiDAR Project Report
+
+
+
+
+                                      USGS Contract # G10PC00026
+                                         Requisition # 0040177225
+                                         Task Order # G14PD00943
+
+
+
+
+                                       Submitted: December 9, 2015
+
+
+
+Prepared by:
+                 Quantum Spatial, Inc
+                 523 Wellington Way, Suite 375
+                 Lexington, KY 40503
+                 859-277-8700
+                                                                                                                                LiDAR Project Report
+
+Contents
+1. Summary / Scope�����������������������������������������������������������������������������������������������������������������������������������������������1
+       1.1. Summary�������������������������������������������������������������������������������������������������������������������������������������������������1
+       1.2. Scope������������������������������������������������������������������������������������������������������������������������������������������������������1
+       1.3. Coverage�����������������������������������������������������������������������������������������������������������������������������������������������1
+       1.4. Duration�������������������������������������������������������������������������������������������������������������������������������������������������1
+       1.5. Issues�����������������������������������������������������������������������������������������������������������������������������������������������������2
+       1.6. Deliverables�����������������������������������������������������������������������������������������������������������������������������������������2
+2. Planning / Equipment������������������������������������������������������������������������������������������������������������������������������������� 4
+       2.1. Flight Planning����������������������������������������������������������������������������������������������������������������������������������� 4
+       2.2. LiDAR Sensor������������������������������������������������������������������������������������������������������������������������������������� 4
+       2.3. Aircraft�������������������������������������������������������������������������������������������������������������������������������������������������7
+       2.4. Base Station Information�����������������������������������������������������������������������������������������������������������������8
+       2.5. Time Period���������������������������������������������������������������������������������������������������������������������������������������10
+3. Processing Summary �������������������������������������������������������������������������������������������������������������������������������������� 11
+       3.1. Flight Logs������������������������������������������������������������������������������������������������������������������������������������������ 11
+       3.2. LiDAR Processing���������������������������������������������������������������������������������������������������������������������������� 12
+       3.3. LAS Classification Scheme������������������������������������������������������������������������������������������������������������ 13
+       3.4. Classified LAS Processing������������������������������������������������������������������������������������������������������������� 13
+       3.5. Hydro-Flattening Breakline Process������������������������������������������������������������������������������������������� 14
+       3.6. Hydro-Flattening Raster DEM Process��������������������������������������������������������������������������������������� 14
+       3.7 Contour Creation Process��������������������������������������������������������������������������������������������������������������� 14
+4. Project Coverage Verification��������������������������������������������������������������������������������������������������������������������� 15
+5. Ground Control and Check Point Collection�������������������������������������������������������������������������������������������� 17
+       5.1. Point Cloud Testing������������������������������������������������������������������������������������������������������������������������� 17
+       5.2. Digital Elevation Model (DEM) Testing�������������������������������������������������������������������������������������� 18
+
+
+
+
+   Clinton-Essex-Lake Champlain, NY
+                                                                          Page ii of iii                                             December 9, 2015
+   2014 QL2 LiDAR Project
+                                                                                                                    LiDAR Project Report
+
+List of Figures
+Figure 1. Clinton-Essex-Lake Champlain NY 2014 LiDAR Project Boundary������������������������������������������3
+Figure 2. Leica ALS70 LidAR Sensor����������������������������������������������������������������������������������������������������������������6
+Figure 3. Some of Quantum Spatial’s Planes��������������������������������������������������������������������������������������������������7
+Figure 4. Base Station Locations�����������������������������������������������������������������������������������������������������������������������9
+Figure 5. Flightline Swath LAS File Coverage���������������������������������������������������������������������������������������������� 16
+Figure 6. Ground Control Points Used in Calibration��������������������������������������������������������������������������������� 19
+Figure 7. Bare Earth QA Point Locations������������������������������������������������������������������������������������������������������ 20
+Figure 8. Forested QA Point Locations���������������������������������������������������������������������������������������������������������� 21
+Figure 9. Swamp/Wetland QA Point Locations������������������������������������������������������������������������������������������ 22
+Figure 10. Tall Weeds QA Point Locations��������������������������������������������������������������������������������������������������� 23
+
+
+List of Tables
+Table 1. Originally Planned LiDAR Specifications�������������������������������������������������������������������������������������������1
+Table 2. Lidar System Specifications����������������������������������������������������������������������������������������������������������������5
+Table 3. Base Station Locations�������������������������������������������������������������������������������������������������������������������������8
+
+
+List of Appendices
+Appendix A: GPS / IMU Processing Statistics, Flight Logs, and Base Station Logs
+Appendix B: Survey Report
+
+
+
+
+   Clinton-Essex-Lake Champlain, NY
+                                                                   Page iii of iii                                        December 9, 2015
+   2014 QL2 LiDAR Project
+                                                                            LiDAR Project Report
+
+
+                                                                 1. Summary / Scope
+
+1.1. Summary
+This report contains a summary of the Clinton-Essex-Lake Champlain, NY 2014 QL2 LiDAR
+acquisition task order, issued by the USGS National Geospatial Technical Operations Center,
+under their Spatial Products and Services Contract issued on September 19, 2014 and modified
+on December 19, 2014. The task order yielded a project area covering approximately 2,669
+square miles over northeastern New York near Lake Champlain. The intent of this document is
+to only provide specific validation information for the LiDAR data acquisition/collection work
+completed as specified in the task order.
+
+1.2. Scope
+Aerial topographic LiDAR was acquired using state of the art technology along with the
+necessary surveyed ground control points (GCPs) and airborne GPS and inertial navigation
+systems. The aerial data collection was designed with the following specifications listed in Table
+1 below.
+
+
+                         Table 1. Originally Planned LiDAR Specifications
+
+               Average Point                       Minimum Side
+                                  Field of View                         RMSEz
+                  Density                             Overlap
+                                                                      9.25 cm or
+                 2.0 pts / m2         40°                  10%
+                                                                        better
+
+
+1.3. Coverage
+The LiDAR project boundary covers approximately 2,669 square miles over the square miles
+and encompasses parts of Clinton, Essex, and Franklin Counties in northeastern New York. The
+Base AOI is approximately 1,951 square miles. Data for the two optional areas of interest, Ausable
+River (289 square miles) and Saranac River (429 square miles), was also processed. These
+extents are shown in Figure 1 on the following page.
+
+1.4. Duration
+LiDAR data was acquired from November 2, 2014 to May 8, 2015 in 28 total lifts. See “Section:
+2.6. Time Period” for more details.
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                            Page 1 of 23                      December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                  LiDAR Project Report
+
+1.5. Issues
+There were no issues with this project.
+
+1.6. Deliverables
+The following products were created for this project:
+
+  • Raw point cloud swath LAS in version 1.2 format
+  • Classified point cloud tiled LAS in version 1.2 format
+  • Hydro flattened raster DEM in ERDAS .IMG format
+  • Hydro flattened breaklines in ESRI shapefile format
+  • Ground control points in ESRI shapefile format
+  • Intensity Images in GeoTIFF format
+  • Flightline swaths in ESRI shapefile format
+  • Tile index in ESRI shapefile format
+  • 1-foot Contours in ESRI shapefile format
+  • Processing boundary in ESRI shapefile format
+  • Project, deliverable, and tile level metadata in XML format
+  • Accuracy Assessment in XLS format
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                          Page 2 of 23              December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                   LiDAR Project Report
+
+         Figure 1. Clinton-Essex-Lake Champlain NY 2014 LiDAR Project Boundary
+
+
+
+
+Clinton-Essex-Lake Champlain, NY
+                                     Page 3 of 23                     December 9, 2015
+2014 QL2 LiDAR Project
+                                                                          LiDAR Project Report
+
+
+                                                      2. Planning / Equipment
+
+2.1. Flight Planning
+Flight planning was based on the unique project requirements and characteristics of the project
+site. The basis of planning included: required accuracies, type of development, amount / type
+of vegetation within project area, required data posting, and potential altitude restrictions
+for flights in project vicinity. Please note that certain values in the table below are listed as
+“Variable” due to the various flight plans used, as described in “Section: 1.5. Issues” of this
+document.
+
+Detailed project flight planning calculations were performed for the project using Leica
+MissionPro planning software.
+
+2.2. LiDAR Sensor
+Quantum Spatial utilized Leica ALS70 LiDAR sensors (Figure 2), serial number(s) 6121 and 7234 ,
+during the project. The system is capable of collecting data at a maximum frequency of 500 kHz,
+which affords elevation data collection of up to 500,000 points per second. The system utilizes
+a Multi-Pulse in the Air option (MPIA). The sensor is also equipped with the ability to measure
+up to 4 returns per outgoing pulse from the laser and these come in the form of 1st, 2nd, 3rd and
+last returns. The intensity of the returns is also captured during aerial acquisition.
+
+A brief summary of the aerial acquisition parameters for the project are shown in the LiDAR
+System Specifications in Table 2.
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                          Page 4 of 23                        December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                             LiDAR Project Report
+
+                               Table 2. Lidar System Specifications
+
+                                                    7121
+                                      7121                        7121        7121         7234
+                                                   Kucera
+                                   Kucera 4B6                  Kucera SP3 Adirondack      OptionA
+                                                    BTV
+
+              Flying Height (m)    701 - 1376     820 - 1376   655 - 1377   1483 - 2310   288 - 1775
+Terrain and
+ Aircraft       Recommended
+ Scanner        Ground Speed          150            150          150          160           105
+                      (kts)
+                 Field of View
+                                      39.0           40.0        40.0          28.0         40.0
+                     (deg)
+ Scanner
+              Scan Rate Setting
+                                      41.5           41.0         34.6         52.2         27.3
+                  Used (Hz)
+               Laser Pulse Rate
+                                    194000         193400       193400       243200         153.8
+                  Used (kHz)
+  Laser
+              Multi Pulse in Air
+                                    Disabled       Disabled     Disabled     Enabled      Disabled
+                     Mode
+              Full Swath Width
+                                     974.88        1002.00      1002.13       1151.90      1292.09
+                       (m)
+Coverage
+              Line Spacing (m)       335.97        430.60       336.40        581.67        131.12
+
+               Maximum Point
+               Spacing Along          0.93           0.94         1.12         1.10         0.99
+                 Track (m)
+  Point
+               Maximum Point
+ Spacing
+               Spacing Along          0.93           0.94         1.12         0.79         0.99
+   and
+                 Track (m)
+ Density
+               Average Point
+                  Density             2.58           2.50         2.50         2.57         2.20
+                 (pts / m2)
+
+
+
+
+ Clinton-Essex-Lake Champlain, NY
+                                              Page 5 of 23                      December 9, 2015
+ 2014 QL2 LiDAR Project
+                                                               LiDAR Project Report
+
+                          Figure 2. Leica ALS70 LidAR Sensor
+
+
+
+
+Clinton-Essex-Lake Champlain, NY
+                                     Page 6 of 23                December 9, 2015
+2014 QL2 LiDAR Project
+                                                                           LiDAR Project Report
+
+2.3. Aircraft
+All flights for the project were accomplished through the use of a customized Cessna Caravan
+(single-turboprop), Tail Number N269JE. These aircraft provided an ideal, stable aerial base for
+LiDAR acquisition. These aerial platforms has relatively fast cruise speeds which are beneficial
+for project mobilization / demobilization while maintaining relatively slow stall speeds which
+proved ideal for collection of high-density, consistent data posting using a state-of-the-art Leica
+ALS70 LiDAR system. Some of the operating aircraft can be seen in Figure 3 below.
+
+                           Figure 3. Some of Quantum Spatial’s Planes
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                           Page 7 of 23                        December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                             LiDAR Project Report
+
+2.4. Base Station Information
+GPS base stations were utilized during all phases of flight (Table 3). The base station locations
+were verified using NGS OPUS service and subsequent surveys. Base station locations are
+depicted in Figure 4. Data sheets, graphical depiction of base station locations or log sheets
+used during station occupation are available in Appendix A.
+
+                                Table 3. Base Station Locations
+
+
+
+                                                                               Ellipsoid Height
+       Base Station              Latitude                    Longitude
+                                                                                      (m)
+          NYET               44° 12' 34.8508"           73° 32' 25.85231"          174.246
+
+          NYML               44° 52' 15.38494"         74° 17' 107.34324"          195.213
+
+          NYPB              44° 40' 50.58254"          73° 27' 14.30528"            30.15
+
+          NYRB                44° 18' 13.9228"          74° 4' 42.07519"          466.846
+
+          VTMI              43° 59' 55.02507"              73° 9' 9.38024"         96.027
+
+          VTUV               44° 28' 9.21279"           73° 11' 52.37575"           112.41
+    AutoAnt, gw, GW,
+                              44° 39' 1.91729"             73° 27' 30.704"         20.665
+        Kucera
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                            Page 8 of 23                       December 9, 2015
+  2014 QL2 LiDAR Project
+                                                               LiDAR Project Report
+
+                            Figure 4. Base Station Locations
+
+
+
+
+Clinton-Essex-Lake Champlain, NY
+                                     Page 9 of 23                December 9, 2015
+2014 QL2 LiDAR Project
+                                                                         LiDAR Project Report
+
+2.5. Time Period
+Project specific flights were conducted over several months. Twenty-eight LiDAR sorties, or
+aircraft lifts were completed. Accomplished sorties are listed below.
+LiDAR Sorties
+
+
+• Apr 29, 2015-A (7121)       • May 07, 2015-A (7234)
+• Apr 29, 2015-B (7121)       • May 08, 2015-A (7234)
+• Apr 29, 2015-C (7121)       • May 08, 2015-B (7234)
+• Apr 29, 2015-D (7121)       • Nov 02, 2014-A (7121)
+• Apr 30, 2015-A (7121)       • Nov 03, 2014-A (7121)
+• Apr 30, 2015-B (7121)       • Nov 03, 2014-B (7121)
+• May 02, 2015-A (7121)       • Nov 03, 2014-C (7121)
+• May 02, 2015-B (7121)       • Nov 03, 2014-D (7121)
+• May 03, 2015-A (7121)       • Nov 03, 2014-E (7121)
+• May 03, 2015-A (7234)       • Nov 04, 2014-A (7121)
+• May 04, 2015-A (7234)       • Nov 04, 2014-B (7121)
+• May 05, 2015-A (7234)       • Nov 04, 2014-C (7121)
+• May 06, 2015-A (7234)       • Nov 11, 2014-A (7121)
+• May 06, 2015-B (7234)       • Nov 11, 2014-B (7121)
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                         Page 10 of 23                      December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                            LiDAR Project Report
+
+
+                                                         3. Processing Summary
+
+3.1. Flight Logs
+Flight logs were completed by LIDAR sensor technicians for each mission during acquisition.
+These logs depict a variety of information, including:
+
+  • Job / Project #
+  • Flight Date / Lift Number
+  • FOV (Field of View)
+  • Scan Rate (HZ)
+  • Pulse Rate Frequency (Hz)
+  • Ground Speed
+  • Altitude
+  • Base Station
+  • PDOP avoidance times
+  • Flight Line #
+  • Flight Line Start and Stop Times
+  • Flight Line Altitude (AMSL)
+  • Heading
+  • Speed
+  • Returns
+  • Crab
+
+Notes: (Visibility, winds, ride, weather, temperature, dew point, pressure, etc). Project specific
+flight logs for each sortie are available in Appendix A.
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                            Page 11 of 23                       December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                            LiDAR Project Report
+
+3.2. LiDAR Processing
+Applanix + POSPac Mobile Mapping Suite software was used for post-processing of airborne
+GPS and inertial data (IMU), which is critical to the positioning and orientation of the LiDAR
+sensor during all flights. POSPac combines aircraft raw trajectory data with stationary GPS base
+station data yielding a “Smoothed Best Estimate Trajectory (SBET) necessary for additional
+post processing software to develop the resulting geo-referenced point cloud from the LiDAR
+missions.
+
+During the sensor trajectory processing (combining GPS & IMU datasets) certain statistical
+graphs and tables are generated within the Applanix POSPac processing environment which
+are commonly used as indicators of processing stability and accuracy. This data for analysis
+include: Max horizontal / vertical GPS variance, separation plot, altitude plot, PDOP plot, base
+station baseline length, processing mode, number of satellite vehicles, and mission trajectory.
+All relevant graphs produced in the POSPac processing environment for each sortie during the
+Photo Science project mobilization are available in Appendix A.
+
+The generated point cloud is the mathematical three dimensional composite of all returns
+from all laser pulses as determined from the aerial mission. Laser point data are imported into
+TerraScan and a manual calibration is performed to assess the system offsets for pitch, roll,
+heading and scale. At this point this data is ready for analysis, classification, and filtering to
+generate a bare earth surface model in which the above-ground features are removed from
+the data set. Point clouds were created using the Leica ALS Post Processor software. GeoCue
+distributive processing software was used in the creation of some files needed in downstream
+processing, as well as in the tiling of the dataset into more manageable file sizes. TerraScan and
+TerraModeler software packages were then used for the automated data classification, manual
+cleanup, and bare earth generation. Project specific macros were developed to classify the
+ground and remove side overlap between parallel flight lines.
+
+All data will manually be reviewed and any remaining artifacts removed using functionality
+provided by TerraScan and TerraModeler. Global Mapper will be used as a final check of the bare
+earth dataset. GeoCue was used to create the deliverable industry-standard LAS files for both
+the All Point Cloud Data and the Bare Earth. In-house software will then used to perform final
+statistical analysis of the classes in the LAS files.
+
+Metadata was generated for the project on a project, deliverable, and lift level.
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                           Page 12 of 23                       December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                            LiDAR Project Report
+
+3.3. LAS Classification Scheme
+The classification classes are determined by the USGS Version 1.0 specifications and are an
+industry standard for the classification of LIDAR point clouds. All data starts the process as
+Class 1 (Unclassified), and then through automated classification routines, the classifications are
+determined using TerraScan macro processing.
+
+The classes used in the dataset are as follows and have the following descriptions:
+
+  • Class 1 – Processed, but Unclassified – These points would be the catch all for points that do
+    not fit any of the other deliverable classes. This would cover features such as vegetation,
+    cars, etc.
+  • Class 2 – Bare earth ground – This is the bare earth surface
+  • Class 7 – Low Points – Low points, manually identified above or below the surface that could
+    be noise points in point cloud.
+  • Class 9 – In-land Water – Points found inside of inland lake/ponds
+  • Class 10 – Ignored Ground – Points found to be close to breakline features. Points are moved
+    to this class from the Class 2 dataset. This class is ignored during the DEM creation process
+    in order to provide smooth transition between the ground surface and hydro flattened
+    surface.
+  • Class 17 – Bridge Decks – Points falling on bridge decks.
+  • Class 18 – High Noise – High points, manually identified above or below the surface that
+    could be noise points in point cloud.
+  • Class 25 – Overlap Water – Points found in the overlap between flight lines that are located
+    inside hydro features. These points are created through automated processing methods and
+    not cleaned up during processing.
+
+3.4. Classified LAS Processing
+The bare earth surface is then manually reviewed to ensure correct classification on the Class 2
+(Ground) points. After the bare- earth surface is finalized; it is then used to generate all hydro-
+breaklines through heads-up digitization.
+
+All ground (ASPRS Class 2) LiDAR data inside of the Lake Pond and Double Line Drain hydro
+flattening breaklines were then classified to water (ASPRS Class 9) using TerraScan macro
+functionality. A buffer of 3 feet was also used around each hydro flattened feature to classify
+these ground (ASPRS Class 2) points to Ignored ground (ASPRS Class 10). All Lake Pond Island
+and Double Line Drain Island features were checked to ensure that the ground (ASPRS Class
+2) points were reclassified to the correct classification after the automated classification was
+completed.
+
+All overlap data was processed through automated functionality provided by TerraScan to
+classify the overlapping flight line data to approved classes by USGS. The overlap data was
+classified through automated processes only and was not verified for classification accuracy. Due
+to software limitations within TerraScan, these classes were used to trip the withheld bit within
+various software packages. These processes were reviewed and accepted by USGS through
+numerous conference calls and pilot study areas.
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                           Page 13 of 23                        December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                                LiDAR Project Report
+
+All data was manually reviewed and any remaining artifacts removed using functionality
+provided by TerraScan and TerraModeler. Global Mapper is used as a final check of the bare
+earth dataset. GeoCue was then used to create the deliverable industry-standard LAS files for
+all point cloud data. Quantum Spatial proprietary software was used to perform final statistical
+analysis of the classes in the LAS files, on a per tile level to verify final classification metrics and
+full LAS header information.
+
+3.5. Hydro-Flattening Breakline Process
+Class 2 LiDAR was used to create a bare earth surface model. The surface model was then used
+to heads-up digitize 2D breaklines of Inland Streams and Rivers with a 100 foot nominal width
+and Inland Ponds and Lakes of 2 acres or greater surface area.
+
+Elevation values were assigned to all Inland Ponds and Lakes, Inland Pond and Lake Islands,
+Inland Streams and Rivers and Inland Stream and River Islands using TerraModeler functionality.
+
+Elevation values were assigned to all Inland streams and rivers using Quantum Spatial
+proprietary software.
+
+All ground (ASPRS Class 2) LiDAR data inside of the collected inland breaklines were then
+classified to water (ASPRS Class 9) using TerraScan macro functionality. A buffer of 3 feet was
+also used around each hydro flattened feature. These points were moved from ground (ASPRS
+Class 2) to Ignored Ground (ASPRS Class 10).
+
+The breakline files were then translated to ESRI Shapefile format using ESRI conversion tools.
+
+3.6. Hydro-Flattening Raster DEM Process
+Class 2 LiDAR in conjunction with the hydro breaklines were used to create a 1-meter Raster
+DEM. Using automated scripting routines within ArcMap, an ERDAS Imagine IMG file was created
+for each tile. Each surface is reviewed using Global Mapper to check for any surface anomalies or
+incorrect elevations found within the surface.
+
+3.7 Contour Creation Process
+Using automated scripting routines within ArcMap, a terrain surface was created using the
+ground (ASPRS Class 2) LiDAR data as well as the hydro-flattening breaklines. This surface was
+then used to generate the final 1 meter contour dataset in ESRI shapefile format.
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                             Page 14 of 23                         December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                       LiDAR Project Report
+
+
+                                     4. Project Coverage Verification
+
+Coverage verification was performed by comparing coverage of processed .LAS files captured
+during project collection to generate project shape files depicting boundaries of specified
+project areas. Please refer to Figure 5.
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                        Page 15 of 23                     December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                     LiDAR Project Report
+
+                      Figure 5. Flightline Swath LAS File Coverage
+
+
+
+
+Clinton-Essex-Lake Champlain, NY
+                                     Page 16 of 23                     December 9, 2015
+2014 QL2 LiDAR Project
+                                                                           LiDAR Project Report
+
+
+              5. Ground Control and Check Point Collection
+
+Quantum Spatial completed a field survey of 76 ground control (calibration) points along with
+104 QA points in 4 land cover classifications (total of 180 points) as an independent test of the
+accuracy of this project.
+
+A combination of precise GPS surveying methods, including static and RTK observations were
+used to establish the 3D position of ground calibration points and QA points for the point
+classes above. GPS was not an appropriate methodology for surveying in the forested areas
+during the leaf-on conditions for the actual field survey (which was accomplished after the
+LiDAR acquisition). Therefore the 3D positions for the forested points were acquired using a
+GPS-derived offset point located out in the open near the forested area, and using precise offset
+surveying techniques to derive the 3D position of the forested point from the open control point.
+The explicit goal for these surveys was to develop 3D positions that were three times greater
+than the accuracy requirement for the elevation surface. In this case of the QA points the goal
+was a positional accuracy of 5 cm in terms of the RMSE.
+
+Figure 6 shows the location of each bare earth calibration point for the project area. Table 4
+depicts the Control Report for the LiDAR bare earth calibration points, as computed in TerraScan
+as a quality assurance check. Note that these results of the surface calibration are not an
+independent assessment of the accuracy of these project deliverables, but the statistical results
+do provide additional feedback as to the overall quality of the elevation surface.
+
+The project was delivered using the following horizontal projection(s): NAD83 UTM Zone 18,
+Meters; MAVD88 (Geoid 12A), Meters. In this document, horizontal coordinates for ground
+control and QA points for all LiDAR classes are reported in the projection stated above.
+
+The required accuracy testing was performed on the LiDAR dataset (both the LiDAR point cloud
+and derived DEM’s) according to the USGS LiDAR Base Specification Version 1.0. The summary
+below provides the results of this testing.
+
+5.1. Point Cloud Testing
+Raw Fundamental Vertical Accuracy (Raw FVA): The tested Raw FVA for the dataset was found
+to be 0.066 meters in terms of the RMSEz. The resulting FVA stated as the 95% confidence
+level (RMSEz x 1.96) is 0.129 meters. This dataset meets the required FVA of 18.13 cm at the 95%
+confidence level (according to the National Standard for Spatial Database Accuracy (NSSDA)),
+based on TINs derived from the final calibrated and controlled LiDAR swath data. See Figure 6.
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                           Page 17 of 23                       December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                          LiDAR Project Report
+
+5.2. Digital Elevation Model (DEM) Testing
+Fundamental Vertical Accuracy (FVA)
+The tested FVA for the dataset captured from the DEM using bi-linear interpolation to derive the
+DEM elevations was found to be 0.066 meters for Lot 4 and 0.058 meters for Lot 5 in terms of
+the RMSEz. The resulting accuracy stated as the 95% confidence level (RMSEz x 1.96) is 0.130
+meters and 0.114 meters for Lot 4 and 5, respectively. This dataset meets the required FVA of
+18.13 cm at the 95% confidence level (based on NSSDA). See Figure 7.
+
+Supplemental Vertical Accuracy (SVA)
+The tested SVA accuracies for the dataset for each of the land cover classes other than open
+ground are summarized below. These results are stated in terms of the 95th percentile error
+(based on ASPRS guidelines) for each of the land cover classes other than open ground.
+
+The following land cover classes were tested and the resulting 95th percentile error values are
+listed below:
+
+  • Forested, Fully Covered by Trees: 0.140 meters (Figure 8)
+  • Swamp/Wetland: 0.315 meters (Figure 9)
+  • Tall Weeds: 0.266 meters (Figure 10)
+
+Consolidated Vertical Accuracy (CVA)
+The tested CVA for the dataset captured from the DEM using bi-linear interpolation for all classes
+(including the bare earth class) was found to be 0.228 meters, which is stated in terms of the
+95th percentile error. Therefore the data meets the required CVA of 26.9 cm. This test was based
+on the 95th percentile error (based on ASPRS guidelines) across all land cover categories.
+
+
+
+
+  Clinton-Essex-Lake Champlain, NY
+                                          Page 18 of 23                      December 9, 2015
+  2014 QL2 LiDAR Project
+                                                                     LiDAR Project Report
+
+                   Figure 6. Ground Control Points Used in Calibration
+
+
+
+
+Clinton-Essex-Lake Champlain, NY
+                                     Page 19 of 23                       December 9, 2015
+2014 QL2 LiDAR Project
+                                                                  LiDAR Project Report
+
+                        Figure 7. Bare Earth QA Point Locations
+
+
+
+
+Clinton-Essex-Lake Champlain, NY
+                                    Page 20 of 23                   December 9, 2015
+2014 QL2 LiDAR Project
+                                                                 LiDAR Project Report
+
+                         Figure 8. Forested QA Point Locations
+
+
+
+
+Clinton-Essex-Lake Champlain, NY
+                                     Page 21 of 23                 December 9, 2015
+2014 QL2 LiDAR Project
+                                                                  LiDAR Project Report
+
+                     Figure 9. Swamp/Wetland QA Point Locations
+
+
+
+
+Clinton-Essex-Lake Champlain, NY
+                                   Page 22 of 23                    December 9, 2015
+2014 QL2 LiDAR Project
+                                                                  LiDAR Project Report
+
+                       Figure 10. Tall Weeds QA Point Locations
+
+
+
+
+Clinton-Essex-Lake Champlain, NY
+                                    Page 23 of 23                   December 9, 2015
+2014 QL2 LiDAR Project
+

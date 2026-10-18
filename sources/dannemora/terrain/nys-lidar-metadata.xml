@@ -1,0 +1,465 @@
+<?xml-stylesheet type="text/xsl" href="fgdc_classic.xsl"?>
+<!DOCTYPE metadata SYSTEM "http://fgdc.gov/metadata/fgdc-std-001-1998.dtd">
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Quantum Spatial</origin>
+				<pubdate>2015</pubdate>
+				<title>
+					Clinton-Essex-Lake Champlain New York 2015 LiDAR
+					USGS Contract: G10PC00026  Task Order Number: G10PC00026 and G14PD000943 (Modification)
+					NY_ClintonEssex_2015
+				</title>
+				<geoform>Lidar point cloud</geoform>
+			</citeinfo>
+		</citation>
+		<descript>
+		<abstract>
+			Geographic Extent: Clinton-Essex-Lake Champlain New York, covering approximately 2,699 square miles.  The Base order is 1,951 square miles with the Ausable area of interest covering 289 square miles and Saranac area of interest covering 429 square miles.   
+			Dataset Description: Clinton Essex New York 2015 LiDAR project called for the Planning, Acquisition, processing and derivative products of LIDAR data to be collected  at a nominal pulse spacing (NPS) of 0.7 meter.  Project specifications are based on the U.S. Geological Survey National Geospatial Program Base LIDAR Specification, Version 1.0.  The data was developed based on a horizontal projection/datum of UTM Zone 18 North, NAD83, meters and vertical datum of NAVD1988 (GEOID12A), meters.  LiDAR data was delivered in RAW flight line swath format, processed to create Classified LAS 1.2 Files formatted to 3,266 individual 1500 meter X 1500 meter tiles, corresponding Intensity Images and Bare Earth DEMs tiled to the same 1500 meter X 1500 meter tile schema, and Breaklines in Esri geodatabase format. Contours with an interval of 1-foot were created in Esri file geodatabase format.
+			Ground Conditions: LiDAR was collected in Fall 2014/Spring 2015, while no snow was on the ground and rivers were at or below normal levels.  In order to post process the LiDAR data to meet task order specifications, Quantum Spatial established 76 calibration control points in order to calibrate the LIDAR to known ground locations established throughout the Clinton-Essex-Lake Champlain project area.  The accuracy of the data was checked with 104 total QC checkpoints. 
+		</abstract>
+		<purpose>
+			Classified LAS files are used to show the manually reviewed bare earth surface.  This allows the user to create Intensity Images, Breaklines and Raster DEM. 
+			The purpose of these lidar data was to produce high accuracy 3D hydro-flattened Digital Elevation Model (DEM) with a 1 meter cell size.
+			These raw lidar point cloud data were used to create classified lidar LAS files, intensity images, 3D breaklines, contours,  hydro-flattened DEMs as necessary.
+		</purpose>
+		<supplinf>
+			USGS Contract No. G10PC00026
+			CONTRACTOR: Quantum Spatial
+			Ground Control Points were acquired and calibrated by Quantum Spatial
+			LiDAR data was acquired by both Quantum Spatial and Kucera
+			Calibration and follow-on processing were completed by Quantum Spatial
+		</supplinf>
+		<lidar>
+			<ldrinfo>
+				<ldrspec>USGS-NGP Base Lidar Specification v1.0</ldrspec>
+				<ldrsens>Leica ALS 70</ldrsens>
+				<ldrmaxnr>4</ldrmaxnr>
+				<ldrnps>0.67</ldrnps>
+				<ldrdens>2.03</ldrdens>
+				<ldrfltht>1859</ldrfltht>
+				<ldrfltsp>105</ldrfltsp>
+				<ldrscana>20.0</ldrscana>
+				<ldrscanr>27.3</ldrscanr>
+				<ldrpulsr>153.8</ldrpulsr>
+				<ldrpulsd>4</ldrpulsd>
+				<ldrpulsw>0.40</ldrpulsw>
+				<ldrwavel>1064</ldrwavel>
+				<ldrmpia>0</ldrmpia>
+				<ldrbmdiv>0.22</ldrbmdiv>
+				<ldrswatw>1292.09</ldrswatw>
+				<ldrswato>37.46</ldrswato>
+				<ldrcrs>NAD_1983_UTM_Zone_18N</ldrcrs>
+				<ldrgeoid>National Geodetic Survey (NGS) Geoid12A</ldrgeoid>
+			</ldrinfo>
+			<ldrinfoAdirondak>
+				<ldrspec>USGS-NGP Base Lidar Specification v1.0</ldrspec>
+				<ldrsens>Leica ALS 70</ldrsens>
+				<ldrmaxnr>4</ldrmaxnr>
+				<ldrnps>0.62</ldrnps>
+				<ldrdens>2.30</ldrdens>
+				<ldrfltht>2310</ldrfltht>
+				<ldrfltsp>160</ldrfltsp>
+				<ldrscana>14.0</ldrscana>
+				<ldrscanr>52.2</ldrscanr>
+				<ldrpulsr>243.2</ldrpulsr>
+				<ldrpulsd>4</ldrpulsd>
+				<ldrpulsw>0.53</ldrpulsw>
+				<ldrwavel>1064</ldrwavel>
+				<ldrmpia>1</ldrmpia>
+				<ldrbmdiv>0.22</ldrbmdiv>
+				<ldrswatw>1151.90</ldrswatw>
+				<ldrswato>21.34</ldrswato>
+				<ldrcrs>NAD_1983_UTM_Zone_18N</ldrcrs>
+				<ldrgeoid>National Geodetic Survey (NGS) Geoid12A</ldrgeoid>
+			</ldrinfoAdirondak>
+			<ldrinfoPBG>
+				<ldrspec>USGS-NGP Base Lidar Specification v1.0</ldrspec>
+				<ldrsens>Leica ALS 70</ldrsens>
+				<ldrmaxnr>4</ldrmaxnr>
+				<ldrnps>0.63</ldrnps>
+				<ldrdens>1.60</ldrdens>
+				<ldrfltht>3090</ldrfltht>
+				<ldrfltsp>150</ldrfltsp>
+				<ldrscana>20.0</ldrscana>
+				<ldrscanr>34.6</ldrscanr>
+				<ldrpulsr>193.4</ldrpulsr>
+				<ldrpulsd>4</ldrpulsd>
+				<ldrpulsw>0.32</ldrpulsw>
+				<ldrwavel>1064</ldrwavel>
+				<ldrmpia>0</ldrmpia>
+				<ldrbmdiv>0.22</ldrbmdiv>
+				<ldrswatw>1002.13</ldrswatw>
+				<ldrswato>29.41</ldrswato>
+				<ldrcrs>NAD_1983_UTM_Zone_18N</ldrcrs>
+				<ldrgeoid>National Geodetic Survey (NGS) Geoid12A</ldrgeoid>
+			</ldrinfoPBG>
+			<ldrinfoBTV>
+				<ldrspec>USGS-NGP Base Lidar Specification v1.0</ldrspec>
+				<ldrsens>Leica ALS 70</ldrsens>
+				<ldrmaxnr>4</ldrmaxnr>
+				<ldrnps>0.63</ldrnps>
+				<ldrdens>2.26</ldrdens>
+				<ldrfltht>1098</ldrfltht>
+				<ldrfltsp>150</ldrfltsp>
+				<ldrscana>20.0</ldrscana>
+				<ldrscanr>41.0</ldrscanr>
+				<ldrpulsr>193.4</ldrpulsr>
+				<ldrpulsd>4</ldrpulsd>
+				<ldrpulsw>0.32</ldrpulsw>
+				<ldrwavel>1064</ldrwavel>
+				<ldrmpia>0</ldrmpia>
+				<ldrbmdiv>0.22</ldrbmdiv>
+				<ldrswatw>1002.00</ldrswatw>
+				<ldrswato>27.90</ldrswato>
+				<ldrcrs>NAD_1983_UTM_Zone_18N</ldrcrs>
+				<ldrgeoid>National Geodetic Survey (NGS) Geoid12A</ldrgeoid>
+			</ldrinfoBTV>
+			<ldrinfo4B6>
+				<ldrspec>USGS-NGP Base Lidar Specification v1.0</ldrspec>
+				<ldrsens>Leica ALS 70</ldrsens>
+				<ldrmaxnr>4</ldrmaxnr>
+				<ldrnps>0.62</ldrnps>
+				<ldrdens>2.32</ldrdens>
+				<ldrfltht>1038</ldrfltht>
+				<ldrfltsp>150</ldrfltsp>
+				<ldrscana>19.5</ldrscana>
+				<ldrscanr>41.5</ldrscanr>
+				<ldrpulsr>194.0</ldrpulsr>
+				<ldrpulsd>4</ldrpulsd>
+				<ldrpulsw>0.32</ldrpulsw>
+				<ldrwavel>1064</ldrwavel>
+				<ldrmpia>0</ldrmpia>
+				<ldrbmdiv>0.22</ldrbmdiv>
+				<ldrswatw>974.88</ldrswatw>
+				<ldrswato>32.38</ldrswato>
+				<ldrcrs>NAD_1983_UTM_Zone_18N</ldrcrs>
+				<ldrgeoid>National Geodetic Survey (NGS) Geoid12A</ldrgeoid>
+			</ldrinfo4B6>
+			<ldraccur>
+				<ldrchacc>-9999</ldrchacc>
+				<rawfva>0.129</rawfva><!--determined from the calibrated but unclassified point cloud and reported as a 95% confidence interval-->
+				<clsfva>0.114</clsfva><!--determined from the derived DEM and reported as a 95% confidence interval-->
+				<clscva>0.228</clscva><!--determined from the derived DEM and reported as a 95th percentile error-->
+				<clssvas>
+					<svalctyp>High Grass, Weeds, and Crops</svalctyp>
+					<svavalue>0.266</svavalue><!--determined from the derived DEM and reported as a 95th percentile error-->
+				</clssvas>
+				<clssvas>
+					<svalctyp>Forested</svalctyp><!--determined from the derived DEM and reported as a 95th percentile error-->
+					<svavalue>0.140</svavalue>
+				</clssvas>
+				<clssvas>
+					<svalctyp>Swamp/Wetland</svalctyp><!--determined from the derived DEM and reported as a 95th percentile error-->
+					<svavalue>0.315</svavalue>
+				</clssvas>
+			</ldraccur>
+			<lasinfo>
+				<lasver>1.2</lasver>
+				<lasprf>1</lasprf>
+				<laswheld>Withheld (ignore) points were identified in these files using the standard LAS Withheld bit.</laswheld>
+				<lasolap>Swath "overage" points were identified in these files by adding 128 to the standard classification values.</lasolap>
+				<lasintr>8</lasintr>
+				<lasclass>
+					<clascode>1</clascode>
+					<clasitem>Processed, but Unclassified</clasitem>
+				</lasclass>
+				<lasclass>
+					<clascode>2</clascode>
+					<clasitem>Bare earth ground</clasitem>
+				</lasclass>
+				<lasclass>
+					<clascode>7</clascode>
+					<clasitem>Noise</clasitem>
+				</lasclass>
+				<lasclass>
+					<clascode>9</clascode>
+					<clasitem>Water</clasitem>
+				</lasclass>
+				<lasclass>
+					<clascode>10</clascode>
+					<clasitem>Ignored Ground</clasitem>
+				</lasclass>
+				<lasclass>
+					<clascode>17</clascode>
+					<clasitem>Bridge Decks</clasitem>
+				</lasclass>
+				<lasclass>
+					<clascode>18</clascode>
+					<clasitem>High Noise</clasitem>
+				</lasclass>
+				<lasclass>
+					<clascode>25</clascode>
+					<clasitem>Overlap Water</clasitem>
+				</lasclass>
+			</lasinfo>
+		</lidar>
+		</descript>
+		<timeperd>
+			<timeinfo>
+				<rngdates>
+					<begdate>20141102</begdate>
+					<enddate>20150508</enddate>
+				</rngdates>
+			</timeinfo>
+			<current>ground condition</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>None planned</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc>-74.4796547575124</westbc>
+				<eastbc>-73.2935471234484</eastbc>
+				<northbc>45.0203987866283</northbc>
+				<southbc>43.7756501360771</southbc>
+			</bounding>
+			<lboundng>
+				<leftbc>541500</leftbc>
+				<rightbc>636000</rightbc>
+				<topbc>4986000</topbc>
+				<bottombc>4848000</bottombc>
+			</lboundng>
+		</spdom>
+		<keywords>
+			<theme>
+				<themekt>None</themekt>
+				<themekey>model</themekey>
+				<themekey>LAS Point Cloud</themekey>
+				<themekey>remote sensing</themekey>
+				<themekey>Elevation data</themekey>
+				<themekey>Lidar</themekey>
+				<themekey>Hydrology</themekey>
+			</theme>
+			<place>
+				<placekt>None</placekt>
+				<placekey>New York</placekey>
+				<placekey>Clinton County</placekey>
+				<placekey>Essex County</placekey>
+				<placekey>Lake Champlain</placekey>
+			</place>
+		</keywords>
+		<accconst>No restrictions apply to these data.</accconst>
+		<useconst>None. However, users should be aware that temporal changes may have occurred since this dataset was collected and that some parts of these data may no Longer represent actual surface conditions. Users should not use these data for critical applications without a full awareness of it's limitations. Acknowledgement of the U.S. Geological Survey would be appreciated for products derived from these data.</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Quantum Spatial, Data Acquisition Department</cntorg>
+					<cntper>John DiGiovanni</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical</addrtype>
+					<address>523 Wellington Way</address>
+					<city>Lexington</city>
+					<state>KY</state>
+					<postal>40503</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>859-277-8700</cntvoice>
+				<cntfax>859-277-8901</cntfax>
+				<cntemail>jdigiovanni@quantumspatial.com</cntemail>
+				<hours>Monday through Friday 8:00 AM to 5:00 PM (Eastern Time)</hours>
+				<cntinst>If unable to reach the contact by telephone, please send an email. You should get a response within 24 hours.</cntinst>
+			</cntinfo>
+		</ptcontac>
+		<datacred>Quantum Spatial flew the LiDAR and processed the data.</datacred>
+		<native>
+			MicroStation Version 8; TerraScan Version 15; TerraModeler Version 15; GeoCue Version 2014.1.21.1; ESRI ArcGIS 10.2; Global Mapper 15; ALS Post Processor 2.75 Build #25; Windows 7 Operating System \\psihq_nx3200\Projects\23902_ClintonEssex_NY_USGS\ 659 GB and  \\Matrix\LIDAR\23902_NYClintonEssex_LakeChamplain 2.87 TB
+		</native>
+	</idinfo>
+	<dataqual>
+		<logic>
+			Classified LAS files were tested by Quantum Spatial for both vertical and horizontal accuracy. All data is seamless from one tile to the next, no gaps or no data areas.
+		</logic>
+		<complete>
+			Datasets contain complete coverage of tiles.
+			No points have been removed or excluded.
+			A visual qualitative assessment was performed to ensure data completeness.
+			There are no void areas or missing data. The raw point cloud is of good quality and data passes Fundamental Vertical Accuracy specifications.
+		</complete>
+		<posacc>
+			<vertacc>
+				<vertaccr>
+					The specifications require that only Fundamental Vertical Accuracy (FVA) be computed for raw lidar point cloud swath files.
+					The vertical accuracy value is the AccuracyZ at 95 percent Confidence Interval in meters.  The FVA was tested using 25 independent survey check points located in open terrain. The survey checkpoints were distributed throughout the project area. The 25 independent check points were surveyed using GPS techniques.  See survey report for additional survey methodologies.  Elevations from the unclassified lidar surface were measured for the x,y location of each check point.  Elevations interpolated from the lidar surface were then compared to the elevation values of the surveyed control. AccuracyZ has been tested to meet 18.13 cm Fundamental Vertical Accuracy at 95 Percent confidence level using RMSE(z) x 1.9600 as defined by the National Standards for Spatial Data Accuracy (NSSDA); assessed and reported using National Digital Elevation Program (NDEP)/ASRPS Guidelines.</vertaccr>
+				<qvertpa>
+					<vertaccv>0.129<!--meters AccuracyZ at 95 percent Confidence Interval--></vertaccv>
+					<vertacce>
+						The Raw FVA was tested using 25 independent survey check points located in open terrain. The survey checkpoints were distributed throughout the project area. The 25 independent check points were surveyed using GPS techniques.  See survey report for additional survey methodologies.  Elevations from the unclassified lidar surface were measured for the x,y location of each check point.  Elevations interpolated from the lidar surface were then compared to the elevation values of the surveyed control. The RMSE was computed to be 0.129 meters.  AccuracyZ has been tested to meet 18.13 cm Fundamental Vertical Accuracy at 95 Percent confidence level using RMSE(z) x 1.9600 as defined by the National Standards for Spatial Data Accuracy (NSSDA); assessed and reported using National Digital Elevation Program (NDEP)/ASRPS Guidelines.
+					</vertacce>
+				</qvertpa>
+			</vertacc>
+		</posacc>
+		<lineage>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>Quantum Spatial</origin>
+						<pubdate>2015</pubdate>
+						<title>Control Survey Report</title>
+						<geoform>vector digital data and tabular data</geoform>
+						<pubinfo>
+							<pubplace>Lexington, KY</pubplace>
+							<publish>Quantum Spatial</publish>
+						</pubinfo>
+					</citeinfo>
+				</srccite>
+				<typesrc>CD-ROM</typesrc>
+				<srctime>
+					<timeinfo>
+						<sngdate>
+							<caldate>2015</caldate>
+						</sngdate>
+					</timeinfo>
+					<srccurr>ground condition</srccurr>
+				</srctime>
+				<srccitea>NY_ClintonEssex_2015_LiDAR_ctrl</srccitea>
+				<srccontr>This data source was used (along with the airborne GPS/IMU Data) to aid in the georeferencing of the lidar point cloud data.</srccontr>
+			</srcinfo>
+			<srcinfo>
+				<srccite>
+					<citeinfo>
+						<origin>Quantum Spatial</origin>
+						<pubdate>2015</pubdate>
+						<title>Lidar RAW Data</title>
+						<geoform>lidar data</geoform>
+						<pubinfo>
+							<pubplace>Quantum Spatial</pubplace>
+							<publish>2015</publish>
+						</pubinfo>
+					</citeinfo>
+				</srccite>
+				<typesrc>online</typesrc>
+				<srctime>
+					<timeinfo>
+						<rngdates>
+					<begdate>20141102</begdate>
+					<enddate>20150508</enddate>
+						</rngdates>
+					</timeinfo>
+					<srccurr>ground condition</srccurr>
+				</srctime>
+				<srccitea>NY_ClintonEssex_2015_LiDAR_Data</srccitea>
+				<srccontr>This data source was used to populate the lidar point cloud data.</srccontr>
+			</srcinfo>
+			<procstep>
+				<procdesc>
+					Classified LAS Processing:
+					The bare earth surface is then manually reviewed to ensure correct classification on the Class 2 (Ground) points. After the bare- earth surface is finalized; it is then used to generate all hydro-breaklines through heads-up digitization.
+					All ground (ASPRS Class 2) LiDAR data inside of the Lake Pond and Double Line Drain hydro flattening breaklines were then classified to water (ASPRS Class 9) using TerraScan macro functionality. A buffer of 3 feet was also used around each hydro flattened feature to classify these ground (ASPRS Class 2) points to Ignored ground (ASPRS Class 10). All Lake Pond Island and Double Line Drain Island features were checked to ensure that the ground (ASPRS Class 2) points were reclassified to the correct classification after the automated classification was completed.
+					All overlap data was processed through automated functionality provided by TerraScan to classify the overlapping flight line data to approved classes by USGS. The overlap data was classified through automated processes only and was not verified for classification accuracy. Due to software limitations within TerraScan, these classes were used to trip the withheld bit within various software packages. These processes were reviewed and accepted by USGS through numerous conference calls and pilot study areas.
+					All data was manually reviewed and any remaining artifacts removed using functionality provided by TerraScan and TerraModeler. Global Mapper is used as a final check of the bare earth dataset. GeoCue was then used to create the deliverable industry-standard LAS files for all point cloud data. Photo Science proprietary software was used to perform final statistical analysis of the classes in the LAS files, on a per tile level to verify final classification metrics and full LAS header information.</procdesc>
+				<srcused>NY_ClintonEssex_2015_LiDAR_ctrl</srcused>
+				<srcused>NY_ClintonEssex_2015_LiDAR_Data</srcused>
+				<procdate>2015</procdate>
+				<srcprod>Classified LAS</srcprod>
+				<proccont>
+					<cntinfo>
+						<cntorgp>
+							<cntorg>Quantum Spatial</cntorg>
+							<cntper>Paul Bishop</cntper>
+						</cntorgp>
+						<cntaddr>
+							<addrtype>mailing and physical</addrtype>
+							<address>523 Wellington Way</address>
+							<city>Lexington</city>
+							<state>KY</state>
+							<postal>40503</postal>
+							<country>USA</country>
+						</cntaddr>
+						<cntvoice>859-277-8700</cntvoice>
+						<cntfax>859-277-8901</cntfax>
+						<cntemail>pbishop@quantumspatial.com</cntemail>
+						<hours>Monday through Friday 8:00 AM to 5:00 PM (Eastern Time)</hours>
+						<cntinst>If unable to reach the contact by telephone, please send an email. You should get a response within 24 hours.</cntinst>
+					</cntinfo>
+				</proccont>
+			</procstep>
+		</lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct>Point</direct>
+		<ptvctinf>
+			<sdtsterm>
+				<sdtstype>Point</sdtstype>
+			</sdtsterm>
+		</ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<gridsys>
+					<gridsysn>Universal Transverse Mercator</gridsysn>
+					<utm>
+						<utmzone>18</utmzone>
+						<transmer>
+							<sfctrmer>0.9996</sfctrmer>
+							<longcm>-75.0</longcm>
+							<latprjo>0.0</latprjo>
+							<feast>500000.0</feast>
+							<fnorth>0.0</fnorth>
+						</transmer>
+					</utm>
+				</gridsys>
+				<planci>
+					<plance>coordinate pair</plance>
+					<coordrep>
+						<absres>0.01</absres>
+						<ordres>0.01</ordres>
+					</coordrep>
+					<plandu>meter</plandu>
+				</planci>
+			</planar>
+			<geodetic>
+				<horizdn>North American Datum of 1983</horizdn>
+				<ellips>Geodetic Reference System 80</ellips>
+				<semiaxis>6378137</semiaxis>
+				<denflat>298.257222101</denflat>
+			</geodetic>
+		</horizsys>
+		<vertdef>
+			<altsys>
+				<altdatum>North American Vertical Datum of 1988 (Geoid 12A)</altdatum>
+				<altres>0.01</altres>
+				<altunits>meters</altunits>
+				<altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+			</altsys>
+		</vertdef>
+	</spref>
+	<metainfo>
+		<metd>20160511</metd>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Quantum Spatial</cntorg>
+					<cntper>Sarah Zibart</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical</addrtype>
+					<address>523 Wellington Way</address>
+					<city>Lexington</city>
+					<state>KY</state>
+					<postal>40503</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>859-277-8700</cntvoice>
+				<cntfax>859-277-8901</cntfax>
+				<cntemail>szibart@quantumspatial.com</cntemail>
+				<hours>Monday through Friday 8:00 AM to 5:00 PM (Eastern Time)</hours>
+				<cntinst>If unable to reach the contact by telephone, please send an email. You should get a response within 24 hours.</cntinst>
+			</cntinfo>
+		</metc>
+		<metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+		<metstdv>FGDC-STD-001-1998</metstdv>
+		<metac>None.</metac>
+		<metuc>None.</metuc>
+		<metsi>
+			<metscs>None.</metscs>
+			<metsc>Unclassified</metsc>
+			<metshd>NONE</metshd>
+		</metsi>
+	</metainfo>
+</metadata>

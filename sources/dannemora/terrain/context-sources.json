@@ -1,0 +1,145 @@
+{
+  "retrievedAt": "2026-10-18T19:20:46.700942+00:00",
+  "siteArea": {
+    "approximatePoint": [
+      -73.82775,
+      44.7298
+    ],
+    "bboxWgs84": [
+      -73.834,
+      44.727,
+      -73.823,
+      44.736
+    ],
+    "boundaryStatus": "Parent GIS context only; Lot 1 is not registered to aerial imagery or independently reconciled."
+  },
+  "defaultRecommendation": "Use archived public elevation and imagery plus local Three.js terrain. No paid GIS account, Google key, Cesium token or billing is required for initial parcel terrain acquisition and visualization. Keep source horizontal/vertical CRS and acquisition metadata. Add cloud services only if a later feature needs them.",
+  "sources": [
+    {
+      "id": "apa",
+      "title": "APA GIS Downloads",
+      "url": "https://apa.ny.gov/planning/gis/downloads.html",
+      "role": "Adirondack wetland covertypes, official promulgated wetlands, park land classification, rivers and watershed context",
+      "access": "Public downloads and REST; no token used for downloaded AOI layers",
+      "limits": "APA says maps are not legal jurisdictional determinations; airphoto wetland classification dates 1994-1999 and may omit wetlands. Use site permit delineation flags as separately sourced evidence.",
+      "status": "AOI wetland areas, wetland lines, land classification acquired with raw layer metadata and query URLs"
+    },
+    {
+      "id": "nwi",
+      "title": "USFWS NWI services",
+      "url": "https://www.fws.gov/program/national-wetlands-inventory/web-mapping-services",
+      "role": "National wetland polygons and dataset provenance context",
+      "access": "Public REST/WMS; no API key used",
+      "limits": "Remote mapping; no negative intersection establishes no wetlands, present-day delineation, or permit clearance.",
+      "status": "5 AOI intersecting features downloaded"
+    },
+    {
+      "id": "fema",
+      "title": "FEMA National Flood Hazard Layer",
+      "url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer",
+      "role": "Flood zones, effective panel dates, NFHL availability and coverage",
+      "access": "Public ArcGIS REST; no API key used",
+      "limits": "Availability polygons are not flood zones; distinguish unmapped/unavailable from outside mapped flood hazard. AOI flood-zone geometry request failed HTTP500; do not interpret failure as no flood hazard.",
+      "status": "2 availability polygons downloaded; full flood-zone geometry request failed, attributes-only query succeeded with 1 intersecting zone X / AREA OF MINIMAL FLOOD HAZARD, study36019C. See fema-flood-zones-attributes.json. Not a Lot1 determination."
+    },
+    {
+      "id": "hydro",
+      "title": "USGS 3DHP products",
+      "url": "https://www.usgs.gov/3d-hydrography-program/access-3dhp-data-products",
+      "role": "Mapped flowlines and waterbodies; compare with elevation-derived drainage",
+      "access": "Public REST/downloads; no API key used",
+      "limits": "Product coverage/vintage and workunit metadata vary. Stream lines are contextual, not surveyed ditch, culvert, flood level or drainage engineering. Legacy NHD/WBD no longer maintained since transition in 2024.",
+      "status": "2 flowlines and 1 waterbody downloaded for AOI"
+    },
+    {
+      "id": "soils",
+      "title": "NRCS Soil Data Access",
+      "url": "https://sdmdataaccess.nrcs.usda.gov/WebServiceHelp.aspx",
+      "role": "SSURGO map units, components, horizons, drainage class, hydric rating, saturated conductivity, depth to restrictive layer, seasonal water-table estimates",
+      "access": "Documented public SQL REST POST, WFS and WMS; no credential shown in official request format",
+      "limits": "Map-unit composition and representative ranges; not site borings, septic suitability, bearing capacity, or exact depth-to-rock. Retain component percentage and horizon depths rather than one misleading soil value.",
+      "status": "Documentation verified; AOI soils not yet downloaded"
+    },
+    {
+      "id": "geology",
+      "title": "NYS Museum GIS geology",
+      "url": "https://www.nysm.nysed.gov/research-collections/geology/gis",
+      "role": "Adirondack regional surficial/bedrock and fault context; check newer quadrangle mapping",
+      "access": "Freely available shapefile downloads",
+      "limits": "Statewide Adirondack sheets are 1:250000 regional mapping, unsuitable for parcel excavation depth or foundation decisions. Seek site-specific geotechnical evidence.",
+      "status": "Documentation verified; no geology download yet"
+    },
+    {
+      "id": "dec",
+      "title": "NYS DEC Environmental Resources Mapper",
+      "url": "https://gisservices.dec.ny.gov/gis/erm/content.html",
+      "role": "Protected stream classifications, natural communities, rare-species generalized screening, other environmental context",
+      "access": "Public map and state GIS downloads",
+      "limits": "ERM explicitly excludes Adirondack Park freshwater wetlands and directs users to APA. Current DEC wetland rules were affected by an April 2026 court decision; avoid applying a simplified statewide rule to this APA site.",
+      "status": "Primary guidance verified; parcel constraints not yet queried"
+    },
+    {
+      "id": "epw",
+      "title": "Climate.OneBuilding weather repository",
+      "url": "https://climate.onebuilding.org/",
+      "role": "Candidate EPW/STAT/DDY/WEA weather files for Ladybug; compare Plattsburgh and upland stations for terrain/elevation mismatch",
+      "access": "Public weather-file downloads; no GIS account required",
+      "limits": "Typical year is assembled climate, not parcel observations, future climate, extreme weather proof, or forest/lake microclimate. Compare station elevation/distance and choose explicit period.",
+      "status": "2 candidate New York TMYx2011-2025 ZIPs downloaded; no file selected or climate analysis run."
+    },
+    {
+      "id": "ladybug",
+      "title": "Ladybug weather import",
+      "url": "https://docs.ladybug.tools/ladybug-primer/components/0_import/import_epw",
+      "role": "Parse EPW location and hourly weather for environmental design summaries",
+      "access": "Open-source software and local files; no service API key required",
+      "limits": "Terrain shadows need geometry, actual site coordinates, north and seasonal canopy assumptions; nearest EPW coordinate does not become parcel coordinate.",
+      "status": "documentation verified via primary source"
+    },
+    {
+      "id": "nasa",
+      "title": "NASA POWER daily API",
+      "url": "https://power.larc.nasa.gov/docs/services/api/temporal/daily/",
+      "role": "Solar/met cross-check or gridded climate gaps",
+      "access": "Public documented HTTP GET; no token in example requests",
+      "limits": "Coarse source grid, not parcel measured wind, tree shade or topographic microclimate. Respect request limits; avoid duplicate-cell downloads.",
+      "status": "Documentation verified; no parcel weather request made"
+    },
+    {
+      "id": "noaa",
+      "title": "NOAA NCEI Access Data Service",
+      "url": "https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation",
+      "role": "Historical station weather, precipitation and extremes cross-check",
+      "access": "Public Access Data Service GET format has no token; CDO v2 is separate and requires token",
+      "limits": "Station coverage/quality flags vary; not EPW selection by itself. No station validation yet.",
+      "status": "documentation verified via primary source"
+    },
+    {
+      "id": "cesium",
+      "title": "CesiumJS quickstart",
+      "url": "https://cesium.com/learn/cesiumjs-learn/cesiumjs-quickstart/",
+      "role": "Optional globe/region-scale 3D viewer, streamed terrain and buildings",
+      "access": "CesiumJS engine open source; ion-hosted assets require account/token and plan-dependent service quotas",
+      "limits": "Global terrain and photogrammetric scene are visual context unless accuracy/datum/vintage is independently established. For local parcel mesh keep primary geospatial data independent of viewer.",
+      "status": "Documentation verified; no account created, token requested or plan enabled"
+    },
+    {
+      "id": "google-elevation",
+      "title": "Google Elevation API usage/billing",
+      "url": "https://developers.google.com/maps/documentation/elevation/usage-and-billing",
+      "role": "Optional on-demand point/profile elevation in Google experience",
+      "access": "Requires enabled billing and API key/OAuth",
+      "limits": "Poor default for reproducible archived parcel terrain. Policies restrict storing/caching and elevation results shown on a map must be on a Google map. Do not build a self-hosted terrain archive from this API.",
+      "status": "Documentation verified; no API enabled or billed"
+    },
+    {
+      "id": "google-policies",
+      "title": "Google Elevation API policies",
+      "url": "https://developers.google.com/maps/documentation/elevation/policies",
+      "role": "Check permitted display/storage before any Google elevation integration",
+      "access": "Public policy documentation",
+      "limits": "No API call or account required to read policies.",
+      "status": "documentation verified via primary source"
+    }
+  ]
+}

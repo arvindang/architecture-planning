@@ -1,0 +1,20 @@
+{
+  "id": "apa-wetland-areas",
+  "url": "https://services2.arcgis.com/8krRUWgifzA4cgL3/arcgis/rest/services/WetlandClassFeatures/FeatureServer/1",
+  "retrievedAt": "2026-10-18T19:19:47.474417+00:00",
+  "bboxWgs84": [
+    -73.834,
+    44.727,
+    -73.823,
+    44.736
+  ],
+  "access": "public HTTPS; no API key or account used",
+  "queryIs": "AOI intersects, full intersecting geometry returned; not clipped to parcel",
+  "limits": "Exploratory area context, not survey geometry, jurisdiction, absence-of-risk, installed-services, or current field verification",
+  "queryUrl": "https://services2.arcgis.com/8krRUWgifzA4cgL3/arcgis/rest/services/WetlandClassFeatures/FeatureServer/1/query?where=1%3D1&geometry=-73.834%2C44.727%2C-73.823%2C44.736&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+  "file": "apa-wetland-areas.geojson",
+  "featureCount": 2,
+  "bytes": 2825,
+  "sha256": "ff2d7ac523003022e5601aba772679a7f01eae32a720a32e3abb839ce6f2570c",
+  "exceededTransferLimit": false
+}

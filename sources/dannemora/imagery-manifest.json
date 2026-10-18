@@ -1,0 +1,106 @@
+[
+  {
+    "id": "aerial-2024-context",
+    "year": "2024",
+    "file": "assets/sites/dannemora/aerial-2024-context.jpg",
+    "source": "https://orthos.its.ny.gov/arcgis/rest/services/wms/2024/MapServer",
+    "request": "https://orthos.its.ny.gov/arcgis/rest/services/wms/2024/MapServer/export?f=json&bbox=-8219115.9442358315%2C5578723.470793981%2C-8218097.427317357%2C5579741.987712454&bboxSR=3857&imageSR=3857&size=1600%2C1600&format=jpg&transparent=false",
+    "response": {
+      "href": "http://orthos.its.ny.gov/arcgis/rest/directories/arcgisoutput/wms/2024_MapServer/_ags_map17dd22db965a425b98de114d0968038f.jpg",
+      "width": 1600,
+      "height": 1600,
+      "extent": {
+        "xmin": -8219115.9442358315,
+        "ymin": 5578723.47079398,
+        "xmax": -8218097.427317357,
+        "ymax": 5579741.987712455,
+        "spatialReference": {
+          "wkid": 102100,
+          "latestWkid": 3857
+        }
+      },
+      "scale": 2405.940664821192
+    },
+    "retrieved": "2026-10-18",
+    "credit": "NYS ITS Geospatial Services",
+    "note": "Map service export; exact flight day not verified. Proposed development dates from 2025."
+  },
+  {
+    "id": "aerial-2024-site",
+    "year": "2024",
+    "file": "assets/sites/dannemora/aerial-2024-site.jpg",
+    "source": "https://orthos.its.ny.gov/arcgis/rest/services/wms/2024/MapServer",
+    "request": "https://orthos.its.ny.gov/arcgis/rest/services/wms/2024/MapServer/export?f=json&bbox=-8218608.559516018%2C5578942.833996985%2C-8218326.513310187%2C5579224.880202815&bboxSR=3857&imageSR=3857&size=1600%2C1600&format=jpg&transparent=false",
+    "response": {
+      "href": "http://orthos.its.ny.gov/arcgis/rest/directories/arcgisoutput/wms/2024_MapServer/_ags_mapc0fef01c238c49daa201fca309532803.jpg",
+      "width": 1600,
+      "height": 1600,
+      "extent": {
+        "xmin": -8218608.559516019,
+        "ymin": 5578942.833996984,
+        "xmax": -8218326.5133101875,
+        "ymax": 5579224.880202816,
+        "spatialReference": {
+          "wkid": 102100,
+          "latestWkid": 3857
+        }
+      },
+      "scale": 666.2495474156218
+    },
+    "retrieved": "2026-10-18",
+    "credit": "NYS ITS Geospatial Services",
+    "note": "Map service export; exact flight day not verified. Proposed development dates from 2025."
+  },
+  {
+    "id": "aerial-2020-site",
+    "year": "2020",
+    "file": "assets/sites/dannemora/aerial-2020-site.jpg",
+    "source": "https://orthos.its.ny.gov/arcgis/rest/services/wms/2020/MapServer",
+    "request": "https://orthos.its.ny.gov/arcgis/rest/services/wms/2020/MapServer/export?f=json&bbox=-8218608.559516018%2C5578942.833996985%2C-8218326.513310187%2C5579224.880202815&bboxSR=3857&imageSR=3857&size=1600%2C1600&format=jpg&transparent=false",
+    "response": {
+      "href": "http://orthos.its.ny.gov/arcgis/rest/directories/arcgisoutput/wms/2020_MapServer/_ags_map2f1ec2a81be54374b55260f2443293b4.jpg",
+      "width": 1600,
+      "height": 1600,
+      "extent": {
+        "xmin": -8218608.559516019,
+        "ymin": 5578942.833996984,
+        "xmax": -8218326.5133101875,
+        "ymax": 5579224.880202816,
+        "spatialReference": {
+          "wkid": 102100,
+          "latestWkid": 3857
+        }
+      },
+      "scale": 666.2495474156218
+    },
+    "retrieved": "2026-10-18",
+    "credit": "NYS ITS Geospatial Services",
+    "note": "Map service export; exact flight day not verified. Proposed development dates from 2025."
+  },
+  {
+    "id": "aerial-2014-site",
+    "year": "2014",
+    "file": "assets/sites/dannemora/aerial-2014-site.jpg",
+    "source": "https://orthos.its.ny.gov/arcgis/rest/services/wms/2014/MapServer",
+    "request": "https://orthos.its.ny.gov/arcgis/rest/services/wms/2014/MapServer/export?f=json&bbox=-8218608.559516018%2C5578942.833996985%2C-8218326.513310187%2C5579224.880202815&bboxSR=3857&imageSR=3857&size=1600%2C1600&format=jpg&transparent=false",
+    "response": {
+      "href": "http://orthos.its.ny.gov/arcgis/rest/directories/arcgisoutput/wms/2014_MapServer/_ags_mapaf616a10643943d39c6c38a078f3a801.jpg",
+      "width": 1600,
+      "height": 1600,
+      "extent": {
+        "xmin": -8218608.559516019,
+        "ymin": 5578942.833996984,
+        "xmax": -8218326.5133101875,
+        "ymax": 5579224.880202816,
+        "spatialReference": {
+          "wkid": 102100,
+          "latestWkid": 3857
+        }
+      },
+      "scale": 666.2495474156218
+    },
+    "retrieved": "2026-10-18",
+    "credit": "NYS ITS Geospatial Services",
+    "note": "Map service export; exact flight day not verified. Proposed development dates from 2025."
+  }
+]

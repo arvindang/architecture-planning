@@ -1,0 +1,285 @@
+{
+  "description": "/vsicurl/https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR/TIFF/USGS_1M_18_x59y496_2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR.tif",
+  "driverShortName": "GTiff",
+  "driverLongName": "GeoTIFF",
+  "files": [
+    "/vsicurl/https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR/TIFF/USGS_1M_18_x59y496_2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR.tif"
+  ],
+  "size": [
+    10012,
+    10012
+  ],
+  "coordinateSystem": {
+    "wkt": "PROJCRS[\"NAD83 / UTM zone 18N\",\n    BASEGEOGCRS[\"NAD83\",\n        DATUM[\"North American Datum 1983\",\n            ELLIPSOID[\"GRS 1980\",6378137,298.257222101,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4269]],\n    CONVERSION[\"UTM zone 18N\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-75,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",500000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",0,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"North America - between 78\u00b0W and 72\u00b0W - onshore and offshore. Canada - Nunavut; Ontario; Quebec. United States (USA) - Connecticut; Delaware; Maryland; Massachusetts; New Hampshire; New Jersey; New York; North Carolina; Pennsylvania; Virginia; Vermont.\"],\n        BBOX[28.28,-78,84,-72]],\n    ID[\"EPSG\",26918]]",
+    "dataAxisToSRSAxisMapping": [
+      1,
+      2
+    ]
+  },
+  "geoTransform": [
+    589994.0000106926,
+    1.0,
+    0.0,
+    4960006.00004593,
+    0.0,
+    -1.0
+  ],
+  "metadata": {
+    "": {
+      "AREA_OR_POINT": "Area"
+    },
+    "IMAGE_STRUCTURE": {
+      "LAYOUT": "COG",
+      "COMPRESSION": "LZW",
+      "INTERLEAVE": "BAND",
+      "PREDICTOR": "3"
+    }
+  },
+  "cornerCoordinates": {
+    "upperLeft": [
+      589994.0,
+      4960006.0
+    ],
+    "lowerLeft": [
+      589994.0,
+      4949994.0
+    ],
+    "lowerRight": [
+      600006.0,
+      4949994.0
+    ],
+    "upperRight": [
+      600006.0,
+      4960006.0
+    ],
+    "center": [
+      595000.0,
+      4955000.0
+    ]
+  },
+  "wgs84Extent": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -73.8623576,
+          44.7877842
+        ],
+        [
+          -73.8641236,
+          44.6976703
+        ],
+        [
+          -73.737784,
+          44.6963447
+        ],
+        [
+          -73.7358217,
+          44.7864541
+        ],
+        [
+          -73.8623576,
+          44.7877842
+        ]
+      ]
+    ]
+  },
+  "bands": [
+    {
+      "band": 1,
+      "block": [
+        512,
+        512
+      ],
+      "type": "Float32",
+      "colorInterpretation": "Gray",
+      "noDataValue": -999999.0,
+      "overviews": [
+        {
+          "size": [
+            5006,
+            5006
+          ]
+        },
+        {
+          "size": [
+            2503,
+            2503
+          ]
+        },
+        {
+          "size": [
+            1251,
+            1251
+          ]
+        },
+        {
+          "size": [
+            625,
+            625
+          ]
+        },
+        {
+          "size": [
+            312,
+            312
+          ]
+        }
+      ],
+      "metadata": {}
+    }
+  ],
+  "stac": {
+    "proj:shape": [
+      10012,
+      10012
+    ],
+    "proj:wkt2": "PROJCRS[\"NAD83 / UTM zone 18N\",\n    BASEGEOGCRS[\"NAD83\",\n        DATUM[\"North American Datum 1983\",\n            ELLIPSOID[\"GRS 1980\",6378137,298.257222101,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4269]],\n    CONVERSION[\"UTM zone 18N\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-75,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",500000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",0,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"North America - between 78\u00b0W and 72\u00b0W - onshore and offshore. Canada - Nunavut; Ontario; Quebec. United States (USA) - Connecticut; Delaware; Maryland; Massachusetts; New Hampshire; New Jersey; New York; North Carolina; Pennsylvania; Virginia; Vermont.\"],\n        BBOX[28.28,-78,84,-72]],\n    ID[\"EPSG\",26918]]",
+    "proj:epsg": 26918,
+    "proj:projjson": {
+      "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+      "type": "ProjectedCRS",
+      "name": "NAD83 / UTM zone 18N",
+      "base_crs": {
+        "type": "GeographicCRS",
+        "name": "NAD83",
+        "datum": {
+          "type": "GeodeticReferenceFrame",
+          "name": "North American Datum 1983",
+          "ellipsoid": {
+            "name": "GRS 1980",
+            "semi_major_axis": 6378137,
+            "inverse_flattening": 298.257222101
+          }
+        },
+        "coordinate_system": {
+          "subtype": "ellipsoidal",
+          "axis": [
+            {
+              "name": "Geodetic latitude",
+              "abbreviation": "Lat",
+              "direction": "north",
+              "unit": "degree"
+            },
+            {
+              "name": "Geodetic longitude",
+              "abbreviation": "Lon",
+              "direction": "east",
+              "unit": "degree"
+            }
+          ]
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 4269
+        }
+      },
+      "conversion": {
+        "name": "UTM zone 18N",
+        "method": {
+          "name": "Transverse Mercator",
+          "id": {
+            "authority": "EPSG",
+            "code": 9807
+          }
+        },
+        "parameters": [
+          {
+            "name": "Latitude of natural origin",
+            "value": 0,
+            "unit": "degree",
+            "id": {
+              "authority": "EPSG",
+              "code": 8801
+            }
+          },
+          {
+            "name": "Longitude of natural origin",
+            "value": -75,
+            "unit": "degree",
+            "id": {
+              "authority": "EPSG",
+              "code": 8802
+            }
+          },
+          {
+            "name": "Scale factor at natural origin",
+            "value": 0.9996,
+            "unit": "unity",
+            "id": {
+              "authority": "EPSG",
+              "code": 8805
+            }
+          },
+          {
+            "name": "False easting",
+            "value": 500000,
+            "unit": "metre",
+            "id": {
+              "authority": "EPSG",
+              "code": 8806
+            }
+          },
+          {
+            "name": "False northing",
+            "value": 0,
+            "unit": "metre",
+            "id": {
+              "authority": "EPSG",
+              "code": 8807
+            }
+          }
+        ]
+      },
+      "coordinate_system": {
+        "subtype": "Cartesian",
+        "axis": [
+          {
+            "name": "Easting",
+            "abbreviation": "E",
+            "direction": "east",
+            "unit": "metre"
+          },
+          {
+            "name": "Northing",
+            "abbreviation": "N",
+            "direction": "north",
+            "unit": "metre"
+          }
+        ]
+      },
+      "scope": "Engineering survey, topographic mapping.",
+      "area": "North America - between 78\u00b0W and 72\u00b0W - onshore and offshore. Canada - Nunavut; Ontario; Quebec. United States (USA) - Connecticut; Delaware; Maryland; Massachusetts; New Hampshire; New Jersey; New York; North Carolina; Pennsylvania; Virginia; Vermont.",
+      "bbox": {
+        "south_latitude": 28.28,
+        "west_longitude": -78,
+        "north_latitude": 84,
+        "east_longitude": -72
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 26918
+      }
+    },
+    "proj:transform": [
+      1.0,
+      0.0,
+      589994.0000106926,
+      0.0,
+      -1.0,
+      4960006.00004593
+    ],
+    "raster:bands": [
+      {
+        "data_type": "float32",
+        "nodata": -999999.0
+      }
+    ],
+    "eo:bands": [
+      {
+        "name": "b1",
+        "description": "Gray"
+      }
+    ]
+  }
+}

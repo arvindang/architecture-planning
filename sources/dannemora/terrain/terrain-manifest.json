@@ -1,0 +1,196 @@
+{
+  "collectedAt": "2026-10-18T19:20:34.522660+00:00",
+  "areaOfInterest": {
+    "approximateCandidateLonLat": [
+      -73.82775,
+      44.7298
+    ],
+    "requestedBufferedBboxWGS84": [
+      -73.836,
+      44.725,
+      -73.822,
+      44.739
+    ],
+    "scope": "Buffered candidate context and parent tax parcel, not a verified Lot1 subdivision boundary"
+  },
+  "dem": {
+    "file": "dannemora-dem-1m.tif",
+    "sourceTitle": "USGS 1 Meter 18 x59y496 2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR",
+    "sourceUrl": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR/TIFF/USGS_1M_18_x59y496_2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR.tif",
+    "catalogQuery": "https://tnmaccess.nationalmap.gov/api/v1/products?bbox=-73.831,44.729,-73.826,44.735&datasets=Digital+Elevation+Model+%28DEM%29+1+meter&max=20&outputFormat=JSON",
+    "horizontalCRS": "EPSG:26918 NAD83 / UTM zone18N",
+    "verticalDatum": "NAVD88",
+    "verticalUnits": "meters",
+    "verticalGeoidModel": "GEOID12A per project source metadata",
+    "resolutionMeters": 1,
+    "sourceGridPreserved": true,
+    "method": "GDAL Translate source-window extraction from public range-readable source GeoTIFF; no resampling, reprojection, interpolation, or vertical datum transformation",
+    "width": 1132,
+    "height": 1572,
+    "geoTransform": [
+      592156.0000106926,
+      1.0,
+      0.0,
+      4954633.00004593,
+      0.0,
+      -1.0
+    ],
+    "nodataValue": -999999.0,
+    "nodataPixels": 0,
+    "acquisitionProjectRange": [
+      "2014-11-02",
+      "2015-05-08"
+    ],
+    "publishedDEM": "2024-05-06",
+    "surface": "bare earth; hydro-flattened source project; not current survey",
+    "limitations": [
+      "Exact local flight day not determined",
+      "Publication date is not acquisition date",
+      "Not a legal boundary or engineering survey",
+      "No local independent vertical checkpoints",
+      "Parent tax GIS polygon and subdivision Lot1 are not reconciled"
+    ],
+    "sourceWindowPixels": [
+      2162,
+      5373,
+      1132,
+      1572
+    ]
+  },
+  "pointCloud": {
+    "tileName": "18TWQ592953",
+    "sourceUrl": "https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR/NY_ClintonEssexLakeChamplain_2014/LAZ/USGS_LPC_2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR_18TWQ592953.laz",
+    "file": null,
+    "nominalPulseSpacingMeters": 0.7,
+    "sourceTileNominalSizeMeters": [
+      1500,
+      1500
+    ],
+    "classifications": "See nys-lidar-metadata.xml. Buildings/vegetation may be automated and were not manually verified like ground.",
+    "eptUrl": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept.json",
+    "eptHorizontalCRS": "EPSG3857; do not compute ground distances/slopes directly in WebMercator",
+    "inspection": "Full70MB USGS LAZ download deferred after slow transfer; not retained. NYS equivalent LAS header verified via HTTP Range; class counts/outlier checks not completed.",
+    "verifiedNysLasHeader": {
+      "file": "nys-las-header.json",
+      "pointCount": 16232571,
+      "pointFormat": 1,
+      "version": "1.2",
+      "scalesMeters": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "note": "Header of equivalent NYS LAS inspected via HTTP206 range. Full tile point classes and outliers not inspected."
+    }
+  },
+  "quality": {
+    "scope": "Project-wide tests in original Dec9 2015 report; not parcel-specific error bound",
+    "demOpenTerrainRMSEmeters": [
+      0.066,
+      0.058
+    ],
+    "demOpenTerrain95pctMeters": [
+      0.13,
+      0.114
+    ],
+    "demForested95percentileMeters": 0.14,
+    "demWetland95percentileMeters": 0.315,
+    "demConsolidated95percentileMeters": 0.228,
+    "note": "Report Lots4/5 are acquisition contracts, not candidate subdivision Lot1"
+  },
+  "sources": {
+    "noaaCatalog": "https://www.fisheries.noaa.gov/inport/item/70271",
+    "nysLatestCoverage": "https://elevation.its.ny.gov/arcgis/rest/services/indexes/Latest_LiDAR_Collections/FeatureServer/0",
+    "nysTileIndex": "https://orthos.its.ny.gov/arcgis/rest/services/vector/las_indexes/MapServer/22",
+    "originalReport": "https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/metadata/2014_New_York_Clinton_Essex_Lake_Champlain_QL2_LiDAR/NY_ClintonEssexLakeChamplain_2014/reports/23902_ClintonEssexNY_LiDAR_ProjectReport.pdf",
+    "originalMetadata": "https://gisdata.ny.gov/elevation/LIDAR/USGS_ClintonEssexFranklin2014/Clinton_Essex_Classified_LAS_Metadata.xml"
+  },
+  "access": {
+    "apiKeysRequired": false,
+    "accountRequired": false,
+    "purchaseRequired": false,
+    "tested": "NYS ArcGIS queries, TNM catalog API, S3 HTTP Range GeoTIFF read, EPT metadata, original metadata/report downloads",
+    "use": "USGS3DEP public-domain; NOAA source record access constraints none; credit USGS and original acquisition provider",
+    "failedEndpoints": [
+      "New elevation.its.ny.gov LAS_Indexes/MapServer/0 query returned400 despite layer metadata; legacy orthos.its.ny.gov tile22 query works",
+      "TNM Lidar Point Cloud dataset query returned0 at AOI; does not imply no coverage; legacy officialUSGS LAZ index andNYSindex show tile"
+    ]
+  },
+  "files": [
+    {
+      "file": "dem-info.json",
+      "bytes": 9301,
+      "sha256": "a821309ca2ab3a19f88b56bb8dd01509365c43d3beb81540be0239a90a9a1db3"
+    },
+    {
+      "file": "18TWQ592953-header.bin",
+      "bytes": 4096,
+      "sha256": "7ee30376150f171d9fe86db27a10e19c010d585855912453d92a16d3a5194469"
+    },
+    {
+      "file": "usgs-native-tile-info.json",
+      "bytes": 9630,
+      "sha256": "6c108d248da6143fae1edc8f894e01b1eecdaa198a35e639eede4319ce7a541f"
+    },
+    {
+      "file": "usgs-ept.json",
+      "bytes": 2430,
+      "sha256": "0dffea1224a7c579e52f5585e463a61edc05a38bb9f1cb80ad69fc07d2abb91c"
+    },
+    {
+      "file": "latest-collections.json",
+      "bytes": 516983,
+      "sha256": "efcae83cbe00fee39a439412a9b4be450930fff74a1f57a34a96688ba0f17a60"
+    },
+    {
+      "file": "usgs-project-report.pdf",
+      "bytes": 2076195,
+      "sha256": "b21ddf459299d6a995a4539c7539284d188cb103a34c1a6e32313d370b227436"
+    },
+    {
+      "file": "usgs-laz-index.html",
+      "bytes": 535924,
+      "sha256": "25957b2d1331bcc74a66e3d26ab2758c65c7104aaa02c4fbad891d246af025be"
+    },
+    {
+      "file": "nys-current-tile-index.json",
+      "bytes": 84,
+      "sha256": "8d8cffcc4562acc226e367c96bd999664c1ae0f8c3db17add3b9df8b9f9941b9"
+    },
+    {
+      "file": "nys-lidar-metadata.xml",
+      "bytes": 20997,
+      "sha256": "db13bcc66a8a43c963518a3cbd874ca45286fae528ee90a44a40f076a0e844b9"
+    },
+    {
+      "file": "tnm-lpc-products.json",
+      "bytes": 678,
+      "sha256": "e62e65542d9fad0b015f142318832ca044680e622cffa2d2b14f4235ef72ea71"
+    },
+    {
+      "file": "usgs-project-report.txt",
+      "bytes": 44757,
+      "sha256": "528507409770d521a42b75fdfef70523ff549b0ad23eaf67816fb739fa346c00"
+    },
+    {
+      "file": "tnm-1m-products.json",
+      "bytes": 4668,
+      "sha256": "d19a80f766ad7f0244c3a37bab36e40cc46061a807457b8082ae5b60f010bd2c"
+    },
+    {
+      "file": "nys-lidar-tile-index.json",
+      "bytes": 1546,
+      "sha256": "f856cf660c3a86a9594aeb2e63807b4ca7370262cd7de43b3d68adb31c34cb7b"
+    },
+    {
+      "file": "dannemora-dem-1m.tif",
+      "bytes": 3460555,
+      "sha256": "3a4442a38f1c0e4fc43356ad544c0e40c146f1fb536242b9be3a3a14bcca3fb4"
+    },
+    {
+      "file": "nys-las-header.json",
+      "bytes": 450,
+      "sha256": "1097a68a43f71dd4f472bdc24b27dd154c510fcf2bff122033d8b336af40d552"
+    }
+  ]
+}

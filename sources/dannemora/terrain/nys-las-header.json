@@ -1,0 +1,25 @@
+{
+  "url": "https://gisdata.ny.gov/elevation/LIDAR/USGS_ClintonEssexFranklin2014/18TWQ592953.las",
+  "httpStatus": 206,
+  "signature": "LASF",
+  "version": "1.2",
+  "pointFormat": 1,
+  "pointRecordLength": 28,
+  "pointCount": 16232571,
+  "scales": [
+    0.01,
+    0.01,
+    0.01
+  ],
+  "offsets": [
+    0.0,
+    0.0,
+    -0.0
+  ],
+  "maxX": 593999.99,
+  "minX": 592500.0,
+  "maxY": 4954499.99,
+  "minY": 4953000.0,
+  "maxZ": 965.2,
+  "minZ": 449.08
+}

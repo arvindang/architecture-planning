@@ -1,0 +1,842 @@
+{
+  "currentVersion": 11.5,
+  "cimVersion": "3.5.0",
+  "id": 0,
+  "name": "Wetlands",
+  "type": "Feature Layer",
+  "description": "",
+  "geometryType": "esriGeometryPolygon",
+  "sourceSpatialReference": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+  },
+  "spatialReference": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "xyTolerance": 0.001,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -20037700,
+    "falseY": -30241100,
+    "xyUnits": 10000,
+    "falseZ": -100000,
+    "zUnits": 10000,
+    "falseM": -100000,
+    "mUnits": 10000
+  },
+  "copyrightText": "",
+  "parentLayer": null,
+  "subLayers": [],
+  "minScale": 250000,
+  "maxScale": 0,
+  "referenceScale": 0.0,
+  "drawingInfo": {
+    "renderer": {
+      "type": "uniqueValue",
+      "field1": "WETLAND_TYPE",
+      "uniqueValueGroups": [
+        {
+          "heading": "WETLAND_TYPE",
+          "classes": [
+            {
+              "label": "Estuarine and Marine Deepwater",
+              "description": "Estuarine and Marine Deepwater",
+              "symbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  0,
+                  124,
+                  135,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSNull",
+                  "color": [
+                    110,
+                    110,
+                    110,
+                    255
+                  ],
+                  "width": 0
+                }
+              },
+              "values": [
+                [
+                  "Estuarine and Marine Deepwater"
+                ]
+              ]
+            },
+            {
+              "label": "Estuarine and Marine Wetland",
+              "description": "Estuarine and Marine Wetland",
+              "symbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  102,
+                  194,
+                  165,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSNull",
+                  "color": [
+                    110,
+                    110,
+                    110,
+                    255
+                  ],
+                  "width": 0
+                }
+              },
+              "values": [
+                [
+                  "Estuarine and Marine Wetland"
+                ]
+              ]
+            },
+            {
+              "label": "Freshwater Emergent Wetland",
+              "description": "Freshwater Emergent Wetland",
+              "symbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  127,
+                  195,
+                  25,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSNull",
+                  "color": [
+                    110,
+                    110,
+                    110,
+                    255
+                  ],
+                  "width": 0
+                }
+              },
+              "values": [
+                [
+                  "Freshwater Emergent Wetland"
+                ]
+              ]
+            },
+            {
+              "label": "Freshwater Forested/Shrub Wetland",
+              "description": "Freshwater Forested/Shrub Wetland",
+              "symbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  0,
+                  135,
+                  55,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSNull",
+                  "color": [
+                    110,
+                    110,
+                    110,
+                    255
+                  ],
+                  "width": 0
+                }
+              },
+              "values": [
+                [
+                  "Freshwater Forested/Shrub Wetland"
+                ]
+              ]
+            },
+            {
+              "label": "Freshwater Pond",
+              "description": "Freshwater Pond",
+              "symbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  103,
+                  139,
+                  192,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSNull",
+                  "color": [
+                    110,
+                    110,
+                    110,
+                    255
+                  ],
+                  "width": 0
+                }
+              },
+              "values": [
+                [
+                  "Freshwater Pond"
+                ]
+              ]
+            },
+            {
+              "label": "Lake",
+              "description": "Lake",
+              "symbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  18,
+                  0,
+                  124,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSNull",
+                  "color": [
+                    110,
+                    110,
+                    110,
+                    255
+                  ],
+                  "width": 0
+                }
+              },
+              "values": [
+                [
+                  "Lake"
+                ]
+              ]
+            },
+            {
+              "label": "Other",
+              "description": "Other",
+              "symbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  179,
+                  135,
+                  83,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSNull",
+                  "color": [
+                    110,
+                    110,
+                    110,
+                    255
+                  ],
+                  "width": 0
+                }
+              },
+              "values": [
+                [
+                  "Other"
+                ]
+              ]
+            },
+            {
+              "label": "Riverine",
+              "description": "Riverine",
+              "symbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  0,
+                  143,
+                  191,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSNull",
+                  "color": [
+                    110,
+                    110,
+                    110,
+                    255
+                  ],
+                  "width": 0
+                }
+              },
+              "values": [
+                [
+                  "Riverine"
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "uniqueValueInfos": [
+        {
+          "symbol": {
+            "type": "esriSFS",
+            "style": "esriSFSSolid",
+            "color": [
+              0,
+              124,
+              135,
+              255
+            ],
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSNull",
+              "color": [
+                110,
+                110,
+                110,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "value": "Estuarine and Marine Deepwater",
+          "label": "Estuarine and Marine Deepwater"
+        },
+        {
+          "symbol": {
+            "type": "esriSFS",
+            "style": "esriSFSSolid",
+            "color": [
+              102,
+              194,
+              165,
+              255
+            ],
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSNull",
+              "color": [
+                110,
+                110,
+                110,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "value": "Estuarine and Marine Wetland",
+          "label": "Estuarine and Marine Wetland"
+        },
+        {
+          "symbol": {
+            "type": "esriSFS",
+            "style": "esriSFSSolid",
+            "color": [
+              127,
+              195,
+              25,
+              255
+            ],
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSNull",
+              "color": [
+                110,
+                110,
+                110,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "value": "Freshwater Emergent Wetland",
+          "label": "Freshwater Emergent Wetland"
+        },
+        {
+          "symbol": {
+            "type": "esriSFS",
+            "style": "esriSFSSolid",
+            "color": [
+              0,
+              135,
+              55,
+              255
+            ],
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSNull",
+              "color": [
+                110,
+                110,
+                110,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "value": "Freshwater Forested/Shrub Wetland",
+          "label": "Freshwater Forested/Shrub Wetland"
+        },
+        {
+          "symbol": {
+            "type": "esriSFS",
+            "style": "esriSFSSolid",
+            "color": [
+              103,
+              139,
+              192,
+              255
+            ],
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSNull",
+              "color": [
+                110,
+                110,
+                110,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "value": "Freshwater Pond",
+          "label": "Freshwater Pond"
+        },
+        {
+          "symbol": {
+            "type": "esriSFS",
+            "style": "esriSFSSolid",
+            "color": [
+              18,
+              0,
+              124,
+              255
+            ],
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSNull",
+              "color": [
+                110,
+                110,
+                110,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "value": "Lake",
+          "label": "Lake"
+        },
+        {
+          "symbol": {
+            "type": "esriSFS",
+            "style": "esriSFSSolid",
+            "color": [
+              179,
+              135,
+              83,
+              255
+            ],
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSNull",
+              "color": [
+                110,
+                110,
+                110,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "value": "Other",
+          "label": "Other"
+        },
+        {
+          "symbol": {
+            "type": "esriSFS",
+            "style": "esriSFSSolid",
+            "color": [
+              0,
+              143,
+              191,
+              255
+            ],
+            "outline": {
+              "type": "esriSLS",
+              "style": "esriSLSNull",
+              "color": [
+                110,
+                110,
+                110,
+                255
+              ],
+              "width": 0
+            }
+          },
+          "value": "Riverine",
+          "label": "Riverine"
+        }
+      ],
+      "fieldDelimiter": ",",
+      "authoringInfo": {
+        "colorRamp": {
+          "type": "multipart",
+          "colorRamps": [
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                0,
+                124,
+                135,
+                255
+              ],
+              "toColor": [
+                0,
+                124,
+                135,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                103,
+                194,
+                165,
+                255
+              ],
+              "toColor": [
+                103,
+                194,
+                165,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                126,
+                194,
+                25,
+                255
+              ],
+              "toColor": [
+                126,
+                194,
+                25,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                0,
+                135,
+                54,
+                255
+              ],
+              "toColor": [
+                0,
+                135,
+                54,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                103,
+                138,
+                191,
+                255
+              ],
+              "toColor": [
+                103,
+                138,
+                191,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                19,
+                0,
+                125,
+                255
+              ],
+              "toColor": [
+                19,
+                0,
+                125,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                179,
+                135,
+                82,
+                255
+              ],
+              "toColor": [
+                179,
+                135,
+                82,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                0,
+                143,
+                191,
+                255
+              ],
+              "toColor": [
+                0,
+                143,
+                191,
+                255
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "scaleSymbols": true,
+    "transparency": 0,
+    "labelingInfo": null
+  },
+  "defaultVisibility": true,
+  "extent": {
+    "xmin": -19951755.682,
+    "ymin": -1622985.366700001,
+    "xmax": 20021539.957799997,
+    "ymax": 11554273.613000004,
+    "zmin": 0,
+    "zmax": 0,
+    "spatialReference": {
+      "wkid": 102100,
+      "latestWkid": 3857,
+      "xyTolerance": 0.001,
+      "zTolerance": 0.001,
+      "mTolerance": 0.001,
+      "falseX": -20037700,
+      "falseY": -30241100,
+      "xyUnits": 10000,
+      "falseZ": -100000,
+      "zUnits": 10000,
+      "falseM": -100000,
+      "mUnits": 10000
+    }
+  },
+  "hasAttachments": false,
+  "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+  "displayField": "Wetlands.ATTRIBUTE",
+  "typeIdField": null,
+  "subtypeFieldName": null,
+  "subtypeField": null,
+  "defaultSubtypeCode": null,
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    },
+    {
+      "name": "Shape",
+      "type": "esriFieldTypeGeometry",
+      "alias": "SHAPE",
+      "domain": null
+    },
+    {
+      "name": "Shape_Length",
+      "type": "esriFieldTypeDouble",
+      "alias": "Shape_Length",
+      "domain": null
+    },
+    {
+      "name": "Shape_Area",
+      "type": "esriFieldTypeDouble",
+      "alias": "Shape_Area",
+      "domain": null
+    },
+    {
+      "name": "GlobalID",
+      "type": "esriFieldTypeGlobalID",
+      "alias": "GlobalID",
+      "length": 38,
+      "domain": null
+    },
+    {
+      "name": "ATTRIBUTE",
+      "type": "esriFieldTypeString",
+      "alias": "ATTRIBUTE",
+      "length": 15,
+      "domain": null
+    },
+    {
+      "name": "WETLAND_TYPE",
+      "type": "esriFieldTypeString",
+      "alias": "WETLAND_TYPE",
+      "length": 50,
+      "domain": null
+    },
+    {
+      "name": "QAQC_CODE",
+      "type": "esriFieldTypeString",
+      "alias": "QAQC_CODE",
+      "length": 9,
+      "domain": null
+    },
+    {
+      "name": "ACRES",
+      "type": "esriFieldTypeDouble",
+      "alias": "ACRES",
+      "domain": null
+    }
+  ],
+  "geometryField": {
+    "name": "Shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "SHAPE"
+  },
+  "indexes": [
+    {
+      "name": "FDO_OBJECTID",
+      "fields": "OBJECTID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    },
+    {
+      "name": "FDO_GlobalID",
+      "fields": "GlobalID",
+      "isAscending": true,
+      "isUnique": false,
+      "description": ""
+    },
+    {
+      "name": "ATTRIBUTE",
+      "fields": "ATTRIBUTE",
+      "isAscending": true,
+      "isUnique": false,
+      "description": ""
+    },
+    {
+      "name": "WETLAND_TYPE",
+      "fields": "WETLAND_TYPE",
+      "isAscending": true,
+      "isUnique": false,
+      "description": ""
+    },
+    {
+      "name": "Shape_INDEX",
+      "fields": "Shape",
+      "isAscending": true,
+      "isUnique": false,
+      "description": ""
+    }
+  ],
+  "subtypes": [],
+  "relationships": [],
+  "canModifyLayer": true,
+  "canScaleSymbols": false,
+  "hasLabels": false,
+  "capabilities": "Map,Query,Data",
+  "maxRecordCount": 500,
+  "maxSelectionCount": 2000,
+  "supportsStatistics": true,
+  "supportsExceedsLimitStatistics": true,
+  "supportsAdvancedQueries": true,
+  "hasZ": true,
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "isDataVersioned": false,
+  "ownershipBasedAccessControlForFeatures": {
+    "allowOthersToQuery": true
+  },
+  "useStandardizedQueries": true,
+  "supportedSpatialRelationships": [
+    "esriSpatialRelIntersects",
+    "esriSpatialRelContains",
+    "esriSpatialRelCrosses",
+    "esriSpatialRelEnvelopeIntersects",
+    "esriSpatialRelIndexIntersects",
+    "esriSpatialRelOverlaps",
+    "esriSpatialRelTouches",
+    "esriSpatialRelWithin",
+    "esriSpatialRelRelation"
+  ],
+  "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsPercentileStatistics": true,
+    "supportsHavingClause": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsCountDistinct": true,
+    "supportsAdvancedQueryRelated": true,
+    "supportsQueryRelatedPagination": true,
+    "supportsPagination": true,
+    "supportsLod": false,
+    "supportsQueryWithLodSR": false,
+    "supportsTrueCurve": true,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true,
+    "supportsTimeRelation": true,
+    "supportsSqlFormat": false,
+    "supportsQueryAnalytic": false,
+    "supportsCurrentUserQueries": true
+  },
+  "supportsDatumTransformation": true,
+  "dateFieldsTimeReference": null,
+  "preferredTimeReference": null,
+  "datesInUnknownTimezone": false,
+  "hasGeometryProperties": true,
+  "geometryProperties": {
+    "shapeAreaFieldName": "Shape_Area",
+    "shapeLengthFieldName": "Shape_Length",
+    "units": "esriMeters",
+    "mapUnits": {
+      "uwkid": 9001
+    }
+  },
+  "hasMetadata": true,
+  "isDataArchived": false,
+  "archivingInfo": {
+    "supportsQueryWithHistoricMoment": false,
+    "startArchivingMoment": -1
+  },
+  "supportsCoordinatesQuantization": true,
+  "supportsDynamicLegends": true
+}
