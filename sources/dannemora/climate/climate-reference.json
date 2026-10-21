@@ -1,0 +1,729 @@
+{
+  "generatedBy": "scripts/prepare-climate.py",
+  "libraries": {
+    "ladybug-core": "0.44.62",
+    "ladybug-comfort": "0.19.12",
+    "numpy": "2.5.4",
+    "rasterio": "1.5.2",
+    "pyproj": "3.8.0"
+  },
+  "site": {
+    "name": "Chazy Lake Road, Dannemora · proposed Lot 1 (research candidate)",
+    "lat": 44.72989,
+    "lon": -73.82818,
+    "elevation": 481.0,
+    "elevationDatum": "NAVD88 m from the 2014–15 USGS 1 m DEM at the provisional house centroid",
+    "timezone": "UTC−5 (EST) standard time throughout; EDT (UTC−4) applies Mar–Nov but is not used in any data here",
+    "source": "Centroid of the \"house\" feature in sources/dannemora/permit-layout-provisional.geojson (provisional county-GIS fit; not surveyed)",
+    "house": {
+      "longAxisBearingDeg": 35.8,
+      "longFacadeAzimuthsDeg": [
+        125.8,
+        305.8
+      ],
+      "lengthM": 12.4,
+      "widthM": 4.4,
+      "status": "Real APA permit house footprint (provisional county-GIS fit, RMS 3.1 m, max LOO 11.6 m; not surveyed), used only as the analysis reference point. Under practice permit PP-01 the house location and orientation are chosen by us."
+    },
+    "groundAtHouse": {
+      "slopeDeg": 3.5,
+      "facesAzimuthDeg": 38,
+      "windowM": 31,
+      "method": "Least-squares plane through the 1 m DEM within ±15 m of the provisional house centroid (bare earth, 2014–15)."
+    },
+    "primaryStation": "saranac-lake",
+    "rationale": "Saranac Lake (507 m) is within 26 m of the site elevation and, like the site, sits in Adirondack upland terrain; Plattsburgh (71 m) is closer (30.0 km vs 48.7 km) but 410 m lower on the Champlain valley floor, ~2.4 °C warmer. Use Saranac Lake for temperature, heating, snow and comfort; treat both stations' winds as bounds because the site lies between the Champlain valley (N–S channelled) and the upland (SW-dominated) regimes.",
+    "limits": "TMYx is a composite typical year (months drawn from 2011–2025), not site observations; it under-represents extremes. Station winds are 10 m airport winds in open terrain — the site is a forest clearing on a slope, so speeds will be lower and directions steered by terrain. Canopy shading, cold-air pooling and lake effects are not modelled."
+  },
+  "stations": [
+    {
+      "id": "saranac-lake",
+      "zip": "USA_NY_Saranac.Lake-Adirondack.Rgnl.AP.726228_TMYx.2011-2025.zip",
+      "zipSha256": "ad7204e51d5fbabf4a4670d7c52a885dfffcfaa01b093d0e20bb93247f118ca8",
+      "entries": {
+        "ddy": {
+          "name": "USA_NY_Saranac.Lake-Adirondack.Rgnl.AP.726228_TMYx.2011-2025.ddy",
+          "sha256": "e33256af84f66f74adcbcfb40784885a7cce1eb874e540f27f0ee1bdeb1a6c2d",
+          "bytes": 185126
+        },
+        "epw": {
+          "name": "USA_NY_Saranac.Lake-Adirondack.Rgnl.AP.726228_TMYx.2011-2025.epw",
+          "sha256": "4422fc019cbc0346c22b6c0e4088331598daca178fc573fbe71b3f482d48334c",
+          "bytes": 1596360
+        },
+        "stat": {
+          "name": "USA_NY_Saranac.Lake-Adirondack.Rgnl.AP.726228_TMYx.2011-2025.stat",
+          "sha256": "71ce48dec06f90caea426e7be0ac4b4172e9bb69d8bde968364ce078bece65ab",
+          "bytes": 63629
+        }
+      },
+      "designHeaderFields": [
+        "DESIGN CONDITIONS",
+        "1",
+        "2025 ASHRAE Handbook -- Fundamentals - Chapter 14 Climatic Design Information",
+        "Heating",
+        "1",
+        "-28.1",
+        "-24.5",
+        "-31.3",
+        "0.2",
+        "-27.5",
+        "-27.7",
+        "0.3",
+        "-23.8",
+        "9.7",
+        "1.3",
+        "8.7",
+        "-2.3",
+        "0.7",
+        "230",
+        "0.589",
+        "Cooling",
+        "7",
+        "13.1",
+        "28.7",
+        "19.6",
+        "27.3",
+        "19.0",
+        "25.9",
+        "18.3",
+        "21.7",
+        "25.8",
+        "20.7",
+        "24.6",
+        "19.9",
+        "23.7",
+        "4.4",
+        "230",
+        "20.4",
+        "16.0",
+        "23.3",
+        "19.3",
+        "15.0",
+        "22.6",
+        "18.5",
+        "14.2",
+        "22.0",
+        "65.7",
+        "25.9",
+        "62.4",
+        "24.6",
+        "59.1",
+        "24.1",
+        "26.0",
+        "Extremes",
+        "8.5",
+        "7.3",
+        "6.3",
+        "-33.3",
+        "31.3",
+        "2.8",
+        "1.2",
+        "-35.3",
+        "32.1",
+        "-37.0",
+        "32.8",
+        "-38.6",
+        "33.5",
+        "-40.6",
+        "34.3",
+        "-33.1",
+        "23.3",
+        "2.4",
+        "1.0",
+        "-34.8",
+        "24.1",
+        "-36.2",
+        "24.7",
+        "-37.6",
+        "25.2",
+        "-39.3",
+        "26.0"
+      ],
+      "stat": {
+        "ashraeClimateZone": "7",
+        "ashraeStandard": "169-2021",
+        "koppen": "Dfb",
+        "koppenLabel": "Humid Continental (Cool Summer)",
+        "standardHdd18_3": {
+          "monthly": [
+            870.0,
+            759.0,
+            688.0,
+            438.0,
+            246.0,
+            109.0,
+            48.0,
+            69.0,
+            167.0,
+            357.0,
+            539.0,
+            744.0
+          ],
+          "annual": 5034
+        },
+        "standardCdd18_3": {
+          "monthly": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            3.0,
+            14.0,
+            30.0,
+            22.0,
+            7.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "annual": 76
+        },
+        "standardPrecipMm": {
+          "monthly": [
+            44.0,
+            39.0,
+            47.0,
+            78.0,
+            90.0,
+            123.0,
+            104.0,
+            99.0,
+            85.0,
+            100.0,
+            63.0,
+            59.0
+          ],
+          "annual": 931
+        },
+        "standardMeanT": [
+          -9.7,
+          -8.8,
+          -3.9,
+          3.7,
+          10.5,
+          15.2,
+          17.7,
+          16.8,
+          13.0,
+          6.8,
+          0.3,
+          -5.7
+        ],
+        "designConditionsPeriod": "99-23",
+        "note": "\"Standard\" rows are the long-term climatology quoted in the .stat file, not values recomputed from this TMYx year."
+      }
+    },
+    {
+      "id": "plattsburgh",
+      "zip": "USA_NY_Plattsburgh.Intl.AP.726225_TMYx.2011-2025.zip",
+      "zipSha256": "c0b3ccb0d33212ce92c8fe46061db1ef738093164679b1e3b61224e24e830756",
+      "entries": {
+        "ddy": {
+          "name": "USA_NY_Plattsburgh.Intl.AP.726225_TMYx.2011-2025.ddy",
+          "sha256": "326f2d52ff2b30c851ee272acc7b12d35d9049b761688b6bc2c5d634c810b32f",
+          "bytes": 182764
+        },
+        "epw": {
+          "name": "USA_NY_Plattsburgh.Intl.AP.726225_TMYx.2011-2025.epw",
+          "sha256": "5a1bdf9274a6441c0107c175d058b55767a56672ae367c4228ae52e0d2fb9713",
+          "bytes": 1604546
+        },
+        "stat": {
+          "name": "USA_NY_Plattsburgh.Intl.AP.726225_TMYx.2011-2025.stat",
+          "sha256": "bb555d0853974d2d63d5b605db61af3f985e3e4a385db2a7ec986a5b04a8bb4c",
+          "bytes": 63645
+        }
+      },
+      "designHeaderFields": [
+        "DESIGN CONDITIONS",
+        "1",
+        "2025 ASHRAE Handbook -- Fundamentals - Chapter 14 Climatic Design Information",
+        "Heating",
+        "1",
+        "-21.8",
+        "-18.3",
+        "-26.6",
+        "0.3",
+        "-20.8",
+        "-23.7",
+        "0.4",
+        "-17.0",
+        "9.8",
+        "-3.5",
+        "8.9",
+        "-4.5",
+        "1.6",
+        "300",
+        "0.525",
+        "Cooling",
+        "7",
+        "10.8",
+        "30.6",
+        "21.9",
+        "28.8",
+        "21.3",
+        "27.3",
+        "20.4",
+        "23.6",
+        "28.3",
+        "22.6",
+        "26.8",
+        "21.7",
+        "25.6",
+        "3.7",
+        "140",
+        "21.9",
+        "16.7",
+        "26.1",
+        "21.1",
+        "15.9",
+        "25.2",
+        "20.2",
+        "15.0",
+        "24.1",
+        "70.5",
+        "28.6",
+        "66.8",
+        "26.8",
+        "63.4",
+        "25.5",
+        "26.5",
+        "Extremes",
+        "8.9",
+        "7.8",
+        "6.9",
+        "-26.7",
+        "34.4",
+        "2.9",
+        "1.2",
+        "-28.8",
+        "35.3",
+        "-30.4",
+        "36.0",
+        "-32.1",
+        "36.7",
+        "-34.2",
+        "37.6",
+        "-26.9",
+        "25.1",
+        "2.8",
+        "0.7",
+        "-29.0",
+        "25.6",
+        "-30.6",
+        "26.0",
+        "-32.2",
+        "26.4",
+        "-34.2",
+        "26.9"
+      ],
+      "stat": {
+        "ashraeClimateZone": "6A",
+        "ashraeStandard": "169-2021",
+        "koppen": "Dfa/Dfb",
+        "koppenLabel": "Humid Continental (Warm Summer/Cool Summer)",
+        "standardHdd18_3": {
+          "monthly": [
+            773.0,
+            667.0,
+            581.0,
+            347.0,
+            155.0,
+            46.0,
+            6.0,
+            12.0,
+            94.0,
+            271.0,
+            468.0,
+            650.0
+          ],
+          "annual": 4070
+        },
+        "standardCdd18_3": {
+          "monthly": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            12.0,
+            38.0,
+            94.0,
+            71.0,
+            21.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "annual": 238
+        },
+        "standardPrecipMm": {
+          "monthly": [
+            32.0,
+            32.0,
+            33.0,
+            68.0,
+            72.0,
+            110.0,
+            96.0,
+            82.0,
+            72.0,
+            89.0,
+            47.0,
+            46.0
+          ],
+          "annual": 779
+        },
+        "standardMeanT": [
+          -6.6,
+          -5.5,
+          -0.4,
+          6.8,
+          13.7,
+          18.1,
+          21.2,
+          20.2,
+          15.9,
+          9.6,
+          2.7,
+          -2.6
+        ],
+        "designConditionsPeriod": "07-23",
+        "note": "\"Standard\" rows are the long-term climatology quoted in the .stat file, not values recomputed from this TMYx year."
+      }
+    }
+  ],
+  "summary": [
+    {
+      "id": "saranac-lake",
+      "name": "Saranac Lake – Adirondack Regional Airport",
+      "elevation": 507,
+      "distanceKm": 48.7,
+      "period": "2011-2025",
+      "annual": {
+        "meanT": 6.1,
+        "minT": -35.0,
+        "maxT": 31.1,
+        "ghiKWhM2": 1380,
+        "dniKWhM2": 1547,
+        "dhiKWhM2": 509,
+        "precipMm": 1332,
+        "maxSnowDepthCm": 67,
+        "snowCoverDays": 156,
+        "meanWindMs": 2.6,
+        "hdd18": 4472,
+        "cdd18": 133,
+        "hdd18_3": 4564,
+        "hdd65F": 8216,
+        "airFreezingIndexCDays": 709,
+        "airFreezingIndexFDays": 1277,
+        "frostFreeSeason": {
+          "lastSpringFrost": "05-07",
+          "firstAutumnFrost": "10-04",
+          "days": 149
+        }
+      },
+      "thresholds": {
+        "hoursBelowMinus20": 165,
+        "hoursBelowMinus10": 821,
+        "hoursBelow0": 2453,
+        "hoursAbove25": 240,
+        "hoursAbove30": 6,
+        "daysMaxBelow0": 65,
+        "daysMinBelow0": 145
+      },
+      "design": {
+        "source": "2025 ASHRAE Handbook -- Fundamentals - Chapter 14 Climatic Design Information",
+        "heating": {
+          "coldestMonth": 1,
+          "db996": -28.1,
+          "db990": -24.5,
+          "ws004": 9.7,
+          "ws010": 8.7,
+          "mcws996": 0.7,
+          "pcwd996": 230.0
+        },
+        "cooling": {
+          "hottestMonth": 7,
+          "dbRange": 13.1,
+          "db004": 28.7,
+          "mcwb004": 19.6,
+          "db010": 27.3,
+          "mcwb010": 19.0,
+          "db020": 25.9,
+          "mcwb020": 18.3,
+          "wb004": 21.7,
+          "mcdb_wb004": 25.8,
+          "mcws004": 4.4,
+          "pcwd004": 230.0,
+          "dp004": 20.4
+        },
+        "extremes": {
+          "ws010": 8.5,
+          "ws025": 7.3,
+          "ws050": 6.3,
+          "meanExtremeMinDb": -33.3,
+          "meanExtremeMaxDb": 31.3,
+          "returnPeriodDb": {
+            "5": {
+              "min": -35.3,
+              "max": 32.1
+            },
+            "10": {
+              "min": -37.0,
+              "max": 32.8
+            },
+            "20": {
+              "min": -38.6,
+              "max": 33.5
+            },
+            "50": {
+              "min": -40.6,
+              "max": 34.3
+            }
+          }
+        },
+        "annualDesignDays": [
+          {
+            "name": "Ann Htg 99.6% Condns DB",
+            "type": "WinterDesignDay",
+            "dryBulbMax": -28.1,
+            "dryBulbRange": 0.0,
+            "windSpeed": 0.7,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Htg 99% Condns DB",
+            "type": "WinterDesignDay",
+            "dryBulbMax": -24.5,
+            "dryBulbRange": 0.0,
+            "windSpeed": 0.7,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Hum_n 99.6% Condns DP=>MCDB",
+            "type": "WinterDesignDay",
+            "dryBulbMax": -27.5,
+            "dryBulbRange": 0.0,
+            "windSpeed": 0.7,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Hum_n 99% Condns DP=>MCDB",
+            "type": "WinterDesignDay",
+            "dryBulbMax": -23.8,
+            "dryBulbRange": 0.0,
+            "windSpeed": 0.7,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Htg Wind 99.6% Condns WS=>MCDB",
+            "type": "WinterDesignDay",
+            "dryBulbMax": 1.3,
+            "dryBulbRange": 0.0,
+            "windSpeed": 9.7,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Htg Wind 99% Condns WS=>MCDB",
+            "type": "WinterDesignDay",
+            "dryBulbMax": -2.3,
+            "dryBulbRange": 0.0,
+            "windSpeed": 8.7,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg .4% Condns DB=>MWB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 28.7,
+            "dryBulbRange": 15.4,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg 1% Condns DB=>MWB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 27.3,
+            "dryBulbRange": 15.4,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg 2% Condns DB=>MWB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 25.9,
+            "dryBulbRange": 15.4,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg .4% Condns WB=>MDB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 25.8,
+            "dryBulbRange": 12.5,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg 1% Condns WB=>MDB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 24.6,
+            "dryBulbRange": 12.5,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg 2% Condns WB=>MDB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 23.7,
+            "dryBulbRange": 12.5,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg .4% Condns DP=>MDB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 23.3,
+            "dryBulbRange": 13.1,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg 1% Condns DP=>MDB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 22.6,
+            "dryBulbRange": 13.1,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg 2% Condns DP=>MDB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 22.0,
+            "dryBulbRange": 13.1,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg .4% Condns Enth=>MDB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 25.9,
+            "dryBulbRange": 13.1,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg 1% Condns Enth=>MDB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 24.6,
+            "dryBulbRange": 13.1,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          },
+          {
+            "name": "Ann Clg 2% Condns Enth=>MDB",
+            "type": "SummerDesignDay",
+            "dryBulbMax": 24.1,
+            "dryBulbRange": 13.1,
+            "windSpeed": 4.4,
+            "windDirection": 230.0
+          }
+        ],
+        "units": "dry bulb °C; wind m/s at 10 m; direction degrees from true north"
+      }
+    },
+    {
+      "id": "plattsburgh",
+      "name": "Plattsburgh International Airport",
+      "elevation": 71,
+      "distanceKm": 30.0,
+      "period": "2011-2025",
+      "annual": {
+        "meanT": 8.5,
+        "minT": -27.2,
+        "maxT": 34.4,
+        "ghiKWhM2": 1343,
+        "dniKWhM2": 1499,
+        "dhiKWhM2": 496,
+        "precipMm": 1118,
+        "maxSnowDepthCm": 50,
+        "snowCoverDays": 116,
+        "meanWindMs": 2.6,
+        "hdd18": 3753,
+        "cdd18": 301,
+        "hdd18_3": 3835,
+        "hdd65F": 6902,
+        "airFreezingIndexCDays": 413,
+        "airFreezingIndexFDays": 744,
+        "frostFreeSeason": {
+          "lastSpringFrost": "04-18",
+          "firstAutumnFrost": "11-09",
+          "days": 204
+        }
+      },
+      "thresholds": {
+        "hoursBelowMinus20": 65,
+        "hoursBelowMinus10": 452,
+        "hoursBelow0": 1749,
+        "hoursAbove25": 422,
+        "hoursAbove30": 44,
+        "daysMaxBelow0": 37,
+        "daysMinBelow0": 110
+      },
+      "design": {
+        "source": "2025 ASHRAE Handbook -- Fundamentals - Chapter 14 Climatic Design Information",
+        "heating": {
+          "coldestMonth": 1,
+          "db996": -21.8,
+          "db990": -18.3,
+          "ws004": 9.8,
+          "ws010": 8.9,
+          "mcws996": 1.6,
+          "pcwd996": 300.0
+        },
+        "cooling": {
+          "hottestMonth": 7,
+          "dbRange": 10.8,
+          "db004": 30.6,
+          "mcwb004": 21.9,
+          "db010": 28.8,
+          "mcwb010": 21.3,
+          "db020": 27.3,
+          "mcwb020": 20.4,
+          "wb004": 23.6,
+          "mcdb_wb004": 28.3,
+          "mcws004": 3.7,
+          "pcwd004": 140.0,
+          "dp004": 21.9
+        },
+        "extremes": {
+          "ws010": 8.9,
+          "ws025": 7.8,
+          "ws050": 6.9,
+          "meanExtremeMinDb": -26.7,
+          "meanExtremeMaxDb": 34.4,
+          "returnPeriodDb": {
+            "5": {
+              "min": -28.8,
+              "max": 35.3
+            },
+            "10": {
+              "min": -30.4,
+              "max": 36.0
+            },
+            "20": {
+              "min": -32.1,
+              "max": 36.7
+            },
+            "50": {
+              "min": -34.2,
+              "max": 37.6
+            }
+          }
+        },
+        "annualDesignDays": [],
+        "units": "dry bulb °C; wind m/s at 10 m; direction degrees from true north"
+      }
+    }
+  ]
+}

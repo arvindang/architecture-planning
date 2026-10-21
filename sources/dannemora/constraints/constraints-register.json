@@ -1,0 +1,1224 @@
+{
+  "revision": "SC-2026-10-20-01",
+  "updated": "2026-10-20",
+  "crs": "EPSG:26918 NAD83 / UTM 18N metres",
+  "script": "scripts/prepare-site-constraints.py",
+  "sources": {
+    "survey": "assets/sites/dannemora/subdivision-survey.png",
+    "c1": "assets/sites/dannemora/septic-site-c1.png",
+    "permit": "https://apa.ny.gov/files/permits/issued/2025/11/P2025-0137-Permit-Final.pdf",
+    "registration": "sources/dannemora/permit-aerial-registration.json",
+    "lot1": "sources/dannemora/permit-layout-provisional.geojson",
+    "practicePermit": "ops/practice-permit.json"
+  },
+  "surveyToUtm": {
+    "parameters": [
+      0.22486650686612383,
+      -0.15750336088240147,
+      592589.6447822957,
+      4954230.12523124
+    ],
+    "model": "E = a*x + b*y + tx, N = b*x - a*y + ty",
+    "metersPerPixel": 0.27454,
+    "rmsFitResidualMeters": 3.100449631077403,
+    "maxFitResidualMeters": 7.604859606751461,
+    "leaveOneOutRmsMeters": 4.3853689598682,
+    "note": "Existing provisional fit (scripts/align-permit-aerial.py); unchanged here."
+  },
+  "c1ToSurvey": {
+    "model": "X = s·cosθ·x − s·sinθ·y + tx, Y = s·sinθ·x + s·cosθ·y + ty (image rows down in both)",
+    "parameters": [
+      0.22514799553693088,
+      0.02892377047910056,
+      1679.1033665011514,
+      1146.2476667313056
+    ],
+    "scale": 0.227,
+    "rotationDeg": 7.32,
+    "c1MetersPerPixel": 0.06232,
+    "c1PixelsPerFoot": 4.891,
+    "rmsResidualSurveyPx": 2.32,
+    "maxResidualSurveyPx": 4.03,
+    "rmsResidualMeters": 0.64,
+    "maxResidualMeters": 1.11,
+    "leaveOneOutRmsMeters": 0.79,
+    "leaveOneOutMaxMeters": 1.45,
+    "controls": [
+      {
+        "flag": "d1",
+        "c1Pixel": [
+          515,
+          1452
+        ],
+        "surveyPixel": [
+          1750,
+          1487
+        ],
+        "residualSurveyPx": 3.24,
+        "residualMeters": 0.89,
+        "leaveOneOutMeters": 1.19
+      },
+      {
+        "flag": "d2",
+        "c1Pixel": [
+          235,
+          1228
+        ],
+        "surveyPixel": [
+          1698,
+          1430
+        ],
+        "residualSurveyPx": 1.58,
+        "residualMeters": 0.43,
+        "leaveOneOutMeters": 0.55
+      },
+      {
+        "flag": "d3",
+        "c1Pixel": [
+          283,
+          1162
+        ],
+        "surveyPixel": [
+          1710,
+          1417
+        ],
+        "residualSurveyPx": 1.23,
+        "residualMeters": 0.34,
+        "leaveOneOutMeters": 0.41
+      },
+      {
+        "flag": "d4",
+        "c1Pixel": [
+          390,
+          1100
+        ],
+        "surveyPixel": [
+          1734,
+          1408
+        ],
+        "residualSurveyPx": 3.02,
+        "residualMeters": 0.83,
+        "leaveOneOutMeters": 0.95
+      },
+      {
+        "flag": "d5",
+        "c1Pixel": [
+          455,
+          932
+        ],
+        "surveyPixel": [
+          1755,
+          1369
+        ],
+        "residualSurveyPx": 0.48,
+        "residualMeters": 0.13,
+        "leaveOneOutMeters": 0.15
+      },
+      {
+        "flag": "d6",
+        "c1Pixel": [
+          400,
+          872
+        ],
+        "surveyPixel": [
+          1746,
+          1354
+        ],
+        "residualSurveyPx": 2.06,
+        "residualMeters": 0.57,
+        "leaveOneOutMeters": 0.63
+      },
+      {
+        "flag": "d7",
+        "c1Pixel": [
+          675,
+          856
+        ],
+        "surveyPixel": [
+          1805,
+          1358
+        ],
+        "residualSurveyPx": 1.41,
+        "residualMeters": 0.39,
+        "leaveOneOutMeters": 0.42
+      },
+      {
+        "flag": "d8",
+        "c1Pixel": [
+          702,
+          827
+        ],
+        "surveyPixel": [
+          1813,
+          1350
+        ],
+        "residualSurveyPx": 2.76,
+        "residualMeters": 0.76,
+        "leaveOneOutMeters": 0.83
+      },
+      {
+        "flag": "d9",
+        "c1Pixel": [
+          625,
+          708
+        ],
+        "surveyPixel": [
+          1800,
+          1324
+        ],
+        "residualSurveyPx": 0.71,
+        "residualMeters": 0.2,
+        "leaveOneOutMeters": 0.22
+      },
+      {
+        "flag": "d10",
+        "c1Pixel": [
+          868,
+          562
+        ],
+        "surveyPixel": [
+          1856,
+          1300
+        ],
+        "residualSurveyPx": 3.11,
+        "residualMeters": 0.85,
+        "leaveOneOutMeters": 1.03
+      },
+      {
+        "flag": "d11",
+        "c1Pixel": [
+          1015,
+          518
+        ],
+        "surveyPixel": [
+          1896,
+          1290
+        ],
+        "residualSurveyPx": 4.03,
+        "residualMeters": 1.11,
+        "leaveOneOutMeters": 1.45
+      },
+      {
+        "flag": "d12",
+        "c1Pixel": [
+          1128,
+          390
+        ],
+        "surveyPixel": [
+          1921,
+          1267
+        ],
+        "residualSurveyPx": 0.85,
+        "residualMeters": 0.23,
+        "leaveOneOutMeters": 0.36
+      }
+    ],
+    "independentCheck": {
+      "driveway": {
+        "window": [
+          1895,
+          1395,
+          1990,
+          1505
+        ],
+        "c1DarkPixels": 492,
+        "medianPx": 2.24,
+        "p90Px": 20.1,
+        "medianMeters": 0.61,
+        "p90Meters": 5.52
+      },
+      "absorptionField": {
+        "dboxOffsetMeters": 1.62,
+        "trenchCentroidOffsetMeters": 1.26,
+        "trenchesInsideSurveyFieldShare": 0.988,
+        "note": "C1 D-box and trenches compared with the survey absorption-field circle and rectangle; not used in the fit."
+      }
+    },
+    "note": "Residuals are relative to the survey drawing; absolute position additionally carries the provisional county-GIS fit error."
+  },
+  "traces": {
+    "surveyWetlandFlags": {
+      "d1": [
+        1750,
+        1487
+      ],
+      "d2": [
+        1698,
+        1430
+      ],
+      "d3": [
+        1710,
+        1417
+      ],
+      "d4": [
+        1734,
+        1408
+      ],
+      "d5": [
+        1755,
+        1369
+      ],
+      "d6": [
+        1746,
+        1354
+      ],
+      "d7": [
+        1805,
+        1358
+      ],
+      "d8": [
+        1813,
+        1350
+      ],
+      "d9": [
+        1800,
+        1324
+      ],
+      "d10": [
+        1856,
+        1300
+      ],
+      "d11": [
+        1896,
+        1290
+      ],
+      "d12": [
+        1921,
+        1267
+      ],
+      "d13": [
+        1902,
+        1225
+      ],
+      "d14": [
+        1878,
+        1162
+      ],
+      "d15": [
+        1860,
+        1107
+      ],
+      "d16": [
+        1843,
+        1058
+      ],
+      "d17": [
+        1837,
+        1012
+      ]
+    },
+    "surveyStream": [
+      [
+        1764,
+        1500
+      ],
+      [
+        1764,
+        1490
+      ],
+      [
+        1764,
+        1474
+      ],
+      [
+        1765,
+        1463
+      ],
+      [
+        1763,
+        1448
+      ],
+      [
+        1766,
+        1435
+      ],
+      [
+        1778,
+        1422
+      ],
+      [
+        1783,
+        1411
+      ],
+      [
+        1788,
+        1394
+      ],
+      [
+        1793,
+        1378
+      ],
+      [
+        1798,
+        1372
+      ],
+      [
+        1807,
+        1362
+      ],
+      [
+        1842,
+        1340
+      ],
+      [
+        1860,
+        1328
+      ],
+      [
+        1873,
+        1319
+      ],
+      [
+        1886,
+        1310
+      ],
+      [
+        1902,
+        1306
+      ],
+      [
+        1914,
+        1303
+      ],
+      [
+        1933,
+        1292
+      ],
+      [
+        1963,
+        1273
+      ],
+      [
+        1977,
+        1263
+      ],
+      [
+        1990,
+        1247
+      ],
+      [
+        2010,
+        1240
+      ],
+      [
+        2047,
+        1227
+      ]
+    ],
+    "surveyClearingOuter": [
+      [
+        2180,
+        1403
+      ],
+      [
+        2127,
+        1404
+      ],
+      [
+        2073,
+        1408
+      ],
+      [
+        2040,
+        1406
+      ],
+      [
+        2013,
+        1399
+      ],
+      [
+        1992,
+        1393
+      ],
+      [
+        1985,
+        1389
+      ],
+      [
+        1978,
+        1382
+      ],
+      [
+        1977,
+        1373
+      ],
+      [
+        1977,
+        1363
+      ],
+      [
+        1972,
+        1355
+      ],
+      [
+        1968,
+        1350
+      ],
+      [
+        1961,
+        1350
+      ],
+      [
+        1931,
+        1346
+      ],
+      [
+        1922,
+        1345
+      ],
+      [
+        1916,
+        1358
+      ],
+      [
+        1917,
+        1368
+      ],
+      [
+        1905,
+        1378
+      ],
+      [
+        1890,
+        1383
+      ],
+      [
+        1879,
+        1386
+      ],
+      [
+        1870,
+        1392
+      ],
+      [
+        1867,
+        1398
+      ],
+      [
+        1866,
+        1409
+      ],
+      [
+        1864,
+        1419
+      ],
+      [
+        1865,
+        1429
+      ],
+      [
+        1866,
+        1437
+      ],
+      [
+        1871,
+        1449
+      ],
+      [
+        1874,
+        1461
+      ],
+      [
+        1877,
+        1471
+      ],
+      [
+        1882,
+        1480
+      ],
+      [
+        1889,
+        1484
+      ],
+      [
+        1895,
+        1487
+      ],
+      [
+        1910,
+        1491
+      ],
+      [
+        1923,
+        1494
+      ],
+      [
+        1933,
+        1496
+      ],
+      [
+        1941,
+        1499
+      ],
+      [
+        1945,
+        1522
+      ]
+    ],
+    "surveyClearingInner": [
+      [
+        1978,
+        1526
+      ],
+      [
+        1973,
+        1496
+      ],
+      [
+        1969,
+        1485
+      ],
+      [
+        1965,
+        1475
+      ],
+      [
+        1949,
+        1459
+      ],
+      [
+        1945,
+        1453
+      ],
+      [
+        1939,
+        1447
+      ],
+      [
+        1934,
+        1441
+      ],
+      [
+        1928,
+        1428
+      ],
+      [
+        1930,
+        1412
+      ],
+      [
+        1940,
+        1407
+      ],
+      [
+        1955,
+        1407
+      ],
+      [
+        1973,
+        1407
+      ],
+      [
+        1983,
+        1410
+      ],
+      [
+        2007,
+        1418
+      ],
+      [
+        2040,
+        1428
+      ],
+      [
+        2060,
+        1430
+      ],
+      [
+        2100,
+        1422
+      ],
+      [
+        2130,
+        1420
+      ],
+      [
+        2180,
+        1422
+      ]
+    ],
+    "surveyAccessory": [
+      [
+        [
+          1924,
+          1352
+        ],
+        [
+          1938,
+          1352
+        ],
+        [
+          1938,
+          1375
+        ],
+        [
+          1924,
+          1375
+        ]
+      ],
+      [
+        [
+          1955,
+          1355
+        ],
+        [
+          1968,
+          1355
+        ],
+        [
+          1968,
+          1379
+        ],
+        [
+          1955,
+          1379
+        ]
+      ]
+    ],
+    "c1WetlandFlags": {
+      "d1": [
+        515,
+        1452
+      ],
+      "d2": [
+        235,
+        1228
+      ],
+      "d3": [
+        283,
+        1162
+      ],
+      "d4": [
+        390,
+        1100
+      ],
+      "d5": [
+        455,
+        932
+      ],
+      "d6": [
+        400,
+        872
+      ],
+      "d7": [
+        675,
+        856
+      ],
+      "d8": [
+        702,
+        827
+      ],
+      "d9": [
+        625,
+        708
+      ],
+      "d10": [
+        868,
+        562
+      ],
+      "d11": [
+        1015,
+        518
+      ],
+      "d12": [
+        1128,
+        390
+      ]
+    },
+    "c1Tank": [
+      [
+        1013,
+        1132
+      ],
+      [
+        1037,
+        1132
+      ],
+      [
+        1037,
+        1175
+      ],
+      [
+        1013,
+        1175
+      ]
+    ],
+    "c1DBox": [
+      1134,
+      1340
+    ],
+    "c1Trenches": [
+      [
+        [
+          1137,
+          1306
+        ],
+        [
+          1265,
+          1306
+        ],
+        [
+          1265,
+          1316
+        ],
+        [
+          1137,
+          1316
+        ]
+      ],
+      [
+        [
+          1140,
+          1336
+        ],
+        [
+          1292,
+          1336
+        ],
+        [
+          1292,
+          1346
+        ],
+        [
+          1140,
+          1346
+        ]
+      ]
+    ],
+    "c1Fill": [
+      [
+        1077,
+        1246
+      ],
+      [
+        1352,
+        1246
+      ],
+      [
+        1352,
+        1409
+      ],
+      [
+        1077,
+        1409
+      ]
+    ],
+    "c1Well": [
+      1197,
+      745
+    ],
+    "c1HouseBox": [
+      [
+        875,
+        1010
+      ],
+      [
+        1052,
+        1010
+      ],
+      [
+        1052,
+        1080
+      ],
+      [
+        875,
+        1080
+      ]
+    ],
+    "practiceReserveC1Pixels": [
+      [
+        1077,
+        1203.6
+      ],
+      [
+        1429.1,
+        1203.6
+      ],
+      [
+        1429.1,
+        1409
+      ],
+      [
+        1077,
+        1409
+      ]
+    ]
+  },
+  "wetlandClosure": "Survey flag line d1 → d15 (d15 lies just north of the Lot 1 north line), then outside Lot 1 to the north-east, back along the survey stream line from beyond the Lot 1 east line to Chazy Lake Road, and closed; the ring is then intersected with Lot 1. Inside Lot 1 the polygon is therefore bounded by the flag line (west / north), the Lot 1 north and east lines, the stream (south-east) and a short piece of the Chazy Lake Road line between flag d1 and the stream. Wetland labels on the survey sit between the flag line and the stream. Flags d16–d17 continue north beyond Lot 1 and are used only for the buffer.",
+  "clearingClosure": "Dotted clearing line traced around the house, camps and septic area and along both sides of the driveway; closed across the driveway mouths on the Chazy Lake Road and Garmish Street lot lines, then intersected with Lot 1.",
+  "edgeClassification": [
+    {
+      "sourcePixels": [
+        [
+          1778,
+          1108
+        ],
+        [
+          2031,
+          1145
+        ]
+      ],
+      "class": "side-rear",
+      "evidence": "North line S46°35'00\"E 227.49' · adjoins Lot 2 (lands to be merged with adjoining owner)",
+      "name": "Side / rear line",
+      "utm": [
+        [
+          592814.99,
+          4953700.72
+        ],
+        [
+          592866.06,
+          4953652.55
+        ]
+      ],
+      "lengthMeters": 70.2,
+      "lengthFeet": 230.3
+    },
+    {
+      "sourcePixels": [
+        [
+          2031,
+          1145
+        ],
+        [
+          1997,
+          1304
+        ]
+      ],
+      "class": "side-rear",
+      "evidence": "East line S46°34'05\"W 143.72' · adjoins adjoining owner",
+      "name": "Side / rear line",
+      "utm": [
+        [
+          592866.06,
+          4953652.55
+        ],
+        [
+          592833.37,
+          4953622.15
+        ]
+      ],
+      "lengthMeters": 44.64,
+      "lengthFeet": 146.5
+    },
+    {
+      "sourcePixels": [
+        [
+          1997,
+          1304
+        ],
+        [
+          2009,
+          1368
+        ]
+      ],
+      "class": "side-rear",
+      "evidence": "East jog S24°09'05\"W 56.25' · adjoins adjoining owner",
+      "name": "Side / rear line",
+      "utm": [
+        [
+          592833.37,
+          4953622.15
+        ],
+        [
+          592825.99,
+          4953605.87
+        ]
+      ],
+      "lengthMeters": 17.88,
+      "lengthFeet": 58.7
+    },
+    {
+      "sourcePixels": [
+        [
+          2009,
+          1368
+        ],
+        [
+          2172,
+          1390
+        ]
+      ],
+      "class": "side-rear",
+      "evidence": "South-east line S46°35'02\"E 150.00' · adjoins adjoining owner",
+      "name": "Side / rear line",
+      "utm": [
+        [
+          592825.99,
+          4953605.87
+        ],
+        [
+          592859.17,
+          4953575.25
+        ]
+      ],
+      "lengthMeters": 45.16,
+      "lengthFeet": 148.1
+    },
+    {
+      "sourcePixels": [
+        [
+          2172,
+          1390
+        ],
+        [
+          2155,
+          1543
+        ]
+      ],
+      "class": "road",
+      "evidence": "Garmish Street frontage S41°55'21\"W 135.76' · corner falls in existing pavement",
+      "name": "Garmish Street",
+      "utm": [
+        [
+          592859.17,
+          4953575.25
+        ],
+        [
+          592831.25,
+          4953543.52
+        ]
+      ],
+      "lengthMeters": 42.26,
+      "lengthFeet": 138.7
+    },
+    {
+      "sourcePixels": [
+        [
+          2155,
+          1543
+        ],
+        [
+          1684,
+          1476
+        ]
+      ],
+      "class": "road",
+      "evidence": "Chazy Lake Road frontage N47°14'47\"W 402.19' + 25.29' (traced as one edge)",
+      "name": "Chazy Lake Road",
+      "utm": [
+        [
+          592831.25,
+          4953543.52
+        ],
+        [
+          592735.89,
+          4953632.77
+        ]
+      ],
+      "lengthMeters": 130.61,
+      "lengthFeet": 428.5
+    },
+    {
+      "sourcePixels": [
+        [
+          1684,
+          1476
+        ],
+        [
+          1778,
+          1108
+        ]
+      ],
+      "class": "side-rear",
+      "evidence": "West line N49°27'48\"E 340.37' · adjoins Lot 2",
+      "name": "Side / rear line",
+      "utm": [
+        [
+          592735.89,
+          4953632.77
+        ],
+        [
+          592814.99,
+          4953700.72
+        ]
+      ],
+      "lengthMeters": 104.27,
+      "lengthFeet": 342.1
+    }
+  ],
+  "practice": {
+    "id": "PP-01",
+    "status": "Practice — fictional alternative for learning; not an approval",
+    "septicBasis": {
+      "status": "Practice sizing assumption — verify against NY 10 NYCRR Appendix 75-A and a NYS design professional",
+      "bedrooms": 4,
+      "designFlowGpdPerBedroom": 110,
+      "designFlowGpd": 440,
+      "percolationMinPerInch": 4,
+      "applicationRateGpdPerSqFt": 1.2,
+      "trenchBottomAreaSqFt": 367,
+      "trenchWidthFt": 2,
+      "trenchLengthFt": 184,
+      "layout": "4 shallow trenches × 46 ft, 6 ft centre-to-centre → absorption field ≈ 20 × 50 ft",
+      "fillMarginFt": 11,
+      "reserveFootprintFt": [
+        42,
+        72
+      ],
+      "replacement": "Replacement in the same footprint after removal of material, following the C1 note; no separate 100% reserve area modelled",
+      "tankGallons": 1250,
+      "placement": "Over the C1 deep-hole / percolation test location, extending the C1 fill area north and east (away from the stream).",
+      "soil": "Real C1 test pit (APA, 2025-07-14): usable soil 25 in, mottling at 25 in, stabilized perc 4 min/in at 6 in depth → shallow trenches with fill; no basement."
+    },
+    "wetlandBufferBasis": "Buffer of the closed survey wetland polygon plus the full flag line d1–d17 by 100 ft, clipped to Lot 1 (flag-line-only alternative reported in checks).",
+    "wellBasis": "C1 proposed well location kept as the practice well."
+  },
+  "areas": {
+    "lot1": {
+      "m2": 9819.2,
+      "acres": 2.4264,
+      "sqft": 105693
+    },
+    "house": {
+      "m2": 54.3,
+      "acres": 0.0134,
+      "sqft": 584
+    },
+    "wetland-survey": {
+      "m2": 2014.2,
+      "acres": 0.4977,
+      "sqft": 21680
+    },
+    "clearing-real": {
+      "m2": 1162.1,
+      "acres": 0.2872,
+      "sqft": 12508
+    },
+    "accessory": {
+      "m2": 47.8,
+      "acres": 0.0118,
+      "sqft": 514
+    },
+    "septic-fill-real": {
+      "m2": 174.1,
+      "acres": 0.043,
+      "sqft": 1874
+    },
+    "septic-field-real": {
+      "m2": 10.9,
+      "acres": 0.0027,
+      "sqft": 117
+    },
+    "septic-tank-real": {
+      "m2": 4.0,
+      "acres": 0.001,
+      "sqft": 43
+    },
+    "well-real": {
+      "m2": 7.1,
+      "acres": 0.0017,
+      "sqft": 76
+    },
+    "apa-wetlands": {
+      "m2": 3225.5,
+      "acres": 0.797,
+      "sqft": 34719
+    },
+    "nwi-wetlands": {
+      "m2": 14444.0,
+      "acres": 3.5692,
+      "sqft": 155474
+    },
+    "pp-setback-road": {
+      "m2": 2385.1,
+      "acres": 0.5894,
+      "sqft": 25673
+    },
+    "pp-setback-side": {
+      "m2": 1848.0,
+      "acres": 0.4566,
+      "sqft": 19891
+    },
+    "pp-wetland-buffer": {
+      "m2": 4936.1,
+      "acres": 1.2197,
+      "sqft": 53132
+    },
+    "pp-septic-reserve": {
+      "m2": 280.9,
+      "acres": 0.0694,
+      "sqft": 3024
+    },
+    "pp-well-radius": {
+      "m2": 2713.7,
+      "acres": 0.6706,
+      "sqft": 29211
+    },
+    "pp-buildable": {
+      "m2": 598.9,
+      "acres": 0.148,
+      "sqft": 6446
+    }
+  },
+  "checks": {
+    "lotAreaM2": 9819.2,
+    "lotAreaAcres": 2.426,
+    "lotAreaDocumentedAcres": 2.4,
+    "realClearingM2": 1162.1,
+    "realClearingAcres": 0.287,
+    "practiceClearingCapAcres": 0.75,
+    "realClearingShareOfCap": 0.383,
+    "buildableM2": 598.9,
+    "buildableAcres": 0.148,
+    "buildableSqFt": 6446,
+    "buildableParts": 1,
+    "footprintFits": {
+      "40x40ft": {
+        "angleDeg": 0,
+        "centerUtm": [
+          592821.1,
+          4953586.4
+        ]
+      },
+      "32x50ft": {
+        "angleDeg": 0,
+        "centerUtm": [
+          592822.1,
+          4953585.4
+        ]
+      },
+      "28x57ft": {
+        "angleDeg": 0,
+        "centerUtm": [
+          592824.1,
+          4953584.4
+        ]
+      }
+    },
+    "permitHouseInsideLot": true,
+    "permitHouseInsideClearing": true,
+    "permitHouseInPracticeBuildable": false,
+    "wellToRealTrenchesMeters": 35.0,
+    "wellToRealTrenchesFeet": 114.7,
+    "wellToPracticeFieldFeet": 104.8,
+    "wellToPracticeReserveFeet": 93.8,
+    "practiceFieldToStreamFeet": 112.8,
+    "practiceFieldToFlagLineFeet": 125.3,
+    "practiceReserveToStreamFeet": 99.4,
+    "realTrenchesToStreamFeet": 116.9,
+    "surveyAbsorptionToStreamDimensionFeet": 110,
+    "dboxToWellFeet": 122.3,
+    "buildableWithoutWellRadiusSqFt": 10411,
+    "surveyStreamAtRoadToNwiR4SB3CMeters": 6.8,
+    "flagOnlyWetlandBufferM2": 4634.1,
+    "polygonWetlandBufferM2": 4936.1,
+    "c1HouseBoxVsSurveyHouse": {
+      "overlapM2": 8.6,
+      "c1BoxM2": 48.1,
+      "surveyHouseM2": 54.3,
+      "centroidOffsetMeters": 6.4,
+      "note": "C1 labels the house as a horizontal box; the survey draws a vertical 14 × 40 ft footprint. Not used as a control."
+    }
+  },
+  "limitations": [
+    "Every documented polygon is a manual trace of a reduced permit drawing carried through the provisional county-GIS display fit (RMS 3.1 m, max 7.6 m against county tax GIS, not survey control). Treat positions as ±several metres.",
+    "The survey wetland polygon closes the flag line along the stream and Lot 1 lines; the survey shows no flags south-east of the stream, so the true wetland extent there is unknown.",
+    "Clearing limits are closed across the driveway mouths on the Lot 1 lines; the dotted line is faint and partly hidden by labels.",
+    "C1 is fitted to the survey on twelve shared wetland flags only; flags and drawings are both reduced previews. The C1 house box does not match the survey house and was not used.",
+    "Mapped APA / NWI wetlands are regional inventories, not field delineations; map absence does not establish dry land.",
+    "Practice PP-01 setbacks, buffers, septic reserve and buildable region are fictional learning geometry. They are not a regulatory determination, an engineered septic design or a buildable-area claim for the real permit.",
+    "Practice geometry is computed on provisional display traces, an exception to the rule against feeding traces to setback calculations; it must not inform real construction, earthwork or terrain statistics.",
+    "Areas are EPSG:26918 grid areas (within 0.1% of ground area here)."
+  ]
+}

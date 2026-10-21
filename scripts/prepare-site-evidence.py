@@ -7,6 +7,10 @@ manifest = json.loads((root/'sources/dannemora/imagery-manifest.json').read_text
 parcel = json.loads((root/'sources/dannemora/county-parent-parcel.geojson').read_text())
 permit_geometry = json.loads((root/'sources/dannemora/permit-layout-provisional.geojson').read_text())
 registration = json.loads((root/'sources/dannemora/permit-aerial-registration.json').read_text())
+constraints_path = root/'sources/dannemora/constraints/constraints-register.json'
+c1_fit = json.loads(constraints_path.read_text())['c1ToSurvey'] if constraints_path.exists() else None
+c1_note = (f"Tank, absorption field and well are carried to the aerials through a 12-flag fit to the survey ({c1_fit['rmsResidualMeters']} m RMS relative to the survey) plus the provisional county-GIS fit; display only."
+           if c1_fit else 'Well and septic remain unregistered to aerial imagery.')
 R = 6378137
 
 def project(lon, lat):
@@ -51,7 +55,7 @@ for entry in manifest:
             {'x':85,'y':19,'title':'Chazy Lake','kind':'Visible in image','note':'Landscape context; shoreline and water levels vary with date.'},
             {'x':32,'y':43,'title':'Chazy Lake Road','kind':'Visible in image','note':'Road corridor along the western side of the parent tract.'}
         ] if context else [
-            {'x':79,'y':34,'title':'Nearby roof / structure','kind':'Visible in image','note':'Visible outside the displayed parent GIS outline. Do not assume this is a Lot 1 accessory building; survey-to-aerial reconciliation is pending.'},
+            {'x':79,'y':34,'title':'Nearby roof / structure','kind':'Visible in image','note':'Visible outside the displayed parent GIS outline, east of Garmish Street. The traced survey accessory buildings plot inside Lot 1, well west of it; this roof is not one of them on the provisional fit.'},
             {'x':62,'y':73,'title':'Garmish Street corridor','kind':'Visible in image','note':'Road corridor and approach to the site. No subsurface utilities inferred.'},
             {'x':24,'y':22,'title':'Tree canopy & shadows','kind':'Visible in image','note':'Canopy obscures portions of the ground. Image brightness and shadows are not elevations.'}
         ])
@@ -62,7 +66,7 @@ for item in items:
         item['annotations'][0].update(title='Compare with 2024 roofs', kind='Historical comparison', note='The same nearby roof forms are not apparent here in this earlier image. Compare against 2024; construction timing and parcel identity remain unverified.')
 
 plans=[
- {'id':'septic-site-c1','title':'C1 · Septic, well & access','page':7,'date':'August 6, 2025','caption':'Engineering site plan. Pins identify proposed features on the drawing, not installed systems. Well and septic remain unregistered to aerial imagery.','annotations':[
+ {'id':'septic-site-c1','title':'C1 · Septic, well & access','page':7,'date':'August 6, 2025','caption':'Engineering site plan. Pins identify proposed features on the drawing, not installed systems. '+c1_note,'annotations':[
   {'x':39.3,'y':57.5,'title':'Septic tank','kind':'Proposed','note':'Proposed 1,000-gallon concrete tank; installation not verified.'},
   {'x':46.8,'y':66.5,'title':'Absorption field & fill','kind':'Proposed','note':'Shallow absorption trenches and fill area. Follow original engineering dimensions and details.'},
   {'x':46.0,'y':37.1,'title':'Well','kind':'Proposed','note':'Proposed well; drawing states minimum separation from distribution box and absorption field.'},
@@ -71,7 +75,7 @@ plans=[
   {'x':26.8,'y':42.0,'title':'Wetland flags / stream','kind':'Documented constraint','note':'APA delineation flags and stream line shown on the plan; preserve original mapping.'},
   {'x':45.8,'y':64.1,'title':'Soil & percolation tests','kind':'Documented test','note':'Deep-hole/percolation locations; test table is at upper left. These are localized septic observations.'}
  ]},
- {'id':'subdivision-survey','title':'Survey · Boundaries & wetlands','page':9,'date':'Revised August 18, 2025','caption':'Boundary/subdivision survey by Dean H. Lashway, L.S., P.C. Drawing orientation follows its north arrow. Lot 1 and house now have a provisional county-GIS display fit, without independent surveyed control.','annotations':[
+ {'id':'subdivision-survey','title':'Survey · Boundaries & wetlands','page':9,'date':'Revised August 18, 2025','caption':'Boundary/subdivision survey by Dean H. Lashway, L.S., P.C. Drawing orientation follows its north arrow. Lot 1 and house have a provisional county-GIS display fit, without independent surveyed control; the wetland flag line, clearing limits and accessory buildings are traced into the aerial constraint layers on the same fit.','annotations':[
   {'x':70.3,'y':61.9,'title':'Lot 1','kind':'Survey reference','note':'Proposed 2.4-acre building lot. County download still represents the larger parent parcel.'},
   {'x':74.6,'y':67.9,'title':'Accessory buildings','kind':'Documented existing','note':'Two accessory buildings recorded by the survey; current condition unverified.'},
   {'x':70.0,'y':65.8,'title':'Wetland delineation','kind':'Documented constraint','note':'APA wetland line and flagged points. No completeness claim for all wetlands on or adjacent to site.'},

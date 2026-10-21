@@ -76,7 +76,7 @@ const SITE_EVIDENCE = [
         "y": 34,
         "title": "Nearby roof / structure",
         "kind": "Visible in image",
-        "note": "Visible outside the displayed parent GIS outline. Do not assume this is a Lot 1 accessory building; survey-to-aerial reconciliation is pending."
+        "note": "Visible outside the displayed parent GIS outline, east of Garmish Street. The traced survey accessory buildings plot inside Lot 1, well west of it; this roof is not one of them on the provisional fit."
       },
       {
         "x": 62,
@@ -193,7 +193,7 @@ const SITE_EVIDENCE = [
     "title": "C1 · Septic, well & access",
     "page": 7,
     "date": "August 6, 2025",
-    "caption": "Engineering site plan. Pins identify proposed features on the drawing, not installed systems. Well and septic remain unregistered to aerial imagery.",
+    "caption": "Engineering site plan. Pins identify proposed features on the drawing, not installed systems. Tank, absorption field and well are carried to the aerials through a 12-flag fit to the survey (0.64 m RMS relative to the survey) plus the provisional county-GIS fit; display only.",
     "annotations": [
       {
         "x": 39.3,
@@ -257,7 +257,7 @@ const SITE_EVIDENCE = [
     "title": "Survey · Boundaries & wetlands",
     "page": 9,
     "date": "Revised August 18, 2025",
-    "caption": "Boundary/subdivision survey by Dean H. Lashway, L.S., P.C. Drawing orientation follows its north arrow. Lot 1 and house now have a provisional county-GIS display fit, without independent surveyed control.",
+    "caption": "Boundary/subdivision survey by Dean H. Lashway, L.S., P.C. Drawing orientation follows its north arrow. Lot 1 and house have a provisional county-GIS display fit, without independent surveyed control; the wetland flag line, clearing limits and accessory buildings are traced into the aerial constraint layers on the same fit.",
     "annotations": [
       {
         "x": 70.3,

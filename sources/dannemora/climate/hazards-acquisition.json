@@ -1,0 +1,1066 @@
+{
+  "retrievedAt": "2026-10-21T01:00:54+00:00",
+  "site": {
+    "lat": 44.72989,
+    "lon": -73.82818
+  },
+  "samplePoints": [
+    {
+      "id": "house",
+      "lon": -73.82818,
+      "lat": 44.72989
+    },
+    {
+      "id": "ring200m-N",
+      "lon": -73.828145,
+      "lat": 44.731695
+    },
+    {
+      "id": "ring200m-NE",
+      "lon": -73.82637,
+      "lat": 44.731149
+    },
+    {
+      "id": "ring200m-E",
+      "lon": -73.825656,
+      "lat": 44.729869
+    },
+    {
+      "id": "ring200m-SE",
+      "lon": -73.826422,
+      "lat": 44.728604
+    },
+    {
+      "id": "ring200m-S",
+      "lon": -73.828218,
+      "lat": 44.728095
+    },
+    {
+      "id": "ring200m-SW",
+      "lon": -73.829993,
+      "lat": 44.72864
+    },
+    {
+      "id": "ring200m-W",
+      "lon": -73.830707,
+      "lat": 44.729921
+    },
+    {
+      "id": "ring200m-NW",
+      "lon": -73.829941,
+      "lat": 44.731186
+    }
+  ],
+  "limits": "Screening-level public datasets at 30–270 m resolution sampled at a provisional, unsurveyed house point; not a site assessment, code determination or insurance rating.",
+  "records": [
+    {
+      "id": "wrc-burn-probability",
+      "label": "USFS Wildfire Risk to Communities 2024 — annual burn probability (service-scaled integer)",
+      "url": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_BurnProbability/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Fire_Aviation/USFS_EDW_RMRS_WRC_BurnProbability",
+        "pixelType": "U16",
+        "pixelSizeX": 30,
+        "minValues": [
+          0
+        ],
+        "maxValues": [
+          1352
+        ]
+      },
+      "queryUrl": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_BurnProbability/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:19+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "id": "wrc-conditional-flame-length",
+      "label": "WRC conditional flame length (service-scaled integer)",
+      "url": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_ConditionalFlameLength/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Fire_Aviation/USFS_EDW_RMRS_WRC_ConditionalFlameLength",
+        "pixelType": "U16",
+        "pixelSizeX": 30,
+        "minValues": [
+          0
+        ],
+        "maxValues": [
+          475
+        ],
+        "valueNote": "Pixel values in this image service have been altered from the original raster dataset due to data requirements in web services."
+      },
+      "queryUrl": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_ConditionalFlameLength/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:22+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "id": "wrc-flame-length-exceed-4ft",
+      "label": "WRC probability flame length > 4 ft given fire (service-scaled)",
+      "url": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_FlameLengthExceedProb4ft/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Fire_Aviation/USFS_EDW_RMRS_WRC_FlameLengthExceedProb4ft",
+        "pixelType": "U16",
+        "pixelSizeX": 30,
+        "minValues": [
+          0
+        ],
+        "maxValues": [
+          1000
+        ]
+      },
+      "queryUrl": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_FlameLengthExceedProb4ft/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:23+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "id": "wrc-risk-to-potential-structures",
+      "label": "WRC risk to potential structures (service-scaled)",
+      "url": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_RiskToPotentialStructures/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Fire_Aviation/USFS_EDW_RMRS_WRC_RiskToPotentialStructures",
+        "pixelType": "U16",
+        "pixelSizeX": 30,
+        "minValues": [
+          0
+        ],
+        "maxValues": [
+          1301
+        ],
+        "valueNote": "Pixel values in this image service have been altered from the original raster dataset due to data requirements in web services."
+      },
+      "queryUrl": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_RiskToPotentialStructures/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:26+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "id": "wrc-exposure-type",
+      "label": "WRC exposure type (service-scaled)",
+      "url": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_ExposureType/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Fire_Aviation/USFS_EDW_RMRS_WRC_ExposureType",
+        "pixelType": "U16",
+        "pixelSizeX": 30,
+        "minValues": [
+          0
+        ],
+        "maxValues": [
+          1000
+        ],
+        "valueNote": "Pixel values in this image service have been altered from the original raster dataset due to data requirements in web services."
+      },
+      "queryUrl": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WRC_ExposureType/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:26+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "1000"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "1000"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "309"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "1000"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "1000"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "564"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "1000"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "1000"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "1000"
+        }
+      ]
+    },
+    {
+      "id": "whp-2023-classified",
+      "label": "Wildfire Hazard Potential 2023, 5 classes (270 m)",
+      "url": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WildfireHazardPotentialClassified/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Fire_Aviation/USFS_EDW_RMRS_WildfireHazardPotentialClassified",
+        "pixelType": "U8",
+        "pixelSizeX": 270,
+        "minValues": [
+          1
+        ],
+        "maxValues": [
+          7
+        ]
+      },
+      "queryUrl": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WildfireHazardPotentialClassified/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:27+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "3"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "3"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "3"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "3"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "1"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "3"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "id": "whp-2023-continuous",
+      "label": "Wildfire Hazard Potential 2023, continuous index (270 m)",
+      "url": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WildfireHazardPotentialContinuous/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Fire_Aviation/USFS_EDW_RMRS_WildfireHazardPotentialContinuous",
+        "pixelType": "S32",
+        "pixelSizeX": 270,
+        "minValues": [
+          0
+        ],
+        "maxValues": [
+          144153
+        ]
+      },
+      "queryUrl": "https://imagery.geoplatform.gov/iipp/rest/services/Fire_Aviation/USFS_EDW_RMRS_WildfireHazardPotentialContinuous/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:27+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "208"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "208"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "209"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "209"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "27"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "27"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "21"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "208"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "208"
+        }
+      ]
+    },
+    {
+      "id": "landfire-fbfm40",
+      "label": "LANDFIRE 2024 Scott & Burgan 40 fire behaviour fuel model (30 m)",
+      "url": "https://lfps.usgs.gov/arcgis/rest/services/Landfire_LF2024/LF2024_FBFM40_CONUS/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Landfire_LF2024/LF2024_FBFM40_CONUS",
+        "pixelType": "S16",
+        "pixelSizeX": 30,
+        "minValues": [
+          91
+        ],
+        "maxValues": [
+          204
+        ]
+      },
+      "queryUrl": "https://lfps.usgs.gov/arcgis/rest/services/Landfire_LF2024/LF2024_FBFM40_CONUS/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:29+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "186"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "186"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "91"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "186"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "183"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "91"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "162"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "162"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "186"
+        }
+      ]
+    },
+    {
+      "id": "landfire-canopy-cover",
+      "label": "LANDFIRE 2024 forest canopy cover, % (30 m)",
+      "url": "https://lfps.usgs.gov/arcgis/rest/services/Landfire_LF2024/LF2024_CC_CONUS/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Landfire_LF2024/LF2024_CC_CONUS",
+        "pixelType": "S16",
+        "pixelSizeX": 30,
+        "minValues": [
+          0
+        ],
+        "maxValues": [
+          95
+        ]
+      },
+      "queryUrl": "https://lfps.usgs.gov/arcgis/rest/services/Landfire_LF2024/LF2024_CC_CONUS/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:30+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "75"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "75"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "75"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "75"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "75"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "65"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "75"
+        }
+      ]
+    },
+    {
+      "id": "landfire-canopy-height",
+      "label": "LANDFIRE 2024 forest canopy height, m × 10 (30 m)",
+      "url": "https://lfps.usgs.gov/arcgis/rest/services/Landfire_LF2024/LF2024_CH_CONUS/ImageServer",
+      "access": "public HTTPS; no API key or account used",
+      "serviceInfo": {
+        "name": "Landfire_LF2024/LF2024_CH_CONUS",
+        "pixelType": "S16",
+        "pixelSizeX": 30,
+        "minValues": [
+          0
+        ],
+        "maxValues": [
+          510
+        ]
+      },
+      "queryUrl": "https://lfps.usgs.gov/arcgis/rest/services/Landfire_LF2024/LF2024_CH_CONUS/ImageServer/getSamples?geometry=%7B%22points%22%3A+%5B%5B-73.82818%2C+44.72989%5D%2C+%5B-73.828145%2C+44.731695%5D%2C+%5B-73.82637%2C+44.731149%5D%2C+%5B-73.825656%2C+44.729869%5D%2C+%5B-73.826422%2C+44.728604%5D%2C+%5B-73.828218%2C+44.728095%5D%2C+%5B-73.829993%2C+44.72864%5D%2C+%5B-73.830707%2C+44.729921%5D%2C+%5B-73.829941%2C+44.731186%5D%5D%2C+%22spatialReference%22%3A+%7B%22wkid%22%3A+4326%7D%7D&geometryType=esriGeometryMultipoint&returnFirstValueOnly=true&f=json",
+      "retrievedAt": "2026-10-21T00:59:30+00:00",
+      "httpStatus": 200,
+      "samples": [
+        {
+          "point": "house",
+          "lon": -73.82818,
+          "lat": 44.72989,
+          "value": "190"
+        },
+        {
+          "point": "ring200m-N",
+          "lon": -73.828145,
+          "lat": 44.731695,
+          "value": "190"
+        },
+        {
+          "point": "ring200m-NE",
+          "lon": -73.82637,
+          "lat": 44.731149,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-E",
+          "lon": -73.825656,
+          "lat": 44.729869,
+          "value": "190"
+        },
+        {
+          "point": "ring200m-SE",
+          "lon": -73.826422,
+          "lat": 44.728604,
+          "value": "190"
+        },
+        {
+          "point": "ring200m-S",
+          "lon": -73.828218,
+          "lat": 44.728095,
+          "value": "0"
+        },
+        {
+          "point": "ring200m-SW",
+          "lon": -73.829993,
+          "lat": 44.72864,
+          "value": "190"
+        },
+        {
+          "point": "ring200m-W",
+          "lon": -73.830707,
+          "lat": 44.729921,
+          "value": "190"
+        },
+        {
+          "point": "ring200m-NW",
+          "lon": -73.829941,
+          "lat": 44.731186,
+          "value": "190"
+        }
+      ]
+    },
+    {
+      "id": "wrc-clinton-county",
+      "label": "wildfirerisk.org Clinton County summary",
+      "url": "https://api.wildfirerisk.org/wrc/place/36019",
+      "retrievedAt": "2026-10-21T00:59:31+00:00",
+      "access": "public JSON API used by wildfirerisk.org; no key",
+      "httpStatus": 200,
+      "response": {
+        "name": "Clinton County, NY",
+        "name_short": "Clinton County",
+        "geo_level": "county",
+        "breadcrumb": "36/36019",
+        "bounds": [
+          -74.027,
+          44.43,
+          -73.333,
+          45.011
+        ],
+        "expanded_bounds": [
+          -74.058,
+          44.408,
+          -73.303,
+          45.032
+        ],
+        "state": {
+          "name": "New York",
+          "abrv": "NY",
+          "wrc_id": "36",
+          "bounds": [
+            -79.762,
+            40.496,
+            -71.856,
+            45.016
+          ]
+        },
+        "risk_to_homes_class": "low",
+        "wildfire_likelihood_class": "low",
+        "exposure_type_class": "high",
+        "vulnerable_populations_class": "medium",
+        "ranks": {
+          "rps_within_nation": 0.084,
+          "bp_within_nation": 0.087,
+          "rps_within_state": 0.377,
+          "bp_within_state": 0.361
+        }
+      }
+    },
+    {
+      "id": "wrc-clinton-county-exposure",
+      "label": "wildfirerisk.org Clinton County exposure type",
+      "url": "https://api.wildfirerisk.org/wrc/wildfireData/36019/county/exposure_type.json",
+      "retrievedAt": "2026-10-21T00:59:31+00:00",
+      "access": "public JSON API used by wildfirerisk.org; no key",
+      "httpStatus": 200,
+      "response": {
+        "36019": {
+          "d": {
+            "fraction_de": 0.223187074,
+            "fraction_ie": 0.023404334,
+            "fraction_me": 0.008271286,
+            "total_buildings": 48286,
+            "buildings_fraction_me": 0.214409974,
+            "buildings_fraction_ie": 0.167025639,
+            "buildings_fraction_de": 0.618564387
+          }
+        }
+      }
+    },
+    {
+      "id": "wrc-place-dannemora",
+      "label": "wildfirerisk.org Dannemora (village CDP, ~8 km east of site)",
+      "url": "https://api.wildfirerisk.org/wrc/place/3600019642",
+      "retrievedAt": "2026-10-21T00:59:32+00:00",
+      "access": "public JSON API used by wildfirerisk.org; no key",
+      "httpStatus": 200,
+      "response": {
+        "name": "Dannemora, NY",
+        "name_short": "Dannemora",
+        "geo_level": "place",
+        "breadcrumb": "36/36019/3600019642",
+        "bounds": [
+          -73.73,
+          44.71,
+          -73.706,
+          44.73
+        ],
+        "expanded_bounds": [
+          -73.761,
+          44.688,
+          -73.676,
+          44.751
+        ],
+        "state": {
+          "name": "New York",
+          "abrv": "NY",
+          "wrc_id": "36",
+          "bounds": [
+            -79.762,
+            40.496,
+            -71.856,
+            45.016
+          ]
+        },
+        "counties": [
+          {
+            "id": "36019",
+            "name": "Clinton County, NY",
+            "name_short": "Clinton County"
+          }
+        ],
+        "risk_to_homes_class": "low",
+        "wildfire_likelihood_class": "low",
+        "exposure_type_class": "very high",
+        "vulnerable_populations_class": "low",
+        "ranks": {
+          "rps_within_nation": 0.151,
+          "bp_within_nation": 0.149,
+          "rps_within_state": 0.356,
+          "bp_within_state": 0.352,
+          "rps_within_county": 0.765,
+          "bp_within_county": 0.706
+        }
+      }
+    },
+    {
+      "id": "wrc-place-lyon-mountain",
+      "label": "wildfirerisk.org Lyon Mountain (CDP whose bounds reach the site longitude)",
+      "url": "https://api.wildfirerisk.org/wrc/place/3600043951",
+      "retrievedAt": "2026-10-21T00:59:33+00:00",
+      "access": "public JSON API used by wildfirerisk.org; no key",
+      "httpStatus": 200,
+      "response": {
+        "name": "Lyon Mountain, NY",
+        "name_short": "Lyon Mountain",
+        "geo_level": "place",
+        "breadcrumb": "36/36019/3600043951",
+        "bounds": [
+          -73.932,
+          44.703,
+          -73.829,
+          44.753
+        ],
+        "expanded_bounds": [
+          -73.962,
+          44.681,
+          -73.799,
+          44.774
+        ],
+        "state": {
+          "name": "New York",
+          "abrv": "NY",
+          "wrc_id": "36",
+          "bounds": [
+            -79.762,
+            40.496,
+            -71.856,
+            45.016
+          ]
+        },
+        "counties": [
+          {
+            "id": "36019",
+            "name": "Clinton County, NY",
+            "name_short": "Clinton County"
+          }
+        ],
+        "risk_to_homes_class": "low",
+        "wildfire_likelihood_class": "low",
+        "exposure_type_class": "very high",
+        "vulnerable_populations_class": "very high",
+        "ranks": {
+          "rps_within_nation": 0.132,
+          "bp_within_nation": 0.13,
+          "rps_within_state": 0.318,
+          "bp_within_state": 0.318,
+          "rps_within_county": 0.588,
+          "bp_within_county": 0.588
+        }
+      }
+    },
+    {
+      "id": "nys-dos-tb-1009",
+      "label": "NYS DOS Technical Bulletin TB-1009-RCNYS: completing Table R301.2(1), 2020 RCNYS",
+      "url": "https://dos.ny.gov/requirements-completing-table-r30121-2020-residential-code-new-york-state",
+      "retrievedAt": "2026-10-21T00:59:34+00:00",
+      "httpStatus": 200,
+      "contentType": "application/pdf",
+      "file": "raw/nys-dos-tb-1009-rcnys.pdf",
+      "sha256": "2a4dddcd1ca57347a78d5fa34379bca002c5b198af24f73c95f1f50340e65f88",
+      "bytes": 446960
+    },
+    {
+      "id": "atc-hazards-snow-api",
+      "label": "ATC Hazards by Location snow API (unauthenticated probe)",
+      "url": "https://api-hazards.atcouncil.org/public/v1/snow.json?lat=44.72989&lng=-73.82818",
+      "retrievedAt": "2026-10-21T01:00:19+00:00",
+      "httpStatus": null,
+      "contentType": null,
+      "error": "URLError(TimeoutError('timed out'))"
+    },
+    {
+      "id": "ncei-air-freezing-index",
+      "label": "NOAA/NCEI Air Freezing Index return-period table cited by TB-1009 (new host)",
+      "url": "https://www.ncei.noaa.gov/sites/default/files/attachments/Air-Freezing-Index-Return-Periods-and-Associated-Probabilities.pdf",
+      "retrievedAt": "2026-10-21T01:00:20+00:00",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "error": "<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\" prefix=\"content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct:"
+    },
+    {
+      "id": "ncdc-air-freezing-index",
+      "label": "Same table at the URL printed in TB-1009",
+      "url": "https://www.ncdc.noaa.gov/sites/default/files/attachments/Air-Freezing-Index-Return-Periods-and-Associated-Probabilities.pdf",
+      "retrievedAt": "2026-10-21T01:00:51+00:00",
+      "httpStatus": 503,
+      "contentType": "text/html; charset=iso-8859-1",
+      "error": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>503 Service Unavailable</title>\n</head><body>\n<h1>Service Unavailable</h1>\n<p>The server is temporarily unable to service your\nrequest due to maintenance downtime or capacity\nproblems. Please try again later.</p>\n<p>Additionally,"
+    },
+    {
+      "id": "asce7-hazard-tool",
+      "label": "ASCE 7 Hazard Tool (ground snow load, wind speed)",
+      "url": "https://ascehazardtool.org/",
+      "status": "not queried",
+      "error": "Requires a registered ASCE account; this project does not create accounts. Recorded as a gap."
+    },
+    {
+      "id": "horizon-dem-3dep",
+      "label": "USGS 3DEP dynamic elevation, 100 m export, 60 × 60 km around the site (horizon study only)",
+      "url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage?bbox=562800%2C4923600%2C622800%2C4983600&bboxSR=26918&imageSR=26918&size=600%2C600&format=tiff&pixelType=F32&interpolation=RSP_BilinearInterpolation&f=image",
+      "retrievedAt": "2026-10-21T01:00:54+00:00",
+      "httpStatus": 200,
+      "contentType": "image/tiff",
+      "bboxUtm18n": [
+        562800.0,
+        4923600.0,
+        622800.0,
+        4983600.0
+      ],
+      "crs": "EPSG:26918",
+      "verticalDatum": "NAVD88 metres (3DEP)",
+      "file": "horizon-dem-3dep-100m.tif",
+      "sha256": "4b2195e7a5f1451cbae68834072e754dedcbeac39477bd2898b1c1946d941615",
+      "bytes": 973950,
+      "minM": 26.4,
+      "maxM": 1166.9
+    }
+  ]
+}

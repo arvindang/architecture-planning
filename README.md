@@ -55,3 +55,9 @@ Site feasibility has separate Overview, Permitted layout, Aerial imagery, Terrai
 The terrain tab displays a native 1 m historical USGS DEM, slope / elevation / hillshade maps, a rotatable local 3D surface, reference profiles, and downloadable 2 m contours. It runs without accounts, external scripts or API keys. Context layers and two candidate weather files are archived. See [Terrain acquisition and next steps](ops/terrain.md) for provenance, regeneration, reuse from mapping-race-courses, and unresolved accuracy / boundary issues.
 
 The current candidate summary lives in `ops/site-findings.json`. Update that record and run `python3 scripts/prepare-site-findings.py` to regenerate `site-findings-data.js` and `ops/site-findings.md`. Overview and Findings use the same record; cite its stable SF finding IDs when recording later design decisions. Acquisition detail remains in `ops/terrain.md`; earlier research history remains in `ops/site-shortlist.md`.
+
+## Practice permit and site climate
+
+We design under **practice permit PP-01** (`ops/practice-permit.json`), a fictional alternative to the real APA permit for a family of four on the same Lot 1. It is shown, marked Practice, in the Permitted layout tab. Wetlands, clearing, septic, well, practice setbacks and the buildable region are drawn on the aerials, terrain map and 3D views.
+
+**Climate & sun** shows wind roses, the sun path with the terrain horizon, cold/snow, sun on walls and roofs, outdoor comfort, wildfire and code design values, and findings CF-001–CF-012 (`ops/climate-findings.md`). **3D sun & shade** is a Three.js model of Lot 1 with LiDAR trees: move the sun by date and time, place an illustrative massing and clear trees to see winter sun on the roof. Data scripts run in the repo `.venv` (`requirements.txt`); see CLAUDE.md for commands and `ops/climate.md` / `ops/canopy.md` for methods and limits.

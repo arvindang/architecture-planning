@@ -70,7 +70,22 @@ Remaining: select and register the exact site, implement supported envelope / pl
 - [x] Archive environmental context, partial FEMA results and two candidate weather files.
 - [x] Publish a sourced findings register and stage handoff from one structured record.
 - [ ] Register Lot 1 to the maps with supported control and measured residuals.
-- [ ] Acquire the classified point-cloud clip and audit ground coverage / gaps.
+- [x] Acquire the classified point-cloud clip and audit ground coverage / gaps (`ops/canopy.md`).
 - [ ] Verify current conditions, recorded instruments and installed services.
-- [ ] Resolve documented 560 sq ft benchmark versus the larger provisional house brief.
-- [ ] Select weather inputs and run solar / climate analysis; recover missing flood geometry and soil / geology screening.
+- [x] Resolve documented 560 sq ft benchmark versus the larger provisional house brief: practice permit PP-01 (D-011).
+- [x] Select weather inputs and run solar / climate analysis (`ops/climate-findings.md`).
+- [ ] Recover missing flood geometry and soil / geology screening.
+
+## Practice permit and site climate — in progress
+
+- [x] Record practice permit PP-01 and show it in the Permitted layout tab.
+- [x] Demarcate survey wetland, clearing, septic, well, mapped wetlands, practice setbacks and buildable region on aerials, terrain and 3D views.
+- [x] Climate, sun, wind, comfort and wildfire screening with Ladybug; findings CF-001–CF-012.
+- [x] LiDAR canopy heights and tree crowns around Lot 1.
+- [ ] Decide the practice well location: its 100 ft radius cuts the buildable region from 10,411 to 6,446 sq ft (0.15 ac).
+- [ ] Decide flag-line vs whole-polygon wetland setback.
+- [ ] Verify PP-01 septic sizing and separations against current 10 NYCRR Appendix 75-A.
+- [ ] Evaluate house positions inside the buildable region against winter sun, clearing (0.75 ac cap, real clearing already 0.29 ac) and wind.
+- [ ] Request the Town of Dannemora's Table R301.2(1): snow load, wind speed, frost depth, ice barrier, code edition.
+- [ ] Log on-site wind and temperature for one winter; check seasonal high water during April snowmelt.
+- [ ] Add a leaf-on canopy check; replace the roof heuristic with building footprints; rerun canopy statistics after Lot 1 is surveyed.

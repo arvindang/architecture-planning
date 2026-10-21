@@ -1,0 +1,1326 @@
+{
+  "ept": {
+    "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept.json",
+    "metadataSource": "sources/dannemora/lidar/ept.json",
+    "matchesArchivedCopy": true,
+    "archivedCopy": "sources/dannemora/terrain/usgs-ept.json",
+    "srs": "3857",
+    "version": "1.1.0",
+    "schemaZ": {
+      "name": "Z",
+      "offset": 666,
+      "scale": 0.001,
+      "size": 4,
+      "type": "signed"
+    }
+  },
+  "retrieved": "2026-10-21T00:52:02+00:00",
+  "retrievedNote": "Latest download time among cached node files (file mtime); generated is the time this manifest was written.",
+  "generated": "2026-10-21T00:55:34+00:00",
+  "aoi": {
+    "EPSG:26918": [
+      592534.0,
+      4953342.0,
+      593068.0,
+      4953902.0
+    ],
+    "EPSG:3857": [
+      -8218883.134,
+      5578707.915,
+      -8218117.25,
+      5579512.531
+    ],
+    "definition": "Provisional Lot 1 bbox + 200 m, snapped to the 2 m lattice aligned with DEM pixel edges, clipped to DEM extent."
+  },
+  "selection": "Every EPT node at every depth whose XY box intersects the AOI (EPSG:3857 +2 m); full density, depths 0-11.",
+  "hierarchyFiles": [
+    "sources/dannemora/lidar/ept-hierarchy/0-0-0-0.json",
+    "sources/dannemora/lidar/ept-hierarchy/8-136-195-127.json",
+    "sources/dannemora/lidar/ept-hierarchy/8-136-196-127.json",
+    "sources/dannemora/lidar/ept-hierarchy/8-137-195-127.json",
+    "sources/dannemora/lidar/ept-hierarchy/8-137-196-127.json"
+  ],
+  "nodeCount": 130,
+  "totalBytes": 70041925,
+  "pointsInNodes": 9396483,
+  "pointsDecoded": 9396483,
+  "pointsInAoi": 5625406,
+  "classCounts": {
+    "1": 1084440,
+    "2": 456868,
+    "7": 8,
+    "9": 20155,
+    "10": 284,
+    "17": 2960651,
+    "18": 1102204,
+    "25": 796
+  },
+  "classAudit": {
+    "1": {
+      "points": 1084440,
+      "hagMedianM": 9.41,
+      "hagP95M": 18.54,
+      "singleReturnPct": 6.41
+    },
+    "2": {
+      "points": 456868,
+      "hagMedianM": -0.0,
+      "hagP95M": 0.06,
+      "singleReturnPct": 28.94
+    },
+    "7": {
+      "points": 8,
+      "hagMedianM": -7.11,
+      "hagP95M": 13.31,
+      "singleReturnPct": 12.5
+    },
+    "9": {
+      "points": 20155,
+      "hagMedianM": 0.26,
+      "hagP95M": 0.3,
+      "singleReturnPct": 100.0
+    },
+    "10": {
+      "points": 284,
+      "hagMedianM": 0.12,
+      "hagP95M": 0.21,
+      "singleReturnPct": 100.0
+    },
+    "17": {
+      "points": 2960651,
+      "hagMedianM": 9.01,
+      "hagP95M": 18.41,
+      "singleReturnPct": 5.95
+    },
+    "18": {
+      "points": 1102204,
+      "hagMedianM": 0.01,
+      "hagP95M": 0.12,
+      "singleReturnPct": 24.5
+    },
+    "25": {
+      "points": 796,
+      "hagMedianM": 0.24,
+      "hagP95M": 0.34,
+      "singleReturnPct": 100.0
+    }
+  },
+  "classNote": "Classes 17/18/25 behave as side-overlap copies of 1/2/9 (base + 16): class 17 heights above the DEM match class 1, class 18 matches class 2 within centimetres, 25 matches water. The project report and FGDC metadata label 17 bridge decks and 18 high noise and say overlap classes were used to trip the withheld bit; the EPT carries no withheld/overlap flag. Interpreted empirically; the script fails if that behaviour changes.",
+  "classNames": {
+    "1": "unclassified (vegetation, structures, other)",
+    "2": "ground",
+    "7": "low noise",
+    "9": "water",
+    "10": "ignored ground (breakline proximity)",
+    "17": "overlap unclassified (report label: bridge decks)",
+    "18": "overlap ground (report label: high noise)",
+    "25": "overlap water"
+  },
+  "horizontal": {
+    "method": "EPT XY (EPSG:3857, WGS84 Pseudo-Mercator) -> EPSG:26918 with PROJ default pipeline (pyproj 3.8.0); WGS84 and NAD83 treated as coincident (ballpark), matching how the EPT was built from NAD83 UTM source tiles",
+    "sourceGridResidualCm": {
+      "median": 0.0178,
+      "p95": 0.0338,
+      "note": "Distance of reprojected X from the 0.01 m grid of the original LAS tiles, in cm units. Uniform noise would give a median near 0.25; values near 0 indicate exact inversion of the EPT build reprojection."
+    }
+  },
+  "vertical": {
+    "eptZ": "EPT schema Z: int32, scale 0.001, offset 666; srs block declares horizontal EPSG:3857 only (no vertical code).",
+    "class2": {
+      "points": 456868,
+      "medianOffsetM": -0.001,
+      "madM": 0.017,
+      "p05M": -0.054,
+      "p95M": 0.057,
+      "rmseM": 0.035,
+      "pctWithin15cm": 99.77
+    },
+    "class18OverlapGround": {
+      "points": 1102204,
+      "medianOffsetM": 0.006,
+      "madM": 0.039,
+      "p05M": -0.094,
+      "p95M": 0.122,
+      "rmseM": 0.065,
+      "pctWithin15cm": 97.07
+    },
+    "medianOffsetM": -0.001,
+    "madM": 0.017,
+    "correctionAppliedM": 0.0,
+    "interpretation": "EPT Z matches the NAVD88 (Geoid12A) DEM to within centimetres: heights are the source orthometric metres passed through unchanged, not ellipsoidal (NY geoid undulation is about -32 m). No correction applied.",
+    "caveat": "The DEM was interpolated from these same ground returns, so agreement checks datum/consistency only, not absolute accuracy."
+  },
+  "gitignore": "sources/dannemora/lidar/ept-data/*.laz is ignored; re-download with scripts/prepare-site-3d.py and verify sha256 below.",
+  "nodes": [
+    {
+      "key": "0-0-0-0",
+      "depth": 0,
+      "points": 36304,
+      "bytes": 536828,
+      "sha256": "cc2f186c876119e104ec10f49941ad02508c3e25ba06c07a80d43c387b14f45e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/0-0-0-0.laz",
+      "file": "sources/dannemora/lidar/ept-data/0-0-0-0.laz"
+    },
+    {
+      "key": "1-1-1-0",
+      "depth": 1,
+      "points": 43923,
+      "bytes": 597043,
+      "sha256": "7029d6acee31ea63f47d525fb9cc6f2f671be4c10218e0a64a219a44d90a637b",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/1-1-1-0.laz",
+      "file": "sources/dannemora/lidar/ept-data/1-1-1-0.laz"
+    },
+    {
+      "key": "1-1-1-1",
+      "depth": 1,
+      "points": 3736,
+      "bytes": 57926,
+      "sha256": "d97d59d648f1ac2c877def6cb013703542c300de2d2a79c82d2f743b1c600d99",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/1-1-1-1.laz",
+      "file": "sources/dannemora/lidar/ept-data/1-1-1-1.laz"
+    },
+    {
+      "key": "2-2-3-1",
+      "depth": 2,
+      "points": 75608,
+      "bytes": 979821,
+      "sha256": "1d625eac57e60db6d94d197f23b6e25d5aafea383bb7b4cdf1102fd0ed9b6da5",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/2-2-3-1.laz",
+      "file": "sources/dannemora/lidar/ept-data/2-2-3-1.laz"
+    },
+    {
+      "key": "2-2-3-2",
+      "depth": 2,
+      "points": 2153,
+      "bytes": 33174,
+      "sha256": "6f9c131a22049b03e15decad6d2dbcb829b1f2ed301877c3a8d78e9073f6b1b2",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/2-2-3-2.laz",
+      "file": "sources/dannemora/lidar/ept-data/2-2-3-2.laz"
+    },
+    {
+      "key": "3-4-6-3",
+      "depth": 3,
+      "points": 76651,
+      "bytes": 974021,
+      "sha256": "fa75fbef6e25cc40e6554113efc73f46aa63079470b3b404d6c05351f709ea6e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/3-4-6-3.laz",
+      "file": "sources/dannemora/lidar/ept-data/3-4-6-3.laz"
+    },
+    {
+      "key": "3-4-6-4",
+      "depth": 3,
+      "points": 8518,
+      "bytes": 115842,
+      "sha256": "716430b12c9e0bf2c8057e02f8389e95d4c53e4b834509760a7049889de9c516",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/3-4-6-4.laz",
+      "file": "sources/dannemora/lidar/ept-data/3-4-6-4.laz"
+    },
+    {
+      "key": "4-8-12-7",
+      "depth": 4,
+      "points": 74674,
+      "bytes": 932802,
+      "sha256": "9cfdbb31991a29fe9ab725c963b2ab52fa4e4263cedd5b4069b965418d428a5d",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/4-8-12-7.laz",
+      "file": "sources/dannemora/lidar/ept-data/4-8-12-7.laz"
+    },
+    {
+      "key": "4-8-12-8",
+      "depth": 4,
+      "points": 21387,
+      "bytes": 275755,
+      "sha256": "1b7ecffb5d23b26a12cb18c3e92772d4184093f99497aceed23b6f6bb8f38a5e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/4-8-12-8.laz",
+      "file": "sources/dannemora/lidar/ept-data/4-8-12-8.laz"
+    },
+    {
+      "key": "5-17-24-15",
+      "depth": 5,
+      "points": 91004,
+      "bytes": 1072640,
+      "sha256": "9b24a2cd5909389b75e5940e880cef73d45fa4546a54cad88e8d451d445668d3",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/5-17-24-15.laz",
+      "file": "sources/dannemora/lidar/ept-data/5-17-24-15.laz"
+    },
+    {
+      "key": "5-17-24-16",
+      "depth": 5,
+      "points": 24636,
+      "bytes": 301367,
+      "sha256": "a3dc759da77b22b1d7ca2a1b110723e0e7ac9f645a6654a0e69aa1323b10821c",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/5-17-24-16.laz",
+      "file": "sources/dannemora/lidar/ept-data/5-17-24-16.laz"
+    },
+    {
+      "key": "6-34-48-31",
+      "depth": 6,
+      "points": 162179,
+      "bytes": 1726249,
+      "sha256": "a27dc27794d6a20adf6adc8dc5796d79b57e84e571fa8aa596b2cb89830e5fe1",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/6-34-48-31.laz",
+      "file": "sources/dannemora/lidar/ept-data/6-34-48-31.laz"
+    },
+    {
+      "key": "6-34-49-31",
+      "depth": 6,
+      "points": 108254,
+      "bytes": 1120681,
+      "sha256": "c71aa10e05f3190e928cc16d603623b71fbe021578cfd07ab54282be6775d7ef",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/6-34-49-31.laz",
+      "file": "sources/dannemora/lidar/ept-data/6-34-49-31.laz"
+    },
+    {
+      "key": "7-68-97-63",
+      "depth": 7,
+      "points": 209481,
+      "bytes": 1883193,
+      "sha256": "c4a2bfc34c00bde9425b054bc4504c59cbc7304d3410bb97e0e7de7591df5cd8",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/7-68-97-63.laz",
+      "file": "sources/dannemora/lidar/ept-data/7-68-97-63.laz"
+    },
+    {
+      "key": "7-68-98-63",
+      "depth": 7,
+      "points": 121197,
+      "bytes": 1091807,
+      "sha256": "9d5a8001a9374de18ef52fe26d8128414226ad4824a7e58b8be9bdfb2f6c8856",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/7-68-98-63.laz",
+      "file": "sources/dannemora/lidar/ept-data/7-68-98-63.laz"
+    },
+    {
+      "key": "8-136-195-127",
+      "depth": 8,
+      "points": 356817,
+      "bytes": 2774652,
+      "sha256": "e6707ff8bee82ae01383d0a2aadfccdafdce32998cb4a47a2873cdfe968e9e94",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/8-136-195-127.laz",
+      "file": "sources/dannemora/lidar/ept-data/8-136-195-127.laz"
+    },
+    {
+      "key": "8-136-196-127",
+      "depth": 8,
+      "points": 321101,
+      "bytes": 2557935,
+      "sha256": "4d9acf678ea1803abbd3674b5804218ec0a79fb7d4f52b2f96df6b45986d9067",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/8-136-196-127.laz",
+      "file": "sources/dannemora/lidar/ept-data/8-136-196-127.laz"
+    },
+    {
+      "key": "8-137-195-127",
+      "depth": 8,
+      "points": 143058,
+      "bytes": 1086429,
+      "sha256": "e4bf817b3b8c2a1093eafcfd500b94acb8b326095e8afe9109efcd99898790ee",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/8-137-195-127.laz",
+      "file": "sources/dannemora/lidar/ept-data/8-137-195-127.laz"
+    },
+    {
+      "key": "8-137-196-127",
+      "depth": 8,
+      "points": 89324,
+      "bytes": 653353,
+      "sha256": "8b0de7d1c1bfbffab0a7101e458109768b9dec9387f65642ebcfc92f49d51f7b",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/8-137-196-127.laz",
+      "file": "sources/dannemora/lidar/ept-data/8-137-196-127.laz"
+    },
+    {
+      "key": "9-272-391-255",
+      "depth": 9,
+      "points": 340412,
+      "bytes": 2457159,
+      "sha256": "352ae934da0ee080c3616e6a0eece1c8bc78d5548fcbd1e1bab0a88510d463ee",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/9-272-391-255.laz",
+      "file": "sources/dannemora/lidar/ept-data/9-272-391-255.laz"
+    },
+    {
+      "key": "9-272-392-255",
+      "depth": 9,
+      "points": 392354,
+      "bytes": 2855814,
+      "sha256": "3b3cc08e37ae827023e600739612f6d90d7c2a341da34e9928520530d3f8c936",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/9-272-392-255.laz",
+      "file": "sources/dannemora/lidar/ept-data/9-272-392-255.laz"
+    },
+    {
+      "key": "9-272-393-255",
+      "depth": 9,
+      "points": 389517,
+      "bytes": 2872523,
+      "sha256": "2a7712eef0f9e577a0ee69832e026c38260a7b0ffab85537e537f4fb175542e5",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/9-272-393-255.laz",
+      "file": "sources/dannemora/lidar/ept-data/9-272-393-255.laz"
+    },
+    {
+      "key": "9-273-391-255",
+      "depth": 9,
+      "points": 353104,
+      "bytes": 2510790,
+      "sha256": "8c369861a6927b24e2f5e91529e36b95d1150e772d67160f35ea192fa618a7bd",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/9-273-391-255.laz",
+      "file": "sources/dannemora/lidar/ept-data/9-273-391-255.laz"
+    },
+    {
+      "key": "9-273-392-255",
+      "depth": 9,
+      "points": 328100,
+      "bytes": 2371732,
+      "sha256": "c79a6ca02c64ac793904b9c324fcc3de61e9fc01e2029c7007f5947b4d1401d8",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/9-273-392-255.laz",
+      "file": "sources/dannemora/lidar/ept-data/9-273-392-255.laz"
+    },
+    {
+      "key": "9-273-393-255",
+      "depth": 9,
+      "points": 171518,
+      "bytes": 1225591,
+      "sha256": "8f665b80f6996df0578bab9742e8a33a94cc49369c2262819b44395e6b68ca2a",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/9-273-393-255.laz",
+      "file": "sources/dannemora/lidar/ept-data/9-273-393-255.laz"
+    },
+    {
+      "key": "9-274-391-255",
+      "depth": 9,
+      "points": 159097,
+      "bytes": 1145688,
+      "sha256": "63b84ed7fba456feb6e0065a5bee5349024777a947e0974aa63b2b1fb1a739cd",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/9-274-391-255.laz",
+      "file": "sources/dannemora/lidar/ept-data/9-274-391-255.laz"
+    },
+    {
+      "key": "9-274-392-255",
+      "depth": 9,
+      "points": 131994,
+      "bytes": 944311,
+      "sha256": "ff40a5b460647e7c85768c38e214c205b738fd67deb0f7af0ba4499ef8cd75f0",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/9-274-392-255.laz",
+      "file": "sources/dannemora/lidar/ept-data/9-274-392-255.laz"
+    },
+    {
+      "key": "9-274-393-255",
+      "depth": 9,
+      "points": 68191,
+      "bytes": 415119,
+      "sha256": "c68e2d035a63df55958ef6d13b7e06a6139014c104481da35f047c11cbebb177",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/9-274-393-255.laz",
+      "file": "sources/dannemora/lidar/ept-data/9-274-393-255.laz"
+    },
+    {
+      "key": "10-544-782-511",
+      "depth": 10,
+      "points": 137464,
+      "bytes": 948602,
+      "sha256": "5d4b7d8495015d15df1e326ba93e54b7ebbee215da626a49fca4e38ef1902a28",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-544-782-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-544-782-511.laz"
+    },
+    {
+      "key": "10-544-783-511",
+      "depth": 10,
+      "points": 159065,
+      "bytes": 1118887,
+      "sha256": "f60247808d7f8d3467c788b2f4d7e5e71e55709f7e040167421bc80d1630d531",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-544-783-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-544-783-511.laz"
+    },
+    {
+      "key": "10-544-784-511",
+      "depth": 10,
+      "points": 153286,
+      "bytes": 1071062,
+      "sha256": "432e5ae8cd8c68844bc9243f964821156465dbd90c4d141783f3a407ab911a4e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-544-784-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-544-784-511.laz"
+    },
+    {
+      "key": "10-544-785-511",
+      "depth": 10,
+      "points": 157467,
+      "bytes": 1110515,
+      "sha256": "e8d39e4962bef2ee6862d044ba68e8c5926595070859b1bf115172f6626dd168",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-544-785-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-544-785-511.laz"
+    },
+    {
+      "key": "10-544-786-511",
+      "depth": 10,
+      "points": 160368,
+      "bytes": 1148052,
+      "sha256": "23e67a845dac98f0eb607a14c786ababb78e61ed079a064e9784d0a1cec343d6",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-544-786-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-544-786-511.laz"
+    },
+    {
+      "key": "10-545-782-511",
+      "depth": 10,
+      "points": 127916,
+      "bytes": 882564,
+      "sha256": "9c378100ab05cb4594bfb90d093b77488a59be7c981fb6c77f7113b215ae82f5",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-545-782-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-545-782-511.laz"
+    },
+    {
+      "key": "10-545-783-511",
+      "depth": 10,
+      "points": 176820,
+      "bytes": 1242200,
+      "sha256": "030dc0326b1de3b1e961f3d9deb2ba98a4e0c906c34b06f80194f813d9801dbf",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-545-783-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-545-783-511.laz"
+    },
+    {
+      "key": "10-545-784-511",
+      "depth": 10,
+      "points": 186707,
+      "bytes": 1321663,
+      "sha256": "13d90b5ca2bd40f7cd112d6fcfe3718aa7a682de6712ed983cf1611cbb4a24ad",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-545-784-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-545-784-511.laz"
+    },
+    {
+      "key": "10-545-785-511",
+      "depth": 10,
+      "points": 174745,
+      "bytes": 1253536,
+      "sha256": "6b403f63fd0204dffcf8c3a5ff6eb224ca3a89aa8fc178431e2afba98f876658",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-545-785-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-545-785-511.laz"
+    },
+    {
+      "key": "10-545-786-510",
+      "depth": 10,
+      "points": 7675,
+      "bytes": 42835,
+      "sha256": "7ae1974d864094bc073862d3391b6ec45d8311ded30572e2af7b11a07d9fb01c",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-545-786-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-545-786-510.laz"
+    },
+    {
+      "key": "10-545-786-511",
+      "depth": 10,
+      "points": 190996,
+      "bytes": 1385405,
+      "sha256": "8e465e8c4cd9fd7cb86072db53a901fec0a352c17cc4c052e247c710c12fadb0",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-545-786-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-545-786-511.laz"
+    },
+    {
+      "key": "10-546-782-511",
+      "depth": 10,
+      "points": 128463,
+      "bytes": 859415,
+      "sha256": "41432d8a17f492a6aeb0b5a1685d184f80701d7ca5a580100d2bb0b5bfbbad3a",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-546-782-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-546-782-511.laz"
+    },
+    {
+      "key": "10-546-783-511",
+      "depth": 10,
+      "points": 138877,
+      "bytes": 948738,
+      "sha256": "0e5044513bc0f9512dbc765a6e278e4b658f485df56c3cf833ad1a1498c03914",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-546-783-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-546-783-511.laz"
+    },
+    {
+      "key": "10-546-784-511",
+      "depth": 10,
+      "points": 112342,
+      "bytes": 772076,
+      "sha256": "245fe3a02d72f5cb95ec8650f1e60e00de8fb7e572a6c873b52790ab52a136b4",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-546-784-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-546-784-511.laz"
+    },
+    {
+      "key": "10-546-785-510",
+      "depth": 10,
+      "points": 10141,
+      "bytes": 66742,
+      "sha256": "3fefd8ac1b72ed647ec3b94a6ab964c2479d3d3b5f51096724cff08009bd731d",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-546-785-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-546-785-510.laz"
+    },
+    {
+      "key": "10-546-785-511",
+      "depth": 10,
+      "points": 108502,
+      "bytes": 766462,
+      "sha256": "9c4681fd2784ab884693c610fbdf848fb329b5998f582a7db25db318652c00c7",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-546-785-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-546-785-511.laz"
+    },
+    {
+      "key": "10-546-786-510",
+      "depth": 10,
+      "points": 44947,
+      "bytes": 262366,
+      "sha256": "cb04cd343b66a8e4df2a22f8778b4392dca2a77ddbfa30ece64c70064bdbb504",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-546-786-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-546-786-510.laz"
+    },
+    {
+      "key": "10-546-786-511",
+      "depth": 10,
+      "points": 77812,
+      "bytes": 544273,
+      "sha256": "7b3ec5a32923fad3e68223f53a9286225e1733012fc2d199cb948c274d93a91e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-546-786-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-546-786-511.laz"
+    },
+    {
+      "key": "10-547-782-510",
+      "depth": 10,
+      "points": 898,
+      "bytes": 7936,
+      "sha256": "5c3a78211c6f90a5f9c3fac8d3e129242c563dc556b008f6db4b9796c9bfc796",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-782-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-782-510.laz"
+    },
+    {
+      "key": "10-547-782-511",
+      "depth": 10,
+      "points": 133528,
+      "bytes": 941039,
+      "sha256": "6c68daf5cecd6f01648add5793143ca2214c1f86854fa358575374877c1aebfa",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-782-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-782-511.laz"
+    },
+    {
+      "key": "10-547-783-510",
+      "depth": 10,
+      "points": 17324,
+      "bytes": 100234,
+      "sha256": "6985bd378a0617562fbab40a4353cda438807e5129fc8567001618d354dc080c",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-783-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-783-510.laz"
+    },
+    {
+      "key": "10-547-783-511",
+      "depth": 10,
+      "points": 91628,
+      "bytes": 638505,
+      "sha256": "81bbc9978d481155e6173d8981fb4c6747ec8a6dac7ad78d5a4d45f8cfdf992a",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-783-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-783-511.laz"
+    },
+    {
+      "key": "10-547-784-510",
+      "depth": 10,
+      "points": 27946,
+      "bytes": 161164,
+      "sha256": "606a81f7d527d534d533afa7afae6efaf465b615e7dc9894b3bcc84276a540e6",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-784-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-784-510.laz"
+    },
+    {
+      "key": "10-547-784-511",
+      "depth": 10,
+      "points": 101941,
+      "bytes": 709048,
+      "sha256": "fad7f56ee0e45092da78785d53671082c305f4073f739ab46a41ab31e946958d",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-784-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-784-511.laz"
+    },
+    {
+      "key": "10-547-785-510",
+      "depth": 10,
+      "points": 63336,
+      "bytes": 369289,
+      "sha256": "adc70d9f2686e19f0fd85a00c4bb5a5e60e740ab46297799dc9ec7be476504f5",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-785-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-785-510.laz"
+    },
+    {
+      "key": "10-547-785-511",
+      "depth": 10,
+      "points": 81960,
+      "bytes": 572432,
+      "sha256": "50ac028897bc082d88db0bfe478eddabbe65c1535a1357a8afa4ca20227fd2fb",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-785-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-785-511.laz"
+    },
+    {
+      "key": "10-547-786-510",
+      "depth": 10,
+      "points": 58844,
+      "bytes": 343372,
+      "sha256": "e592ba20dbcf129b1130ce3703d8182906f66db8c04725c978258ef8f9d74529",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-786-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-786-510.laz"
+    },
+    {
+      "key": "10-547-786-511",
+      "depth": 10,
+      "points": 38349,
+      "bytes": 263865,
+      "sha256": "4eba6efec837f54eade7ec823f8163c9767b07d85ed3902e37d186387f8dd6b1",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-547-786-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-547-786-511.laz"
+    },
+    {
+      "key": "10-548-782-510",
+      "depth": 10,
+      "points": 37335,
+      "bytes": 246403,
+      "sha256": "89615f7f50fb0dd18383720f2efbc231458c79e4e7ca7ef5bd59f36a7a7a9ec0",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-782-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-782-510.laz"
+    },
+    {
+      "key": "10-548-782-511",
+      "depth": 10,
+      "points": 58385,
+      "bytes": 423735,
+      "sha256": "49ff73ca3b7bee005efb54064d1bf8aedb0292378dd546119f62cd1d6b4daa65",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-782-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-782-511.laz"
+    },
+    {
+      "key": "10-548-783-510",
+      "depth": 10,
+      "points": 37071,
+      "bytes": 242430,
+      "sha256": "9781c48d9f88b6bbb2ac71c2a38c3488e71facb1392aa0da2d3e48968f5fac50",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-783-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-783-510.laz"
+    },
+    {
+      "key": "10-548-783-511",
+      "depth": 10,
+      "points": 60473,
+      "bytes": 440407,
+      "sha256": "7d026fef8d6673e199acf182da1b7cf18f389efcae518efacabf7cfba50de169",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-783-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-783-511.laz"
+    },
+    {
+      "key": "10-548-784-510",
+      "depth": 10,
+      "points": 40001,
+      "bytes": 257951,
+      "sha256": "d34b62f5b56870aec0aca06e14c1e456aee7b2f087b05a9502464adbfad3ba25",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-784-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-784-510.laz"
+    },
+    {
+      "key": "10-548-784-511",
+      "depth": 10,
+      "points": 60187,
+      "bytes": 431942,
+      "sha256": "df55537985fdbccf7459ba56f0970ff4f649f17a38c1596620675910c4b3a544",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-784-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-784-511.laz"
+    },
+    {
+      "key": "10-548-785-510",
+      "depth": 10,
+      "points": 41212,
+      "bytes": 271069,
+      "sha256": "e00d220392fd18f401fc8078a5d474fa29d3ad8a48083434b018f662efea8f22",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-785-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-785-510.laz"
+    },
+    {
+      "key": "10-548-785-511",
+      "depth": 10,
+      "points": 28624,
+      "bytes": 205570,
+      "sha256": "d8a48bf63c439bf157c2af09d5cd4a712b542c5a88f3be9fc8d92c13ba0373e3",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-785-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-785-511.laz"
+    },
+    {
+      "key": "10-548-786-510",
+      "depth": 10,
+      "points": 27582,
+      "bytes": 177662,
+      "sha256": "2f817de37da58cc5fe8c5eaabc002214a68949e7bacfc623988a73b242ed0186",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-786-510.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-786-510.laz"
+    },
+    {
+      "key": "10-548-786-511",
+      "depth": 10,
+      "points": 28917,
+      "bytes": 176169,
+      "sha256": "19ffeaea9dfd198ae83cd4f5f1989724ae262ce43caa7436341f588bcf8e074e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/10-548-786-511.laz",
+      "file": "sources/dannemora/lidar/ept-data/10-548-786-511.laz"
+    },
+    {
+      "key": "11-1089-1565-1022",
+      "depth": 11,
+      "points": 37501,
+      "bytes": 223399,
+      "sha256": "4dfc3c467a4b8ecce3beb78f2de4143f69dbe69e7bf2185c3041672a9551558e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1089-1565-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1089-1565-1022.laz"
+    },
+    {
+      "key": "11-1089-1566-1022",
+      "depth": 11,
+      "points": 49204,
+      "bytes": 317988,
+      "sha256": "6774c89952807a864a5eecfb4c322bea5f8ffd93e657f22c3b1b7ce57269cbca",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1089-1566-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1089-1566-1022.laz"
+    },
+    {
+      "key": "11-1089-1567-1022",
+      "depth": 11,
+      "points": 49363,
+      "bytes": 316147,
+      "sha256": "da98d33a528c49a0e6bddea0900f159eb668aa8f5e8d6ff0ea44ad3fc1da0a3c",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1089-1567-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1089-1567-1022.laz"
+    },
+    {
+      "key": "11-1089-1568-1022",
+      "depth": 11,
+      "points": 39098,
+      "bytes": 244643,
+      "sha256": "5961e4709080dd06cbd4fa62484904886db831cfcd1421b8bee148873f32aa3e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1089-1568-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1089-1568-1022.laz"
+    },
+    {
+      "key": "11-1089-1569-1022",
+      "depth": 11,
+      "points": 42947,
+      "bytes": 274131,
+      "sha256": "98f861e5da43eafecb75dfcc61004bae9b8d6aa8d04c95a9d995101bba801603",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1089-1569-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1089-1569-1022.laz"
+    },
+    {
+      "key": "11-1089-1570-1022",
+      "depth": 11,
+      "points": 44745,
+      "bytes": 283364,
+      "sha256": "6f1ab1b93509267095d607ec7a31b9d4fd9a9010e52b1095b1825bfd0066354e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1089-1570-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1089-1570-1022.laz"
+    },
+    {
+      "key": "11-1089-1571-1022",
+      "depth": 11,
+      "points": 48458,
+      "bytes": 322035,
+      "sha256": "f4808643762f352e606e4bfcd90d525d495f44186a1ffa8bb171f2c22d1ccf1c",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1089-1571-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1089-1571-1022.laz"
+    },
+    {
+      "key": "11-1089-1572-1022",
+      "depth": 11,
+      "points": 40125,
+      "bytes": 263964,
+      "sha256": "152fb16b0f2a09309d32960d963f579c662bbe179f60e5abea733e1aa1cccf2c",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1089-1572-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1089-1572-1022.laz"
+    },
+    {
+      "key": "11-1089-1573-1022",
+      "depth": 11,
+      "points": 35449,
+      "bytes": 233482,
+      "sha256": "b457949b83365ca2f90f61ec50e293c6c89250efa76dc3f8fd81282d8400e42a",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1089-1573-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1089-1573-1022.laz"
+    },
+    {
+      "key": "11-1090-1565-1022",
+      "depth": 11,
+      "points": 33687,
+      "bytes": 213171,
+      "sha256": "5b367b32a9277bf96683736996c00688c685181bb6c3dfbd007efb2d041ab3d8",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1090-1565-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1090-1565-1022.laz"
+    },
+    {
+      "key": "11-1090-1566-1022",
+      "depth": 11,
+      "points": 42591,
+      "bytes": 263295,
+      "sha256": "b9ccb7f00b42884a799d935ec16ef35d228021d9e2176904be74cf96a4329bfb",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1090-1566-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1090-1566-1022.laz"
+    },
+    {
+      "key": "11-1090-1567-1022",
+      "depth": 11,
+      "points": 40772,
+      "bytes": 257903,
+      "sha256": "c3aed26f715b61155849a4a7ed582e9d2ff00ab5c7f242dd0b825c735915b428",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1090-1567-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1090-1567-1022.laz"
+    },
+    {
+      "key": "11-1090-1568-1022",
+      "depth": 11,
+      "points": 44954,
+      "bytes": 282741,
+      "sha256": "7d6e297a5329f99ad3f11a4f56d3d4ad07eada5ed1b69ea7b25fdd26143d78f6",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1090-1568-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1090-1568-1022.laz"
+    },
+    {
+      "key": "11-1090-1569-1022",
+      "depth": 11,
+      "points": 42010,
+      "bytes": 271265,
+      "sha256": "c4ff981b95a3fef91d460bf1e384f237a0622880deb2d89ddb38aac908f9599e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1090-1569-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1090-1569-1022.laz"
+    },
+    {
+      "key": "11-1090-1570-1022",
+      "depth": 11,
+      "points": 35166,
+      "bytes": 232372,
+      "sha256": "1fb44b10809d464f5676920a7d046e7d4d5f2e76b2eb0038f9c523b5fbf8f604",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1090-1570-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1090-1570-1022.laz"
+    },
+    {
+      "key": "11-1090-1571-1022",
+      "depth": 11,
+      "points": 30568,
+      "bytes": 194316,
+      "sha256": "24d96b746d6ff41cbcbcc334f5f094e9b057ad5b09464afa85e658684565e0a1",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1090-1571-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1090-1571-1022.laz"
+    },
+    {
+      "key": "11-1090-1572-1022",
+      "depth": 11,
+      "points": 34362,
+      "bytes": 228985,
+      "sha256": "8d777711040871f96e188560b4091233f0599e45405dcbfcf303009f627d081e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1090-1572-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1090-1572-1022.laz"
+    },
+    {
+      "key": "11-1090-1573-1022",
+      "depth": 11,
+      "points": 34090,
+      "bytes": 222483,
+      "sha256": "faf69f1b73ebc034c61c434077ee681321550f1f2b71313d46ecef1a33f690d2",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1090-1573-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1090-1573-1022.laz"
+    },
+    {
+      "key": "11-1091-1565-1022",
+      "depth": 11,
+      "points": 62167,
+      "bytes": 410964,
+      "sha256": "b3725785607e730c2a6acfc74f46d4c0603b5c2990bf8addce641b5f15db12fa",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1091-1565-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1091-1565-1022.laz"
+    },
+    {
+      "key": "11-1091-1566-1022",
+      "depth": 11,
+      "points": 68305,
+      "bytes": 452903,
+      "sha256": "2a8f4873ad0c1dfa2e86ab55ee3e2a1e70b37499c22c57feec55a13e557ab88c",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1091-1566-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1091-1566-1022.laz"
+    },
+    {
+      "key": "11-1091-1567-1022",
+      "depth": 11,
+      "points": 67861,
+      "bytes": 447826,
+      "sha256": "8ad19d44cb89f9e2645402643958caa47a48052870dc525186889f847c15e714",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1091-1567-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1091-1567-1022.laz"
+    },
+    {
+      "key": "11-1091-1568-1022",
+      "depth": 11,
+      "points": 70979,
+      "bytes": 471138,
+      "sha256": "62384810a8e5b69cfa1dc89cbe4d0289ae13b5c0a51e0394ee6425931d184753",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1091-1568-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1091-1568-1022.laz"
+    },
+    {
+      "key": "11-1091-1569-1022",
+      "depth": 11,
+      "points": 64831,
+      "bytes": 448933,
+      "sha256": "f749c1e68e8e394035ff8851977e6b327e34194258b9e3e3872dfafc55c962ff",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1091-1569-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1091-1569-1022.laz"
+    },
+    {
+      "key": "11-1091-1570-1022",
+      "depth": 11,
+      "points": 52584,
+      "bytes": 350955,
+      "sha256": "b291c6653cda00d88f838039475c5f824afb27f27a1be94770176d3f46b7bcbd",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1091-1570-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1091-1570-1022.laz"
+    },
+    {
+      "key": "11-1091-1571-1022",
+      "depth": 11,
+      "points": 62280,
+      "bytes": 428860,
+      "sha256": "034e3bd8fd5b036c5a970c63b56c70d65143fb65645a5c6cba18899d522f8574",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1091-1571-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1091-1571-1022.laz"
+    },
+    {
+      "key": "11-1091-1572-1022",
+      "depth": 11,
+      "points": 78223,
+      "bytes": 541961,
+      "sha256": "976cb093d29942877410c1565effc0175630faebc53635213463927aa3254d15",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1091-1572-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1091-1572-1022.laz"
+    },
+    {
+      "key": "11-1091-1573-1022",
+      "depth": 11,
+      "points": 54867,
+      "bytes": 380640,
+      "sha256": "64ab4326051cf329d654875a034becfe35fdca435644f4aea302fa59974675ca",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1091-1573-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1091-1573-1022.laz"
+    },
+    {
+      "key": "11-1094-1565-1022",
+      "depth": 11,
+      "points": 9529,
+      "bytes": 75033,
+      "sha256": "64b9865c5ee01c911708e96f3e2bdfc16898b0bfd60017cfe70cf82ed4be72d5",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1094-1565-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1094-1565-1022.laz"
+    },
+    {
+      "key": "11-1094-1566-1022",
+      "depth": 11,
+      "points": 6867,
+      "bytes": 54620,
+      "sha256": "129dcebb08cdf2b5b05556bb3198e6f2d01be5997c759738e752b198fb58a5af",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1094-1566-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1094-1566-1022.laz"
+    },
+    {
+      "key": "11-1094-1567-1022",
+      "depth": 11,
+      "points": 7791,
+      "bytes": 60166,
+      "sha256": "39811f17d926b21ab111c88d62641e3aff7677d4ff53a3e35d10881f968c10e1",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1094-1567-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1094-1567-1022.laz"
+    },
+    {
+      "key": "11-1095-1565-1022",
+      "depth": 11,
+      "points": 15068,
+      "bytes": 109620,
+      "sha256": "1e1979961e0583555f1130bac05c63634c34f231ef1e0e867264d868dd505716",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1095-1565-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1095-1565-1022.laz"
+    },
+    {
+      "key": "11-1095-1566-1022",
+      "depth": 11,
+      "points": 11475,
+      "bytes": 86743,
+      "sha256": "3045d0f128b10a082edf93032c8a1ef2772c122b00ccc706afaede2ca1480e35",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1095-1566-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1095-1566-1022.laz"
+    },
+    {
+      "key": "11-1095-1567-1022",
+      "depth": 11,
+      "points": 9328,
+      "bytes": 75472,
+      "sha256": "f63ef4648089452eaa050e9ac7447d52b16e179e52fbf3c4ebe4af58409bc0b5",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1095-1567-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1095-1567-1022.laz"
+    },
+    {
+      "key": "11-1096-1565-1021",
+      "depth": 11,
+      "points": 16389,
+      "bytes": 87772,
+      "sha256": "dffacd1a8b2ce575fe1a8473eca48613960c89a7c49a6047525a2ae8e8e46977",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1565-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1565-1021.laz"
+    },
+    {
+      "key": "11-1096-1565-1022",
+      "depth": 11,
+      "points": 29734,
+      "bytes": 186783,
+      "sha256": "e0c07b630542cb345ca7367cb9233a802ea00169aa7b984113f4326fdbce728d",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1565-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1565-1022.laz"
+    },
+    {
+      "key": "11-1096-1566-1021",
+      "depth": 11,
+      "points": 14726,
+      "bytes": 81842,
+      "sha256": "25415ad4f20aec60d27238cca48a5bdb70c16808fec8c2d0cdca4d5223017344",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1566-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1566-1021.laz"
+    },
+    {
+      "key": "11-1096-1566-1022",
+      "depth": 11,
+      "points": 35632,
+      "bytes": 229992,
+      "sha256": "3af365fbb4267013c5c22167a79c34b294a2ad4550c16bc9ffefdbd33d9b384e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1566-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1566-1022.laz"
+    },
+    {
+      "key": "11-1096-1567-1021",
+      "depth": 11,
+      "points": 20083,
+      "bytes": 108085,
+      "sha256": "c12e1afbec69e8a3b4a4b1430401fcf984ea1b6526ee49900b4f0ec37e1c481b",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1567-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1567-1021.laz"
+    },
+    {
+      "key": "11-1096-1567-1022",
+      "depth": 11,
+      "points": 35555,
+      "bytes": 230076,
+      "sha256": "ff181d39514f86f6b2b3fd6ee1547b3be8059f03edf13f7c54f259bf86fb6f2e",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1567-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1567-1022.laz"
+    },
+    {
+      "key": "11-1096-1568-1021",
+      "depth": 11,
+      "points": 15175,
+      "bytes": 85295,
+      "sha256": "367438609db7bc91eed31baac48ffc3d530c4b201799074e58d2921d0f52d856",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1568-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1568-1021.laz"
+    },
+    {
+      "key": "11-1096-1568-1022",
+      "depth": 11,
+      "points": 32526,
+      "bytes": 210297,
+      "sha256": "1348715b3e34e6da296b4aee8225287be8b1fe7d67f64dc2f27b16da16df611b",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1568-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1568-1022.laz"
+    },
+    {
+      "key": "11-1096-1569-1021",
+      "depth": 11,
+      "points": 18664,
+      "bytes": 108257,
+      "sha256": "7a0c664efdd16c10550432cb19f8a937e78997e0dc5153a5e44eb51efd0545eb",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1569-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1569-1021.laz"
+    },
+    {
+      "key": "11-1096-1569-1022",
+      "depth": 11,
+      "points": 40678,
+      "bytes": 260705,
+      "sha256": "e4592bafee301369ff095d6d60540ab078a23199da23f2df1a429f10c10db78d",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1569-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1569-1022.laz"
+    },
+    {
+      "key": "11-1096-1570-1021",
+      "depth": 11,
+      "points": 31955,
+      "bytes": 168185,
+      "sha256": "8eaf933d93c3fae571332d806344986a2bc048134fa39f3ca433ffd12c7fd685",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1570-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1570-1021.laz"
+    },
+    {
+      "key": "11-1096-1570-1022",
+      "depth": 11,
+      "points": 23695,
+      "bytes": 151772,
+      "sha256": "b4e160021586baf27f05637548aaf1472a4713906386cc56affa6fdad42c0240",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1570-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1570-1022.laz"
+    },
+    {
+      "key": "11-1096-1571-1021",
+      "depth": 11,
+      "points": 29017,
+      "bytes": 158315,
+      "sha256": "f8bbc01bce68e9595c289e55ba2e19dd63c5e2d5c1033100c69d323c7a49d675",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1571-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1571-1021.laz"
+    },
+    {
+      "key": "11-1096-1571-1022",
+      "depth": 11,
+      "points": 11273,
+      "bytes": 72082,
+      "sha256": "72db278ba03b71be3e8ae89ee0f8fb3ab399e07fbbadeab7ba23e8ea96d68a59",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1571-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1571-1022.laz"
+    },
+    {
+      "key": "11-1096-1572-1021",
+      "depth": 11,
+      "points": 33232,
+      "bytes": 184270,
+      "sha256": "3980c23170a73cb4c31e965922765d0933765a119c2035481ea01faff2a52f89",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1572-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1572-1021.laz"
+    },
+    {
+      "key": "11-1096-1573-1021",
+      "depth": 11,
+      "points": 2145,
+      "bytes": 12563,
+      "sha256": "c6356d155eda37d32eafee29912e925d32aaeb1c0e2049de88874bcae616310c",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1096-1573-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1096-1573-1021.laz"
+    },
+    {
+      "key": "11-1097-1565-1021",
+      "depth": 11,
+      "points": 4875,
+      "bytes": 38723,
+      "sha256": "23b41176ddf12246be13a9c6d97aa4ffde277aedcc92a540a1a3ea7dbd92f065",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1565-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1565-1021.laz"
+    },
+    {
+      "key": "11-1097-1565-1022",
+      "depth": 11,
+      "points": 2415,
+      "bytes": 23638,
+      "sha256": "072810d372360e5081d833187350591e7168f0f871c397026f264980d3b8e946",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1565-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1565-1022.laz"
+    },
+    {
+      "key": "11-1097-1566-1021",
+      "depth": 11,
+      "points": 7140,
+      "bytes": 50003,
+      "sha256": "afd8a9e33d6bd7cf008fe4ad0df908cbde4d6ca5989bd4961dc131050a661b30",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1566-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1566-1021.laz"
+    },
+    {
+      "key": "11-1097-1566-1022",
+      "depth": 11,
+      "points": 1738,
+      "bytes": 17820,
+      "sha256": "05e81ae11be22f963fb99632ee40bb7501124301175458816543efbf5f39b2c7",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1566-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1566-1022.laz"
+    },
+    {
+      "key": "11-1097-1567-1021",
+      "depth": 11,
+      "points": 4634,
+      "bytes": 35907,
+      "sha256": "0760c0e58feaaa34290507b07f62315c40d24c200e38a80a6065673096257603",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1567-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1567-1021.laz"
+    },
+    {
+      "key": "11-1097-1567-1022",
+      "depth": 11,
+      "points": 1957,
+      "bytes": 20147,
+      "sha256": "48a08b1983e36d2f7ac39063e03f67b025a0648ab67ac7da40a5213a48e3d928",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1567-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1567-1022.laz"
+    },
+    {
+      "key": "11-1097-1568-1021",
+      "depth": 11,
+      "points": 5214,
+      "bytes": 38718,
+      "sha256": "18fb6790dd8b34286b322e6d2dac6cd81550dc0a3266accf39857feca8d031de",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1568-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1568-1021.laz"
+    },
+    {
+      "key": "11-1097-1568-1022",
+      "depth": 11,
+      "points": 1848,
+      "bytes": 18471,
+      "sha256": "d39b607694e5685e9ff0a1a373073489a4133566051c4cb63115d6403f83b9c4",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1568-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1568-1022.laz"
+    },
+    {
+      "key": "11-1097-1569-1021",
+      "depth": 11,
+      "points": 6457,
+      "bytes": 43551,
+      "sha256": "2516032972a2ab9cb8df0eb564cf8a2a0b3be71bcbf301ed3d4f543208b6c3ec",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1569-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1569-1021.laz"
+    },
+    {
+      "key": "11-1097-1569-1022",
+      "depth": 11,
+      "points": 1384,
+      "bytes": 14516,
+      "sha256": "0b0436c2e58a33cc240d09d4ee758c4ecc15bf5d17bb1f514e35f26e25aa7a58",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1569-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1569-1022.laz"
+    },
+    {
+      "key": "11-1097-1570-1021",
+      "depth": 11,
+      "points": 4326,
+      "bytes": 32961,
+      "sha256": "b8a5a70dd969ab3645bbfa45383c8293111593726495d3194b3ca79d5affed7f",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1570-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1570-1021.laz"
+    },
+    {
+      "key": "11-1097-1570-1022",
+      "depth": 11,
+      "points": 895,
+      "bytes": 10271,
+      "sha256": "931d475e2b0ef40259c9dbd4dbc40911ebcdfd61b51fd2d29821eafc4ee682b7",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1570-1022.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1570-1022.laz"
+    },
+    {
+      "key": "11-1097-1571-1021",
+      "depth": 11,
+      "points": 1960,
+      "bytes": 15208,
+      "sha256": "3df3f8e1a3292b3c3b8e0c685943a6bb9143ba17742887fac41861c6db40f7d5",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1571-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1571-1021.laz"
+    },
+    {
+      "key": "11-1097-1572-1021",
+      "depth": 11,
+      "points": 231,
+      "bytes": 4045,
+      "sha256": "955af1aec5d8a7e608f56ad4098bf892b0f405c43e7b02d45d0602f5351ee3b3",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1572-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1572-1021.laz"
+    },
+    {
+      "key": "11-1097-1573-1021",
+      "depth": 11,
+      "points": 259,
+      "bytes": 4277,
+      "sha256": "917bcc7a50e29ba9aa1ffb082dc816ced177df68e5bccf09eac4ee0a7ae0e6c4",
+      "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_NY_Cl_Ess_LChamp_P2_2014_LAS_2016/ept-data/11-1097-1573-1021.laz",
+      "file": "sources/dannemora/lidar/ept-data/11-1097-1573-1021.laz"
+    }
+  ]
+}

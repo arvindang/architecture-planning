@@ -58,3 +58,14 @@ The site choice, modeling tools, analysis workers, and future backend are still 
 - Use `ops/site-findings.json` as the current structured candidate findings record. Stable IDs SF-001–SF-008 connect facts, uncertainties, source files and consequences for later stages. Regenerate the Markdown handoff and browser data with `python3 scripts/prepare-site-findings.py` after updates.
 - The Overview research summary and Findings page describe completed acquisition / generated terrain separately from manual project check states. A researched candidate is not a selected project site or completed feasibility review.
 - Keep public archived data and the local terrain viewer as the current implementation. No paid GIS integration or backend choice is required yet. Exact Lot 1 alignment precedes parcel-specific pad, access and quantity work.
+
+## Practice permit and site climate — 2026-10-20
+
+| ID | Decision | Basis / consequences |
+| --- | --- | --- |
+| D-011 | Design under **practice permit PP-01**, a fictional alternative to APA 2025-0137 for Lot 1 | User request, for learning. 2 adults + 2 kids; ~2,200 sq ft over 2 storeys; footprint ≤ 1,600 sq ft; height ≤ 30 ft (condition 9 measuring rule); clearing ≤ 0.75 ac; setbacks 50 ft road / 25 ft side-rear / 100 ft wetland; well ≥ 100 ft from absorption field; septic sized for 4 bedrooms. Real conditions 13, 14, 16 and 17 kept. The real permit record is unchanged. Source of truth: `ops/practice-permit.json` |
+| D-012 | Compute practice setbacks and buffers on the provisional display traces | Explicit learning exception: survey fit 3.1 m RMS against county GIS; C1→survey fit 0.64 m RMS on 12 wetland flags. Never use for real setback, earthwork or terrain calculations. Wetland setback measured from the closed survey wetland polygon (including the stream edge); practice well kept at the C1 location |
+| D-013 | Use Saranac Lake TMYx (726228, 507 m) as the primary weather file | Elevation match to the site (~481 m). Saranac and Plattsburgh winds are treated as bounds until on-site wind data exists (CF-001, CF-003) |
+| D-014 | Treat W–NW as the weather side and E–SE–S as the entry / outdoor side for layout studies | CF-003, CF-008. Code design values (snow, wind, frost) wait for the Town of Dannemora's R301.2(1) table (CF-007, CF-012) |
+| D-015 | Adopt `SITE_3D`: 2 m terrain + canopy grid around Lot 1 from full-density USGS EPT | EPT heights confirmed NAVD88 (median −0.001 m vs DEM). Canopy = all unclassified returns (no vegetation classes delivered). Raw LAZ (70 MB) gitignored; manifest with sha256 committed. See `ops/canopy.md` |
+| D-016 | Use vendored Three.js r147 (UMD) for the 3D sun/season viewer | Classic scripts keep `file://` and offline use working; no CDN at runtime |

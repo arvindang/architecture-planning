@@ -1,0 +1,216 @@
+# Climate, sun and hazard findings — Dannemora Lot 1 candidate
+
+Revision: CF-2026-10-20-02 · Updated: 2026-10-20
+
+Regional climate screening; no site measurements and no professional review. Dannemora is a research candidate, not the selected project site.
+
+Design consequences are framed for the fictional Practice permit PP-01 (ops/practice-permit.json): house location and orientation are ours to choose; ~2,200 sq ft over 2 storeys; height ≤ 30 ft; footprint ≤ 1,600 sq ft; total clearing ≤ 0.75 acre; setbacks 50 ft road / 25 ft side-rear / 100 ft from the wetland flag line; 100 ft well↔septic; 4-bedroom septic redesign. Real APA permit 2025-0137 facts (14 × 40 ft house at a fixed location and footprint, 15 ft height, clearing limits) are kept as historical context, not as our constraints. Analyses use two TMYx 2011–2025 airport weather files (Saranac Lake primary, Plattsburgh comparison), ladybug-core/ladybug-comfort, a bare-earth terrain horizon and public wildfire screening layers, evaluated at the real-permit house centroid as a reference point (provisional, unsurveyed). Numbers describe a typical year at an airport, not the Lot 1 clearing. Code design values (snow, wind, frost) are NOT established here.
+
+Generated from `ops/climate-findings.json` by `scripts/prepare-climate.py`. Edit the JSON and rerun; methods and limits are in `ops/climate.md`.
+
+## Summary
+
+| ID | Topic | Finding (short) | Status |
+|---|---|---|---|
+| CF-001 | Weather file choice & temperature regime | Use Saranac Lake (507 m): HDD18 4,472, 99.6 % heating −28.1 °C; Plattsburgh is ~2.4 °C warmer | Computed from TMYx |
+| CF-002 | Deep cold, frozen ground & snow cover | 165 h below −20 °C, 65 ice days, snow on ground ~156 days, soil at 0.5 m frozen Dec–Apr | Computed from TMYx |
+| CF-003 | Winter wind direction & entry/windbreak placement | Cold winds come from the SW–NW (upland) or NW–N (valley); never from E/SE | Computed from TMYx; site wind unknown |
+| CF-004 | Coldest nights are calm & clear (cold-air drainage) | 99.6 % heating hours coincide with 0.7 m/s wind at Saranac Lake | From ASHRAE design header; site behaviour inferred |
+| CF-005 | Sun geometry & terrain horizon | Dec noon sun 21.9°; winter solar access needs roughly 0.25–0.5 ac of south clearing, i.e. ~30–70 % of the PP-01 0.75 ac cap | Computed (ladybug Sunpath + bare-earth horizon) |
+| CF-006 | Solar on walls & roofs; orientation under PP-01 | Under PP-01 an E–W long axis is ours to choose: south wall 688 kWh/m² Oct–Apr vs 540 for the real permit's SE-facing wall (−21 %) | Computed (ladybug Wea, isotropic sky, snow-adjusted albedo) |
+| CF-007 | Snow load & roof form | Ground snow load unknown; NYS adds ~12 psf at this elevation to the mapped value | Design value gap |
+| CF-008 | Outdoor-season comfort (UTCI) | Sun + wind shelter turns April/October from ~2–24 % to ~80 % comfortable daytime hours | Computed (ladybug-comfort UTCI, Saranac Lake) |
+| CF-009 | Passive strategies & heating dominance | Passive measures cover ~54 % of hours; ~46 % still need heat; cooling negligible | Computed (ladybug-comfort PMV polygon) |
+| CF-010 | Wildfire exposure & defensible space | Regional likelihood low (county 8th national percentile), WHP Moderate at house, forest directly adjacent | Public screening layers obtained |
+| CF-011 | Wet season, high water & frost heave | Mottling at 25 in + 5 frozen months → keep the floor up and the ground draining away | Weather computed; soil from permit drawing |
+| CF-012 | Code climatic design criteria | Snow load, wind speed, frost depth unknown — Town of Dannemora sets them | Design value gap |
+
+## Findings
+
+### CF-001 — Weather file choice & temperature regime
+
+Status: Computed from TMYx
+
+The site centroid is at 481 m (NAVD88, 1 m DEM). Saranac Lake airport is 48.7 km SW at 507 m; Plattsburgh airport is 30 km ESE at 71 m on the Champlain valley floor. Saranac Lake TMYx: mean 6.1 °C, January mean −8.4 °C (daily max −3.1, min −15.8), July mean 19.2 °C, HDD18 4,472 (the .stat long-term figure is 5,034 at 18.3 °C), CDD18 133, ASHRAE climate zone 7. ASHRAE 2025 design: heating 99.6 % −28.1 °C, 99 % −24.5 °C, cooling 0.4 % 28.7 °C; 50-year return minimum −40.6 °C. Plattsburgh: mean 8.5 °C, HDD18 3,753, heating 99.6 % −21.8 °C, climate zone 6A.
+
+**Design consequence for Lot 1:** Size the envelope and heating plant for the colder, elevation-matched Saranac Lake record (a heating-dominated, zone-7-like climate); Plattsburgh numbers understate heat loss. Expect the energy-code climate zone to be set by county, so confirm it separately rather than reading it from the station. For the PP-01 ~2,200 sq ft two-storey house, a compact, near-cubic, airtight and heavily insulated volume is worth more than any orientation trick: the two-storey stack already halves roof and floor area per square foot compared with a single storey.
+
+Sources:
+
+- [SITE_CLIMATE stations[].annual / design](../climate-data.js)
+- [Station provenance and parsed design header](../sources/dannemora/climate/climate-reference.json)
+- [Saranac Lake TMYx zip](../sources/dannemora/terrain/USA_NY_Saranac.Lake-Adirondack.Rgnl.AP.726228_TMYx.2011-2025.zip)
+- [Plattsburgh TMYx zip](../sources/dannemora/terrain/USA_NY_Plattsburgh.Intl.AP.726225_TMYx.2011-2025.zip)
+
+### CF-002 — Deep cold, frozen ground & snow cover
+
+Status: Computed from TMYx
+
+Saranac Lake TMYx has 165 h below −20 °C, 821 h below −10 °C, 2,453 h below 0 °C, 65 days that stay below freezing and 145 frost days. Last spring frost 7 May, first autumn frost 4 Oct (149 frost-free days; Plattsburgh 204). A TMY-season air freezing index is ~709 °C·days (~1,277 °F·days); this is a typical-year value, not the 100-year index codes use. Ground at 0.5 m (computed undisturbed-soil model in the EPW, not measured) stays below 0 °C from December to April (minimum −6.4 °C). Snow depth is recorded on ~156 days with a February maximum of 67 cm.
+
+**Design consequence for Lot 1:** Footings, water service and septic lines must sit below a frost depth that the town sets (unknown here) or be frost-protected; keep plumbing inside the heated envelope and avoid plumbing in exterior walls. Plan an airlock/vestibule entry, covered approach and a mechanical space that tolerates long cold snaps. Winter construction and site access need planning for ~5 months of snow cover.
+
+Sources:
+
+- [SITE_CLIMATE stations[].thresholds / annual / groundTemperatureC](../climate-data.js)
+- [Saranac Lake TMYx zip](../sources/dannemora/terrain/USA_NY_Saranac.Lake-Adirondack.Rgnl.AP.726228_TMYx.2011-2025.zip)
+
+### CF-003 — Winter wind direction & entry/windbreak placement
+
+Status: Computed from TMYx; site wind unknown
+
+The two stations disagree. Saranac Lake is SW-dominated: SSW–W carries 43 % of all hours (53 % in Dec–Feb), prevailing SW, winter mean 3.2 m/s, 13 % of winter hours ≥ 6 m/s. Plattsburgh is channelled N–S by the Champlain valley: prevailing SSE annually but N in winter. In hours below −10 °C, Saranac Lake winds come mostly from SW, WNW and W and Plattsburgh's from WNW, N and NW; at both, 41–44 % of those hours are calm. Neither station shows cold winds from the E or SE. Both are open 10 m airport anemometers; the Lot 1 clearing sits in forest on a slope, so speeds will be lower and directions bent by terrain.
+
+**Design consequence for Lot 1:** Treat the west-to-north arc as the weather side: keep that façade mostly closed, put storage/mechanical/bath along it, and retain the existing tree belt to the W/NW as a windbreak (this also costs nothing against the clearing limit). Put the entry and outdoor space on the E–SE–S side under a roof, but out of the lee corner where snow drifts collect. Do not finalize entry or porch orientation on airport winds alone; log on-site wind for a winter.
+
+Sources:
+
+- [SITE_CLIMATE stations[].windRose (annual, DJF, coldBelowMinus10)](../climate-data.js)
+- [Station provenance](../sources/dannemora/climate/climate-reference.json)
+
+### CF-004 — Coldest nights are calm & clear (cold-air drainage)
+
+Status: From ASHRAE design header; site behaviour inferred
+
+At Saranac Lake the mean wind coincident with the 99.6 % heating temperature is 0.7 m/s (from 230°), and 41 % of hours below −10 °C are calm. Extreme cold here is radiative: clear, still nights. On such nights cold air drains downslope and pools in hollows and near water. The DEM plane at the provisional house point faces NE (≈38°) with a 3.5° slope.
+
+**Design consequence for Lot 1:** Prefer a mid-slope house position over low ground or the lake-side bottom of the lot; avoid placing the house or its entry in a depression or behind a dam-like berm or dense hedge on the downslope side that would trap cold air. This is a qualitative screen: no cold-air flow modelling has been done.
+
+Sources:
+
+- [SITE_CLIMATE stations[].design.heating (mcws996, pcwd996)](../climate-data.js)
+- [SITE_CLIMATE site.groundAtHouse](../climate-data.js)
+- [1 m DEM](../sources/dannemora/terrain/dannemora-dem-1m.tif)
+
+### CF-005 — Sun geometry & terrain horizon
+
+Status: Computed (ladybug Sunpath + bare-earth horizon)
+
+On 21 December the sun rises at 07:32 EST at azimuth 124°, peaks at 21.9° at 11:54 and sets at 16:15 at 236° (8.7 h); on 21 June it peaks at 68.7° with 15.5 h of daylight (rise 55°, set 305°). The bare-earth horizon (1 m DEM to 0.9 km plus 100 m 3DEP to 30 km) reaches 8.7–9.4° to the SW (220–230°, ridge ~4 km away), 4.8–7.9° to the WSW–W (near hill 0.6–0.85 km) and ~5–5.7° to the E. Terrain alone limits December direct sun to roughly 08:00–15:00 EST (7.25 h) and removes 8.5 % of December beam energy on a south wall, 1.5 % annually. Trees are not in this horizon: LANDFIRE 2024 maps the house cell as 75 % canopy cover, ~19 m tall broadleaf forest. Sun altitude on 21 Dec is 16–17° at 10:00 and 14:00, so an 18 m obstruction above a window sill must be ~63 m away (≈45 m at noon) to keep the low winter sun. Sweeping a 15 m (≈50 ft) south façade along the 21 Dec sun directions gives the area that must be free of full-height canopy: ~2,120 m² (0.52 ac, 70 % of a 0.75 ac cap) for ground-floor glazing from 10:00 to 14:00, ~1,260 m² (0.31 ac, 41 %) for 11:00–13:00, and ~1,600 / ~970 m² (0.40 / 0.24 ac) for upper-floor glazing (sill ~4 m). A 12 m façade needs about 10 % less and an 18 m façade about 10 % more. The DEM shows the ground rising gently toward the south (the house plane faces NE), which makes uphill trees effectively taller.
+
+**Design consequence for Lot 1:** Winter solar access is decided by trees within ~45–65 m south (SSE–SSW) of the glazing, not by the distant terrain. Under PP-01 that south 'solar window' competes for the same 0.75 ac clearing cap as the house, drive, septic field, well and defensible space. Full ground-floor access from 10:00 to 14:00 would use most of the cap, so the realistic options are: (a) place the house at the north edge of an existing opening or field, so the clearing it needs already exists; (b) aim for upper-floor and 11:00–13:00 access (~0.25–0.3 ac), with a feathered edge that keeps lower trees farther out; (c) rely on leafless deciduous trees for partial winter beam. Afternoon winter sun is lost early to the SW ridge, so favour SE–S glazing over SW. All clock times are EST; add 1 h for EDT. (Historical contrast: the real APA permit fixes clearing limits and the house location, which would make this a fixed outcome rather than a design choice.)
+
+Sources:
+
+- [SITE_CLIMATE sun.monthly21st / keyDates / horizon / terrainShading](../climate-data.js)
+- [Sun positions for JS validation](../sources/dannemora/climate/sun-reference.json)
+- [3DEP 100 m horizon DEM](../sources/dannemora/climate/horizon-dem-3dep-100m.tif)
+- [LANDFIRE canopy samples](../sources/dannemora/climate/hazards-acquisition.json)
+- [Practice permit PP-01](../ops/practice-permit.json)
+
+### CF-006 — Solar on walls & roofs; orientation under PP-01
+
+Status: Computed (ladybug Wea, isotropic sky, snow-adjusted albedo)
+
+Saranac Lake annual irradiance (kWh/m²): south wall 1,136 (688 in Oct–Apr), west 917, east 866, north 502; roof 30° south 1,568, 45° south 1,561 (771 in Oct–Apr, best in winter), horizontal 1,371. Snow albedo adds ~8 % to the south wall versus a constant 0.2. For historical contrast, the traced real-permit footprint (provisional) has its long axis at ~36°, so its long façades face ~126° (SE) and ~306° (NW): 1,031 and 701 kWh/m²·yr, and the SE wall gets 540 kWh/m² in Oct–Apr, 21 % less than a true-south wall. None of these figures include tree or terrain shading.
+
+**Design consequence for Lot 1:** PP-01 leaves location and orientation to us, so run the long axis roughly E–W (south ±15°) and put most glazing on the south. That recovers the ~21 % of winter gain that the real permit's SE/NW orientation gives up. The real APA permit fixes its 14 × 40 ft footprint via Condition 9, so this freedom is specific to PP-01. A 1,600 sq ft footprint cap and ~2,200 sq ft over two storeys suit a moderately elongated plan, for example ~50 × 24 ft, with a south façade of ~15 m. With the 30 ft height limit, roof pitch is no longer the constraint it was at 15 ft. A south roof plane at 35–45° gives ~1,560 kWh/m²·yr for PV, the best winter yield, and sheds snow, which suits a gable or shed oriented to the E–W ridge. Limit east and west glazing: west gets 917 kWh/m²·yr with summer afternoon overheating risk, while north gets only 502.
+
+Sources:
+
+- [SITE_CLIMATE surfaceIrradiance](../climate-data.js)
+- [Provisional house footprint](../sources/dannemora/permit-layout-provisional.geojson)
+- [APA permit 2025-0137, conditions (p. 4)](../sources/dannemora/apa-2025-0137.pdf#page=4)
+- [Practice permit PP-01](../ops/practice-permit.json)
+
+### CF-007 — Snow load & roof form
+
+Status: Design value gap
+
+The 2020 RCNYS has the building official enter the ground snow load from Figure R301.2(6). NYS amends footnote "o" so sites above 1,000 ft add 2 psf per 100 ft. At 481 m (≈1,578 ft) that adds about 11.6 psf to the mapped value. The mapped value for the Town of Dannemora was not obtained, the ASCE 7 hazard tool needs an account and the ATC API timed out. The TMY shows a 67 cm maximum snow depth and ~156 snow-cover days, which are not a code load.
+
+**Design consequence for Lot 1:** Keep the roof simple (PP-01's 30 ft limit leaves room for a 35–45° pitch that sheds snow): a single shed or gable with no valleys, dormers or roof-to-wall pockets where snow and ice dams build. Do not shed snow onto the entry, the drive or the SE outdoor space (pairs with CF-003). Plan ice-dam control (ventilated cold roof or very low roof heat loss) and confirm ice-barrier underlayment. The structural snow load waits for the official's Pg plus the elevation adder.
+
+Sources:
+
+- [NYS DOS TB-1009-RCNYS (archived)](../sources/dannemora/climate/raw/nys-dos-tb-1009-rcnys.pdf)
+- [Acquisition log incl. failures](../sources/dannemora/climate/hazards-acquisition.json)
+- [SITE_CLIMATE hazards.designValues](../climate-data.js)
+
+### CF-008 — Outdoor-season comfort (UTCI)
+
+Status: Computed (ladybug-comfort UTCI, Saranac Lake)
+
+In open shade with station wind, daytime (08–18 h) hours with no thermal stress run 52–96 % from May to September, 24 % in October, 2 % in April and ~0 % from December to March. Sheltering wind to 0.5 m/s cuts annual strong-or-worse cold stress from 19.7 % to 6.4 % of hours. Adding full sun as well (SolarCal MRT, calm) raises daytime no-stress hours to 79 % in April, 80 % in October and 45 % in March, but in July it drops to 13 % because people overheat in full sun.
+
+**Design consequence for Lot 1:** One wind-sheltered, south/south-east-facing outdoor room (porch or deck in the lee of the house, backed by the W/NW tree belt) adds roughly two shoulder months of usable outdoor time. Give it summer shade (roof overhang, pergola or deciduous canopy) because full sun is uncomfortable from June to August. Open, windswept decks on the W/NW side would see little use. Under PP-01 the outdoor room's sheltered footprint also counts against the 0.75 ac clearing cap; place it within the clearing needed anyway for the solar window.
+
+Sources:
+
+- [SITE_CLIMATE comfort.byStation.saranac-lake.scenarios](../climate-data.js)
+
+### CF-009 — Passive strategies & heating dominance
+
+Status: Computed (ladybug-comfort PMV polygon)
+
+At Saranac Lake the plain PMV comfort polygon contains 5 % of hours. Internal heat gains (12.8 °C balance point) cover 25 %, passive solar through a south window 22 %, mass plus night flushing 2 %, occupant fans 2 % and evaporative cooling 2 %. All strategies together cover 54 % of hours, which leaves ~46 % too cold. Only 6 h exceed 30 °C and CDD18 is 133 (Plattsburgh: 44 h, 301).
+
+**Design consequence for Lot 1:** Treat this as a heating problem, for the PP-01 2,200 sq ft house as much as for the real 560 sq ft one. Envelope (insulation, airtightness, triple glazing) and capturing internal and solar gains matter most; thermal mass helps solar gain more than cooling. Plan for cross-ventilation and a ceiling fan rather than air conditioning, and add summer shading on south and west glazing so passive solar design doesn't overheat June–August.
+
+Sources:
+
+- [SITE_CLIMATE comfort.byStation.*.pmvStrategies](../climate-data.js)
+
+### CF-010 — Wildfire exposure & defensible space
+
+Status: Public screening layers obtained
+
+USFS Wildfire Hazard Potential 2023 (270 m) is class 3 'Moderate' at the house point, Moderate to the N/E/W/NW, and Very low to the SE/S/SW within 200 m. wildfirerisk.org rates Clinton County risk to homes and wildfire likelihood 'low' (8.4th and 8.7th national percentile; 37.7th and 36.1st within NY). Lyon Mountain and Dannemora CDPs are also 'low', with exposure 'very high'. The WRC exposure-type service value at the house is the top of its 0–1,000 range, consistent with direct exposure to wildland fuel (the service rescales values for display). LANDFIRE 2024 fuel model is TL6 (moderate-load broadleaf litter) at the house cell, with TU2/TL3 nearby, 75 % canopy cover and ~19 m canopy height. All of this predates any clearing.
+
+**Design consequence for Lot 1:** Fire is a secondary, not primary, layout driver, but the house sits in forest. Use a noncombustible zone right around the house (gravel or hardscape, no mulch or woodpile against walls), a Class A roof (metal suits snow shedding too), ember-resistant vents and noncombustible cladding near grade. Thin ladder fuels near the house. Under PP-01 the defensible zone, solar window (CF-005), drive and 4-bedroom septic field all draw on one 0.75 ac clearing budget, so overlap them deliberately: the south solar clearing doubles as fuel-reduced space. (Historical context: the real permit's Condition 15 allows removing hazardous, dead or diseased vegetation and 15 ft utility strips outside its clearing limits.)
+
+Sources:
+
+- [Hazard acquisition (raw responses, URLs, timestamps)](../sources/dannemora/climate/hazards-acquisition.json)
+- [SITE_CLIMATE hazards.wildfire / community](../climate-data.js)
+- [APA permit 2025-0137, condition 15 (p. 4)](../sources/dannemora/apa-2025-0137.pdf#page=4)
+- [wildfirerisk.org Clinton County](https://wildfirerisk.org/explore/overview/36/36019/)
+
+### CF-011 — Wet season, high water & frost heave
+
+Status: Weather computed; soil from permit drawing
+
+The permit deep-hole test (APA, 14 Jul 2025) records 25 in of usable soil with mottling at 25 in, a sign of a seasonally high water table, and a 4 min/in perc rate. TMYx precipitation peaks in October (204 mm) and May (168 mm), with snowmelt in April. TMYx total precipitation (1,332 mm) is well above the .stat long-term average (927 mm), so treat precipitation magnitudes as uncertain. Saturated soil within ~0.6 m of the surface, combined with the frozen ground of CF-002, creates frost-heave and wet-crawlspace risk.
+
+**Design consequence for Lot 1:** Avoid a full basement. Favour a slab-on-grade (frost-protected) or a raised, well-drained crawl/pier foundation set above seasonal water, with grade sloping away, perimeter drains to daylight and gutters/downspouts discharged away from the septic field. The PP-01 4-bedroom septic redesign needs a larger absorption field than the real permit's 1,000-gallon design. Keep the house uphill of it, 100 ft between well and field, and the drive draining across, not toward, the building pad. The mottling depth comes from the real permit's July 2025 deep hole and should be re-tested for the new field location.
+
+Sources:
+
+- [APA permit 2025-0137, deep hole data (p. 7)](../sources/dannemora/apa-2025-0137.pdf#page=7)
+- [SITE_CLIMATE stations[].monthly precipMm / longTermStat](../climate-data.js)
+
+### CF-012 — Code climatic design criteria
+
+Status: Design value gap
+
+Per NYS DOS TB-1009-RCNYS, the local jurisdiction fills in 2020 RCNYS Table R301.2(1). That covers ground snow load from Figure R301.2(6) plus the elevation adder, ultimate design wind speed from Figure R301.2(5)A with site exposure category, topographic effects, frost line depth, seismic category, ice-barrier requirement and the Manual J winter design temperature. All of NYS is 'Severe' weathering. No Dannemora table was found online. The ASCE 7 hazard tool requires an account (not used) and the ATC Hazards API timed out. The NOAA air-freezing-index table cited by the bulletin returned 404/503.
+
+**Design consequence for Lot 1:** No structural, foundation-depth or roof-load decision should be taken from this workspace. Get the town's Table R301.2(1) and confirm the code edition in force before schematic design closes.
+
+Sources:
+
+- [NYS DOS TB-1009-RCNYS (archived)](../sources/dannemora/climate/raw/nys-dos-tb-1009-rcnys.pdf)
+- [Acquisition log incl. failures](../sources/dannemora/climate/hazards-acquisition.json)
+
+## Next actions, in order
+
+1. **Evaluate house positions inside the PP-01 buildable region** — Once site-constraints-data.js publishes the practice buildable region (setbacks 50/25 ft, 100 ft wetland, well↔septic 100 ft), test candidate positions and E–W orientations for: the south solar-window clearing area against the 0.75 ac cap (CF-005), existing openings, mid-slope vs low ground for cold air, W/NW tree-belt retention, and drive/septic overlap. (CF-003, CF-004, CF-005, CF-006, CF-010)
+
+2. **Request Table R301.2(1) from the Town of Dannemora** — Ground snow load (with the +2 psf/100 ft adder), design wind speed and topographic entry, frost line depth, ice-barrier requirement, winter design temperature and the code edition in force. (CF-007, CF-012, CF-002)
+
+3. **Combine solar access with the canopy study** — Overlay the 21 Dec 10:00–14:00 sun azimuths (153–210°) and ~45–65 m obstruction distances on mapped trees south of candidate positions. Separate deciduous from conifer and size the clearing each position needs against 0.75 ac. (CF-005, CF-010)
+
+4. **Simple energy model of the PP-01 massing** — Compare an E–W long-axis ~50 × 24 ft two-storey massing against the real permit's SE/NW orientation and against a reduced south glazing case (if solar clearing is limited), to size glazing and insulation. (CF-006, CF-009)
+
+5. **Log on-site wind and temperature for one winter** — A small logger in the clearing (wind direction/speed and temperature at 2–3 m) to choose between the Saranac Lake (SW) and Plattsburgh (N/NW) wind regimes and test cold-air pooling. (CF-003, CF-004)
+
+6. **Seasonal high-water check at the new septic and house locations** — Observe a test pit or monitoring well in April snowmelt to bound the mottling-indicated water table before choosing slab vs crawlspace, footing depth and the 4-bedroom field location. (CF-011, CF-002)
+
+## Questions for an architect / engineer / building official
+
+- **Building official:** What are Dannemora's Table R301.2(1) entries (Pg, Vult, topographic effects, frost depth, ice barrier, winter design temperature), and which Uniform Code edition will apply? (CF-007, CF-012)
+- **Structural engineer:** Given Pg + ~11.6 psf elevation adder and an unknown wind exposure for a forest clearing, what roof pitch and form (gable vs shed, 35–45°) best sheds snow away from the entry within the PP-01 30 ft height limit? (CF-006, CF-007)
+- **Engineer / soils:** With mottling at 25 in and a ~1,280 °F·day typical-year freezing index, is a frost-protected shallow foundation or a raised crawl/pier foundation more robust for a two-storey house here? (CF-002, CF-011)
+- **Architect:** How much south glazing is worth it if the solar-window clearing must share the 0.75 ac cap — full ground-floor access, upper-floor only, or deciduous filtering? (CF-005, CF-006, CF-009)
+- **Architect:** Where do the entry, mudroom and a sheltered SE outdoor room go so they avoid both the W/NW weather side and the lee-side snow drift and roof shedding zones? (CF-003, CF-007, CF-008)
+- **Landscape / forester:** Which trees south and west of candidate positions are deciduous vs conifer, and how should the 0.75 ac clearing be shaped (feathered edges, retained W/NW windbreak) to serve solar access and defensible space together? (CF-003, CF-005, CF-010)

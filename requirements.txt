@@ -1,0 +1,13 @@
+ladybug-comfort==0.19.12
+ladybug-core==0.44.62
+ladybug-geojson==0.0.3
+ladybug-radiance==0.2.12
+laspy==2.7.0
+lazrs==0.8.2
+numpy==2.5.4
+pillow==13.0.0
+pyproj==3.8.0
+rasterio==1.5.2
+scikit-image==0.26.0
+scipy==1.18.1
+shapely==2.2.0

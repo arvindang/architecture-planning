@@ -17,7 +17,7 @@ The browser renderer is a dependency-free local canvas mesh, not a streamed Cesi
 
 ## Point cloud
 
-Exact tile **18TWQ592953** was verified using the NYS tile index and LAS header: 16,232,571 points, LAS 1.2, 0.01 m coordinate encoding. That encoding is not measurement accuracy. The tile contains the candidate and parent tract but not the entire buffered DEM context. Full ~70 MB compressed USGS LAZ download was slow and deferred; no complete local point cloud or class-count / ground-density audit exists yet.
+Exact tile **18TWQ592953** was verified using the NYS tile index and LAS header: 16,232,571 points, LAS 1.2, 0.01 m coordinate encoding. That encoding is not measurement accuracy. The tile contains the candidate and parent tract but not the entire buffered DEM context. A full-density EPT clip around Lot 1 (130 nodes, 5.6 M points, 18.8 pts/m²) is now archived by `scripts/prepare-site-3d.py`; ground density and class audit are in `sources/dannemora/lidar/lidar-manifest.json` and `ops/canopy.md`.
 
 Public access:
 
@@ -61,11 +61,11 @@ Google Maps is optional visual orientation. Google Elevation needs API setup and
 
 1. Reconcile recorded Lot 1 boundary / parcel lineage and align survey with control points, reporting registration residuals. Do not transfer proposed well/septic from C1 onto the terrain until this is supported.
 2. Obtain current photos, surveyed control and current/as-built records. Historical ground may predate grading and structures.
-3. Acquire a classified point-cloud clip; audit coverage, class counts and ground gaps. Generate canopy-height context with explicit limitations.
+3. Point-cloud clip, class audit and canopy heights done (`ops/canopy.md`). Still open: vegetation / building classification, leaf-on check and current conditions.
 4. Review APA delineation against coarse inventory; acquire soils/geology for screening. FEMA zone attributes returned X for the AOI, but polygon request failed HTTP500. Availability polygons are not flood zones and zone X does not establish no local drainage risk.
 5. Extract parcel-specific slope statistics only after boundary registration, excluding water appropriately. Add user-defined non-wrapping sections and driveway corridors.
 6. Compare tentative building pads and access. Cut/fill needs explicit pad level, grading extents, material assumptions and a supported surface. No rock depth, foundations, septic suitability or engineering design can be established from the DEM.
-7. Choose the climate file, run Ladybug sun/climate summaries, and add terrain/seasonal canopy shadows. No climate or energy simulation has run yet.
+7. Climate file chosen and Ladybug sun / climate / comfort summaries run (`ops/climate-findings.md`). Canopy shadow inputs feed the 3D viewer; no building energy simulation has run yet.
 
 ## Permit layout views
 
