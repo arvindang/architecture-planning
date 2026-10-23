@@ -18,8 +18,8 @@ A second project, **Hydepark Home** (5418 & 5420 S. Kimbark Ave, Chicago — all
 There is no build, lint, or test suite.
 
 ```sh
-# Serve the workspace (keep host+port stable — localStorage is per-origin; 127.0.0.1 ≠ localhost)
-python3 -m http.server 4173 --bind 127.0.0.1
+# Serve the workspace on 127.0.0.1:4173 with Cache-Control: no-store (keep host+port stable — localStorage is per-origin; 127.0.0.1 ≠ localhost)
+python3 scripts/serve.py
 
 # Regenerate site findings (writes site-findings-data.js and ops/site-findings.md; asserts linked files exist)
 python3 scripts/prepare-site-findings.py

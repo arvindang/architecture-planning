@@ -4,7 +4,7 @@
     {
       "name": "groundwork",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4173", "--bind", "127.0.0.1"],
+      "runtimeArgs": ["scripts/serve.py"],
       "port": 4173,
       "url": "http://127.0.0.1:4173"
     }
