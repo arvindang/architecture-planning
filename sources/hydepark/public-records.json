@@ -1,0 +1,38 @@
+{
+  "retrieved": "2026-10-22",
+  "note": "Public records for Lot 25 (5418 & 5420 S. Kimbark Ave). Owner, buyer and seller names are left out on purpose; they are private individuals. Open the linked records to see them.",
+  "parcels": [
+    {"pin": "20-11-420-025-0000", "address": "5418 S. Kimbark Ave", "classHistory": "205 (two-or-more-story residence) through 2021; 100 (vacant land) from 2022", "landSqftAssessor": 3402, "assessed2025": {"land": 21080, "building": 0}, "assessed2021": {"land": 17000, "building": 23601}, "pinYears": "1999–2026", "assessor": "https://www.cookcountyassessor.com/pin/20114200250000"},
+    {"pin": "20-11-420-026-0000", "address": "5420 S. Kimbark Ave", "classHistory": "202 (one-story residence) through 2022; 100 (vacant land) from 2023", "landSqftAssessor": 3498, "assessed2025": {"land": 21700, "building": 0}, "assessed2022": {"land": 17500, "building": 36509}, "pinYears": "1999–2026", "assessor": "https://www.cookcountyassessor.com/pin/20114200260000"}
+  ],
+  "consolidation": "Both PINs are still separate in tax year 2026 (parcel universe, addresses and assessed values) and in the county's 2024 GIS parcel layer. No combined PIN was found. Recorded deeds or plats of consolidation at the Cook County Clerk were not searched.",
+  "sales": [
+    {"pin": "20-11-420-025-0000", "date": "2012-06-01", "price": 68000, "deed": "Other", "doc": "1218422074"},
+    {"pin": "20-11-420-025-0000", "date": "2013-07-31", "price": 228000, "deed": "Warranty", "doc": "1422629059"},
+    {"pin": "20-11-420-026-0000", "date": "2016-08-04", "price": 1, "deed": "Warranty", "doc": "1623919312"},
+    {"pin": "20-11-420-025-0000", "date": "2018-09-13", "price": 375000, "deed": "Warranty", "doc": "1826306208"},
+    {"pin": "20-11-420-026-0000", "date": "2018-09-17", "price": 360000, "deed": "Warranty", "doc": "1828249152"}
+  ],
+  "permits": [
+    {"permit": "B100562153", "address": "5420", "issued": "2014-09-23", "type": "Express permit", "status": "Complete", "work": "Remove and replace electrical fixtures, outlets and receptacles at this single-family residence", "cost": 200},
+    {"permit": "100564197", "address": "5420", "issued": "2014-10-06", "type": "Easy permit", "status": "Not recorded", "work": "Replace drywall, kitchen and bath plumbing fixtures, tile and hardwood floors; repair window frames, stair and porch", "cost": 1500},
+    {"permit": "B100966644", "address": "5418", "issued": "2022-06-07", "type": "Wrecking / demolition", "status": "Complete", "work": "Wreck and remove a 1½-story frame residence", "cost": 20000},
+    {"permit": "B100967275", "address": "5420", "issued": "2022-06-07", "type": "Wrecking / demolition", "status": "Complete", "work": "Wreck and remove a 1½-story frame residence", "cost": 20000}
+  ],
+  "permitNote": "Both demolition permits list the same owner and the same general contractor. No new-construction permit appears for 5400–5440 S. Kimbark through the dataset's current records.",
+  "violations": "21 building-violation records, 2014–2018: vacant-building registration, watchman, owner posting, 'repair/wreck dangerous residential premises' and 'obtain or post permit' at both addresses (5420 from June 2014, 5418 from January 2015 to June 2018).",
+  "zoning": {"district": "RT-4", "name": "Residential Two-Flat, Townhouse and Multi-Unit District", "source": "City of Chicago zoning districts layer (dj47-wfun), queried at the site point; layer edited 2026-08-26", "nearby": "A 2021 permit at 5406 S. Kimbark also describes its lot as RT-4."},
+  "landmarks": "Outside all 59 Chicago Landmark Districts in the city's boundary file (Nov 2012); the nearest, Greenwood Row House and Kenwood, are about 440 m away. Inside the rough extent of the National Register Hyde Park–Kenwood Historic District (47th–59th St., Cottage Grove–Lake Park Ave.); exact boundary not checked.",
+  "neighbourSouth": {"pin": "20-11-420-027-0000", "address": "5422 S. Kimbark Ave", "class": "211 (apartment building, 2–6 units)", "construction": "Masonry", "buildingSqft": 2630, "ageYears": 118, "landSqft": 5249},
+  "sources": [
+    ["https://data.cityofchicago.org/d/ydr8-5enu", "Chicago building permits"],
+    ["https://data.cityofchicago.org/d/22u3-xenr", "Chicago building violations"],
+    ["https://data.cityofchicago.org/d/dj47-wfun", "Chicago zoning districts"],
+    ["https://data.cityofchicago.org/d/t8pq-wu86", "Chicago landmark district boundaries"],
+    ["https://datacatalog.cookcountyil.gov/d/nj4t-kc8j", "Cook County parcel universe"],
+    ["https://datacatalog.cookcountyil.gov/d/uzyt-m557", "Cook County assessed values"],
+    ["https://datacatalog.cookcountyil.gov/d/wvhk-k5uv", "Cook County parcel sales"],
+    ["https://gis.cookcountyil.gov/traditional/rest/services/cookVwrDynmc/MapServer/44", "Cook County GIS current parcels"],
+    ["https://en.wikipedia.org/wiki/Hyde_Park%E2%80%93Kenwood_Historic_District", "Hyde Park–Kenwood Historic District (NRHP)"]
+  ]
+}

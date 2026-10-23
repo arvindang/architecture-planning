@@ -69,3 +69,12 @@ The site choice, modeling tools, analysis workers, and future backend are still 
 | D-014 | Treat W–NW as the weather side and E–SE–S as the entry / outdoor side for layout studies | CF-003, CF-008. Code design values (snow, wind, frost) wait for the Town of Dannemora's R301.2(1) table (CF-007, CF-012) |
 | D-015 | Adopt `SITE_3D`: 2 m terrain + canopy grid around Lot 1 from full-density USGS EPT | EPT heights confirmed NAVD88 (median −0.001 m vs DEM). Canopy = all unclassified returns (no vegetation classes delivered). Raw LAZ (70 MB) gitignored; manifest with sha256 committed. See `ops/canopy.md` |
 | D-016 | Use vendored Three.js r147 (UMD) for the 3D sun/season viewer | Classic scripts keep `file://` and offline use working; no CDN at runtime |
+
+## Hydepark Home — 2026-10-22
+
+| ID | Decision | Basis / consequences |
+| --- | --- | --- |
+| D-017 | Add **Hydepark Home** (5418 & 5420 S. Kimbark Ave, Chicago) as its own project with its own site evidence | User request. Same five stages, tasks, checks, deliverables and tools as every project; a `siteKey` selects Hydepark site tabs instead of the shared Dannemora research. Seeded once into existing workspaces (`state.seeds`) and set active |
+| D-018 | Treat all of Lot 25 (north + south halves) as the working site, about 40 × 175 ft and 6,960 sq ft by plat areas | Two plats (2014, 2018). Working envelope only: zoning lot status, ownership and the 171.51 vs 175.00 ft shared line (HP-003) are unresolved |
+| D-019 | Keep the raw plat PDFs local (gitignored) and mask the client name on the app images | The repo is public; the 2014 plat prints a private client's name in its ordered-by line. Surveyor and firm credits stay |
+| D-020 | Design Lot 25 as **one site** (both halves, about 40 × 175 ft, 6,960 sq ft) | Customer, 2026-10-22: the parcels are not yet combined but will be before construction. Zoning and massing studies use the combined lot; applications cite both PINs until the consolidation is recorded (HP-009) |

@@ -4,3 +4,4 @@ __pycache__/
 sources/dannemora/lidar/ept-data/*.laz
 sources/dannemora/lidar/ept-data/*.part
 sources/dannemora/apa-2025-0137.pdf
+sources/hydepark/*.pdf

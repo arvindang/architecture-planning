@@ -89,3 +89,19 @@ Remaining: select and register the exact site, implement supported envelope / pl
 - [ ] Request the Town of Dannemora's Table R301.2(1): snow load, wind speed, frost depth, ice barrier, code edition.
 - [ ] Log on-site wind and temperature for one winter; check seasonal high water during April snowmelt.
 - [ ] Add a leaf-on canopy check; replace the roof heuristic with building footprints; rerun canopy statistics after Lot 1 is surveyed.
+
+## Hydepark Home — site feasibility
+
+- [x] Add the project and both plats of survey; findings in `ops/hydepark-site.json`.
+- [x] Pull public records (`sources/hydepark/public-records.json`): PINs, sales, assessments, permits, violations, zoning, landmark districts, county parcel outlines (HP-009–HP-012).
+- [ ] Verify the RT-4 rules (FAR, lot area per unit, height, yards, rear open space, detached-house rules) in the official Chapter 17-2 with citations.
+- [ ] Confirm ownership via Clerk recordings or title; track the customer's consolidation of PINs 20-11-420-025 and -026 before construction (D-020).
+- [ ] Check the exact Hyde Park–Kenwood National Register boundary and whether it triggers any review.
+- [ ] Order a combined boundary + topographic survey of the vacant lot (resolves HP-003; adds grades, trees, fill, utility stubs).
+- [ ] Site visit: dated photos of the vacant lot, alleys, 5422 and 5412 heights, trees, capped services.
+- [ ] Imagery, terrain and a Chicago TMYx weather file; rerun the climate and 3D sun pipelines using `sources/hydepark/county-parcels.geojson` for placement.
+
+## Hydepark Home — brief & requirements (noted for later)
+
+- [ ] Customer wants additional dwellings: research Chicago ADU rules for detached (coach house) and internal / conversion units on an RT-4 lot, and how they count against density and FAR.
+- [ ] Customer wants car lifts in the garage for stacked parking: check clear height, slab and power needs, garage / accessory building height limits, and alley access.

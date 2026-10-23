@@ -1,0 +1,151 @@
+{
+ "type": "FeatureCollection",
+ "name": "cook-county-current-parcels",
+ "crs_note": "WGS84 lon/lat (outSR=4326) from Cook County GIS cookVwrDynmc layer 44 Current Parcel; GIS parcel shapes are approximate, not survey",
+ "source": "https://gis.cookcountyil.gov/traditional/rest/services/cookVwrDynmc/MapServer/44",
+ "retrieved": "2026-10-22",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "PIN14": "20114200270000",
+    "Address": "5422 S KIMBARK AVE",
+    "BLDGClass": "211",
+    "BldgSqft": 2630,
+    "BldgAge": 118,
+    "LandSqft": 5249,
+    "LandValue": "32550",
+    "BldgValue": "40450",
+    "TotalValue": "73000",
+    "TaxCode": "70131",
+    "TAXYR": 2024,
+    "geom_year": 2024,
+    "value_description": "CCAOFINAL",
+    "Shape.STArea()": 5322.07048253125
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -87.59509954104884,
+       41.79725307422121
+      ],
+      [
+       -87.59510138232599,
+       41.797335414458026
+      ],
+      [
+       -87.59575191345635,
+       41.797327738588116
+      ],
+      [
+       -87.59574999646658,
+       41.79724545207365
+      ],
+      [
+       -87.59509954104884,
+       41.79725307422121
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "PIN14": "20114200260000",
+    "Address": "5420 S KIMBARK AVE",
+    "BLDGClass": "100",
+    "BldgSqft": 0,
+    "BldgAge": 0,
+    "LandSqft": 3498,
+    "LandValue": "21700",
+    "BldgValue": "0",
+    "TotalValue": "21700",
+    "TaxCode": "70131",
+    "TAXYR": 2024,
+    "geom_year": 2024,
+    "value_description": "CCAOFINAL",
+    "Shape.STArea()": 3545.63700496875
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -87.59510138232599,
+       41.797335414458026
+      ],
+      [
+       -87.59510266089819,
+       41.79739025339108
+      ],
+      [
+       -87.59575311833255,
+       41.79738257635565
+      ],
+      [
+       -87.59575191345635,
+       41.797327738588116
+      ],
+      [
+       -87.59510138232599,
+       41.797335414458026
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "PIN14": "20114200250000",
+    "Address": "5418 S KIMBARK AVE",
+    "BLDGClass": "100",
+    "BldgSqft": 0,
+    "BldgAge": 0,
+    "LandSqft": 3402,
+    "LandValue": "21080",
+    "BldgValue": "0",
+    "TotalValue": "21080",
+    "TaxCode": "70131",
+    "TAXYR": 2024,
+    "geom_year": 2024,
+    "value_description": "CCAOFINAL",
+    "Shape.STArea()": 3851.86637753125
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -87.59510266089819,
+       41.79739025339108
+      ],
+      [
+       -87.59510402665394,
+       41.79745019793085
+      ],
+      [
+       -87.59572881031279,
+       41.79744284932606
+      ],
+      [
+       -87.59575404488263,
+       41.79742330742187
+      ],
+      [
+       -87.59575311833255,
+       41.79738257635565
+      ],
+      [
+       -87.59510266089819,
+       41.79739025339108
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}
