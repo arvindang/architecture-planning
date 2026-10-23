@@ -778,6 +778,7 @@
     v.renderer.dispose();v.renderer.forceContextLoss?.();
   }
 
+  window.siteSolarPosition=solarPosition;
   window.siteViewer3dView=siteViewer3dView;
   window.initSiteViewer3d=initSiteViewer3d;
   window.disposeSiteViewer3d=disposeSiteViewer3d;

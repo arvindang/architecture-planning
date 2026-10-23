@@ -1,5 +1,5 @@
 {
-  "revision": "HP-2026-10-22-03",
+  "revision": "HP-2026-10-22-04",
   "updated": "2026-10-22",
   "site": "5418 & 5420 S. Kimbark Ave, Chicago, IL — all of Lot 25, Block 29, Kimbark's Addition to Hyde Park",
   "summary": "All of Lot 25: two 20 ft lots (5418 and 5420) with a combined plat area of 6,960 sq ft, about 40 × 175 ft between S. Kimbark Ave and a 24 ft public alley. Both frame houses were demolished in 2022; the land is vacant, zoned RT-4, and under one owner since 2018, but it is still two tax parcels. The customer will combine them before construction, so design treats Lot 25 as one site.",
@@ -108,7 +108,14 @@
       "dpi": 150,
       "rotate": 0,
       "format": "jpg",
-      "redact": [],
+      "redact": [
+        [
+          1140,
+          2446,
+          1470,
+          2475
+        ]
+      ],
       "date": "September 11, 2018",
       "credit": "Carradus Land Survey, Inc. · Allen D. Carradus, IL PLS 35-2551",
       "caption": "Plat of the south half of Lot 25, drawn with Kimbark Ave at the top (east) and no north arrow. North is to the left.",
@@ -346,6 +353,142 @@
           "Hyde Park–Kenwood Historic District (NRHP)"
         ]
       ]
+    },
+    {
+      "id": "HP-013",
+      "topic": "Aerial record of the lot",
+      "status": "Documented",
+      "finding": "Cook County 6-inch orthophotos show both frame houses standing through the 2022 flight and the lot vacant in 2023–2025. Large trees cover roughly the rear (west) third of the lot. Lot 25 faces Nichols Park across Kimbark, and the 20 ft north alley opens onto Kimbark.",
+      "implication": "Use the 2024 leaf-off image for siting checks. The rear-yard trees and the park to the east drive views, shade and tree-protection questions; confirm species and size on the site visit.",
+      "sources": [
+        [
+          "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2024/ImageServer",
+          "Cook County 2024 orthophoto"
+        ],
+        [
+          "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2020/ImageServer",
+          "Cook County 2020 orthophoto"
+        ]
+      ]
+    },
+    {
+      "id": "HP-014",
+      "topic": "County GIS vs record lot",
+      "status": "Needs review",
+      "finding": "The county parcels (identical to the Clerk's Lot 25) measure 41.8 × 177.3 ft and 7,392 sq ft against the plats' 40 × 175 ft and 6,960 sq ft; all the extra width is in 5418. Visible features put the south, front and rear lines within ±0.5 m of the county lines; the north line is uncertain by up to about 0.9 m.",
+      "implication": "Never take areas or setbacks from GIS. Use plat dimensions, and fix the north line with the combined survey (HP-003).",
+      "sources": [
+        [
+          "https://gis.cookcountyil.gov/traditional/rest/services/cookVwrDynmc/MapServer/44",
+          "Cook County GIS current parcels"
+        ],
+        [
+          "https://gis.cookcountyil.gov/traditional/rest/services/clerkCadastre/MapServer/2",
+          "Cook County Clerk subdivision lots"
+        ]
+      ]
+    },
+    {
+      "id": "HP-015",
+      "topic": "Easements and building lines",
+      "status": "Unknown",
+      "finding": "Neither plat shows an easement or a building line; both defer to the deed, title policy and local regulations. No title or recorded-document search has been done.",
+      "implication": "Order a title commitment with recorded easements before fixing a footprint or utility routes; alley utility easements are common.",
+      "sources": [
+        "survey-5418",
+        "survey-5420",
+        [
+          "https://www.cookcountyclerkil.gov/recordings",
+          "Cook County Clerk recordings"
+        ]
+      ]
+    },
+    {
+      "id": "HP-016",
+      "topic": "Three public edges",
+      "status": "Documented",
+      "finding": "Clerk right-of-way and county pavement data agree with the plats: Kimbark Ave 66 ft (east), a 24 ft rear alley (west) and a 20 ft alley along the north line, open to Kimbark. Curb positions come from older county planimetry and are approximate.",
+      "implication": "Zoning's alley-side rules apply on two sides. Confirm curb cuts and aprons on the site visit, since garage access can come from the rear or north alley.",
+      "sources": [
+        [
+          "https://gis.cookcountyil.gov/traditional/rest/services/clerkCadastre/MapServer/0",
+          "Cook County Clerk right-of-way"
+        ],
+        [
+          "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7",
+          "Cook County planimetry"
+        ]
+      ]
+    },
+    {
+      "id": "HP-017",
+      "topic": "South neighbour and winter sun",
+      "status": "Measured",
+      "finding": "5422 is a flat-roofed 2-flat 8.7 m (28.6 ft) tall, 0.35 ft off the south line along about the front 62 ft. At December noon its shadow reaches 18.9 m north, past the 12.2 m lot width; points 4 m up stay shaded for 10.3 m and points 7 m up for 3.8 m. At the equinox the shadow is 7.8 m. The rear two-thirds faces only a 3 m garage, a 5.5 m outbuilding 9 m away and a 21 m tree in 5422's yard.",
+      "implication": "Low floors at the front of the lot get no winter midday sun from the south. Put winter-sun rooms in the rear two-thirds, on the north-alley side with clerestories, or above about 7 m. Test options in the 3D sun & shade model.",
+      "sources": [
+        [
+          "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_IL_4County_Cook_2017_LAS_2019/ept.json",
+          "USGS 3DEP LiDAR, Cook County 2017"
+        ],
+        [
+          "https://data.cityofchicago.org/d/syp8-uezg",
+          "Chicago building footprints"
+        ]
+      ]
+    },
+    {
+      "id": "HP-018",
+      "topic": "Side clearances and walking space",
+      "status": "Documented",
+      "finding": "There is no walking space on the south side beyond the lot: 5422 and its garage stand 0.30–0.35 ft off the line. The north side is open: the 20 ft alley, with 5412 (8.9 m) 20.37 ft from the line and 3–3.6 m garages beyond. At the rear, a 12.3 m (40 ft) 3-storey courtyard building stands about 22 ft away across the 24 ft alley.",
+      "implication": "Any south side path has to come out of Lot 25 and will be in shade most of the winter. Daylight, windows and pedestrian access lean to the north alley side.",
+      "sources": [
+        "survey-5418",
+        "survey-5420",
+        [
+          "https://data.cityofchicago.org/d/syp8-uezg",
+          "Chicago building footprints"
+        ],
+        [
+          "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_IL_4County_Cook_2017_LAS_2019/ept.json",
+          "USGS 3DEP LiDAR, Cook County 2017"
+        ]
+      ]
+    },
+    {
+      "id": "HP-019",
+      "topic": "Terrain",
+      "status": "Preliminary",
+      "finding": "The lot was nearly flat in 2017: 0.72 m total range (178.71–179.43 m NAVD88), a best-fit fall of 0.61 m toward the south-southeast, about 0.3 m below the rear alley and level with the Kimbark centreline. A shallow low spot on the front half marks where the houses stood.",
+      "implication": "Drainage goes toward the street. The 2022 backfill changed the ground, so take spot grades from the new topographic survey.",
+      "sources": [
+        [
+          "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/IL_4_County_QL1_LiDAR_2016_B16/TIFF/USGS_1M_16_x45y463_IL_4_County_QL1_LiDAR_2016_B16.tif",
+          "USGS 1 m DEM tile"
+        ],
+        [
+          "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_IL_4County_Cook_2017_LAS_2019/ept.json",
+          "USGS 3DEP LiDAR, Cook County 2017"
+        ]
+      ]
+    },
+    {
+      "id": "HP-020",
+      "topic": "Trees",
+      "status": "Needs review",
+      "finding": "Two crowns 16–17 m tall stood in the lot's rear half in 2017 and still show in the 2025 aerial. A 21 m tree stands just south in 5422's yard, and park and parkway trees across Kimbark are 15–21 m.",
+      "implication": "Record species, trunk positions and ownership on the site visit. The rear crowns limit the rear footprint, the car-lift garage and solar placement.",
+      "sources": [
+        [
+          "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_IL_4County_Cook_2017_LAS_2019/ept.json",
+          "USGS 3DEP LiDAR, Cook County 2017"
+        ],
+        [
+          "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+          "Cook County 2025 orthophoto"
+        ]
+      ]
     }
   ],
   "nextActions": [
@@ -363,23 +506,27 @@
     },
     {
       "title": "Visit and photograph the site",
-      "detail": "Dated photos of the vacant lot, both alleys, the 5422 and 5412 buildings and their heights, trees and capped service connections."
+      "detail": "Dated photos of the vacant lot, both alleys, the 5422 and 5412 buildings and their heights, trees and capped service connections. Record species, trunk positions and ownership of the rear-yard trees and the 5422 tree (HP-020)."
     },
     {
       "title": "Check the National Register district boundary",
       "detail": "Confirm whether Lot 25 is inside the Hyde Park–Kenwood Historic District and whether that triggers any review."
     },
     {
-      "title": "Collect imagery, terrain and climate",
-      "detail": "Cook County orthoimagery, Illinois LiDAR and a Chicago Midway TMYx weather file, then rerun the climate and 3D sun pipelines for this site."
+      "title": "Order a title commitment",
+      "detail": "Recorded easements, covenants and building lines for both PINs; neither plat shows any (HP-015)."
+    },
+    {
+      "title": "Confirm code climate values",
+      "detail": "Ground snow load, wind speed and frost depth from the official Chicago Building Code text (HC-012)."
     }
   ],
   "gaps": [
     {
       "tab": "imagery",
       "title": "Aerial imagery",
-      "status": "Not collected",
-      "need": "Recent and historical orthoimagery with Lot 25 outlined, to see roofs, trees and the alleys.",
+      "status": "Collected",
+      "need": "Cook County 6-inch orthophotos 2020–2025 with Lot 25, the right-of-way and plat notes outlined (HP-013–HP-016).",
       "sources": [
         [
           "https://maps.cookcountyil.gov/cookviewer/",
@@ -390,8 +537,8 @@
     {
       "tab": "terrain",
       "title": "Terrain & slopes",
-      "status": "Not collected",
-      "need": "Ground elevations and drainage toward the street and alleys. Expect a nearly flat urban lot; spot grades from the new survey matter more than a regional DEM.",
+      "status": "Collected",
+      "need": "2017 USGS LiDAR bare earth and neighbouring building heights (HP-017–HP-019). Spot grades from the new topographic survey will replace the 2017 ground.",
       "sources": [
         [
           "https://clearinghouse.isgs.illinois.edu/",
@@ -402,8 +549,8 @@
     {
       "tab": "climate",
       "title": "Climate & sun",
-      "status": "Not collected",
-      "need": "A Chicago Midway or O'Hare TMYx weather file, then wind, sun path, comfort and design conditions from scripts/prepare-climate.py adapted to this site.",
+      "status": "Collected",
+      "need": "Midway, O'Hare and lakefront TMYx files, FEMA flood zone, basement-water reports and code climate values (HC-001–HC-012 in ops/hydepark-climate-findings.json). Code values are from an unverified copy of the Chicago Building Code.",
       "sources": [
         [
           "https://climate.onebuilding.org/",
@@ -414,8 +561,8 @@
     {
       "tab": "sun3d",
       "title": "3D sun & shade",
-      "status": "Not collected",
-      "need": "Lot 25 with the neighbouring buildings modelled as blocks (heights from the site visit or city building footprints) to test winter sun on a 40 ft lot.",
+      "status": "Collected",
+      "need": "Neighbouring buildings and trees from 2017 LiDAR with an illustrative house and garage to test winter sun (HP-017, HP-018).",
       "sources": [
         [
           "https://data.cityofchicago.org/",

@@ -1,0 +1,187 @@
+{
+  "retrievedAt": "2026-10-23T02:42:12+00:00",
+  "site": {
+    "lat": 41.79739,
+    "lon": -87.59543
+  },
+  "limits": "Screening-level public data sampled at one point; not a flood determination, survey, code review or insurance rating.",
+  "records": {
+    "tmyx-midway": {
+      "id": "tmyx-midway",
+      "label": "Midway – Chicago Midway International Airport TMYx 2011–2025 (climate.onebuilding.org)",
+      "url": "https://climate.onebuilding.org/WMO_Region_4_North_and_Central_America/USA_United_States_of_America/IL_Illinois/USA_IL_Chicago.Midway.Intl.AP.725340_TMYx.2011-2025.zip",
+      "retrievedAt": "2026-10-23T02:41:19+00:00",
+      "httpStatus": 200,
+      "file": "raw/USA_IL_Chicago.Midway.Intl.AP.725340_TMYx.2011-2025.zip",
+      "sha256": "5b24502eef1810d3808c1ed0bc6c2c0d2f5b5a85c399f242bf841fbd103a54a3",
+      "bytes": 411693
+    },
+    "tmyx-ohare": {
+      "id": "tmyx-ohare",
+      "label": "O'Hare – Chicago O'Hare International Airport TMYx 2011–2025 (climate.onebuilding.org)",
+      "url": "https://climate.onebuilding.org/WMO_Region_4_North_and_Central_America/USA_United_States_of_America/IL_Illinois/USA_IL_Chicago.OHare.Intl.AP.725300_TMYx.2011-2025.zip",
+      "retrievedAt": "2026-10-23T02:41:19+00:00",
+      "httpStatus": 200,
+      "file": "raw/USA_IL_Chicago.OHare.Intl.AP.725300_TMYx.2011-2025.zip",
+      "sha256": "6d74a90e46465829921b67d329e5373209b67aebc297b7c7022049e180202847",
+      "bytes": 407653
+    },
+    "tmyx-northerly-island": {
+      "id": "tmyx-northerly-island",
+      "label": "Northerly Island – Chicago lakefront (former Meigs Field) TMYx 2011–2025 (climate.onebuilding.org)",
+      "url": "https://climate.onebuilding.org/WMO_Region_4_North_and_Central_America/USA_United_States_of_America/IL_Illinois/USA_IL_Chicago-Meigs.Field-Northerly.Island.725346_TMYx.2011-2025.zip",
+      "retrievedAt": "2026-10-23T02:41:20+00:00",
+      "httpStatus": 200,
+      "file": "raw/USA_IL_Chicago-Meigs.Field-Northerly.Island.725346_TMYx.2011-2025.zip",
+      "sha256": "3933cd4116188f5a7acba9f5f42fb16e7f3558c2fa5e23d3135351547bd530ab",
+      "bytes": 428133
+    },
+    "tmyx-calumet": {
+      "id": "tmyx-calumet",
+      "label": "Calumet Harbor – Coast Guard station, south lakefront TMYx 2011–2025 (climate.onebuilding.org)",
+      "url": "https://climate.onebuilding.org/WMO_Region_4_North_and_Central_America/USA_United_States_of_America/IL_Illinois/USA_IL_Chicago-CGS.Calumet.725344_TMYx.2011-2025.zip",
+      "retrievedAt": "2026-10-23T02:41:20+00:00",
+      "httpStatus": 200,
+      "file": "raw/USA_IL_Chicago-CGS.Calumet.725344_TMYx.2011-2025.zip",
+      "sha256": "f91910d46875f8b40713c21dd96486235ce01bf00c7fc05935fcb95c74e05595",
+      "bytes": 437249
+    },
+    "fema-nfhl-zone": {
+      "id": "fema-nfhl-zone",
+      "label": "FEMA NFHL Flood Hazard Zones (layer 28) at the site point",
+      "url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?geometry=-87.59543%2C41.79739&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=false&f=json&outFields=FLD_ZONE%2CZONE_SUBTY%2CSFHA_TF%2CSTATIC_BFE%2CV_DATUM%2CDFIRM_ID%2CSTUDY_TYP%2CSOURCE_CIT",
+      "retrievedAt": "2026-10-23T02:41:20+00:00",
+      "httpStatus": 200,
+      "access": "public ArcGIS REST; no key or account",
+      "file": "raw/fema-nfhl-zone.json",
+      "sha256": "b6bef957a0f94b924e9ff3fea8e77d39e89a65afff48b400b88fa737f987976e",
+      "bytes": 1087
+    },
+    "fema-nfhl-panel": {
+      "id": "fema-nfhl-panel",
+      "label": "FEMA NFHL FIRM Panels (layer 3) at the site point",
+      "url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/3/query?geometry=-87.59543%2C41.79739&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=false&f=json&outFields=FIRM_PAN%2CPANEL_TYP%2CEFF_DATE%2CPNP_REASON%2CDFIRM_ID",
+      "retrievedAt": "2026-10-23T02:41:20+00:00",
+      "httpStatus": 200,
+      "access": "public ArcGIS REST; no key or account",
+      "file": "raw/fema-nfhl-panel.json",
+      "sha256": "477c37972c313e1595dffbf79156df68ccca7e90ebe4ef39dd7ab5a63b3b1728",
+      "bytes": 761
+    },
+    "fema-nfhl-sfha-2500m": {
+      "id": "fema-nfhl-sfha-2500m",
+      "label": "FEMA NFHL Special Flood Hazard Areas within 2.5 km (geometry, for distance)",
+      "url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?geometry=-87.59543%2C41.79739&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=true&f=json&where=SFHA_TF%3D%27T%27&distance=2500&units=esriSRUnit_Meter&outSR=4326&outFields=FLD_ZONE%2CSTATIC_BFE%2CV_DATUM%2CLEN_UNIT&geometryPrecision=6",
+      "retrievedAt": "2026-10-23T02:41:21+00:00",
+      "httpStatus": 200,
+      "access": "public ArcGIS REST; no key or account",
+      "file": "raw/fema-nfhl-sfha-2500m.json",
+      "sha256": "ea9bcfef53a8dc9fb9aeb9997c2bfda1f7bea87b9f1816c65f141eec8984ace1",
+      "bytes": 209298
+    },
+    "usgs-epqs-elevation": {
+      "id": "usgs-epqs-elevation",
+      "label": "USGS 3DEP Elevation Point Query Service at the site point",
+      "url": "https://epqs.nationalmap.gov/v1/json?x=-87.59543&y=41.79739&units=Meters&wkid=4326&includeDate=true",
+      "retrievedAt": "2026-10-23T02:41:21+00:00",
+      "httpStatus": 200,
+      "verticalDatum": "NAVD88 metres (3DEP)",
+      "valueM": 179.052139282,
+      "resolutionM": 1,
+      "acquisitionDate": "6/3/2017"
+    },
+    "chi311-basement-250m": {
+      "id": "chi311-basement-250m",
+      "label": "Chicago 311 \"Water in Basement Complaint\" requests within 250 m",
+      "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.json?%24select=count%28%2A%29+as+n%2C+min%28created_date%29+as+first%2C+max%28created_date%29+as+last&%24where=within_circle%28location%2C41.79739%2C-87.59543%2C250%29+AND+sr_type%3D%27Water+in+Basement+Complaint%27",
+      "retrievedAt": "2026-10-23T02:41:22+00:00",
+      "httpStatus": 200,
+      "dataset": "City of Chicago Data Portal, 311 Service Requests (v6vf-nfxy)",
+      "access": "public Socrata API; no key",
+      "count": 9,
+      "first": "2019-03-11T11:24:21.000",
+      "last": "2026-08-01T13:58:15.000"
+    },
+    "chi311-basement-500m": {
+      "id": "chi311-basement-500m",
+      "label": "Chicago 311 \"Water in Basement Complaint\" requests within 500 m",
+      "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.json?%24select=count%28%2A%29+as+n%2C+min%28created_date%29+as+first%2C+max%28created_date%29+as+last&%24where=within_circle%28location%2C41.79739%2C-87.59543%2C500%29+AND+sr_type%3D%27Water+in+Basement+Complaint%27",
+      "retrievedAt": "2026-10-23T02:41:23+00:00",
+      "httpStatus": 200,
+      "dataset": "City of Chicago Data Portal, 311 Service Requests (v6vf-nfxy)",
+      "access": "public Socrata API; no key",
+      "count": 47,
+      "first": "2019-03-11T11:24:21.000",
+      "last": "2026-08-01T13:58:15.000"
+    },
+    "chi311-basement-city": {
+      "id": "chi311-basement-city",
+      "label": "Chicago 311 \"Water in Basement Complaint\" requests, whole city",
+      "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.json?%24select=count%28%2A%29+as+n%2C+min%28created_date%29+as+first%2C+max%28created_date%29+as+last&%24where=sr_type%3D%27Water+in+Basement+Complaint%27",
+      "retrievedAt": "2026-10-23T02:42:11+00:00",
+      "httpStatus": 200,
+      "dataset": "City of Chicago Data Portal, 311 Service Requests (v6vf-nfxy)",
+      "access": "public Socrata API; no key",
+      "count": 70566,
+      "first": "2018-12-19T18:02:57.000",
+      "last": "2026-10-22T12:30:44.000"
+    },
+    "chicago-bc-2019-ch16": {
+      "id": "chicago-bc-2019-ch16",
+      "label": "Chicago Building Code 2019, Ch. 16 Structural Design (UpCodes copy)",
+      "url": "https://up.codes/viewer/chicago/chi-building-code-2019/chapter/16/structural-design",
+      "retrievedAt": "2026-10-23T02:42:11+00:00",
+      "httpStatus": 200,
+      "note": "Third-party (UpCodes) copy of the 2019 Chicago Building Code; the official text is on the City site, which refused automated requests.",
+      "file": "raw/chicago-bc-2019-ch16.html",
+      "sha256": "38fb6ba5450f10b06a34cbc1c3dda4c04d2e45f4ae31ee43ab8d8e90ee821eca",
+      "bytes": 1033672,
+      "verified": {
+        "groundSnowLoad25psf": true,
+        "windRiskII107mph": true
+      }
+    },
+    "chicago-bc-2019-ch18": {
+      "id": "chicago-bc-2019-ch18",
+      "label": "Chicago Building Code 2019, Ch. 18 Soils and Foundations (UpCodes copy)",
+      "url": "https://up.codes/viewer/chicago/chi-building-code-2019/chapter/18/soils-and-foundations",
+      "retrievedAt": "2026-10-23T02:42:12+00:00",
+      "httpStatus": 200,
+      "note": "Third-party (UpCodes) copy of the 2019 Chicago Building Code; the official text is on the City site, which refused automated requests.",
+      "file": "raw/chicago-bc-2019-ch18.html",
+      "sha256": "76bbc23bbce0c32d1641ea46eec2aaf7639f319741b89d75412a67f123fb026c",
+      "bytes": 1170263,
+      "verified": {
+        "frost42in": true
+      }
+    },
+    "mwrd-tarp": {
+      "id": "mwrd-tarp",
+      "label": "MWRD Tunnel and Reservoir Plan (combined-sewer context)",
+      "url": "https://mwrd.org/what-we-do/tunnel-and-reservoir-plan-tarp",
+      "retrievedAt": "2026-10-23T02:42:12+00:00",
+      "httpStatus": 200,
+      "file": "raw/mwrd-tarp.html",
+      "sha256": "2ec95b4e390d2589433b7c9c0dcb1f58cd11fdbd269060292be464e87f4292c6",
+      "bytes": 109721,
+      "verified": {
+        "combinedSewer": true
+      }
+    },
+    "chicago-gov-structural-deck": {
+      "id": "chicago-gov-structural-deck",
+      "label": "Chicago DOB 2019 code training deck, Ch. 16 (official City host)",
+      "url": "https://www.chicago.gov/content/dam/city/depts/bldgs/general/Self_Cert_Program/2019/16A-STRUCTURAL.pdf",
+      "retrievedAt": "2026-10-23T02:42:12+00:00",
+      "httpStatus": 403,
+      "error": "Access Denied (CDN bot block); not retried by other means."
+    },
+    "asce7-hazard-tool": {
+      "id": "asce7-hazard-tool",
+      "label": "ASCE 7 Hazard Tool (ground snow load, wind speed)",
+      "url": "https://ascehazardtool.org/",
+      "status": "not queried",
+      "error": "Requires a registered ASCE account; this project does not create accounts."
+    }
+  }
+}

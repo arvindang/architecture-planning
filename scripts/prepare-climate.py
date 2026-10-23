@@ -352,8 +352,8 @@ def dt_hours(d):
     return d.hour + d.minute / 60 + d.second / 3600
 
 
-def sun_data(site, horizon):
-    sp = Sunpath(site['lat'], site['lon'], time_zone=-5)
+def sun_data(site, horizon, time_zone=-5, time_convention=None):
+    sp = Sunpath(site['lat'], site['lon'], time_zone=time_zone)
     monthly = []
     for m in range(1, 13):
         ss = sp.calculate_sunrise_sunset(m, 21)
@@ -388,14 +388,14 @@ def sun_data(site, horizon):
             pts.append([h, r(s.altitude, 3), r(s.azimuth, 3)])
         key_dates.append({'label': label, 'date': f'2017-{m:02d}-{d:02d}', 'positions': pts})
     return {
-        'timeConvention': ('All clock times are local STANDARD time, UTC−5 (EST), with no daylight saving '
-                           'applied, matching the EPW files. Add 1 h for EDT (UTC−4), in force from the '
-                           'second Sunday of March to the first Sunday of November.'),
+        'timeConvention': time_convention or ('All clock times are local STANDARD time, UTC−5 (EST), with no daylight saving '
+                                              'applied, matching the EPW files. Add 1 h for EDT (UTC−4), in force from the '
+                                              'second Sunday of March to the first Sunday of November.'),
         'angleConvention': ('altitude: degrees above the horizon, corrected for atmospheric refraction; '
                             'azimuth: degrees clockwise from TRUE north (90 = east, 180 = south).'),
         'algorithm': ('ladybug-core Sunpath (NOAA solar calculator equations); dates use ladybug\'s '
                       'non-leap reference year 2017. Sunrise/sunset use a 0.5334° solar-disc depression.'),
-        'location': {'lat': site['lat'], 'lon': site['lon'], 'timeZone': -5},
+        'location': {'lat': site['lat'], 'lon': site['lon'], 'timeZone': time_zone},
         'monthly21st': monthly,
         'keyDates': key_dates,
         'keyDatesFormat': '[hourDecimalLocalStandardTime, altitudeDeg, azimuthDeg] every 15 min, 00:00–23:45',

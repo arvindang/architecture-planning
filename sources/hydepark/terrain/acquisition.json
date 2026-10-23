@@ -1,0 +1,551 @@
+{
+  "generated": "2026-10-23T02:39:14+00:00",
+  "script": "scripts/prepare-hydepark-3d.py",
+  "frame": {
+    "crs": "EPSG:26916",
+    "verticalDatum": "NAVD88 m",
+    "origin": [
+      450532.0,
+      4627452.0
+    ],
+    "extent": [
+      -80.0,
+      -80.0,
+      80.0,
+      80.0
+    ]
+  },
+  "lidar": {
+    "ept": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_IL_4County_Cook_2017_LAS_2019/ept.json",
+    "projectList": "https://raw.githubusercontent.com/hobuinc/usgs-lidar/master/boundaries/resources.geojson",
+    "projectSearch": "Only USGS_LPC_IL_4County_Cook_2017_LAS_2019 covers the lot in the usgs-lidar-public resources list; the TNM API (https://tnmaccess.nationalmap.gov/api/v1/products) lists only IL_4_County_QL1_LiDAR_2016_B16 point-cloud tiles here (checked 2026-10-22).",
+    "tnmTiles": [
+      "https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/IL_4_County_QL1_LiDAR_2016_B16/IL_4County_Cook_2017/LAZ/USGS_LPC_IL_4_County_QL1_LiDAR_2016_B16_LAS_18508700.laz"
+    ],
+    "eptSha256": "20ac4f4318a60f46c348ae3be2222edbb1b387da536a582aae7a2bcd08691850",
+    "fetchBoxEPSG26916": [
+      450422.0,
+      4627342.0,
+      450642.0,
+      4627562.0
+    ],
+    "fetchBoxEPSG3857": [
+      -9751228.64,
+      5130526.12,
+      -9750927.84,
+      5130828.04
+    ],
+    "nodes": 72,
+    "hierarchyFiles": 3,
+    "pointsDecoded": 2903757,
+    "pointsInFetchBox": 2062402,
+    "collectedDays": [
+      "2017-04-18"
+    ],
+    "nodeFiles": [
+      {
+        "key": "0-0-0-0",
+        "points": 24812,
+        "bytes": 187966,
+        "sha256": "7ef36553efa60fdb07f1fc3c821a344be663c51865fb5cda3908feb2787e8440"
+      },
+      {
+        "key": "1-1-0-0",
+        "points": 12346,
+        "bytes": 105141,
+        "sha256": "22f6ba1a3203f06df5e20fd2f9ddd63ad65b7064a73a94994fd74eb9835d31dd"
+      },
+      {
+        "key": "1-1-1-0",
+        "points": 7804,
+        "bytes": 67770,
+        "sha256": "132a7aa3c67901da7513de28f569bf26058c4c3a7203a5a3b17afbc3a672cb71"
+      },
+      {
+        "key": "1-1-1-1",
+        "points": 37,
+        "bytes": 1689,
+        "sha256": "0235a7f914ce708004dff05665a9b597b2b23fc79bbe17895e0ba422fce4ff63"
+      },
+      {
+        "key": "2-3-1-1",
+        "points": 8055,
+        "bytes": 72594,
+        "sha256": "adb9f71b4524040c331b2151c26aa0a2a1180f9453a19b83cd546cdd30a228de"
+      },
+      {
+        "key": "2-3-2-1",
+        "points": 1844,
+        "bytes": 19325,
+        "sha256": "dd185bb512427daf8baf55bfe71d9cebc78acc398cbdbd8597f4b898d5a1b255"
+      },
+      {
+        "key": "2-3-2-2",
+        "points": 63,
+        "bytes": 2086,
+        "sha256": "e50c32b00b03d78f56851dc6716ee919fb14c2fefd18d2976accf45c9ed014e6"
+      },
+      {
+        "key": "3-6-3-3",
+        "points": 13090,
+        "bytes": 106227,
+        "sha256": "90f7f473dc01815b07b5537d6feefe3a463b34651646d95bae54b7101ef521e8"
+      },
+      {
+        "key": "3-6-4-3",
+        "points": 5884,
+        "bytes": 51037,
+        "sha256": "7cf5fe8b811835cfdd119b2c15c4193f2296c99f4431cbc0fe04ff32bc530229"
+      },
+      {
+        "key": "3-6-4-4",
+        "points": 48,
+        "bytes": 1825,
+        "sha256": "a6d4043817ac31034643d0701f93911ffa3b3ab158d3f6f477f24a77f678ca7c"
+      },
+      {
+        "key": "4-12-7-7",
+        "points": 20395,
+        "bytes": 155194,
+        "sha256": "ae769a652a755b692674c3537279f0742d3086bd567fc95df0bceed71da7b20b"
+      },
+      {
+        "key": "4-12-8-7",
+        "points": 16202,
+        "bytes": 122847,
+        "sha256": "2cefa93c8e03689668877fb9fa13f82f534d5c18175ca3c638c8f9b55bd4d3b6"
+      },
+      {
+        "key": "5-25-15-15",
+        "points": 17829,
+        "bytes": 133115,
+        "sha256": "c4f44b27870432620a9170e5e23dc5564fc4b28a03d88acca7237ca06db9c24c"
+      },
+      {
+        "key": "5-25-16-15",
+        "points": 16500,
+        "bytes": 119821,
+        "sha256": "d2f955f15cfcbfbb1a8e90cb5ad789502baaaed684afd1ece0fed47cf0285f0e"
+      },
+      {
+        "key": "6-50-31-31",
+        "points": 31708,
+        "bytes": 224435,
+        "sha256": "21d4d773db45e07be4d9b1bcb5da0a914e2eb640a97ffcf85f11a139e7964554"
+      },
+      {
+        "key": "6-50-32-31",
+        "points": 33034,
+        "bytes": 230321,
+        "sha256": "7fd5d0528ba6f96c10584907996de8cb8901a56bfda0befeb0113596ef02f8cd"
+      },
+      {
+        "key": "7-100-63-63",
+        "points": 41186,
+        "bytes": 277102,
+        "sha256": "2836e546dc2dfd17915c8bb01b1ae1823035b2e8592fb0cf9d748f47109eface"
+      },
+      {
+        "key": "7-100-64-63",
+        "points": 43287,
+        "bytes": 290588,
+        "sha256": "a402c9094dbcfb538f1daedbe2dbd7b6cede25b1ea77845b64ac3f5c6903fdf7"
+      },
+      {
+        "key": "8-201-127-127",
+        "points": 48532,
+        "bytes": 312572,
+        "sha256": "a6a43d3f0b2e0c28c98cf41bf49c8b748882627e7b168c71964e40575fa97724"
+      },
+      {
+        "key": "8-201-128-127",
+        "points": 52924,
+        "bytes": 344187,
+        "sha256": "5427b462506add06808f6830fd2470e04db2631ddfb68ff1ce8220405bf5dbf6"
+      },
+      {
+        "key": "9-402-255-255",
+        "points": 54690,
+        "bytes": 348919,
+        "sha256": "4a91f812eb88c2b02e7f59e4683e9ca5f91578b3b2b4d938b689495083517299"
+      },
+      {
+        "key": "9-402-256-255",
+        "points": 55192,
+        "bytes": 352462,
+        "sha256": "27acd6944c51cf86b5cfbfa965f117eae0e596a6be58fac29dde0d5247691cb8"
+      },
+      {
+        "key": "9-403-255-255",
+        "points": 54639,
+        "bytes": 346104,
+        "sha256": "ca0ff670aa81a06361e448f762a7fa055855420dd2d59ae74f7c46e51cc3ebb9"
+      },
+      {
+        "key": "9-403-256-255",
+        "points": 59181,
+        "bytes": 375011,
+        "sha256": "0b066babff5483b62ad83e6dfe194e9e25fced2c3a936b6d96fe24189aadc598"
+      },
+      {
+        "key": "10-804-511-510",
+        "points": 63614,
+        "bytes": 404005,
+        "sha256": "3c5cd1b79f228d80c51676a20b6a39065e0d0f5af2ba681b660b3f84d4561166"
+      },
+      {
+        "key": "10-804-512-510",
+        "points": 53204,
+        "bytes": 337777,
+        "sha256": "2858e1d370c8e46b558f321065123b9ea573403379c009babace0b4066690228"
+      },
+      {
+        "key": "10-804-513-510",
+        "points": 53007,
+        "bytes": 337117,
+        "sha256": "ca270d1fbf9e383f748b86d17ca29f8db2967d225f4b70458803e8268efe4c3b"
+      },
+      {
+        "key": "10-805-511-510",
+        "points": 56574,
+        "bytes": 356021,
+        "sha256": "257706c187df15681a94d3ff2fbe5eb3bbe0bca48f60a4ab8fae6d614131b67e"
+      },
+      {
+        "key": "10-805-512-510",
+        "points": 49311,
+        "bytes": 308371,
+        "sha256": "fa7ff2480e3cc5970b364da374ea6f9dd13ff33f6a5490166cf2a6b550de104c"
+      },
+      {
+        "key": "10-805-513-510",
+        "points": 52584,
+        "bytes": 333015,
+        "sha256": "fd834c3670f44c0535140160866ff9b8a25ce564bc18b7c19d6ad2d204bdf37e"
+      },
+      {
+        "key": "10-806-511-510",
+        "points": 83921,
+        "bytes": 527174,
+        "sha256": "50a7c7af4f45ae94a13c86331fdef11ac9d358a6ca464b6040c946e668f3cab5"
+      },
+      {
+        "key": "10-806-512-510",
+        "points": 78631,
+        "bytes": 491673,
+        "sha256": "ceca2313d796ecb8676e3bbad02f7aaaf3b084dfa0672dfd2cf2179cc8eebd4d"
+      },
+      {
+        "key": "10-806-513-510",
+        "points": 47246,
+        "bytes": 296997,
+        "sha256": "28eed970322ec48742401be95d2c2bc7705cf1bbbf7a0659140583f9a05b5923"
+      },
+      {
+        "key": "10-807-511-510",
+        "points": 50441,
+        "bytes": 312389,
+        "sha256": "0adc9948e911bfb5c3f1bc2b1b5eaebcf864ba113a137eae960f8c044bf6fc2d"
+      },
+      {
+        "key": "10-807-512-510",
+        "points": 65866,
+        "bytes": 409089,
+        "sha256": "76ad45aeee76f2339c0e557b7660e85cdc727fe53a1a706449e0d74c32d2dd99"
+      },
+      {
+        "key": "10-807-513-510",
+        "points": 49105,
+        "bytes": 307813,
+        "sha256": "93dbcf2ca4740aedbef62170f80927a9dc42942d9cabd9a6e72e38e4b7185e00"
+      },
+      {
+        "key": "11-1609-1022-1020",
+        "points": 44777,
+        "bytes": 276527,
+        "sha256": "adbe96022ea43f8ba1cd514d51af6ece9bc8dbb7e2d0f8a541f7ac328896490e"
+      },
+      {
+        "key": "11-1609-1023-1020",
+        "points": 57181,
+        "bytes": 356195,
+        "sha256": "6f1831c363d3d5f6e2cbd0a4c0ea22ae8f1a9b36249f2abb05d4d0b55f3e0b7a"
+      },
+      {
+        "key": "11-1609-1024-1020",
+        "points": 55229,
+        "bytes": 340179,
+        "sha256": "70671147f76b855e1ee1ed118c6b23ede3918471f2187084f9b96f9fa5c32b79"
+      },
+      {
+        "key": "11-1609-1025-1020",
+        "points": 50057,
+        "bytes": 310177,
+        "sha256": "d3ae28466e5071f32d05980c595cf8e1fa13e0c415027f5bd0508062f7616973"
+      },
+      {
+        "key": "11-1609-1026-1020",
+        "points": 46229,
+        "bytes": 285766,
+        "sha256": "1117d40a7f6484920cc4efb6893580d624902425bb8529f35a5ad69670a1bf4b"
+      },
+      {
+        "key": "11-1609-1027-1020",
+        "points": 33422,
+        "bytes": 208411,
+        "sha256": "781d5e2ada41605bf5eb35697cd1456cfc9034e15cee5efa625c547bcd3b09c9"
+      },
+      {
+        "key": "11-1610-1022-1020",
+        "points": 25576,
+        "bytes": 159656,
+        "sha256": "7b880407f097950cf4e5d9eebc575b4690c628d429717f44c6576aded16d5c18"
+      },
+      {
+        "key": "11-1610-1023-1020",
+        "points": 51369,
+        "bytes": 320215,
+        "sha256": "fd9f1a5b07e3431b691830e78fdc6b6dd976bf44543c41c9387b621f638999cf"
+      },
+      {
+        "key": "11-1610-1024-1020",
+        "points": 40307,
+        "bytes": 249513,
+        "sha256": "99d205d4275a40a14cb9dfe89a1315815eca4ed64f88e25cf46fc64dd3e31b0b"
+      },
+      {
+        "key": "11-1610-1025-1020",
+        "points": 36840,
+        "bytes": 230982,
+        "sha256": "a5fca2512ea188227a1648c1ad2599503d0d276e374ab9673a358cbcaabcc7e6"
+      },
+      {
+        "key": "11-1610-1026-1020",
+        "points": 37489,
+        "bytes": 235811,
+        "sha256": "dd6d27087e744c9f30c92f6f915b70d2a050548005f4c19540b74b375d7cb21d"
+      },
+      {
+        "key": "11-1610-1027-1020",
+        "points": 30728,
+        "bytes": 192343,
+        "sha256": "abd7e70a34e8780c373abebe5a3a55dec9b0bafe10611bf0b99cad094c13d7a2"
+      },
+      {
+        "key": "11-1611-1022-1020",
+        "points": 30547,
+        "bytes": 190102,
+        "sha256": "cc85d2d9678b952a1155dd36558092ebe4b3265fb89e0c244393678bdab0b00f"
+      },
+      {
+        "key": "11-1611-1023-1020",
+        "points": 27883,
+        "bytes": 175167,
+        "sha256": "432c58fa6b339bb6511a627200a0ac2c252eb32425b4b01ed52883322c675e60"
+      },
+      {
+        "key": "11-1611-1024-1020",
+        "points": 30672,
+        "bytes": 190777,
+        "sha256": "3b7a6c1d08eabd003bc2abbe187e95cc9ac342904e3b7d43c232b2334b60302e"
+      },
+      {
+        "key": "11-1611-1025-1020",
+        "points": 43749,
+        "bytes": 271695,
+        "sha256": "dd848c654345f09146be240ee690e9ba6d0f0fee827585aedf980c5ea2ca4261"
+      },
+      {
+        "key": "11-1611-1026-1020",
+        "points": 44097,
+        "bytes": 275599,
+        "sha256": "1052ad40518ddd9a5dbf431b8c0f13b6da61dd22a1ee7961af01e0577991289c"
+      },
+      {
+        "key": "11-1611-1027-1020",
+        "points": 43135,
+        "bytes": 268763,
+        "sha256": "6c82fe8efcc1a584f8c4449d9a6975a612d668b982ef9622021bb8bbf119eae0"
+      },
+      {
+        "key": "11-1612-1022-1020",
+        "points": 59962,
+        "bytes": 370756,
+        "sha256": "9c1fae4f8a039a30b35eeb42e7fca12849b042855270939c6a9d59f46f4c14e2"
+      },
+      {
+        "key": "11-1612-1023-1020",
+        "points": 52455,
+        "bytes": 328349,
+        "sha256": "6fd81d902e49becb187120d1a598bcd840e777d53aa7378f01a0cd90223c58ab"
+      },
+      {
+        "key": "11-1612-1024-1020",
+        "points": 47078,
+        "bytes": 290300,
+        "sha256": "2fa859f09b1ebf5d3226b7e94e64b597987e7d428106acfa7834d5cb9134ce70"
+      },
+      {
+        "key": "11-1612-1025-1020",
+        "points": 47788,
+        "bytes": 296678,
+        "sha256": "aec26c9d63cb62f6f3ac65e65c7e608a9320f92ecb84d66d65452ad29c758339"
+      },
+      {
+        "key": "11-1612-1026-1020",
+        "points": 40746,
+        "bytes": 253053,
+        "sha256": "bbdd63aeb0130a00f68f28772c270db9575190109c6eafa935c6e3b5a5084c18"
+      },
+      {
+        "key": "11-1612-1027-1020",
+        "points": 40927,
+        "bytes": 254791,
+        "sha256": "46213e920163f9fb01da45e67727ffdf5fba3f25856c3e6f510cdb6df2db251c"
+      },
+      {
+        "key": "11-1613-1022-1020",
+        "points": 64016,
+        "bytes": 397114,
+        "sha256": "bfd518fcaf9358f5b8de751fd6892c87460041f3623469e2c4e3d413ebc4a9a5"
+      },
+      {
+        "key": "11-1613-1023-1020",
+        "points": 76677,
+        "bytes": 469414,
+        "sha256": "dd91671b4735ee8c5cb12122347ea7fcf774c2ffdad1ba4785f36c32501593e7"
+      },
+      {
+        "key": "11-1613-1024-1020",
+        "points": 76366,
+        "bytes": 461701,
+        "sha256": "810dcd47c30988ef074dec24097941ad613606bf097690a1da0ccc200aef4489"
+      },
+      {
+        "key": "11-1613-1025-1020",
+        "points": 58731,
+        "bytes": 360929,
+        "sha256": "88cb7f1eb77c1ee6bc5b0fdcfac5a56d2cdfe44ac79495a99e3ed18f677728b2"
+      },
+      {
+        "key": "11-1613-1026-1020",
+        "points": 27335,
+        "bytes": 168724,
+        "sha256": "c3c089898c8a4d1f52602443768dff6048194dcc8636a679fa45d721ac524516"
+      },
+      {
+        "key": "11-1613-1027-1020",
+        "points": 28906,
+        "bytes": 182554,
+        "sha256": "4ff08594249015287a0b45fde92ccbb40e455bceaa252d933c69233503384542"
+      },
+      {
+        "key": "11-1614-1022-1020",
+        "points": 34349,
+        "bytes": 207423,
+        "sha256": "caee7565ba8edab0caf9db3e8f46208111b9dd28e545409bbff9ca7a75e3dcf6"
+      },
+      {
+        "key": "11-1614-1023-1020",
+        "points": 40951,
+        "bytes": 248703,
+        "sha256": "443930d8b8236e74dbdb5db0e1ebfd7b3e73e25b7882ef46001916a916b448d2"
+      },
+      {
+        "key": "11-1614-1024-1020",
+        "points": 38753,
+        "bytes": 235372,
+        "sha256": "70caa5c644e8465cabdaa0e94c9b47d0eca9d5c5f59bc6e462f85086289c0608"
+      },
+      {
+        "key": "11-1614-1025-1020",
+        "points": 30918,
+        "bytes": 191429,
+        "sha256": "d742a42b53243c898a1b86347e27048b694f65c17f3821d188a7e4b26ad77bf9"
+      },
+      {
+        "key": "11-1614-1026-1020",
+        "points": 46868,
+        "bytes": 288851,
+        "sha256": "2a00eb15556b9e32cbee0d61e999a3620158d63c56ad218dbad381fc235153fd"
+      },
+      {
+        "key": "11-1614-1027-1020",
+        "points": 38858,
+        "bytes": 245836,
+        "sha256": "12142cbf1c13ac25f9008d08f56ea1ac1b75806d2795684984b6409f18f26585"
+      }
+    ]
+  },
+  "dem": {
+    "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/IL_4_County_QL1_LiDAR_2016_B16/TIFF/USGS_1M_16_x45y463_IL_4_County_QL1_LiDAR_2016_B16.tif",
+    "method": "gdal_translate -projwin over /vsicurl/ (origin +/- 140 m)",
+    "clip": "sources/hydepark/cache/dem/usgs-1m-x45y463-clip.tif",
+    "sha256": "df20bfc1fb12e6fba7cf5aec168bd6aac66b84d399879ff608dab7461fcb30e1"
+  },
+  "footprints": {
+    "url": "https://data.cityofchicago.org/resource/syp8-uezg.geojson?%24where=within_box%28the_geom%2C+41.79829340138497%2C+-87.59662141210302%2C+41.79647962464426%2C+-87.59423089256082%29&%24limit=5000",
+    "dataset": "https://data.cityofchicago.org/d/syp8-uezg",
+    "datasetUpdated": "2015-08-15",
+    "file": "sources/hydepark/cache/footprints/syp8-uezg.geojson",
+    "sha256": "acbec65d44817b0cd4d5b903d7066f1e1bceffe2f34a09c1e43ee757fedf6cef",
+    "features": 55
+  },
+  "permits": {
+    "url": "https://data.cityofchicago.org/resource/ydr8-5enu.json?%24where=latitude+between+41.79647962464426+and+41.79829340138497+and+longitude+between+-87.59662141210302+and+-87.59423089256082+and+issue_date+%3E+%272015-01-01%27+and+permit_type+in+%28%27PERMIT+-+NEW+CONSTRUCTION%27%2C+%27PERMIT+-+WRECKING%2FDEMOLITION%27%29&%24limit=1000&%24select=permit_%2Cpermit_type%2Cissue_date%2Cstreet_number%2Cstreet_direction%2Cstreet_name%2Cwork_description%2Clatitude%2Clongitude",
+    "dataset": "https://data.cityofchicago.org/d/ydr8-5enu",
+    "file": "sources/hydepark/cache/footprints/permits-new-wreck.json",
+    "sha256": "22685e73cf22a483112f199186c9e24fc4395ca42232e91660a27309a0545e9a",
+    "records": [
+      {
+        "permit_": "101014083",
+        "permit_type": "PERMIT - NEW CONSTRUCTION",
+        "issue_date": "2023-09-08T00:00:00.000",
+        "street_number": "5446",
+        "street_direction": "S",
+        "street_name": "KIMBARK AVE",
+        "work_description": "SPR 2019 CBC. ERECT A NEW 3 -STORY (IIIB CONSTRUCTION) 3 DWELLING UNIT RESIDENTIAL BUILDING WITH BASEMENT(DUPLEX 1ST FLOOR WITH BASEMENT AS 1 UNIT) AND ROOF ACCESS. NEW 3 STORY REAR METAL PORCH. NEW FRONT BALCONIES AT EACH FLOOR, NEW FENCING, NEW 2 CAR MASONRY GARAGE WITH ROOF DECK AND 1 CAR MASONRY GARAGE. ALL WORK AS PER PLANS."
+      },
+      {
+        "permit_": "B100967275",
+        "permit_type": "PERMIT - WRECKING/DEMOLITION",
+        "issue_date": "2022-06-07T00:00:00.000",
+        "street_number": "5420",
+        "street_direction": "S",
+        "street_name": "KIMBARK AVE",
+        "work_description": "WRECK AND REMOVE A 1 1/2 STORY FRAME RESIDENCE"
+      },
+      {
+        "permit_": "B101015649",
+        "permit_type": "PERMIT - WRECKING/DEMOLITION",
+        "issue_date": "2023-07-19T00:00:00.000",
+        "street_number": "5446",
+        "street_direction": "S",
+        "street_name": "KIMBARK AVE",
+        "work_description": "WRECK AND REMOVE A 2 STORY FRAME RESIDENCE"
+      },
+      {
+        "permit_": "B100966644",
+        "permit_type": "PERMIT - WRECKING/DEMOLITION",
+        "issue_date": "2022-06-07T00:00:00.000",
+        "street_number": "5418",
+        "street_direction": "S",
+        "street_name": "KIMBARK AVE",
+        "work_description": "WRECK AND REMOVE A 1 1/2 STORY FRAME RESIDENCE"
+      },
+      {
+        "permit_": "101030251",
+        "permit_type": "PERMIT - NEW CONSTRUCTION",
+        "issue_date": "2023-09-19T00:00:00.000",
+        "street_number": "5339",
+        "street_direction": "S",
+        "street_name": "WOODLAWN AVE",
+        "work_description": "SELF-CERT 2019 CBC: INTERIOR RENOVATIONS FOR 3 UNITS IN 3 STORY, 4 DWELLING UNIT MULTI-FAMILY BRICK BUILDING WITH BASEMENT. OCCUPANCY GROUP R-2, TYPE IIIB CONSTRUCTION."
+      }
+    ]
+  },
+  "parcels": {
+    "file": "sources/hydepark/county-parcels.geojson",
+    "sha256": "1b14c34eaaf32902bf8cb0b6e1f0f1a4b0cfe13619895e4a4df1019cc2eddd35"
+  }
+}

@@ -1,0 +1,196 @@
+{
+ "retrieved": "2026-10-22",
+ "crs": "EPSG:26916",
+ "origin": [
+  450532.0,
+  4627452.0
+ ],
+ "note": "Exported through each ImageServer exportImage in EPSG:26916 (server reprojection from Illinois East State Plane ftUS; any NAD83(2011) -> NAD83 datum shift is whatever the server applies, so absolute position may differ by a few decimetres; parcels came through the same server and share that frame). Raw GeoTIFFs stay in the gitignored cache.",
+ "images": [
+  {
+   "id": "aerial-2025",
+   "service": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+   "layer": "CookOrtho2025 (bands 1-3 of RGB+NIR)",
+   "flightYear": 2025,
+   "flightDate": "Not published in the service metadata; leaf state indicates a spring flight.",
+   "nativeResolution": "0.5 ft US (0.152 m), 4-band RGB+NIR",
+   "nativeCrs": "NAD83(2011) / Illinois East ftUS (EPSG:6455)",
+   "request": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=450452%2C4627372%2C450612%2C4627532&bboxSR=26916&imageSR=26916&size=1067%2C1067&format=tiff&pixelType=U8&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&noData=0&f=image",
+   "outputCrs": "EPSG:26916",
+   "boundsEPSG26916": [
+    450452.0,
+    4627372.0,
+    450612.0,
+    4627532.0
+   ],
+   "boundsLocalM": [
+    -80.0,
+    -80.0,
+    80.0,
+    80.0
+   ],
+   "pixelSizeM": 0.149953,
+   "width": 1067,
+   "height": 1067,
+   "resampling": "Server-side bilinear reprojection",
+   "rawFile": "sources/hydepark/cache/imagery/aerial-2025.tif",
+   "rawSha256": "e0018ca9a56c25b0b51369f7a3d11684ccfcb8281ca04eb6d2b73a129d7bcef3",
+   "file": "assets/sites/hydepark/aerial-2025.jpg",
+   "sha256": "3faeedc86f100dcff47324e7263f75ec92cef92b04c41f2edfc773c5773b4d9a",
+   "retrieved": "2026-10-22"
+  },
+  {
+   "id": "aerial-2024",
+   "service": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2024/ImageServer",
+   "layer": "CookOrtho2024 (bands 1-3 of RGB+NIR)",
+   "flightYear": 2024,
+   "flightDate": "Not published in the service metadata; leaf state indicates a spring flight.",
+   "nativeResolution": "0.5 ft US (0.152 m), 4-band RGB+NIR",
+   "nativeCrs": "NAD83(2011) / Illinois East ftUS (EPSG:6455)",
+   "request": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2024/ImageServer/exportImage?bbox=450452%2C4627372%2C450612%2C4627532&bboxSR=26916&imageSR=26916&size=1067%2C1067&format=tiff&pixelType=U8&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&noData=0&f=image",
+   "outputCrs": "EPSG:26916",
+   "boundsEPSG26916": [
+    450452.0,
+    4627372.0,
+    450612.0,
+    4627532.0
+   ],
+   "boundsLocalM": [
+    -80.0,
+    -80.0,
+    80.0,
+    80.0
+   ],
+   "pixelSizeM": 0.149953,
+   "width": 1067,
+   "height": 1067,
+   "resampling": "Server-side bilinear reprojection",
+   "rawFile": "sources/hydepark/cache/imagery/aerial-2024.tif",
+   "rawSha256": "4417d5eb436b96070dcc63f7717662f2f5393e12471f5159a3ab8e254a3b39a1",
+   "file": "assets/sites/hydepark/aerial-2024.jpg",
+   "sha256": "d72ad8892c2e7a424785dd8facc67733c1ea083569f0487f313fcad0ec088325",
+   "retrieved": "2026-10-22"
+  },
+  {
+   "id": "aerial-2020",
+   "service": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2020/ImageServer",
+   "layer": "CookOrtho2020 (bands 1-3 of RGB+NIR)",
+   "flightYear": 2020,
+   "flightDate": "Not published in the service metadata; leaf state indicates a spring flight.",
+   "nativeResolution": "0.5 ft US (0.152 m), 4-band RGB+NIR",
+   "nativeCrs": "NAD83 / Illinois East ftUS (EPSG:3435)",
+   "request": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2020/ImageServer/exportImage?bbox=450452%2C4627372%2C450612%2C4627532&bboxSR=26916&imageSR=26916&size=1067%2C1067&format=tiff&pixelType=U8&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&noData=0&f=image",
+   "outputCrs": "EPSG:26916",
+   "boundsEPSG26916": [
+    450452.0,
+    4627372.0,
+    450612.0,
+    4627532.0
+   ],
+   "boundsLocalM": [
+    -80.0,
+    -80.0,
+    80.0,
+    80.0
+   ],
+   "pixelSizeM": 0.149953,
+   "width": 1067,
+   "height": 1067,
+   "resampling": "Server-side bilinear reprojection",
+   "rawFile": "sources/hydepark/cache/imagery/aerial-2020.tif",
+   "rawSha256": "90763eb4046844cfd636846c31b39319560e22d9018bb42fc62a9505deef7d64",
+   "file": "assets/sites/hydepark/aerial-2020.jpg",
+   "sha256": "a705032fb837818b5b35734ad9e3bd8bfcb5fe591c18be23f70dbcef406675fb",
+   "retrieved": "2026-10-22"
+  },
+  {
+   "id": "aerial-2025-context",
+   "service": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer",
+   "layer": "CookOrtho2025 (bands 1-3 of RGB+NIR)",
+   "flightYear": 2025,
+   "flightDate": "Not published in the service metadata; leaf state indicates a spring flight.",
+   "nativeResolution": "0.5 ft US (0.152 m), 4-band RGB+NIR",
+   "nativeCrs": "NAD83(2011) / Illinois East ftUS (EPSG:6455)",
+   "request": "https://gis.cookcountyil.gov/imagery/rest/services/CookOrtho2025/ImageServer/exportImage?bbox=450332%2C4627252%2C450732%2C4627652&bboxSR=26916&imageSR=26916&size=1600%2C1600&format=tiff&pixelType=U8&bandIds=0%2C1%2C2&interpolation=RSP_BilinearInterpolation&noData=0&f=image",
+   "outputCrs": "EPSG:26916",
+   "boundsEPSG26916": [
+    450332.0,
+    4627252.0,
+    450732.0,
+    4627652.0
+   ],
+   "boundsLocalM": [
+    -200.0,
+    -200.0,
+    200.0,
+    200.0
+   ],
+   "pixelSizeM": 0.25,
+   "width": 1600,
+   "height": 1600,
+   "resampling": "Server-side bilinear reprojection",
+   "rawFile": "sources/hydepark/cache/imagery/aerial-2025-context.tif",
+   "rawSha256": "fa853ad49c2a88a8061195f3a09076752358472fd3271824f7cc7002aa75c740",
+   "file": "assets/sites/hydepark/aerial-2025-context.jpg",
+   "sha256": "5b43d3189cf8e42223ec81acea3efbd39ace6b7b2f132a813cb564c438eeae29",
+   "retrieved": "2026-10-22"
+  }
+ ],
+ "layers": [
+  {
+   "name": "parcels",
+   "service": "https://gis.cookcountyil.gov/traditional/rest/services/cookVwrDynmc/MapServer/44",
+   "description": "Cook County current parcels (tax year 2024 geometry)",
+   "request": "https://gis.cookcountyil.gov/traditional/rest/services/cookVwrDynmc/MapServer/44/query?geometry=450412%2C4627332%2C450652%2C4627572&geometryType=esriGeometryEnvelope&inSR=26916&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=26916&f=geojson",
+   "rawFile": "sources/hydepark/cache/gis/parcels.geojson",
+   "rawSha256": "545b52f30d1e7279f800d0cd5ddf9689a32eae2561443bc826c5856ba1f10cf5",
+   "features": 72
+  },
+  {
+   "name": "lots",
+   "service": "https://gis.cookcountyil.gov/traditional/rest/services/clerkCadastre/MapServer/2",
+   "description": "Cook County Clerk subdivision lots",
+   "request": "https://gis.cookcountyil.gov/traditional/rest/services/clerkCadastre/MapServer/2/query?geometry=450412%2C4627332%2C450652%2C4627572&geometryType=esriGeometryEnvelope&inSR=26916&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=26916&f=geojson",
+   "rawFile": "sources/hydepark/cache/gis/lots.geojson",
+   "rawSha256": "f9bd1a076817ef966fde0c359a70fdbf4ab12724a935e4ba404f96cb6af38681",
+   "features": 103
+  },
+  {
+   "name": "row",
+   "service": "https://gis.cookcountyil.gov/traditional/rest/services/clerkCadastre/MapServer/0",
+   "description": "Cook County Clerk right-of-way",
+   "request": "https://gis.cookcountyil.gov/traditional/rest/services/clerkCadastre/MapServer/0/query?geometry=450412%2C4627332%2C450652%2C4627572&geometryType=esriGeometryEnvelope&inSR=26916&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=26916&f=geojson",
+   "rawFile": "sources/hydepark/cache/gis/row.geojson",
+   "rawSha256": "c75980c0c7c89357d74bc78724cfd499504926fe855d86cf21aba04eb070cea7",
+   "features": 4
+  },
+  {
+   "name": "road-edge",
+   "service": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7",
+   "description": "Cook County planimetry road edge (pavement)",
+   "request": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/7/query?geometry=450412%2C4627332%2C450652%2C4627572&geometryType=esriGeometryEnvelope&inSR=26916&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=26916&f=geojson",
+   "rawFile": "sources/hydepark/cache/gis/road-edge.geojson",
+   "rawSha256": "ff53c9ce604c81fc9a91a6e1803945e7040c126c0b6becd5f98e5321df230386",
+   "features": 4
+  },
+  {
+   "name": "street",
+   "service": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/5",
+   "description": "Cook County planimetry street centrelines",
+   "request": "https://gis.cookcountyil.gov/traditional/rest/services/planimetry/MapServer/5/query?geometry=450412%2C4627332%2C450652%2C4627572&geometryType=esriGeometryEnvelope&inSR=26916&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=26916&f=geojson",
+   "rawFile": "sources/hydepark/cache/gis/street.geojson",
+   "rawSha256": "ce93048ab9f35c06a354d9d238fc8242cbfe862cb62fb0841764ad3a01de198f",
+   "features": 16
+  }
+ ],
+ "outputs": {
+  "geometry": {
+   "file": "sources/hydepark/site-geometry.geojson",
+   "sha256": "dccf2ea81269323c50ce5ff7fcdf93bfb9eb02ec3c4a7d0d61bc1e2a15e0481d"
+  },
+  "data": {
+   "file": "hydepark-imagery-data.js",
+   "sha256": "91d2e10375fcbd0f2fcba8a7ad0709b55fc827b6f4de5d461fe481ac3b5c55f6"
+  }
+ }
+}

@@ -99,7 +99,14 @@ Remaining: select and register the exact site, implement supported envelope / pl
 - [ ] Check the exact Hyde Park–Kenwood National Register boundary and whether it triggers any review.
 - [ ] Order a combined boundary + topographic survey of the vacant lot (resolves HP-003; adds grades, trees, fill, utility stubs).
 - [ ] Site visit: dated photos of the vacant lot, alleys, 5422 and 5412 heights, trees, capped services.
-- [ ] Imagery, terrain and a Chicago TMYx weather file; rerun the climate and 3D sun pipelines using `sources/hydepark/county-parcels.geojson` for placement.
+- [x] Aerial imagery and outlines: Cook County 6-inch orthophotos 2020–2025, county/plat lot, right-of-way, plat notes (`scripts/prepare-hydepark-imagery.py`, HP-013–HP-016).
+- [x] Terrain, neighbouring buildings and trees from 2017 USGS LiDAR + Chicago footprints (`scripts/prepare-hydepark-3d.py`, HP-017–HP-020).
+- [x] 3D sun & shade model with an illustrative house and car-lift garage (`hydepark-viewer3d.js`).
+- [x] Climate & sun study: Midway / O'Hare / lakefront TMYx, FEMA flood zone, basement-water reports, code climate values (`scripts/prepare-hydepark-climate.py`, HC-001–HC-012).
+- [ ] Confirm ground snow load, wind speed and frost depth in the official Chicago Building Code (HC-012).
+- [ ] Order a title commitment with recorded easements (HP-015).
+- [ ] Record the rear-yard trees (species, trunk position, ownership) and the 5422 tree on the site visit (HP-020).
+- [ ] Check the 3D model's neighbour heights against site photos; confirm whether the 5446 replacement building is built.
 
 ## Hydepark Home — brief & requirements (noted for later)
 

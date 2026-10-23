@@ -11,7 +11,7 @@ A six-week residential architecture + software experiment. Two halves:
 
 No parcel has been selected and no regulatory feasibility determination has been made. Dannemora is a research candidate, not the project site. Keep that distinction in UI copy and docs.
 
-A second project, **Hydepark Home** (5418 & 5420 S. Kimbark Ave, Chicago — all of Lot 25), has its own site evidence: two plats of survey, `ops/hydepark-site.json` (HP finding IDs) and the `hydepark-site.js` tabs.
+A second project, **Hydepark Home** (5418 & 5420 S. Kimbark Ave, Chicago — all of Lot 25), has its own site evidence: two plats of survey, `ops/hydepark-site.json` (HP finding IDs), `ops/hydepark-climate-findings.json` (HC IDs) and the `hydepark-site.js` tabs. Hydepark geometry is EPSG:26916 metres with local origin [450532, 4627452] (D-021); county GIS lines are mapped, not survey (HP-014).
 
 ## Commands
 
@@ -45,6 +45,11 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 # Hydepark plats → masked images + hydepark-site-data.js (reads ops/hydepark-site.json; needs pdftoppm)
 .venv/bin/python scripts/prepare-hydepark-site.py
+
+# Hydepark imagery, terrain/buildings and climate (--acquire / default re-fetch; --skip-download uses sources/hydepark/cache)
+.venv/bin/python scripts/prepare-hydepark-imagery.py   # Cook County orthophotos + outlines → hydepark-imagery-data.js
+.venv/bin/python scripts/prepare-hydepark-3d.py        # 2017 USGS LiDAR + Chicago footprints → hydepark-3d-data.js
+.venv/bin/python scripts/prepare-hydepark-climate.py   # TMYx, FEMA, code values → hydepark-climate-data.js (imports prepare-climate.py)
 ```
 
 Full run order for the overlay chain: `align-permit-aerial.py` → `prepare-site-constraints.py` → `prepare-site-evidence.py`.
@@ -57,12 +62,12 @@ The original terrain derivatives were built with the adjacent repo's GIS runtime
 
 ## Architecture
 
-**Generated data files — never hand-edit.** All `*-data.js` files, `ops/site-findings.md`, `ops/climate-findings.md`, `ops/practice-permit.md`, `sources/dannemora/constraints/*`, and everything under `assets/sites/dannemora/terrain/`, `assets/sites/dannemora/site3d/` and `assets/sites/hydepark/` are script outputs. Edit the source (`ops/site-findings.json`, `ops/climate-findings.json`, `ops/practice-permit.json`, `ops/hydepark-site.json`, `sources/dannemora/*.json`, the DEM) and rerun the matching script. Each script resolves paths from the repo root, so run from anywhere.
+**Generated data files — never hand-edit.** All `*-data.js` files, `ops/site-findings.md`, `ops/climate-findings.md`, `ops/practice-permit.md`, `sources/dannemora/constraints/*`, `ops/hydepark-3d.md`, `ops/hydepark-climate-findings.md`, `sources/hydepark/{site-geometry,buildings}.geojson`, `sources/hydepark/{imagery,terrain,climate}/acquisition.json`, and everything under `assets/sites/dannemora/terrain/`, `assets/sites/dannemora/site3d/` and `assets/sites/hydepark/` are script outputs. Edit the source (`ops/site-findings.json`, `ops/climate-findings.json`, `ops/practice-permit.json`, `ops/hydepark-site.json`, `sources/dannemora/*.json`, the DEM) and rerun the matching script. Each script resolves paths from the repo root, so run from anywhere.
 
 **Browser runtime.** `index.html` loads plain `defer` scripts in order; they share globals rather than using modules (keeps `file://` working — no ES modules, no CDN):
 
-- `*-data.js` define `SITE_EVIDENCE`, `SITE_TERRAIN`, `SITE_FINDINGS`, `SITE_CONSTRAINTS` (wetland/clearing/septic/well/setback/buildable layers in EPSG:26918 plus terrain/aerial SVG paths, and `practicePermit`), `SITE_CLIMATE` (stations, wind roses, sun, comfort, hazards, findings), `SITE_3D` (2 m ground + canopy grid, trees, `crownId`).
-- `site-terrain.js` (canvas 3D mesh, maps, profiles), `site-evidence.js` (`siteResearchView` and its tabs), `site-research.js` (`siteProgressView` overview card), `site-climate.js` (`siteClimateView`) and `site-viewer3d.js` (`siteViewer3dView` / `initSiteViewer3d` / `disposeSiteViewer3d`, Three.js r147 vendored in `vendor/three/`) and `hydepark-site.js` (`hydeparkSiteView`, same nine tabs from `SITE_HYDEPARK`) define render functions and module-level view state (`let terrainYaw`, `let siteEvidenceTab`, …).
+- `*-data.js` define `SITE_EVIDENCE`, `SITE_TERRAIN`, `SITE_FINDINGS`, `SITE_CONSTRAINTS` (wetland/clearing/septic/well/setback/buildable layers in EPSG:26918 plus terrain/aerial SVG paths, and `practicePermit`), `SITE_CLIMATE` / `SITE_HYDEPARK_CLIMATE` (stations, wind roses, sun, comfort, hazards, findings; `siteClimateView(data)` renders either), `SITE_3D` (2 m ground + canopy grid, trees, `crownId`).
+- `site-terrain.js` (canvas 3D mesh, maps, profiles), `site-evidence.js` (`siteResearchView` and its tabs), `site-research.js` (`siteProgressView` overview card), `site-climate.js` (`siteClimateView`) and `site-viewer3d.js` (`siteViewer3dView` / `initSiteViewer3d` / `disposeSiteViewer3d`, Three.js r147 vendored in `vendor/three/`) `hydepark-site.js` (`hydeparkSiteView`, same nine tabs from `SITE_HYDEPARK`, `SITE_HYDEPARK_IMAGERY`, `SITE_HYDEPARK_3D`) and `hydepark-viewer3d.js` (`hydeparkViewer3dView` / `initHydeparkViewer3d`; buildings extruded from footprints, illustrative house + garage, ray-marched sun hours; reuses `siteSolarPosition` from site-viewer3d.js) define render functions and module-level view state (`let terrainYaw`, `let siteEvidenceTab`, …).
 - `app.js` loads last: owns state, hash routing (`#overview`, `#site`, …), `render()`, the editor dialog, and import/export. It calls into the site modules (e.g. `siteResearchView` for the `site` stage, `initSiteTerrain` / `initSiteViewer3d` after render). Views are HTML template strings; escape interpolated text with `e()`.
 
 **Workspace state.** Stored in localStorage under `fieldwork.workspace.v1` — keep that key (it predates the Groundwork rename and preserves saved projects/old exports). Exports carry `schemaVersion: 1`; `validateWorkspace` checks imports, which append copies under new IDs. Each project has an incrementing `revision`; recording a decision marks user-selected checks/deliverables stale until reviewed (manual dependency tracking, not model-change detection). A passing check or ready deliverable requires source, link, findings, and model/input revision. Shared Dannemora research must never alter a project's selected site or manual check states. A project's optional `siteKey` picks its site tabs (`'hydepark'` → `hydeparkSiteView`; absent → shared Dannemora research). `state.seeds` records one-time seeded projects so a deleted seed stays deleted.
