@@ -27,23 +27,28 @@
     },
     {
       "path": "assets/sites/dannemora/septic-details-c2.png",
-      "bytes": 317399,
-      "sha256": "484eecd6554185530eaf178f44c6a382bcac3796d815196a9f74dbdc12fb6c8f"
+      "bytes": 191939,
+      "sha256": "20dec583b992e08e967b0e2e9d1d96e4cfd1b05f9b057a89303d60d627a80450",
+      "redaction": "Owner and neighbour names masked for public release; drawing geometry unchanged"
     },
     {
       "path": "assets/sites/dannemora/septic-site-c1.png",
-      "bytes": 365175,
-      "sha256": "e23a161739f8264cb59d835860bde790046af79525171b06074a1c72ef7db764"
+      "bytes": 230952,
+      "sha256": "6b94f5eaae256083d5e7a88b1c932fa08b12f1aeaf591e21dc24d54d3ed0b85d",
+      "redaction": "Owner and neighbour names masked for public release; drawing geometry unchanged"
     },
     {
       "path": "assets/sites/dannemora/subdivision-survey.png",
-      "bytes": 404691,
-      "sha256": "9ea867b408771cc5316fb49f9526740d258ce9b293e72881d81a501c5ae08f24"
+      "bytes": 256569,
+      "sha256": "51fa7424be6d29e12ab8a3d86342f1917ebbcbbf87a93f43181859cf1d24faa2",
+      "redaction": "Owner and neighbour names masked for public release; drawing geometry unchanged"
     },
     {
       "path": "sources/dannemora/apa-2025-0137.pdf",
       "bytes": 360382,
-      "sha256": "0cc78bb16a993e2182a46eabf1781a594ee96919513d37b12645e849917ce171"
+      "sha256": "0cc78bb16a993e2182a46eabf1781a594ee96919513d37b12645e849917ce171",
+      "published": false,
+      "note": "Kept locally (gitignored); not in the public repository because it names private permittees"
     },
     {
       "path": "sources/dannemora/county-layer-metadata.json",

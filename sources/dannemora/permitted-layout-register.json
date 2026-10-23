@@ -9,14 +9,14 @@
       "sourceImage": "assets/sites/dannemora/subdivision-survey.png",
       "sourceViewBox": "1630 1080 680 560",
       "method": "Unchanged original pixels embedded in SVG; display-only emphasis and callouts",
-      "sha256": "be823d357634605c10ccf40b10473ec20e2612a3a2e676e5906526a4ac38d350"
+      "sha256": "c59c2bc745b66afa15058cf476fcf8a2cf08e67c9a020e988974928ac66378f9"
     },
     {
       "file": "assets/sites/dannemora/house-services-permitted-layout.svg",
       "sourceImage": "assets/sites/dannemora/septic-site-c1.png",
       "sourceViewBox": "180 660 2300 1040",
       "method": "Unchanged original pixels embedded in SVG; display-only emphasis and callouts",
-      "sha256": "0807add4ea58eba82cc92707df81c5b43d4242cec5b3a64ad4d01f290ed4653b"
+      "sha256": "8821f3b3c0d4420ace2082da5c3f8ab18d464a04dc92111ef1b3fb66925d3806"
     }
   ]
 }
