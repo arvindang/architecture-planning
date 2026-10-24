@@ -8,9 +8,10 @@
   const FALLBACK={lat:41.79739,lon:-87.59543}, SUN_R=150;
   const SUN_PRESETS=[['Dec 21',12,21],['Feb 15',2,15],['Mar 20',3,20],['Jun 21',6,21],['Sep 22',9,22]];
   const KEY_DATES=[['Dec 21',12,21],['Mar 20',3,20],['Jun 21',6,21]];
+  const FENCE_H=6;
   const MASS={front:15,depth:60,height:35,north:3,south:5,garage:true,garageDepth:24,garageHeight:15,rearGap:2};
   const doyOf=(m,d,y=YEAR)=>Math.round((Date.UTC(y,m-1,d)-Date.UTC(y,0,1))/864e5)+1;
-  const state={doy:doyOf(12,21),minutes:12*60,clock:'standard',trees:true,heat:true,labels:true,imagery:true,ghosts:false,sunPath:true,showMass:true,mass:{...MASS},camera:null};
+  const state={doy:doyOf(12,21),minutes:12*60,clock:'standard',trees:true,heat:true,labels:true,imagery:true,ghosts:false,sunPath:true,showMass:true,mass:{...MASS},fence:true,fenceH:FENCE_H,camera:null};
   let DATA=null, V=null;
 
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -113,6 +114,13 @@
     if(m.garage){const g0=F.u0+m.rearGap*FT;out.push(box('garage',g0,Math.min(g0+m.garageDepth*FT,hu0-1),vS,vN,m.garageHeight*FT));}
     return out.filter(b=>b.u1>b.u0+1&&b.v1>b.v0+1);
   }
+  // Fence runs along both side lines and the rear alley line; the Kimbark frontage is left open.
+  function fenceSegments(){
+    const F=DATA.frame, r=DATA.lot, segs=[], pu=p=>p[0]*F.u[0]+p[1]*F.u[1];
+    for(let i=1;i<r.length;i++){const a=r[i-1],b=r[i];if(pu(a)>F.u1-1&&pu(b)>F.u1-1)continue;if(Math.hypot(b[0]-a[0],b[1]-a[1])>.3)segs.push([a,b]);}
+    return segs;
+  }
+  const segDist=(x,y,[a,b])=>{const dx=b[0]-a[0],dy=b[1]-a[1],t=clamp(((x-a[0])*dx+(y-a[1])*dy)/(dx*dx+dy*dy),0,1);return Math.hypot(x-a[0]-t*dx,y-a[1]-t*dy);};
   const inBox=(b,x,y)=>{const F=DATA.frame,pu=x*F.u[0]+y*F.u[1],pv=x*F.v[0]+y*F.v[1];return pu>=b.u0&&pu<=b.u1&&pv>=b.v0&&pv<=b.v1;};
 
   // ---------------------------------------------------------------- obstruction surface (0.5 m) and ray march
@@ -132,13 +140,18 @@
     }
     return {cols,rows,n,base,trees,surf:new Float32Array(n),top:0};
   }
-  function composeSurface(){
+  function composeSurface(noFence){
     const S=V.S, D=DATA, boxes=state.showMass?massBoxes():[];
     for(let i=0;i<S.n;i++)S.surf[i]=state.trees&&S.trees[i]>S.base[i]?S.trees[i]:S.base[i];
     for(const b of boxes){
       const xs=b.corners.map(p=>p[0]),ys=b.corners.map(p=>p[1]);
       const c0=Math.max(0,Math.floor((Math.min(...xs)-D.x0)/CELL)),c1=Math.min(S.cols-1,Math.ceil((Math.max(...xs)-D.x0)/CELL)),r0=Math.max(0,Math.floor((D.y1-Math.max(...ys))/CELL)),r1=Math.min(S.rows-1,Math.ceil((D.y1-Math.min(...ys))/CELL));
       for(let r=r0;r<=r1;r++)for(let c=c0;c<=c1;c++)if(inBox(b,D.x0+(c+.5)*CELL,D.y1-(r+.5)*CELL)){const i=r*S.cols+c;if(b.top>S.surf[i])S.surf[i]=b.top;}
+    }
+    if(state.fence&&!noFence)for(const sg of fenceSegments()){
+      const h=state.fenceH*FT, xs=[sg[0][0],sg[1][0]], ys=[sg[0][1],sg[1][1]];
+      const c0=Math.max(0,Math.floor((Math.min(...xs)-D.x0)/CELL)-1),c1=Math.min(S.cols-1,Math.ceil((Math.max(...xs)-D.x0)/CELL)+1),r0=Math.max(0,Math.floor((D.y1-Math.max(...ys))/CELL)-1),r1=Math.min(S.rows-1,Math.ceil((D.y1-Math.min(...ys))/CELL)+1);
+      for(let r=r0;r<=r1;r++)for(let c=c0;c<=c1;c++){const x=D.x0+(c+.5)*CELL,y=D.y1-(r+.5)*CELL;if(segDist(x,y,sg)>CELL*.5)continue;const i=r*S.cols+c,z=groundAt(x,y)+h;if(z>S.surf[i])S.surf[i]=z;}
     }
     let top=-Infinity;for(let i=0;i<S.n;i++)if(S.surf[i]>top)top=S.surf[i];S.top=top;
     V.boxes=boxes;
@@ -182,12 +195,16 @@
     }
     return {hours,daylight:daylight/60};
   }
-  const ZONES=[['front','Front yard (Kimbark)'],['south','South side path'],['rear','Rear yard / garden'],['roof','House roof'],['wall1','South wall, level 1 (1.5 m)'],['wall2','South wall, level 2 (4.5 m)'],['wall3','South wall, level 3 (7.5 m)'],['rearwall','Rear (west) wall, level 1']];
+  const ZONES=[['yard','Whole lot (no massing)'],['front','Front yard (Kimbark)'],['south','South side path'],['north','North side path'],['rear','Rear yard / garden'],['roof','House roof'],['wall1','South wall, level 1 (1.5 m)'],['wall2','South wall, level 2 (4.5 m)'],['wall3','South wall, level 3 (7.5 m)'],['rearwall','Rear (west) wall, level 1']];
   function zoneMeans(pts,hours){const acc={};pts.forEach((p,i)=>{(acc[p.zone]||(acc[p.zone]=[0,0]));acc[p.zone][0]+=hours[i];acc[p.zone][1]++;});const out={};for(const k in acc)out[k]=acc[k][0]/acc[k][1];return out;}
   function analyse(full){
     if(!V)return;
     const pts=samplePoints(), t0=performance.now();
     if(full)V.keyStats=KEY_DATES.map(([l,m,d])=>{const r=dayHours(doyOf(m,d),pts);return {label:l,daylight:r.daylight,zones:zoneMeans(pts,r.hours)};});
+    if(full){
+      V.noFence=null;
+      if(state.fence){composeSurface(true);V.noFence=KEY_DATES.map(([l,m,d])=>zoneMeans(pts,dayHours(doyOf(m,d),pts).hours));composeSurface();}
+    }
     const sel=dayHours(state.doy,pts);
     V.selStats={label:dateLabel(state.doy),daylight:sel.daylight,zones:zoneMeans(pts,sel.hours)};
     V.heat={pts,hours:sel.hours,daylight:sel.daylight};
@@ -245,6 +262,7 @@
       `Ground: USGS 3DEP Cook County LiDAR${li.collectedDays?.[0]?`, flown ${esc(li.collectedDays[0])} (leaf-off)`:''}, bare earth on a ${d.spacing} m grid, ${esc(d.verticalDatum||'NAVD88 m')}, ${esc(d.crs||'EPSG:26916')}. Area shown ${fmt(DATA.x1-DATA.x0)} × ${fmt(DATA.y1-DATA.y0)} m; beyond it the sky is treated as open.`,
       `Neighbouring buildings: ${esc(fp.source||'building footprints')} outlines, extruded flat to the LiDAR roof top (a high percentile of roof returns). Pitched roofs therefore cast slightly more shadow than they really do, which errs on the cautious side for winter sun.`,
       `Trees: ${fmt(DATA.trees.length)} crowns detected from the same LiDAR, modelled as solid domes when “Trees block sun” is on (leaf-on summer). Bare winter branches let part of the sun through, so winter tree shade is overstated with it on and understated with it off.`,
+      `Fence: a ${FENCE_H} ft solid fence by default on the county GIS side and rear lines (up to about 1 m off the record lines, HP-014), treated as fully opaque; slatted or open fences let more sun through.`,
       'Massing: an illustrative house and rear garage on Lot 25, not a design. Setbacks default to the unverified RT-4 screening numbers in HP-011; the lot outline is the county GIS parcel, not a survey.',
       `Sun hours: direct beam only, ray-marched every 10 minutes on a ${CELL} m surface of ground, buildings, trees and the massing. No sky light, reflections or glazing losses.`,
       v?`Sun model (NOAA equations, Central Standard Time UTC−6) checked against ${v.n} reference positions in the climate study: max error ${v.maxSep.toFixed(3)}°.`:'Sun model: NOAA solar-calculator equations, Central Standard Time (UTC−6).'
@@ -299,6 +317,11 @@
             ${slider('garageDepth','Garage depth',18,40,1,m.garageDepth)}${slider('garageHeight','Garage height',10,24,1,m.garageHeight)}
             <ul class="hp3d-checks" id="hp3d-checks"></ul>
             <button type="button" class="button secondary" id="hp3d-reset">Reset massing</button>
+          </fieldset>
+          <fieldset class="v3d-group"><legend>Fence</legend>
+            ${chk('fence',state.fence,'Fence on the side and rear lot lines','Typical solid wood privacy fence; the Kimbark frontage is left open')}
+            <div class="v3d-row"><label for="hp3d-fence-h">Fence height <output id="hp3d-fence-h-out"></output></label><input type="range" id="hp3d-fence-h" min="3" max="8" step="0.5" value="${state.fenceH}"></div>
+            <p class="v3d-note" id="hp3d-fence-effect"></p>
           </fieldset>
           <fieldset class="v3d-group"><legend>Direct sun hours</legend>
             <div class="research-table hp3d-sun-table"><table><thead><tr><th>Where</th>${KEY_DATES.map(([l])=>`<th>${l}</th>`).join('')}<th id="hp3d-sel-head">Selected</th></tr></thead><tbody id="hp3d-sun-body"></tbody></table></div>
@@ -366,6 +389,7 @@
     const massMat=new THREE.MeshLambertMaterial({color:0xf4f0e6}), garMat=new THREE.MeshLambertMaterial({color:0xdde3ea});
     const mkBox=mat=>{const g=new THREE.BoxGeometry(1,1,1);g.translate(0,.5,0);const m=new THREE.Mesh(g,mat);m.castShadow=m.receiveShadow=true;m.add(new THREE.LineSegments(new THREE.EdgesGeometry(g),new THREE.LineBasicMaterial({color:0x3d4a55})));scene.add(m);return m;};
     const house=mkBox(massMat), garage=mkBox(garMat);
+    const fence=new THREE.Group();scene.add(fence);
 
     const mkLine=(color,opacity)=>{const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(new Float32Array(150*3),3));g.setDrawRange(0,0);const l=new THREE.Line(g,new THREE.LineBasicMaterial({color,transparent:opacity<1,opacity}));l.frustumCulled=false;scene.add(l);return l;};
     const paths={sel:mkLine(0x8a5a00,1),jun:mkLine(0xe0893a,.75),dec:mkLine(0x4f7fb8,.75)};
@@ -376,7 +400,7 @@
     const big=!coarse&&renderer.capabilities.maxTextureSize>=8192;
     sun.castShadow=true;sun.shadow.mapSize.set(big?4096:2048,big?4096:2048);sun.shadow.bias=-0.0003;sun.shadow.normalBias=.08;
     scene.add(sun,sun.target);
-    return {renderer,scene,camera,ground,bGroup,ghosts,crowns,trunks,house,garage,paths,sunBall,hemi,sun,drapeCanvas,drapeCtx:drapeCanvas.getContext('2d'),drapeTex};
+    return {renderer,scene,camera,ground,bGroup,ghosts,crowns,trunks,house,garage,fence,paths,sunBall,hemi,sun,drapeCanvas,drapeCtx:drapeCanvas.getContext('2d'),drapeTex};
   }
 
   function placeMassing(){
@@ -386,6 +410,18 @@
       mesh.visible=!!b;if(!b)continue;
       const bottom=b.ground-.3-DATA.base;
       mesh.position.set(b.c[0],bottom,-b.c[1]);mesh.scale.set(b.u1-b.u0,b.top-DATA.base-bottom,b.v1-b.v0);mesh.rotation.y=F.angle;
+    }
+  }
+  function placeFence(){
+    const g=V.fence;
+    for(const c of [...g.children]){g.remove(c);c.geometry.dispose();}
+    g.visible=state.fence;if(!state.fence)return;
+    const h=state.fenceH*FT;
+    if(!V.fenceMat)V.fenceMat=new THREE.MeshLambertMaterial({color:0x9a7b5b});
+    for(const [a,b] of fenceSegments()){
+      const len=Math.hypot(b[0]-a[0],b[1]-a[1]), mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2, gz=groundAt(mx,my);
+      const m=new THREE.Mesh(new THREE.BoxGeometry(len,h+.2,.06),V.fenceMat);
+      m.position.set(mx,gz-DATA.base+h/2-.1,-my);m.rotation.y=Math.atan2(b[1]-a[1],b[0]-a[0]);m.castShadow=m.receiveShadow=true;g.add(m);
     }
   }
   function sunDir(alt,az){const a=alt*RAD,z=az*RAD;return new THREE.Vector3(Math.sin(z)*Math.cos(a),Math.sin(a),-Math.cos(z)*Math.cos(a));}
@@ -450,6 +486,12 @@
       const s=state.mass.south*FT, nn=state.mass.north*FT, dec=ks[0].zones.south;
       el.walk.innerHTML=`<strong>Walking space.</strong> South side: ${ft(s)} to the lot line${sN?`, ${ft(s+ +sN.distanceToLotM)} to the ${esc(sN.address||'south neighbour')} wall (${ft(+sN.heightM)} tall)`:''}${dec!=null?`; ${dec.toFixed(1)} h of sun there on Dec 21`:''}. North side: ${ft(nn)} to the lot line${nN?`, ${ft(nn+ +nN.distanceToLotM)} to the ${esc(nN.address)} wall across the alley`:''}.`;
     }else el.walk.textContent='Show the massing to read side-path widths.';
+    el.fenceH.textContent=`${state.fenceH} ft`;
+    if(state.fence&&V.noFence){
+      const ground=['yard','front','south','north','rear'].filter(z=>ks[0].zones[z]!=null);
+      const loss=ground.map(z=>`${ZONES.find(q=>q[0]===z)[1].replace(/ \(.*\)/,'').toLowerCase()} ${KEY_DATES.map(([l],i)=>`${Math.max(0,V.noFence[i][z]-ks[i].zones[z]).toFixed(1)}`).join(' / ')} h`);
+      el.fenceEffect.innerHTML=`<strong>Sun the fence takes away</strong> (Dec 21 / Mar 20 / Jun 21, average over each area): ${esc(loss.join('; '))}.`;
+    }else el.fenceEffect.textContent=state.fence?'':'Fence hidden. Turn it on to see how much ground sun it costs.';
   }
   function renderChecks(){
     const el=V.el, m=state.mass, F=DATA.frame, depth=(F.u1-F.u0)/FT, width=(F.v1-F.v0)/FT, house=V.boxes.find(b=>b.id==='house'), garage=V.boxes.find(b=>b.id==='garage');
@@ -546,19 +588,21 @@
     if(V.dirty){V.dirty=false;V.renderer.render(V.scene,V.camera);updateHud();}
   }
   function resize(){if(!V)return;const w=V.el.canvas.clientWidth,h=V.el.canvas.clientHeight;if(!w||!h)return;V.renderer.setSize(w,h,false);V.camera.aspect=w/h;V.camera.updateProjectionMatrix();V.dirty=true;}
-  function refreshMassing(){composeSurface();placeMassing();renderChecks();updateSun(false);scheduleAnalyse(true);}
+  function refreshMassing(){composeSurface();placeMassing();placeFence();renderChecks();updateSun(false);scheduleAnalyse(true);}
 
   function onInput(ev){
     const t=ev.target, id=t.id;
     if(id==='hp3d-date'){state.doy=+t.value;updateSun(true);scheduleAnalyse(false);}
     else if(id==='hp3d-time'){const v=+t.value;state.minutes=state.clock==='local'&&isDst(state.doy)?(v-60+1440)%1440:v;updateSun(false);}
     else if(t.dataset.hp3dMass){state.mass[t.dataset.hp3dMass]=+t.value;refreshMassing();}
+    else if(id==='hp3d-fence-h'){state.fenceH=+t.value;V.el.fenceH.textContent=`${state.fenceH} ft`;refreshMassing();}
   }
   function onChange(ev){
     const t=ev.target, id=t.id;
     if(id==='hp3d-clock'){state.clock=t.value;updateSun(false);}
     else if(id==='hp3d-mass'){state.showMass=t.checked;refreshMassing();}
     else if(id==='hp3d-garage'){state.mass.garage=t.checked;refreshMassing();}
+    else if(id==='hp3d-fence'){state.fence=t.checked;refreshMassing();}
     else if(id==='hp3d-trees'){state.trees=t.checked;composeSurface();scheduleAnalyse(true);}
     else if(id==='hp3d-heat'){state.heat=t.checked;drawDrape();}
     else if(id==='hp3d-labels'){state.labels=t.checked;V.el.labels.hidden=!t.checked;V.dirty=true;}
@@ -588,7 +632,7 @@
     V={root,...parts,dirty:true,anim:null,raf:0,boxes:[],
       el:{root,canvas,wrap:q('wrap'),labels:q('labels'),date:q('date'),dateOut:q('date-out'),time:q('time'),timeOut:q('time-out'),tz:q('tz'),alt:q('alt'),az:q('az'),rise:q('rise'),set:q('set'),daylen:q('daylen'),noon:q('noon'),
         hudTime:q('hud-time'),hudSun:q('hud-sun'),rose:q('compass-rose'),compassSun:q('compass-sun'),scaleBar:q('scale-bar'),scaleLabel:q('scale-label'),
-        playDay:q('play-day'),playYear:q('play-year'),checks:q('checks'),sunBody:q('sun-body'),selHead:q('sel-head'),walk:q('walk'),live:q('live')}};
+        playDay:q('play-day'),playYear:q('play-year'),checks:q('checks'),sunBody:q('sun-body'),selHead:q('sel-head'),walk:q('walk'),fenceH:q('fence-h-out'),fenceEffect:q('fence-effect'),live:q('live')}};
     V.S=buildStatic();
     const controls=new THREE.OrbitControls(V.camera,canvas);
     controls.enableDamping=true;controls.dampingFactor=.12;controls.screenSpacePanning=false;controls.maxPolarAngle=89*RAD;controls.minDistance=4;controls.maxDistance=900;
@@ -597,7 +641,7 @@
     root.addEventListener('input',onInput);root.addEventListener('change',onChange);root.addEventListener('click',onClick);
     V.resizeObs=new ResizeObserver(resize);V.resizeObs.observe(canvas);resize();
     V.ghosts.visible=state.ghosts;
-    composeSurface();placeMassing();renderChecks();buildLabels();drawDrape();loadAerial();renderImageryNote();
+    composeSurface();placeMassing();placeFence();renderChecks();buildLabels();drawDrape();loadAerial();renderImageryNote();
     V.riseSet=riseSet(state.doy);updateSun(true);
     if(state.camera){V.camera.position.fromArray(state.camera.p);controls.target.fromArray(state.camera.t);controls.update();}else setCamera('overview');
     analyse(true);
@@ -612,7 +656,7 @@
     v.resizeObs?.disconnect();v.el.canvas.removeEventListener('keydown',keyNav);
     v.root.removeEventListener('input',onInput);v.root.removeEventListener('change',onChange);v.root.removeEventListener('click',onClick);
     v.scene.traverse(o=>{o.geometry?.dispose();const m=o.material;(Array.isArray(m)?m:m?[m]:[]).forEach(x=>{x.map?.dispose();x.dispose();});o.dispose?.();});
-    v.drapeTex.dispose();v.sun.shadow.map?.dispose();v.renderer.dispose();v.renderer.forceContextLoss?.();
+    v.fenceMat?.dispose();v.drapeTex.dispose();v.sun.shadow.map?.dispose();v.renderer.dispose();v.renderer.forceContextLoss?.();
   }
 
   window.hydeparkViewer3dView=hydeparkViewer3dView;
